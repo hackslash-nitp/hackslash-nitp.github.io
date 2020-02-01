@@ -1,15 +1,15 @@
 @font-face {
-  font-family: 'GT Walsheim Pro';
+  font-family: "GT Walsheim Pro";
   src: url(assets/GTWalsheimProRegular.ttf);
 }
 
 @font-face {
-  font-family: 'Brandon Grotesque Black';
+  font-family: "Brandon Grotesque Black";
   src: url(assets/brandon_grotesque.otf);
 }
 
 @font-face {
-  font-family: 'Fake Serif';
+  font-family: "Fake Serif";
   src: url(assets/fake_serif.ttf);
 }
 
@@ -17,40 +17,30 @@ html {
   height: 100%;
 }
 
-body {
-  /* Background Image */
-  background-color: #60b6e9;
-  color: white;
-  font-family: 'GT Walsheim Pro';
-}
-
 .box {
-  display:flex;
+  display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
-#item1{
+#item1 {
   width: 50%;
   height: 100%;
 }
 
-#item2{
+#item2 {
   width: 50%;
   height: 100%;
 }
 
-P {
+p {
   margin-top: 10px;
   margin-left: 5vw;
 }
-a {
+
+#know_more {
   text-decoration: none;
   display: inline-block;
-  color: white;
-}
-
-p > a{
   background-color: white;
   color: #60b6e9;
   border-radius: 7px;
@@ -59,39 +49,88 @@ p > a{
   font-weight: 100;
 }
 
-li > a{
+#nav-box-inverted > nav > ul > li > a {
   border-radius: 10px;
   margin: 2px 14px;
   padding: 8px;
-  transition: background-color 0.5s ease
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  transition: background-color 0.5s ease;
 }
 
-li > a:hover, a:active {
+#nav-box-inverted > nav > ul > li > a:hover,
+a:active {
   background-color: white;
   color: #60b6e9;
   border-radius: 15px;
 }
 
-nav {
+#nav-box-inverted > nav {
   width: 100%;
-  font-family: 'Brandon Grotesque Black';
+  font-family: "Brandon Grotesque Black";
   font-size: 20px;
 }
-nav > ul {
+
+#nav-box-inverted > nav > ul {
   list-style: none;
   float: right;
 }
 
-nav > ul > li {
+#nav-box-inverted > nav > ul > li {
   display: inline-block;
 }
 
-#drop{
-  display: none;
+#nav-box > nav > ul > li > a {
+  border-radius: 10px;
+  margin: 2px 14px;
+  padding: 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: #60b6e9;
+  transition: background-color 0.5s ease;
 }
 
-#drop:hover{
-  display:block;
+#nav-box > nav > ul > li > a:hover,
+a:active {
+  background-color: #60b6e9;
+  color: white;
+  border-radius: 15px;
+}
+
+#nav-box > nav {
+  width: 100%;
+  font-family: "Brandon Grotesque Black";
+  font-size: 20px;
+  position: fixed;
+  margin-top: 0px;
+  margin-left: 0px;
+  left: 0px;
+  top: 0px;
+  z-index: 15px;
+  background-color: white;
+}
+
+#nav-box > nav > ul {
+  list-style: none;
+  float: right;
+  margin: 16px
+}
+
+#nav-box > nav > ul > li {
+  display: inline-block;
+}
+
+#nav_home {
+  font-size: 50px;
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  font-weight: normal;
+  color: #60b6e9;
+  position: absolute;
+  margin-left: 5vw;
+  top: 5px;
+  text-decoration: none;
 }
 
 header {
@@ -102,50 +141,31 @@ header {
   display: inline-block;
 }
 
-#p_world{
-  font-family: 'Fake Serif';
+#p_world {
+  font-family: "Fake Serif";
 }
 
 img {
-  max-width:100%;
+  max-width: 100%;
+}
+
+#nav_selected {
+  background-color: white;
+  color: #60b6e9;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 480px) {
-  .box{
+  .box {
     flex-direction: column;
   }
-  #item1{
+  #item1 {
     width: 100%;
   }
-  #item2{
+  #item2 {
     width: 100%;
   }
 }
-
-.dropbtn {
-  border: none;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: #60b6e9;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown:hover .dropdown-content {display: block;}
 
 body::-webkit-scrollbar {
   width: 5px;
