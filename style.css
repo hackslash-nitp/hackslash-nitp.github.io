@@ -161,3 +161,10 @@ body::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 15px;
 }
+#box{
+  position: absolute;
+width: 810px;
+height: 587px;
+left: -61px;
+top: 74px;
+}
