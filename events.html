@@ -2,34 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>hackslash index</title>
-    <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <meta charset="UTF-8">
+  <title>hackslash index</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    #event_heading {
+      position: absolute;
+      width: 644px;
+      height: 206px;
+      left: 200px;
+      top: 20%;
+      font-family: GT Walsheim Pro;
+      font-style: normal;
+      font-weight: normal;
+      z-index: -1;
+      font-size: 4.5vw;
+      line-height: 121.73%;
+      color: #3A454B;
+    }
 
+    #event_subheading {
+      position: absolute;
+      width: 600px;
+      height: 96px;
+      left: 200px;
+      top: 50%;
+      z-index: -1;
+      font-family: GT Walsheim Pro;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2.2vw;
+      line-height: 42px;
+
+      color: #3F82AA;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+    }
+
+    .form-control-underlined {
+      border-width: 0;
+      border-bottom-width: 1px;
+      border-radius: 0;
+      padding-left: 0;
+    }
+
+    #search {
+      position: absolute;
+      width: 600px;
+      height: 45px;
+      left: 200px;
+      top: 70%;
+    }
+  </style>
 </head>
 
-<body>
-    <div id="container">
-        <div id="nav-box">
-            <nav>
-                <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Hall of Fame</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <!-- <div class="dropdown">
-            <li><a href="#" class="dropbtn">More</a>
-              <div class="dropdown-content">
-                <a href="#">Resources</a>
-                <a href="#">Gallery</a>
-              </div>
-            </li>
-          </div> -->
-                    <li><a href="#">Join Us</a></li>
-                </ul>
-            </nav>
-        </div>
+<body style="padding: 0px">
+  <div id="container">
+    <div id="nav-box">
+      <nav>
+        <a href="index.html" id="nav_home">hackslash</a>
+        <ul>
+          <li><a href="#" id="nav_selected">Events</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Hall of Fame</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Join Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <img src="assets/events-bg-1.svg" style="margin-left: 0px; left:0px; z-index: -1;">
+
+  <img src="assets/events-bg-2.svg"
+    style="margin-right: 90px;margin-top: 136px; height: 100%; width: 40%; z-index: -1; float: right;">
+
+    
+
+  <p id="event_heading">
+    Ready to join the movement?
+  </p>
+
+  <p id="event_subheading">
+    Check out what's happening in the campus
+  </p>
+  <form id="search">
+    <input type="email" class="form-control form-control-underlined" placeholder="Search for events here">
+  </form>
+  
+
+  <img src="assets/events-bg-4.svg" style="height: 50vw; width: 75%; margin-right: -350px; float: right; margin-top: -300px;" >
+  <img src="assets/events-bg-3.svg" style="margin-left: -450px;height: 50vw; width: 75%; margin-right: 0px; right: -100px; float: left;" >
+  <img src="assets/events-bg-5.svg" style="margin-bottom: 0px; bottom: 80px; height: 50vw; width: 75%; margin-right: 0px; right: -100px; float: right;" >
+
 </body>
 
 </html>
