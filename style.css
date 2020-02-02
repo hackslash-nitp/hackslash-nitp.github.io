@@ -88,6 +88,7 @@ a:active {
   text-decoration: none;
   display: inline-block;
   color: #60b6e9;
+  border-radius: 15px;
   transition: background-color 0.5s ease;
 }
 
@@ -103,11 +104,11 @@ a:active {
   font-family: "Brandon Grotesque Black";
   font-size: 20px;
   position: fixed;
+  z-index: 200;
   margin-top: 0px;
   margin-left: 0px;
   left: 0px;
   top: 0px;
-  z-index: 15px;
   background-color: white;
 }
 
