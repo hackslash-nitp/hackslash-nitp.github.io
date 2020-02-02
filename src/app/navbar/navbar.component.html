@@ -1,30 +1,47 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>hackslash</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Events</a>
-      <a mat-list-item href="#">Projects</a>
-      <a mat-list-item href="#">Hall of Fame</a>
-      <a mat-list-item href="#">Articles</a>
-      <a mat-list-item href="#">About Us</a>
-      <a mat-list-item href="#">Join Us</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>hslash</span>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg #60b6e9" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">hackslash</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="events" style="color:white"><mdb-icon fas icon="envelope"></mdb-icon>Events<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect ><mdb-icon fas icon="cog"></mdb-icon>Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon>Hall of Fame</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon>Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon>About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon>Join Us</a>
+      </li>
+      <!-- Dropdown -->
+      <!--<li class="nav-item dropdown" dropdown>
+    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+      <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span>
+    </a>
+    <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+      <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+    </div>
+  </li>
+  -->
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
