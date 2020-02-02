@@ -184,6 +184,7 @@ body::-webkit-scrollbar-thumb {
 #box{
   position: absolute;
 width: 810px;
+z-index: -1;
 height: 587px;
 left: -61px;
 top: 74px;
