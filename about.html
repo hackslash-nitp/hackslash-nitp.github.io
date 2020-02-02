@@ -30,7 +30,7 @@
             font-size: 20px;
             line-height: 30px;
             letter-spacing: 0.05em;
-            width: 50%;
+            width: 60%;
             color: rgba(0, 0, 0, 0.75);
 
         }
@@ -52,7 +52,7 @@
             font-size: 64px;
             line-height: 85px;
             margin-top: 150px;
-            margin-left: 700px;
+            margin-left: 40%;
             color: rgba(0, 0, 0, 0.9);
         }
 
@@ -62,7 +62,7 @@
             font-weight: 500;
             font-size: 20px;
             line-height: 30px;
-            margin-left: 700px;
+            margin-left: 40%;
             margin-right: 40px;
             color: rgba(0, 0, 0, 0.75);
         }
@@ -83,15 +83,17 @@
             margin-top: 50px;
             width: 100%;
             height: auto;
+            text-align: center;
         }
 
         .member_card {
             width: 300px;
             height: 400px;
-            float: left;
             margin-top: 40px;
             padding: 0px;
-            margin-left: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
             box-shadow: 0px 0px 5px #CACACA;
             background-color: #0085CA;
         }
@@ -147,7 +149,7 @@
             line-height: 22px;
             /* identical to box height */
             color: #FFFFFF;
-            margin-top: 50px;
+            margin-top: 230px;
             width: 100%;
             margin-left: 0px;
             text-align: center;
@@ -156,7 +158,6 @@
 
         .about_me {
             width: 100%;
-            margin-top: 0px;
             text-align: center;
             font-family: Ubuntu;
             font-style: normal;
@@ -193,11 +194,11 @@
             <nav>
                 <a href="index.html" id="nav_home">hackslash</a>
                 <ul>
-                    <li><a href="#" id="nav_selected">Events</a></li>
+                    <li><a href="#">Events</a></li>
                     <li><a href="#">Projects</a></li>
                     <li><a href="#">Hall of Fame</a></li>
                     <li><a href="#">Articles</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#" id="nav_selected">About Us</a></li>
                     <li><a href="#">Join Us</a></li>
                 </ul>
             </nav>
@@ -205,14 +206,15 @@
     </div>
 
 
-    <img src="assets/about_us/about-bg-1.svg" style="margin-right: -5px; width: 35%; margin-top: -20px;float: right">
+    <img src="assets/about_us/about-bg-1.svg" style="margin-right: -5px; width: 500px; margin-top: -20px; position: absolute; right: 0px;
+    z-index: -1;">
     <p id="about_us_heading">About Us</p>
     <p id="about_us">Hackslash is a student developers' community powered by Mozilla Campus Clubs Network that focuses
         fundamentally on software development. Hackslash subsists on the belief that everyone can create & innovate. The
         club aims at contriving better code by involving people from all walks of life. The ever-growing community of
         young developers strives at upholding this maxim through the years to come.</p>
     <img src="assets/about_us/about-bg-2.svg"
-        style="margin-right: 90px;margin-top: 150px; height: 100%; width: 40%; float: left;">
+        style="margin-right: 90px;margin-top: 0px; height: 100%; width: 600px; position: absolute; z-index: -1;">
     <p id="our_story_heading">Our Story</p>
     <p id="our_story">Platea porttitor eu semper sagittis scelerisque duis at mi sed. Neque faucibus rhoncus, ac
         curabitur ut tellus. Adipiscing nisi, quisque eget dolor augue. Ut sed eget consectetur fermentum velit
@@ -225,36 +227,13 @@
 
     <p id="meet_the_team">Meet the team</p>
 
-    
+
 
     <div id="members_list">
-        <div class="member_card card">
-            <div
-                style="width: 300px; height: 175px; position:absolute z-index: -1; background-color: white; margin-left: -1px; margin-top: -1px;">
-
-                <p class="member_name">Kumar Harsh</p>
-                <p class="member_post">Technical Lead</p>
-            </div>
-
-            <img src="https://avatars0.githubusercontent.com/u/46624829?s=400&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4"
-                class="member_photo">
-
-            <p class="about_me_header">About me</p>
-            <p class="about_me">Hey - I'm Kr. Harsh, a 20 years old frontend dev. Feel free to follow me or hire me</p>
-
-
-            <div class="links">
-                <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
-                <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img src="assets/about_us/card-link-linkedin.svg" class="link"></a>
-                <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
-            </div>
-        </div>
-
         
         <div class="member_card card">
             <div
-                style="width: 300px; height: 175px; position:absolute z-index: -1; background-color: white; margin-left: -1px; margin-top: -1px;">
+                style="width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;">
 
                 <p class="member_name">Kumar Harsh</p>
                 <p class="member_post">Technical Lead</p>
@@ -270,14 +249,15 @@
             <div class="links">
                 <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
                 <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img src="assets/about_us/card-link-linkedin.svg" class="link"></a>
+                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img
+                        src="assets/about_us/card-link-linkedin.svg" class="link"></a>
                 <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
             </div>
         </div>
 
         <div class="member_card card">
             <div
-                style="width: 300px; height: 175px; position:absolute z-index: -1; background-color: white; margin-left: -1px; margin-top: -1px;">
+                style="width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;">
 
                 <p class="member_name">Kumar Harsh</p>
                 <p class="member_post">Technical Lead</p>
@@ -293,38 +273,15 @@
             <div class="links">
                 <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
                 <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img src="assets/about_us/card-link-linkedin.svg" class="link"></a>
-                <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
-            </div>
-        </div>
-
-        
-        <div class="member_card card">
-            <div
-                style="width: 300px; height: 175px; position:absolute z-index: -1; background-color: white; margin-left: -1px; margin-top: -1px;">
-
-                <p class="member_name">Kumar Harsh</p>
-                <p class="member_post">Technical Lead</p>
-            </div>
-
-            <img src="https://avatars0.githubusercontent.com/u/46624829?s=400&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4"
-                class="member_photo">
-
-            <p class="about_me_header">About me</p>
-            <p class="about_me">Hey - I'm Kr. Harsh, a 20 years old frontend dev. Feel free to follow me or hire me</p>
-
-
-            <div class="links">
-                <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
-                <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img src="assets/about_us/card-link-linkedin.svg" class="link"></a>
+                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img
+                        src="assets/about_us/card-link-linkedin.svg" class="link"></a>
                 <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
             </div>
         </div>
 
         <div class="member_card card">
             <div
-                style="width: 300px; height: 175px; position:absolute z-index: -1; background-color: white; margin-left: -1px; margin-top: -1px;">
+                style="width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;">
 
                 <p class="member_name">Kumar Harsh</p>
                 <p class="member_post">Technical Lead</p>
@@ -340,88 +297,18 @@
             <div class="links">
                 <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
                 <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img src="assets/about_us/card-link-linkedin.svg" class="link"></a>
-                <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
-            </div>
-        </div>
-
-        
-        <div class="member_card card">
-            <div
-                style="width: 300px; height: 175px; position:absolute z-index: -1; background-color: white; margin-left: -1px; margin-top: -1px;">
-
-                <p class="member_name">Kumar Harsh</p>
-                <p class="member_post">Technical Lead</p>
-            </div>
-
-            <img src="https://avatars0.githubusercontent.com/u/46624829?s=400&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4"
-                class="member_photo">
-
-            <p class="about_me_header">About me</p>
-            <p class="about_me">Hey - I'm Kr. Harsh, a 20 years old frontend dev. Feel free to follow me or hire me</p>
-
-
-            <div class="links">
-                <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
-                <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img src="assets/about_us/card-link-linkedin.svg" class="link"></a>
-                <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
-            </div>
-        </div>
-
-        <div class="member_card card">
-            <div
-                style="width: 300px; height: 175px; position:absolute z-index: -1; background-color: white; margin-left: -1px; margin-top: -1px;">
-
-                <p class="member_name">Kumar Harsh</p>
-                <p class="member_post">Technical Lead</p>
-            </div>
-
-            <img src="https://avatars0.githubusercontent.com/u/46624829?s=400&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4"
-                class="member_photo">
-
-            <p class="about_me_header">About me</p>
-            <p class="about_me">Hey - I'm Kr. Harsh, a 20 years old frontend dev. Feel free to follow me or hire me</p>
-
-
-            <div class="links">
-                <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
-                <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img src="assets/about_us/card-link-linkedin.svg" class="link"></a>
-                <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
-            </div>
-        </div>
-
-        
-        <div class="member_card card">
-            <div
-                style="width: 300px; height: 175px; position:absolute z-index: -1; background-color: white; margin-left: -1px; margin-top: -1px;">
-
-                <p class="member_name">Kumar Harsh</p>
-                <p class="member_post">Technical Lead</p>
-            </div>
-
-            <img src="https://avatars0.githubusercontent.com/u/46624829?s=400&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4"
-                class="member_photo">
-
-            <p class="about_me_header">About me</p>
-            <p class="about_me">Hey - I'm Kr. Harsh, a 20 years old frontend dev. Feel free to follow me or hire me</p>
-
-
-            <div class="links">
-                <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
-                <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img src="assets/about_us/card-link-linkedin.svg" class="link"></a>
+                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img
+                        src="assets/about_us/card-link-linkedin.svg" class="link"></a>
                 <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
             </div>
         </div>
         <!-- More cards to be added here later -->
     </div>
 
-    
+
 
     <img src="assets/about_us/about-bg-3.svg"
-        style="margin-right: 90px; margin-top: -450px; height: 100%; width: 100%; float: left; padding-right: 80%;" >
+        style="margin-right: 90px; margin-top: -650px; height: 100%; width: 100%; position: absolute; padding-right: 80%">
 </body>
 
 </html>
