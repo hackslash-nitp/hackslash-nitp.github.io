@@ -17,10 +17,17 @@ import { AppComponent } from './app.component';
 import { EventsComponent } from './events/events.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IndexComponent } from './index/index.component';
+import { AboutComponent } from './about/about.component';
+import { HallComponent } from './hall/hall.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { EventdetailsComponent } from './eventdetails/eventdetails.component';
 
 const appRoutes: Routes = [
   { path: '', component: IndexComponent },
-  { path: 'events', component: EventsComponent }
+  { path: 'events', component: EventsComponent },
+  { path: 'projects', component: ProjectsComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'hall', component: HallComponent },
 ]
 
 @NgModule({
@@ -28,7 +35,11 @@ const appRoutes: Routes = [
     AppComponent,
     EventsComponent,
     NavbarComponent,
-    IndexComponent
+    IndexComponent,
+    AboutComponent,
+    HallComponent,
+    ProjectsComponent,
+    EventdetailsComponent
   ],
   imports: [
     BrowserModule,
