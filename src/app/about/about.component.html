@@ -1,5 +1,5 @@
 
-<head>
+<!--<head>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Mada&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,27 +14,23 @@
   </script>
   <meta charset="UTF-8">
 
-</head>
-
-<body style="padding: 0px">
+</head>-->
   <app-navbar></app-navbar>
-<!--<div id="container">
+  <div id="container">
     <div id="nav-box">
       <nav>
-        <a href="index.html" id="nav_home">hackslash</a>
+        <a routerLink="../" id="nav_home">hackslash</a>
         <ul>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Hall of Fame</a></li>
+          <li><a routerLink="../events" id="nav_selected">Events</a></li>
+          <li><a routerLink="../projects">Projects</a></li>
+          <li><a routerLink="../hall">Hall of Fame</a></li>
           <li><a href="#">Articles</a></li>
-          <li><a href="#" id="nav_selected">About Us</a></li>
+          <li><a routerLink="about">About Us</a></li>
           <li><a href="#">Join Us</a></li>
         </ul>
       </nav>
     </div>
-  </div>-->
-
-
+  </div>
   <img src="assets/about_us/about-bg-1.svg" style="margin-right: -5px; width: 500px; margin-top: -20px; position: absolute; right: 0px;
     z-index: -1;">
   <p id="about_us_heading">About Us</p>
@@ -142,4 +138,3 @@
 
   <img src="assets/about_us/about-bg-3.svg"
        style="margin-right: 90px; margin-top: -650px; height: 100%; width: 100%; position: absolute; padding-right: 80%">
-</body>
