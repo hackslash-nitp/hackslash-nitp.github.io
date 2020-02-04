@@ -35,7 +35,7 @@
                 console.log(element.name);
                 var card = "<div class='member_card" + (index % 5) + " card'>";
                 card += "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
-                    "<p class='member_name'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + (index % 5) + "'>" +
+                    "<p class='member_name" + ((index) % 5) + "'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + (index % 5) + "'>" +
                     "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio + "</p><div class='links'>";
 
                 if (element.medium !== undefined) {
@@ -63,13 +63,15 @@
 
                 $(".leads_header, .leads").animate({
                     opacity: 1.0,
-                    tranisitionDuration: '1s'
+                    transitionDuration: '0.4s'
                 });
 
             if (lead_count !== 0 && dev_count !== 0 && designer_count !== 0) {
                 console.log('here');
-                $("body").css("overflow", "scroll");
-
+                $("body").css("overflow-y", "scroll");
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".leads_header").offset().top
+                }, 1000);
                 console.log(document.body.style.overflowY);
             }
         });
@@ -79,7 +81,7 @@
                 console.log(element.name);
                 var card = "<div class='member_card" + ((index + 2) % 5) + " card'>";
                 card += "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
-                    "<p class='member_name'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + ((index + 2) % 5) + "'>" +
+                    "<p class='member_name" + ((index + 2) % 5) + "'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + ((index + 2) % 5) + "'>" +
                     "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio + "</p><div class='links'>";
 
                 if (element.medium !== undefined) {
@@ -107,12 +109,16 @@
 
                 $(".devs_header, .devs").animate({
                     opacity: 1.0,
-                    tranisitionDuration: '1s'
+                    transitionDuration: '0.4s'
                 });
 
             if (lead_count != 0 && dev_count != 0 && designer_count != 0) {
+
+                $("body").css("overflow-y", "scroll");
                 
-                $("body").css("overflow", "scroll");
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".leads_header").offset().top
+                }, 1000);
                 console.log(document.body.style.overflowY);
             }
 
@@ -125,7 +131,7 @@
                 console.log(element.name);
                 var card = "<div class='member_card" + ((index + 4) % 5) + " card'>";
                 card += "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
-                    "<p class='member_name'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + ((index + 4) % 5) + "'>" +
+                    "<p class='member_name" + ((index + 4) % 5) + "'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + ((index + 4) % 5) + "'>" +
                     "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio + "</p><div class='links'>";
 
                 if (element.medium !== undefined) {
@@ -153,12 +159,16 @@
 
                 $(".designers_header, .designers").animate({
                     opacity: 1.0,
-                    tranisitionDuration: '1s'
+                    transitionDuration: '0.4s'
                 });
 
             if (lead_count !== 0 && dev_count !== 0 && designer_count !== 0) {
+
+                $("body").css("overflow-y", "scroll");
                 
-                $("body").css("overflow", "scroll");
+                $([document.documentElement, document.body]).animate({
+                   scrollTop: $(".leads_header").offset().top
+                }, 1000);
                 console.log(document.body.style.overflowY);
             }
 
@@ -297,13 +307,65 @@
             background-color: #8D8C97;
         }
 
-        .member_name {
+        .member_name0 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #F97892;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name1 {
             font-family: GT Walsheim Pro;
             font-style: normal;
             font-weight: normal;
             font-size: 28px;
             line-height: 30px;
             color: #0085CA;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name2 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #FCA557;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name3 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #F97892;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name4 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #8D8C97;
             width: 100%;
             margin-left: 0px;
             margin-top: 24px;
@@ -441,6 +503,7 @@
 
         .leads, .leads_header, .designers, .designers_header, .devs, .devs_header {
             opacity: 0.0;
+            transform: translateY(200px);
         }
     </style>
 </head>
@@ -453,9 +516,9 @@
                 <ul>
                     <li><a href="#">Events</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a href="#">Hall of Fame</a></li>
+                    <li><a href="#" id="nav_selected" style="color: white">Hall of Fame</a></li>
                     <li><a href="#">Articles</a></li>
-                    <li><a href="#" id="nav_selected">About Us</a></li>
+                    <li><a href="#">About Us</a></li>
                     <li><a href="#">Join Us</a></li>
                 </ul>
             </nav>
@@ -464,10 +527,9 @@
 
     <img src="assets/hall/hall-bg-1.svg"
          style="width: 540px; height: 360px; position: absolute; top: 150px; left:40px; z-index: -1;">
-    <div class="page_heading">Lorem ipsum dolor sit amet</div>
+    <div class="page_heading">The Illuminatis</div>
     <div class="page_subheading">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet
-        luctus venenatis
+        Learning, inspiring & growing together
     </div>
     <img src="assets/hall/hall-bg-2.svg"
          style="width: 75px; height: 500px; position: absolute; top: 150px; right: 0px; z-index: -1;">

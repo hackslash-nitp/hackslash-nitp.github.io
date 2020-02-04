@@ -1,22 +1,90 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Mada&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <meta charset="UTF-8">
     <title>hackslash index</title>
     <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="common_script.js"></script>
+    <script>
+        var database = firebase.database();
+        var members_count = 0;
+        var dev_count = 0;
+        var designer_count = 0;
+
+        database.ref('/members').once('value').then(function (snapshot) {
+            snapshot.val().forEach(function (element, index) {
+                console.log(element.name);
+                var card = "<div class='member_card" + (index % 5) + " card'>";
+                card += "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
+                    "<p class='member_name'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + (index % 5) + "'>" +
+                    "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio + "</p><div class='links'>";
+
+                if (element.medium !== undefined) {
+                    card += "<a href='" + element.medium + "'><img src='assets/about_us/card-link-medium.svg' class='link'></a>";
+                }
+
+                if (element.github !== undefined) {
+                    card += "<a href='" + element.github + "'><img src='assets/about_us/card-link-github.svg' class='link'></a>";
+                }
+
+                if (element.linkedin !== undefined) {
+                    card += "<a href='" + element.linkedin + "'><img src='assets/about_us/card-link-linkedin.svg' class='link'></a>";
+                }
+
+                if (element.dev !== undefined) {
+                    card += "<a href='" + element.dev + "'><img src='assets/about_us/card-link-dev.svg' class='link'></a>";
+                }
+
+                card += "</div></div>";
+                $("#members_list").append(card);
+                members_count++;
+            });
+
+            if (members_count !== 0)
+
+                $("#meet_the_team, #members_list").animate({
+                    opacity: 1.0,
+                    transitionDuration: '0.4s'
+                });
+
+            if (members_count !== 0) {
+                console.log('here');
+                console.log(document.body.style.overflowY);
+            }
+        });
+    </script>
 
     <style>
         body {
@@ -32,7 +100,6 @@
             letter-spacing: 0.05em;
             width: 60%;
             color: rgba(0, 0, 0, 0.75);
-
         }
 
         #about_us_heading {
@@ -76,6 +143,7 @@
             line-height: 82px;
             margin-left: 0px;
             text-align: center;
+            opacity: 0.0;
             color: rgba(0, 0, 0, 0.9);
         }
 
@@ -83,10 +151,23 @@
             margin-top: 50px;
             width: 100%;
             height: auto;
+            opacity: 0.0;
             text-align: center;
         }
 
-        .member_card {
+        .member_card0 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #F97892;
+        }
+
+        .member_card1 {
             width: 300px;
             height: 400px;
             margin-top: 40px;
@@ -96,6 +177,42 @@
             display: inline-block;
             box-shadow: 0px 0px 5px #CACACA;
             background-color: #0085CA;
+        }
+
+        .member_card2 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #FCA557;
+        }
+
+        .member_card3 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #F97892;
+        }
+
+        .member_card4 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #8D8C97;
         }
 
         .member_name {
@@ -109,7 +226,6 @@
             margin-left: 0px;
             margin-top: 24px;
             text-align: center;
-
         }
 
         .member_post {
@@ -126,7 +242,21 @@
             color: #686868;
         }
 
-        .member_photo {
+        .member_photo0 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #F97892;
+        }
+
+        .member_photo1 {
             display: block;
             border-radius: 200px;
             box-sizing: border-box;
@@ -138,6 +268,48 @@
             margin-left: 0px;
             position: absolute;
             border: 3px solid #0085CA;
+        }
+
+        .member_photo2 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #FCA557;
+        }
+
+        .member_photo3 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #F97892;
+        }
+
+        .member_photo4 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #8D8C97;
         }
 
 
@@ -153,7 +325,6 @@
             width: 100%;
             margin-left: 0px;
             text-align: center;
-
         }
 
         .about_me {
@@ -194,12 +365,12 @@
             <nav>
                 <a href="index.html" id="nav_home">hackslash</a>
                 <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Hall of Fame</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#" id="nav_selected">About Us</a></li>
-                    <li><a href="#">Join Us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="hall.html">Hall of Fame</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="#" id="nav_selected" style="color: white">About Us</a></li>
+                    <li><a href="">Join Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -207,108 +378,33 @@
 
 
     <img src="assets/about_us/about-bg-1.svg" style="margin-right: -5px; width: 500px; margin-top: -20px; position: absolute; right: 0px;
-    z-index: -1;">
+            z-index: -1;">
     <p id="about_us_heading">About Us</p>
-    <p id="about_us">Hackslash is a student developers' community powered by Mozilla Campus Clubs Network that focuses
+    <p id="about_us">
+        Hackslash is a student developers' community powered by Mozilla Campus Clubs Network that focuses
         fundamentally on software development. Hackslash subsists on the belief that everyone can create & innovate. The
         club aims at contriving better code by involving people from all walks of life. The ever-growing community of
-        young developers strives at upholding this maxim through the years to come.</p>
+        young developers strives at upholding this maxim through the years to come.
+    </p>
     <img src="assets/about_us/about-bg-2.svg"
-        style="margin-right: 90px;margin-top: 0px; height: 100%; width: 600px; position: absolute; z-index: -1;">
+         style="margin-right: 90px;margin-top: 0px; height: 100%; width: 600px; position: absolute; z-index: -1;">
     <p id="our_story_heading">Our Story</p>
-    <p id="our_story">Platea porttitor eu semper sagittis scelerisque duis at mi sed. Neque faucibus rhoncus, ac
+    <p id="our_story">
+        Platea porttitor eu semper sagittis scelerisque duis at mi sed. Neque faucibus rhoncus, ac
         curabitur ut tellus. Adipiscing nisi, quisque eget dolor augue. Ut sed eget consectetur fermentum velit
         tincidunt auctor purus. Ornare sit elementum iaculis platea. At donec molestie condimentum nunc sed nulla.
         Gravida lectus velit scelerisque fermentum. Lectus dignissim enim justo, neque viverra bibendum. Nulla est donec
         egestas dictumst odio maecenas aliquam felis massa. Velit amet enim, facilisi id arcu sit. Mi et elementum enim
         tempus aliquet egestas turpis orci. Urna nunc lorem tellus est viverra nunc ornare viverra. Vulputate hendrerit
         ut sagittis non accumsan neque cras feugiat. Facilisis faucibus ullamcorper tortor lectus orci, aliquam faucibus
-        at.</p>
+        at.
+    </p>
 
     <p id="meet_the_team">Meet the team</p>
-
-
-
-    <div id="members_list">
-        
-        <div class="member_card card">
-            <div
-                style="width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;">
-
-                <p class="member_name">Kumar Harsh</p>
-                <p class="member_post">Technical Lead</p>
-            </div>
-
-            <img src="https://avatars0.githubusercontent.com/u/46624829?s=400&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4"
-                class="member_photo">
-
-            <p class="about_me_header">About me</p>
-            <p class="about_me">Hey - I'm Kr. Harsh, a 20 years old frontend dev. Feel free to follow me or hire me</p>
-
-
-            <div class="links">
-                <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
-                <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img
-                        src="assets/about_us/card-link-linkedin.svg" class="link"></a>
-                <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
-            </div>
-        </div>
-
-        <div class="member_card card">
-            <div
-                style="width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;">
-
-                <p class="member_name">Kumar Harsh</p>
-                <p class="member_post">Technical Lead</p>
-            </div>
-
-            <img src="https://avatars0.githubusercontent.com/u/46624829?s=400&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4"
-                class="member_photo">
-
-            <p class="about_me_header">About me</p>
-            <p class="about_me">Hey - I'm Kr. Harsh, a 20 years old frontend dev. Feel free to follow me or hire me</p>
-
-
-            <div class="links">
-                <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
-                <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img
-                        src="assets/about_us/card-link-linkedin.svg" class="link"></a>
-                <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
-            </div>
-        </div>
-
-        <div class="member_card card">
-            <div
-                style="width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;">
-
-                <p class="member_name">Kumar Harsh</p>
-                <p class="member_post">Technical Lead</p>
-            </div>
-
-            <img src="https://avatars0.githubusercontent.com/u/46624829?s=400&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4"
-                class="member_photo">
-
-            <p class="about_me_header">About me</p>
-            <p class="about_me">Hey - I'm Kr. Harsh, a 20 years old frontend dev. Feel free to follow me or hire me</p>
-
-
-            <div class="links">
-                <a href="https://medium.com/@kharsh39"><img src="assets/about_us/card-link-medium.svg" class="link"></a>
-                <a href="https://github.com/krharsh17"><img src="assets/about_us/card-link-github.svg" class="link"></a>
-                <a href="https://www.linkedin.com/in/kumar-harsh-0a119716b/"><img
-                        src="assets/about_us/card-link-linkedin.svg" class="link"></a>
-                <a href="https://dev.to/krharsh17"><img src="assets/about_us/card-link-dev.svg" class="link"></a>
-            </div>
-        </div>
-        <!-- More cards to be added here later -->
-    </div>
-
-
+    <div id="members_list" class="members"></div>
 
     <img src="assets/about_us/about-bg-3.svg"
-        style="margin-right: 90px; margin-top: -650px; height: 100%; width: 100%; position: absolute; padding-right: 80%">
+         style="margin-right: 90px; margin-top: -650px; height: 100%; width: 100%; position: absolute; padding-right: 80%">
 </body>
 
 </html>
