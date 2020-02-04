@@ -51,21 +51,21 @@ p {
 }
 
 #nav-box-inverted > nav > ul > li > a {
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 2px 14px;
   padding: 8px;
   text-decoration: none;
   display: inline-block;
   color: white;
-  transition: 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
-#nav-box-inverted > nav > ul > li > a:hover{
-  background-color: white;
-  color: #60b6e9;
-  box-shadow: rgba(255, 255, 255, 0.6) 0px 2px 12px;
-  border-radius: 15px;
-}
+  #nav-box-inverted > nav > ul > li > a:hover,
+  a:active {
+    background-color: white;
+    color: #60b6e9;
+    border-radius: 15px;
+  }
 
 #nav-box-inverted > nav {
   width: 100%;
@@ -73,38 +73,32 @@ p {
   font-size: 20px;
 }
 
-#nav-box-inverted > nav > ul {
-  list-style: none;
-  float: right;
-}
+  #nav-box-inverted > nav > ul {
+    list-style: none;
+    float: right;
+  }
 
-#nav-box-inverted > nav > ul > li {
-  display: inline-block;
-}
+    #nav-box-inverted > nav > ul > li {
+      display: inline-block;
+    }
 
 #nav-box > nav > ul > li > a {
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 2px 14px;
   padding: 8px;
   text-decoration: none;
   display: inline-block;
   color: #60b6e9;
   border-radius: 15px;
-  transition: 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
-#nav-box > nav > ul > li > a:hover{
-  background-color: #60b6e9;
-  color: white;
-  box-shadow: rgba(96, 183, 233, 0.699) 0px 2px 12px;
-  border-radius: 15px;
-}
-
-#nav_selected {
-  background-color: #60b6e9;
-  color: white;
-  border-radius: 15px;
-}
+  #nav-box > nav > ul > li > a:hover,
+  a:active {
+    background-color: #60b6e9;
+    color: white;
+    border-radius: 15px;
+  }
 
 #nav-box > nav {
   width: 100%;
@@ -119,15 +113,15 @@ p {
   background-color: white;
 }
 
-#nav-box > nav > ul {
-  list-style: none;
-  float: right;
-  margin: 16px;
-}
+  #nav-box > nav > ul {
+    list-style: none;
+    float: right;
+    margin: 16px
+  }
 
-#nav-box > nav > ul > li {
-  display: inline-block;
-}
+    #nav-box > nav > ul > li {
+      display: inline-block;
+    }
 
 #nav_home {
   font-size: 50px;
@@ -142,6 +136,7 @@ p {
 }
 
 header {
+  margin-top: 5vw;
   margin-left: 5vw;
   font-weight: 400;
   font-size: 100px;
@@ -156,12 +151,16 @@ img {
   max-width: 100%;
 }
 
+#nav_selected {
+  background-color: white;
+  color: #60b6e9;
+  border-radius: 15px;
+}
+
 @media screen and (max-width: 480px) {
   .box {
     flex-direction: column;
   }
-
-  
 
   #item1 {
     width: 100%;
@@ -185,12 +184,4 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 15px;
-}
-#box{
-  position: absolute;
-width: 810px;
-z-index: -1;
-height: 587px;
-left: -61px;
-top: 74px;
 }
