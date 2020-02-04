@@ -194,3 +194,190 @@ height: 587px;
 left: -61px;
 top: 74px;
 }
+
+
+#content {	
+    float: left; 
+    width: 100%;
+}
+        
+#mask {
+    display: none;
+    background: #000; 
+    position: fixed; left: 0; top: 0; 
+    z-index: 10;
+    width: 100%; height: 100%;
+    opacity: 0.8;
+    z-index: 999;
+}
+
+.login-popup{
+    display:none;
+    background: #ffffff;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%; left: 50%;
+    z-index: 99999;
+}
+
+a.close{
+    height: 0;
+}
+
+img.btn_close {
+    float: right; 
+    margin: -40px -40px 0 0;
+    position: absolute;
+    right: 0;
+}
+
+.join-us-box{
+    width: 75vw;
+    height: 75vh;
+    display: flex;
+}
+
+.left-div{
+    width: 25%;
+    height: 100%;
+    background: #60b6e9;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 45px;
+}
+
+.right-div{
+    width: 75%;
+    height: 100%;
+    background: #ffffff;
+    background-image: url(assets/joinusBG.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 55%;
+    color: #000000;
+    padding-left: 75px;
+    padding-top: 45px;
+}
+
+#login-box p{
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+.left-div input{
+    outline: none;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.left-div input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: #ffffff;
+opacity: 1; /* Firefox */
+}
+
+.left-div input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: #ffffff;
+}
+
+.left-div input::-ms-input-placeholder { /* Microsoft Edge */
+color: #ffffff;
+}
+
+#signin-btn{
+    cursor: pointer;
+    background: #ffffff;
+    color: #60b6e9;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+    padding: 7px;
+    box-shadow: 2px 2px 2px #0000002a;
+    border-radius: 25px;
+}
+
+.signin-btns{
+    cursor: pointer;
+    background: #ffffff;
+    color: #757575;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.fab{
+    margin-top: 5px;
+    margin-right: 20px;
+    color: #323131;
+}
+
+.right-div input{
+    padding-bottom: 5px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1.5px solid #0000001a;
+    color: #60b6e9;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.right-div input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: #60b6e9;
+opacity: 1; /* Firefox */
+}
+
+.right-div input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: #60b6e9;
+}
+
+.right-div input::-ms-input-placeholder { /* Microsoft Edge */
+color: #60b6e9;
+}    
+
+.name, .details input{
+    width: 45%;
+}
+
+.name{
+    display: flex;
+}
+
+.name input{
+    width: 48%;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+}
+
+#signup-btn{
+    cursor: pointer;
+    background: #60b6e9;
+    color: #ffffff;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+    width: 26%;
+    padding: 12px;
+    box-shadow: 2px 2px 2px #0000003a;
+    border: none;
+    border-radius: 8px;
+}
