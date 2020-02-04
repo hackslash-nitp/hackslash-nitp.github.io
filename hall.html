@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Mada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="common_script.js"></script>
+    <script>
+        var database = firebase.database();
+        var lead_count = 0;
+        var dev_count = 0;
+        var designer_count = 0;
+
+        database.ref('/hall/leads').once('value').then(function (snapshot) {
+            snapshot.val().forEach(function (element, index) {
+                console.log(element.name);
+                var card = "<div class='member_card" + (index % 5) + " card'>";
+                card += "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
+                    "<p class='member_name" + ((index) % 5) + "'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + (index % 5) + "'>" +
+                    "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio + "</p><div class='links'>";
+
+                if (element.medium !== undefined) {
+                    card += "<a href='" + element.medium + "'><img src='assets/about_us/card-link-medium.svg' class='link'></a>";
+                }
+
+                if (element.github !== undefined) {
+                    card += "<a href='" + element.github + "'><img src='assets/about_us/card-link-github.svg' class='link'></a>";
+                }
+
+                if (element.linkedin !== undefined) {
+                    card += "<a href='" + element.linkedin + "'><img src='assets/about_us/card-link-linkedin.svg' class='link'></a>";
+                }
+
+                if (element.dev !== undefined) {
+                    card += "<a href='" + element.dev + "'><img src='assets/about_us/card-link-dev.svg' class='link'></a>";
+                }
+
+                card += "</div></div>";
+                $(".leads").append(card);
+                lead_count++;
+            });
+
+            if (lead_count !== 0)
+
+                $(".leads_header, .leads").animate({
+                    opacity: 1.0,
+                    transitionDuration: '0.4s'
+                });
+
+            if (lead_count !== 0 && dev_count !== 0 && designer_count !== 0) {
+                console.log('here');
+                $("body").css("overflow-y", "scroll");
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".leads_header").offset().top
+                }, 1000);
+                console.log(document.body.style.overflowY);
+            }
+        });
+
+        database.ref('/hall/devs').once('value').then(function (snapshot) {
+            snapshot.val().forEach(function (element, index) {
+                console.log(element.name);
+                var card = "<div class='member_card" + ((index + 2) % 5) + " card'>";
+                card += "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
+                    "<p class='member_name" + ((index + 2) % 5) + "'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + ((index + 2) % 5) + "'>" +
+                    "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio + "</p><div class='links'>";
+
+                if (element.medium !== undefined) {
+                    card += "<a href='" + element.medium + "'><img src='assets/about_us/card-link-medium.svg' class='link'></a>";
+                }
+
+                if (element.github !== undefined) {
+                    card += "<a href='" + element.github + "'><img src='assets/about_us/card-link-github.svg' class='link'></a>";
+                }
+
+                if (element.linkedin !== undefined) {
+                    card += "<a href='" + element.linkedin + "'><img src='assets/about_us/card-link-linkedin.svg' class='link'></a>";
+                }
+
+                if (element.dev !== undefined) {
+                    card += "<a href='" + element.dev + "'><img src='assets/about_us/card-link-dev.svg' class='link'></a>";
+                }
+
+                card += "</div></div>";
+                $(".devs").append(card);
+                dev_count++;
+            });
+
+            if (dev_count !== 0)
+
+                $(".devs_header, .devs").animate({
+                    opacity: 1.0,
+                    transitionDuration: '0.4s'
+                });
+
+            if (lead_count != 0 && dev_count != 0 && designer_count != 0) {
+
+                $("body").css("overflow-y", "scroll");
+                
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".leads_header").offset().top
+                }, 1000);
+                console.log(document.body.style.overflowY);
+            }
+
+
+        });
+
+
+        database.ref('/hall/designers').once('value').then(function (snapshot) {
+            snapshot.val().forEach(function (element, index) {
+                console.log(element.name);
+                var card = "<div class='member_card" + ((index + 4) % 5) + " card'>";
+                card += "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
+                    "<p class='member_name" + ((index + 4) % 5) + "'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + ((index + 4) % 5) + "'>" +
+                    "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio + "</p><div class='links'>";
+
+                if (element.medium !== undefined) {
+                    card += "<a href='" + element.medium + "'><img src='assets/about_us/card-link-medium.svg' class='link'></a>";
+                }
+
+                if (element.github !== undefined) {
+                    card += "<a href='" + element.github + "'><img src='assets/about_us/card-link-github.svg' class='link'></a>";
+                }
+
+                if (element.linkedin !== undefined) {
+                    card += "<a href='" + element.linkedin + "'><img src='assets/about_us/card-link-linkedin.svg' class='link'></a>";
+                }
+
+                if (element.dev !== undefined) {
+                    card += "<a href='" + element.dev + "'><img src='assets/about_us/card-link-dev.svg' class='link'></a>";
+                }
+
+                card += "</div></div>";
+                $(".designers").append(card);
+                designer_count++;
+            });
+
+            if (designer_count !== 0)
+
+                $(".designers_header, .designers").animate({
+                    opacity: 1.0,
+                    transitionDuration: '0.4s'
+                });
+
+            if (lead_count !== 0 && dev_count !== 0 && designer_count !== 0) {
+
+                $("body").css("overflow-y", "scroll");
+                
+                $([document.documentElement, document.body]).animate({
+                   scrollTop: $(".leads_header").offset().top
+                }, 1000);
+                console.log(document.body.style.overflowY);
+            }
+
+
+        });
+
+    </script>
+    <meta charset="UTF-8">
+    <title>hackslash index</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .page_heading {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 60px;
+            width: 40%;
+            margin-right: 16px;
+            margin-top: 223px;
+            margin-left: 40%;
+            line-height: 121.73%;
+            /* or 88px */
+            color: #3A454B;
+        }
+
+        .page_subheading {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: 42px;
+            width: 50%;
+            margin-left: 40%;
+            margin-right: 16px;
+            color: #3F82AA;
+        }
+
+        .line {
+            width: 90%;
+            height: 2px;
+            position: relative;
+            margin-top: 125px;
+            z-index: -1;
+            background-color: #A3A3A3;
+            display: inline-block;
+        }
+
+        #leads {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 50px;
+            line-height: 66px;
+            z-index: 1;
+            background-color: white;
+            width: auto;
+            border-radius: 8px;
+            padding-left: 8px;
+            padding-right: 8px;
+            float: left;
+            margin-top: -40px;
+            margin-left: 100px;
+            color: #000000;
+        }
+
+        #members_list {
+            margin-top: 50px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .member_card0 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #F97892;
+        }
+
+        .member_card1 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #0085CA;
+        }
+
+        .member_card2 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #FCA557;
+        }
+
+        .member_card3 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #F97892;
+        }
+
+        .member_card4 {
+            width: 300px;
+            height: 400px;
+            margin-top: 40px;
+            padding: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline-block;
+            box-shadow: 0px 0px 5px #CACACA;
+            background-color: #8D8C97;
+        }
+
+        .member_name0 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #F97892;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name1 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #0085CA;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name2 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #FCA557;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name3 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #F97892;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name4 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #8D8C97;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_post {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 24px;
+            margin-top: -4px;
+            width: 100%;
+            margin-left: 0px;
+            text-align: center;
+            /* identical to box height */
+            color: #686868;
+        }
+
+        .member_photo0 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #F97892;
+        }
+
+        .member_photo1 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #0085CA;
+        }
+
+        .member_photo2 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #FCA557;
+        }
+
+        .member_photo3 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #F97892;
+        }
+
+        .member_photo4 {
+            display: block;
+            border-radius: 200px;
+            box-sizing: border-box;
+            z-index: 5;
+            width: 120px;
+            height: 120px;
+            top: 100px;
+            left: 87px;
+            margin-left: 0px;
+            position: absolute;
+            border: 3px solid #8D8C97;
+        }
+
+
+        .about_me_header {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            /* identical to box height */
+            color: #FFFFFF;
+            margin-top: 230px;
+            width: 100%;
+            margin-left: 0px;
+            text-align: center;
+        }
+
+        .about_me {
+            width: 100%;
+            text-align: center;
+            font-family: Ubuntu;
+            font-style: normal;
+            font-weight: 100;
+            font-size: 16px;
+            line-height: 18px;
+            width: 100%;
+            margin-left: 0px;
+            text-align: center;
+            padding-left: 25px;
+            padding-right: 25px;
+            color: #FFFFFF;
+        }
+
+        .links {
+            height: auto;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .link {
+            width: 36px;
+            margin-left: 4px;
+            margin-right: 4px;
+            display: inline-block;
+            height: 36px;
+        }
+
+        .leads, .leads_header, .designers, .designers_header, .devs, .devs_header {
+            opacity: 0.0;
+            transform: translateY(200px);
+        }
+    </style>
+</head>
+
+<body style="padding: 0px">
+    <div id="container">
+        <div id="nav-box">
+            <nav>
+                <a href="index.html" id="nav_home">hackslash</a>
+                <ul>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#" id="nav_selected" style="color: white">Hall of Fame</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <img src="assets/hall/hall-bg-1.svg"
+         style="width: 540px; height: 360px; position: absolute; top: 150px; left:40px; z-index: -1;">
+    <div class="page_heading">The Illuminatis</div>
+    <div class="page_subheading">
+        Learning, inspiring & growing together
+    </div>
+    <img src="assets/hall/hall-bg-2.svg"
+         style="width: 75px; height: 500px; position: absolute; top: 150px; right: 0px; z-index: -1;">
+    <div style="width: 100%; text-align: center;" class="leads_header">
+        <div class="line"></div>
+        <p id="leads">Leads</p>
+    </div>
+
+    <div id="members_list" class="leads">
+
+        <!-- More cards to be added here later -->
+    </div>
+
+    <div style="width: 100%; text-align: center;" class="designers_header">
+        <div class="line"></div>
+        <p id="leads">Top Designers</p>
+    </div>
+
+    <div id="members_list" class="designers">
+
+    </div>
+
+
+    <div style="width: 100%; text-align: center;" class="devs_header">
+        <div class="line"></div>
+        <p id="leads">Top Developers</p>
+    </div>
+
+    <div id="members_list" class="devs">
+
+    </div>
+
+
+    <img src="assets/hall/hall-bg-3.svg"
+         style="width: 350px; height: auto; position: absolute; top: 850px; left: 0px; z-index: -2;">
+    <img src="assets/hall/hall-bg-4.svg"
+         style="        width: 850px;
+        height: auto;
+        position: absolute;
+        top: 850px;
+        right: 0px;
+        z-index: -2;">
+    <img src="assets/hall/hall-bg-5.svg"
+         style="width: 350px; height: auto; position: absolute; top: 1700px; right: 0px; z-index: -2;">
+    <img src="assets/hall/hall-bg-6.svg"
+         style="width: 850px; height: auto; position: absolute; top: 1800px; left: 0px; z-index: -2;">
+
+
+    <img src="assets/hall/hall-bg-7.svg"
+         style="width: 500px; height: auto; position: absolute; top: 2300px; right: 0px; z-index: -2;">
+    <img src="assets/hall/hall-bg-8.svg"
+         style="width: 300px; height: auto; position: absolute; top: 2500px; left: 0px; z-index: -2;">
+
+</body>
+
+</html>

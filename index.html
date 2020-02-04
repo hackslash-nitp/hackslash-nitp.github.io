@@ -1,79 +1,43 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>hackslash index</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
-  <style>
-    body {
-      /* Background Image */
-      background-color: #60b6e9;
-      color: white;
-      font-family: 'GT Walsheim Pro';
-    }
-  </style>
-
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $('a.login-window').click(function () {
-
-        var loginBox = $(this).attr('href');
-
-        $(loginBox).fadeIn(300);
-
-        var popMargTop = ($(loginBox).height() + 24) / 2;
-        var popMargLeft = ($(loginBox).width() + 24) / 2;
-
-        $(loginBox).css({
-          'margin-top': -popMargTop,
-          'margin-left': -popMargLeft
-        });
-
-        $('body').append('<div id="mask"></div>');
-        $('#mask').fadeIn(300);
-
-        return false;
-      });
-
-      // When clicking on the button close or the mask layer the popup closed
-      $('a.close, #mask').live('click', function () {
-        $('#mask , .login-popup').fadeOut(300, function () {
-          $('#mask').remove();
-        });
-        return false;
-      });
-    });
-  </script>
-
+    <meta charset="UTF-8">
+    <title>hackslash index</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body {
+            /* Background Image */
+            background-color: #60b6e9;
+            color: white;
+            font-family: 'GT Walsheim Pro';
+        }
+    </style>
 </head>
 
 <body>
-  <div id="container">
-    <div id="nav-box-inverted">
-      <nav>
-        <ul>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Hall of Fame</a></li>
-          <li><a href="#">Articles</a></li>
-          <li><a href="#">About Us</a></li>
-          <!-- <div class="dropdown">
-            <li><a href="#" class="dropbtn">More</a>
-              <div class="dropdown-content">
-                <a href="#">Resources</a>
-                <a href="#">Gallery</a>
-              </div>
-            </li>
-          </div> -->
-          <li><a href="#login-box" class="login-window">Join Us</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Join-Us PopUp -->
+    <div id="container">
+        <div id="nav-box-inverted">
+            <nav>
+                <ul>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="hall.html">Hall of Fame</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <!-- <div class="dropdown">
+                      <li><a href="#" class="dropbtn">More</a>
+                        <div class="dropdown-content">
+                          <a href="#">Resources</a>
+                          <a href="#">Gallery</a>
+                        </div>
+                      </li>
+                    </div> -->
+                    <li><a href="#">Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+      <!-- Join-Us PopUp -->
     <div class="content">
       <div id="login-box" class="login-popup">
         <a href="#" class="close"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
@@ -115,27 +79,27 @@
     </div>
 
     <!-- / Join-Us PopUp -->
-
-    <div class="box">
-      <div id="item1">
-        <header>hackslash</header>
-        <p style="font-size: 20px">
-          Student Developer Club<br>National Institute of Technology, Patna
-        </p>
-        <p style="font-size: 22px; font-weight: 400; margin-top: 6vw; margin-bottom: 6vw;">
-          Come, be a part of the community<br />and help contrive better software.
-          <br />
-          <a href="#" id="know_more">Know more</a>
-        </p>
-        <p id="p_world" style="font-size: 70px;">
-          In a world of technology,<br>people make the difference.
-        </p>
-      </div>
-      <div id="item2">
-        <img src="assets/coderdojo.png">
-      </div>
+      
+        <div class="box">
+            <div id="item1">
+                <header>hackslash</header>
+                <p style="font-size: 20px">
+                    Student Developer Club<br>National Institute of Technology, Patna
+                </p>
+                <p style="font-size: 22px; font-weight: 400; margin-top: 2vw; margin-bottom: 6vw;">
+                    Come, be a part of the community<br />and help contrive better software.
+                    <br />
+                    <a href="#" id="know_more">Know more</a>
+                </p>
+                <p id="p_world" style="font-size: 70px; margin-bottom: 0px;">
+                    In a world of technology,<br>people make the difference.
+                </p>
+            </div>
+            <div id="item2">
+                <img src="assets/coderdojo.png">
+            </div>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>

@@ -23,6 +23,7 @@ html {
   justify-content: center;
   align-items: center;
 }
+
 #item1 {
   width: 50%;
   height: 100%;
@@ -50,19 +51,19 @@ p {
 }
 
 #nav-box-inverted > nav > ul > li > a {
-  border-radius: 10px;
+  border-radius: 15px;
   margin: 2px 14px;
   padding: 8px;
   text-decoration: none;
   display: inline-block;
   color: white;
-  transition: background-color 0.5s ease;
+  transition: 0.5s ease;
 }
 
-#nav-box-inverted > nav > ul > li > a:hover,
-a:active {
+#nav-box-inverted > nav > ul > li > a:hover{
   background-color: white;
   color: #60b6e9;
+  box-shadow: rgba(255, 255, 255, 0.6) 0px 2px 12px;
   border-radius: 15px;
 }
 
@@ -82,18 +83,24 @@ a:active {
 }
 
 #nav-box > nav > ul > li > a {
-  border-radius: 10px;
+  border-radius: 15px;
   margin: 2px 14px;
   padding: 8px;
   text-decoration: none;
   display: inline-block;
   color: #60b6e9;
   border-radius: 15px;
-  transition: background-color 0.5s ease;
+  transition: 0.5s ease;
 }
 
-#nav-box > nav > ul > li > a:hover,
-a:active {
+#nav-box > nav > ul > li > a:hover{
+  background-color: #60b6e9;
+  color: white;
+  box-shadow: rgba(96, 183, 233, 0.699) 0px 2px 12px;
+  border-radius: 15px;
+}
+
+#nav_selected {
   background-color: #60b6e9;
   color: white;
   border-radius: 15px;
@@ -115,7 +122,7 @@ a:active {
 #nav-box > nav > ul {
   list-style: none;
   float: right;
-  margin: 16px
+  margin: 16px;
 }
 
 #nav-box > nav > ul > li {
@@ -135,7 +142,6 @@ a:active {
 }
 
 header {
-  margin-top: 5vw;
   margin-left: 5vw;
   font-weight: 400;
   font-size: 100px;
@@ -150,19 +156,17 @@ img {
   max-width: 100%;
 }
 
-#nav_selected {
-  background-color: white;
-  color: #60b6e9;
-  border-radius: 15px;
-}
-
 @media screen and (max-width: 480px) {
   .box {
     flex-direction: column;
   }
+
+  
+
   #item1 {
     width: 100%;
   }
+
   #item2 {
     width: 100%;
   }
