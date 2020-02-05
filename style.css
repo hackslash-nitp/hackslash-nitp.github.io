@@ -17,6 +17,11 @@ html {
   height: 100%;
 }
 
+body {
+    color: white;
+    font-family: 'GT Walsheim Pro';
+}
+
 .box {
   display: flex;
   width: 100%;
@@ -223,10 +228,6 @@ top: 74px;
     z-index: 99999;
 }
 
-a.close{
-    height: 0;
-}
-
 img.btn_close {
     float: right; 
     margin: -40px -40px 0 0;
@@ -241,8 +242,8 @@ img.btn_close {
 }
 
 .left-div{
-    width: 25%;
-    height: 100%;
+    width: 330px;
+    height: 615px;
     background: #60b6e9;
     padding-left: 35px;
     padding-right: 35px;
@@ -250,8 +251,8 @@ img.btn_close {
 }
 
 .right-div{
-    width: 75%;
-    height: 100%;
+    width: 830px;
+    height: 615px;
     background: #ffffff;
     background-image: url(assets/joinusBG.png);
     background-repeat: no-repeat;

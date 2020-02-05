@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>hackslash index</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="common_script.js"></script>
 
     <!-- <style>
     body{
@@ -15,21 +18,63 @@
 <body>
     <div id="container">
         <div id="nav-box">
-            <nav>
-                <a href="index.html" id="nav_home">hackslash</a>
-                <ul>
-                    <li><a href="#" id="nav_selected">Events</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Hall of Fame</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Join Us</a></li>
-                </ul>
-            </nav>
+          <nav>
+            <a href="index.html" id="nav_home">hackslash</a>
+            <ul>
+              <li><a href="#" id="nav_selected">Events</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Hall of Fame</a></li>
+              <li><a href="#">Articles</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#login-box" class="login-window">Join Us</a></li>
+            </ul>
+          </nav>
         </div>
-    </div>
-    <img src="assets/Asset.svg" id="box">
-    <h2 style="position: absolute;
+        <!-- Join-Us PopUp -->
+        <div class="content">
+            <div id="login-box" class="login-popup">
+                <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
+                        alt="Close" /></a>
+                <div class="join-us-box">
+                    <div class="left-div">
+                        <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
+                        <p style="font-size: 14px;color: #FFFFFF;">
+                            Students' Developers Club<br>National Institute of Technology, Patna
+                        </p>
+                        <form action="#" style="margin-top: 40px;">
+                            <input type="email" name="email" placeholder="Email Address">
+                            <input type="password" name="pass" placeholder="Password">
+                            <input type="submit" id="signin-btn" value="Sign In">
+                        </form>
+                        <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
+                        <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
+                        <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
+                    </div>
+                    <div class="right-div">
+                        <p style="font-weight:bold;font-size:60px;">Create an account</p>
+                        <p style="font-size:30px;">Just a few basic details</p>
+                        <form action="#" style="margin-top: 40px;">
+                            <div class="name">
+                                <input type="text" name="fname" placeholder="First Name">
+                                <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+                            </div>
+                            <div class="details">
+                                <input type="email" name="email" placeholder="Email Address">
+                                <input type="password" name="pass" placeholder="Enter a Password">
+                                <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
+                                <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                            </div>
+                            <input type="submit" id="signup-btn" value="Create Account">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- / Join-Us PopUp -->
+      </div>
+        <img src="assets/Asset.svg" id="box">
+        <h2 style="position: absolute;
         width: 680px;
         z-index: -1;
         height: 182px;
