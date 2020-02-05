@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>hackslash index</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script src="common_script.js"></script>
-  <style>
-    body {
-      /* Background Image */
-      background-color: #60b6e9;
-      color: white;
-      font-family: 'GT Walsheim Pro';
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>hackslash index</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="common_script.js"></script>
+    
+    <style>
+        body {
+            /* Background Image */
+            background-color: #60b6e9;
+            color: white;
+            font-family: 'GT Walsheim Pro';
+        }
+    </style>
 </head>
 
 <body>
@@ -36,11 +37,11 @@
                         </div>
                       </li>
                     </div> -->
-          <li><a href="#login-box" class="login-window">Join Us</a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- Join-Us PopUp -->
+                    <li><a href="#login-box" class="login-window">Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+      <!-- Join-Us PopUp -->
     <div class="content">
       <div id="login-box" class="login-popup">
         <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
@@ -52,8 +53,9 @@
               Students' Developers Club<br>National Institute of Technology, Patna
             </p>
             <form action="#" style="margin-top: 40px;">
-              <input type="email" name="email" placeholder="Email Address">
-              <input type="password" name="pass" placeholder="Password">
+              <input type="email" name="email" id="email" placeholder="Email Address" style="font-family: 'GT Walsheim Pro';">
+              <input type="password" name="pass" id="password" placeholder="Password" style="font-family: 'GT Walsheim Pro';">
+
               <input type="submit" id="signin-btn" value="Sign In">
             </form>
             <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
@@ -65,16 +67,17 @@
             <p style="font-size:30px;">Just a few basic details</p>
             <form action="#" style="margin-top: 40px;">
               <div class="name">
-                <input type="text" name="fname" placeholder="First Name">
-                <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+
+                <input type="text" name="fname" id="fname" placeholder="First Name" style="font-family: 'GT Walsheim Pro';">
+                <input type="text" style="margin-left: 15px;" name="lname" id="lname" placeholder="Last Name" style="font-family: 'GT Walsheim Pro';">
               </div>
               <div class="details">
-                <input type="email" name="email" placeholder="Email Address">
-                <input type="password" name="pass" placeholder="Enter a Password">
-                <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                <input type="email" name="email" id="email" placeholder="Email Address" style="font-family: 'GT Walsheim Pro';">
+                <input type="password" name="pass" id="password" placeholder="Enter a Password" style="font-family: 'GT Walsheim Pro';">
+                <input type="password" name="confirm-pass" id="conf-password" placeholder="Re-Enter Password" style="font-family: 'GT Walsheim Pro';">
+                <input type="text" name="git-id" id="password" placeholder="Git ID(Optional)" style="font-family: 'GT Walsheim Pro';">
               </div>
-              <input type="submit" id="signup-btn" value="Create Account">
+              <input type="submit" id="signup-btn" value="Create Account" style="font-family: 'GT Walsheim Pro'; margin-bottom: 16px;">
             </form>
           </div>
         </div>
