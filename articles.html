@@ -136,107 +136,67 @@ a:active {
  
 
 
- #block5{
- 	width:98%;
- 	height: 230px;
+ .block{
  	background: white;
- 	 box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
+ 	box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
  	border-style: solid;
+  margin-bottom: 50px;
  	border: 2px solid#fff;
-   z-index: 5;
-   position:absolute;
-      margin-top:20%;
-      margin-left:18px;
-
-
+  z-index: 5;
  }
- #block4{
- 	width:98%;
- 	height: 230px;
- 	background: white;
- 	 box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
- 	border-style: solid;
- 	border: 2px solid#fff;
-   z-index: 5;
-   position:absolute;
-      margin-top:38%;
-      margin-left:18px;
 
-
-  
- }    
- #block3{
- 	width:98%;
- 	height: 230px;
- 	background: white;
- 	 box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
- 	border-style: solid;
- 	border: 2px solid#fff;
-   z-index: 5;
-   position:absolute;
-      margin-top:56%;
-      margin-left:18px;
-
-
-  
- }    
-       
- #block2{
- 	width:98%;
- 	height: 230px;
- 	background: white;
- 	 box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
- 	border-style: solid;
- 	border: 2px solid#fff;
-   z-index: 5;
-   position:absolute;
-      margin-top:74%;
-      margin-left:18px;
-
-
-  
- }    
- #block1{
- 	width:98%;
- 	height: 230px;
- 	background: white;
- 	 box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
- 	border-style: solid;
- 	border: 2px solid#fff;
-   z-index: 5;
-   position:absolute;
-      margin-top:92%;
-      margin-left:18px;
-
-
-  
- }    
+ .articleinfo{
+  height: 50px;
+ }
           
+.profileimg{
+  position: absolute;
+  top: 31px;
+  left: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 55px;
+}
 
- .line{
- 	width:1100px;
- 	height:2px;
- }
+.profilename{
+  position: absolute;
+  margin-top: 35px;
 
- @media screen and( max-width:360px)
- {
- #shivam{
-  width: 100%;
-  height: 10px;
- }
- 
- .circle{
- 	margin-left: 20%;
- }
+  height: 47px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: GT Walsheim Pro;
+  color: #3F3D56;
+}
+.articledate{
+  position: absolute;
+width: 82px;
+height: 25px;
+margin-top: 62px;
 
- }
+
+font-family: GT Walsheim Pro;
+font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 19px;
+
+color: #297BAB;
+}
+.articlehash{
+  position: absolute;
+  margin-top: 62px;
+  margin-left: 100px;
+  }
 </style>
 
 
 
 <body>
-    <div id="container">
-        <div id="nav-box">
+  <div id="container">
+    <div id="nav-box">
           <nav>
             <a href="index.html" id="nav_home">hackslash</a>
             <ul>
@@ -248,129 +208,55 @@ a:active {
               <li><a href="#login-box" class="login-window">Join Us</a></li>
             </ul>
           </nav>
-        </div>
-        <!-- Join-Us PopUp -->
-        <div class="content">
-          <div id="login-box" class="login-popup">
-            <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window" alt="Close" /></a>
-            <div class="join-us-box">
-              <div class="left-div">
-                <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
-                <p style="font-size: 14px;color: #FFFFFF;">
-                  Students' Developers Club<br>National Institute of Technology, Patna
-                </p>
-                <form action="#" style="margin-top: 40px;">
-                  <input type="email" name="email" placeholder="Email Address">
-                  <input type="password" name="pass" placeholder="Password">
-                  <input type="submit" id="signin-btn" value="Sign In">
-                </form>
-                <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
-                <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
-                <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
-              </div>
-              <div class="right-div">
-                <p style="font-weight:bold;font-size:60px;">Create an account</p>
-                <p style="font-size:30px;">Just a few basic details</p>
-                <form action="#" style="margin-top: 40px;">
-                  <div class="name">
-                    <input type="text" name="fname" placeholder="First Name">
-                    <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
-                  </div>
-                  <div class="details">
-                    <input type="email" name="email" placeholder="Email Address">
-                    <input type="password" name="pass" placeholder="Enter a Password">
-                    <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                    <input type="text" name="git-id" placeholder="Git ID(Optional)">
-                  </div>
-                  <input type="submit" id="signup-btn" value="Create Account">
-                </form>
-              </div>
+    </div>
+  </div>
+  <div style="margin:180px;"></div>
+  <br>
+  <div class="container block">
+        <div class="row">
+          <div class="col-xs-1 col-md-1 col-ls-1">
+            <img src="https://i.pinimg.com/originals/f8/20/01/f82001c8ef0f754f9e0d6586acd227f8.jpg" class="profileimg">
+          </div>
+          <div class="col-xs-11 col-md-11 col-ls-11" style="margin-left: -15px;">
+          <p class="profilename">Sudhanshu Singh</p>
+            <p class="articledate">22/22/2222 -</p>
+            <div class="articlehash">
+              <div style="height: 18px;background-color: #60B6E9;margin-right: 8px;font-size: 13px;padding-left: 7px;padding-right: 7px;padding-bottom: 3px;">#raj kothari
+              </div>  
             </div>
           </div>
         </div>
-        
-        <!-- / Join-Us PopUp -->
-      </div>
-
-<img src="D:\shivam.jpg" id="shivam" style="width: 500px; height:450px; margin-left: 20px;"><img src="D:\Head.jpg" class="head"><img src="D:\circle1.png" class="circle" >
-<img src="D:\singh.jpg" class="singh">
-
-<img src="D:\icon.png" style="margin-left: 90px;margin-top: -22px;">
-  <form id="search_field">
-    <input type="text" class="form-control form-control-underlined" placeholder="Search Articles">
-  </form></div>
-  <span>
-  	<ul id="ready" style=" margin-top:4%;" >
-  		<li style="display: inline-block; color: blue; font-size: 20px; font-family:  GT Walsheim Pro;"><u >Recent</u></li>
-  		<li style="display: inline-block; margin-left: 5px; font-size: 19px;">All</li>
-  	</ul>
-
-  </span>
- 
+        //
+        <br>
+        <div class="row" style="margin-top: 80px;">
+          <div class="col-xs-12 col-md-12 col-ls-12">
+            <img src="https://i.pinimg.com/originals/f8/20/01/f82001c8ef0f754f9e0d6586acd227f8.jpg" class="img-responsive">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-3 col-md-3 col-ls-3"></div>
+          <div  class="col-xs-6 col-md-6 col-ls-6" style="color: #000000;">
+            <h2 style="width: 100%;text-align: center;">Best Car In The World - The Black Dragon</h2>
+          </div>
+          <div class="col-xs-3 col-md-3 col-ls-3"></div>
+        </div>
+        <br>
+        <div class="row">
+          <div  class="col-xs-11 col-md-11 col-ls-11" style="color: #3F3D56;padding-bottom: 80px;">
+            <p style="width: 100%;padding-right: 55px;">Best Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black DragonBest Car In The World The Black Dragon</p>
+          </div>
+        </div>
   </div>
-
-  <img src="D:\Vector.png" style="margin-top:-22px;float:left; margin-left: -10.5% ; ">
-
- 
-   
-
-
-
+  <br>
+  <center>
+    <div style="width: 100px;height: 40px;background-color: #60B6E9;border-radius: 5px;box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);margin-bottom: 50px;padding-top: 8px;">
+      Go Back
+    </div>
+  </center>
 
 
-  <div id="block5">
- <div style="height:200px;background:#fff;width:70%; margin-left:20px;margin-top: 18px; ">
- 	<span><h1 style="text-align: center;"> Angular vs React Vs Vue</h1><br>
- 	<p >Vue and React offers better performance and flexibility than Angular. Vue and react are more suited for light-weight applications and angular is the best for large UI applications. from routing, templates to testing utilities in its package. Vue is the most popular, loved and growing framework of Javascript</p></span>
-  </div>
-   	
-   
-  	<div><img src="D:/Preview.png" style="height:200px; width:300px;float: right; margin-top:-14%; margin-right: 20px;margin-bottom: 20px;"></div>
-  </div>
 
-  <div id="block4">
-    <div style="height:200px;background:#fff;width:70%; margin-left:20px;margin-top: 18px; ">
-      <span><h1 style="text-align: center;"> Angular vs React Vs Vue</h1><br>
-      <p >Vue and React offers better performance and flexibility than Angular. Vue and react are more suited for light-weight applications and angular is the best for large UI applications. from routing, templates to testing utilities in its package. Vue is the most popular, loved and growing framework of Javascript</p></span>
-     </div>
-        
-      
-       <div><img src="D:/Preview.png" style="height:200px; width:300px;float: right; margin-top:-14%; margin-right: 20px;margin-bottom: 20px;"></div>
-     </div>
- 
-     
-  <div id="block3">
-    <div style="height:200px;background:#fff;width:70%; margin-left:20px;margin-top: 18px; ">
-      <span><h1 style="text-align: center;"> Angular vs React Vs Vue</h1><br>
-      <p >Vue and React offers better performance and flexibility than Angular. Vue and react are more suited for light-weight applications and angular is the best for large UI applications. from routing, templates to testing utilities in its package. Vue is the most popular, loved and growing framework of Javascript</p></span>
-     </div>
-        
-      
-       <div><img src="D:/Preview.png" style="height:200px; width:300px;float: right; margin-top:-14%; margin-right: 20px;margin-bottom: 20px;"></div>
-     </div>
 
-     <div id="block2">
-      <div style="height:200px;background:#fff;width:70%; margin-left:20px;margin-top: 18px; ">
-        <span><h1 style="text-align: center;"> Angular vs React Vs Vue</h1><br>
-        <p >Vue and React offers better performance and flexibility than Angular. Vue and react are more suited for light-weight applications and angular is the best for large UI applications. from routing, templates to testing utilities in its package. Vue is the most popular, loved and growing framework of Javascript</p></span>
-       </div>
-          
-        
-         <div><img src="D:/Preview.png" style="height:200px; width:300px;float: right; margin-top:-14%; margin-right: 20px;margin-bottom: 20px;"></div>
-       </div>
-  
-       <div id="block1">
-        <div style="height:200px;background:#fff;width:70%; margin-left:20px;margin-top: 18px; ">
-          <span><h1 style="text-align: center;"> Angular vs React Vs Vue</h1><br>
-          <p >Vue and React offers better performance and flexibility than Angular. Vue and react are more suited for light-weight applications and angular is the best for large UI applications. from routing, templates to testing utilities in its package. Vue is the most popular, loved and growing framework of Javascript</p></span>
-         </div>
-            
-          
-           <div><img src="D:/Preview.png" style="height:200px; width:300px;float: right; margin-top:-14%; margin-right: 20px;margin-bottom: 20px;"></div>
-         </div>
-        
-  <img src="D:\circle2.0.png" style="float:right;margin-top: 70%; margin-right:-50% ;">
-   <img src="D:\men.png" style="margin-top:99%;float: left;margin-left:-40% ;">
-  
 </body>
 </html>
