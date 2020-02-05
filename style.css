@@ -18,8 +18,8 @@ html {
 }
 
 body {
-    color: white;
-    font-family: 'GT Walsheim Pro';
+  color: white;
+  font-family: 'GT Walsheim Pro';
 }
 
 .box {
@@ -217,16 +217,15 @@ top: 74px;
 }
 
 .login-popup{
-    display:block;
+    display:none;
     background: #ffffff;
     float: left;
     font-size: 1.2em;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%; left: 50%;
     z-index: 99999;
 }
+
 
 img.btn_close {
     float: right; 
