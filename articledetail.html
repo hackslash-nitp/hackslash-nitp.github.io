@@ -20,9 +20,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="common_script.js"></script>
-
-  
   <link rel="stylesheet" href="./style.css">
+
+<script type="text/javascript">
+  
+  function fetch_article(){
+var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     alert(this.responseText);
+    }
+  };
+  xhttp.open("GET", "https://hackslash-17.firebaseio.com/articles/articleone", true);
+  xhttp.send();
+}
+
+window.onload=fetch_article();
+
+</script>
+
+
 </head>
 <style>
 	@font-face {
@@ -231,45 +248,20 @@ font-family: GT Walsheim Pro;
       </p> -->
   <div class="articlehash">
     <p class="hashvalue">
-      #raj kothari
+      #Web development
     </p>
     <p class="hashvalue">
-      #raj kothari
+      #HTML
     </p>
     <p class="hashvalue">
-      #raj kothari
+      #CSS
     </p>
     <p class="hashvalue">
-      #raj kothari
+      #JAVAscript
     </p>
     <p class="hashvalue">
-      #raj kothari
-    </p>
-    <p class="hashvalue">
-      #raj kothari
-    </p>
-    <p class="hashvalue">
-      #raj kothari
-    </p>
-    <p class="hashvalue">
-      #raj kothari
-    </p>
-    <p class="hashvalue">
-      #raj kothari
-    </p>
-    <p class="hashvalue">
-      #raj kothari
-    </p>
-    <p class="hashvalue">
-      #raj kothari
-    </p>
-    <p class="hashvalue">
-      #raj kothari
-    </p>
-    <p class="hashvalue">
-      #raj kothari
-    </p>
-      
+      #Angular
+    </p>      
   </div>
         <div class="row" style="margin-top: 10px;">
           <div class="col-xs-12 col-md-12 col-ls-12">
