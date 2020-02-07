@@ -519,53 +519,57 @@
                     <li><a href="" id="nav_selected" style="color: white">Hall of Fame</a></li>
                     <li><a href="articles.html">Articles</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#login-box" class="login-window">Join Us</a></li>
+                    <li><a href="#login-box" class="login-window join-us-btn">Join Us</a></li>>
                 </ul>
             </nav>
         </div>
     </div>
 
-
-    <!-- Join-Us PopUp -->
-    <div class="content">
-        <div id="login-box" class="login-popup">
-            <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
-                    alt="Close" /></a>
-            <div class="join-us-box">
-                <div class="left-div">
-                    <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
-                    <p style="font-size: 14px;color: #FFFFFF;">
-                        Students' Developers Club<br>National Institute of Technology, Patna
-                    </p>
-                    <form action="#" style="margin-top: 40px;">
-                        <input type="email" name="email" placeholder="Email Address">
-                        <input type="password" name="pass" placeholder="Password">
-                        <input type="submit" id="signin-btn" value="Sign In">
-                    </form>
-                    <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
-                    <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
-                    <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
-                </div>
-                <div class="right-div">
-                    <p style="font-weight:bold;font-size:60px;">Create an account</p>
-                    <p style="font-size:30px;">Just a few basic details</p>
-                    <form action="#" style="margin-top: 40px;">
-                        <div class="name">
-                            <input type="text" name="fname" placeholder="First Name">
-                            <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
-                        </div>
-                        <div class="details">
-                            <input type="email" name="email" placeholder="Email Address">
-                            <input type="password" name="pass" placeholder="Enter a Password">
-                            <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                            <input type="text" name="git-id" placeholder="Git ID(Optional)">
-                        </div>
-                        <input type="submit" id="signup-btn" value="Create Account">
-                    </form>
-                </div>
+<!-- Join-Us PopUp -->
+<div class="content">
+    <div id="login-box" class="login-popup">
+        <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
+                alt="Close" /></a>
+        <div class="join-us-box">
+            <div class="left-div" >
+                <p class="signin-heading" style="font-size: 48px;">hackslash</p>
+                <p style="font-size: 14px">
+                    Students' Developers Club<br>National Institute of Technology, Patna
+                </p>
+                <form action="#" style="margin-top: 40px;">
+                    <input type="email" name="email" id="signin-email" placeholder="Email Address" required>
+                    <input type="password" name="pass" id="signin-pass" placeholder="Password" required>
+                    <input type="button" id="signin-btn" value="Sign In" onclick="userSignIn()">
+                </form>
+                <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
+                <button class="signin-btns" onclick="signInWithGithub()"><i class="fab fa-github"></i> Sign in with
+                    GitHub</button>
+                <button class="signin-btns" onclick="signInWithGoogle()"><i class="fab fa-google"></i> Sign in with
+                    Google</button>
+            </div>
+            <div class="right-div" >
+                <p style="font-weight:bold;font-size:60px;">Create an account</p>
+                <p style="font-size:30px;">Just a few basic details</p>
+                <form action="#" style="margin-top: 40px;">
+                    <div class="name">
+                        <input type="text" name="fname" placeholder="First Name">
+                        <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+                    </div>
+                    <div class="details">
+                        <input type="email" name="email" id="signup-email" placeholder="Email Address" required>
+                        <input type="password" name="pass" id="signup-pass" placeholder="Enter a Password" required>
+                        <input type="password" name="confirm-pass" id="signup-conf-pass" placeholder="Re-Enter Password"
+                            required>
+                        <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                    </div>
+                    <input type="button" id="signup-btn" value="Create Account" onclick="userSignUp()">
+                </form>
             </div>
         </div>
     </div>
+</div>
+
+<!-- / Join-Us PopUp -->
 
     <img src="assets/hall/hall-bg-1.svg"
          style="width: 540px; height: 360px; position: absolute; top: 150px; left:40px; z-index: -1;">

@@ -44,52 +44,54 @@
                         </div>
                       </li>
                     </div> -->
-          <li><a href="#login-box" class="login-window">Join Us</a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- Join-Us PopUp -->
-    <div class="content">
-      <div id="login-box" class="login-popup">
-        <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
-            alt="Close" /></a>
-        <div class="join-us-box">
-          <div class="left-div" style="width: 25%;height: 100%;">
-            <p class="signin-heading" style="font-size: 48px;">hackslash</p>
-            <p style="font-size: 14px">
-              Students' Developers Club<br>National Institute of Technology, Patna
-            </p>
-            <form action="#" style="margin-top: 40px;">
-              <input type="email" name="email" placeholder="Email Address">
-              <input type="password" name="pass" placeholder="Password">
-              <input type="submit" id="signin-btn" value="Sign In">
-            </form>
-            <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
-            <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
-            <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
+          <li><a href="#login-box" class="login-window join-us-btn">Join Us</a></li>
+          </ul>
+          </nav>
           </div>
-          <div class="right-div" style="width: 75%;height: 100%;">
-            <p style="font-weight:bold;font-size:60px;">Create an account</p>
-            <p style="font-size:30px;">Just a few basic details</p>
-            <form action="#" style="margin-top: 40px;">
-              <div class="name">
-                <input type="text" name="fname" placeholder="First Name">
-                <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+          <!-- Join-Us PopUp -->
+          <div class="content">
+            <div id="login-box" class="login-popup">
+              <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
+                  alt="Close" /></a>
+              <div class="join-us-box">
+                <div class="left-div" style="width: 25%;height: 100%;">
+                  <p class="signin-heading" style="font-size: 48px;">hackslash</p>
+                  <p style="font-size: 14px">
+                    Students' Developers Club<br>National Institute of Technology, Patna
+                  </p>
+                  <form action="#" style="margin-top: 40px;">
+                    <input type="email" name="email" id="signin-email" placeholder="Email Address" required>
+                    <input type="password" name="pass" id="signin-pass" placeholder="Password" required>
+                    <input type="button" id="signin-btn" value="Sign In" onclick="userSignIn()">
+                  </form>
+                  <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
+                  <button class="signin-btns" onclick="signInWithGithub()"><i class="fab fa-github"></i> Sign in with
+                    GitHub</button>
+                  <button class="signin-btns" onclick="signInWithGoogle()"><i class="fab fa-google"></i> Sign in with
+                    Google</button>
+                </div>
+                <div class="right-div" style="width: 75%;height: 100%;">
+                  <p style="font-weight:bold;font-size:60px;">Create an account</p>
+                  <p style="font-size:30px;">Just a few basic details</p>
+                  <form action="#" style="margin-top: 40px;">
+                    <div class="name">
+                      <input type="text" name="fname" placeholder="First Name">
+                      <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+                    </div>
+                    <div class="details">
+                      <input type="email" name="email" id="signup-email" placeholder="Email Address" required>
+                      <input type="password" name="pass" id="signup-pass" placeholder="Enter a Password" required>
+                      <input type="password" name="confirm-pass" id="signup-conf-pass" placeholder="Re-Enter Password" required>
+                      <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                    </div>
+                    <input type="button" id="signup-btn" value="Create Account" onclick="userSignUp()">
+                  </form>
+                </div>
               </div>
-              <div class="details">
-                <input type="email" name="email" placeholder="Email Address">
-                <input type="password" name="pass" placeholder="Enter a Password">
-                <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                <input type="text" name="git-id" placeholder="Git ID(Optional)">
-              </div>
-              <input type="submit" id="signup-btn" value="Create Account">
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- / Join-Us PopUp -->
+          
+          <!-- / Join-Us PopUp -->
 
     <div class="box">
       <div id="item1">
