@@ -13,6 +13,13 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Mada&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -42,52 +49,55 @@
           <li><a href="#">Hall of Fame</a></li>
           <li><a href="#">Articles</a></li>
           <li><a href="#">About Us</a></li>
-          <li><a href="#login-box" class="login-window">Join Us</a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- Join-Us PopUp -->
-    <div class="content">
-      <div id="login-box" class="login-popup">
-        <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
-            alt="Close" /></a>
-        <div class="join-us-box">
-          <div class="left-div">
-            <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
-            <p style="font-size: 14px;color: #FFFFFF;">
-              Students' Developers Club<br>National Institute of Technology, Patna
-            </p>
-            <form action="#" style="margin-top: 40px;">
-              <input type="email" name="email" placeholder="Email Address">
-              <input type="password" name="pass" placeholder="Password">
-              <input type="submit" id="signin-btn" value="Sign In">
-            </form>
-            <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
-            <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
-            <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
+          <li><a href="#login-box" class="login-window join-us-btn">Join Us</a></li>
+          </ul>
+          </nav>
           </div>
-          <div class="right-div">
-            <p style="font-weight:bold;font-size:60px;">Create an account</p>
-            <p style="font-size:30px;">Just a few basic details</p>
-            <form action="#" style="margin-top: 40px;">
-              <div class="name">
-                <input type="text" name="fname" placeholder="First Name">
-                <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+          <!-- Join-Us PopUp -->
+          <div class="content">
+            <div id="login-box" class="login-popup">
+              <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
+                  alt="Close" /></a>
+              <div class="join-us-box">
+                <div class="left-div" >
+                  <p class="signin-heading" style="font-size: 48px;">hackslash</p>
+                  <p style="font-size: 14px">
+                    Students' Developers Club<br>National Institute of Technology, Patna
+                  </p>
+                  <form action="#" style="margin-top: 40px;">
+                    <input type="email" name="email" id="signin-email" placeholder="Email Address" required>
+                    <input type="password" name="pass" id="signin-pass" placeholder="Password" required>
+                    <input type="button" id="signin-btn" value="Sign In" onclick="userSignIn()">
+                  </form>
+                  <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
+                  <button class="signin-btns" onclick="signInWithGithub()"><i class="fab fa-github"></i> Sign in with
+                    GitHub</button>
+                  <button class="signin-btns" onclick="signInWithGoogle()"><i class="fab fa-google"></i> Sign in with
+                    Google</button>
+                </div>
+                <div class="right-div" >
+                  <p style="font-weight:bold;font-size:60px;">Create an account</p>
+                  <p style="font-size:30px;">Just a few basic details</p>
+                  <form action="#" style="margin-top: 40px;">
+                    <div class="name">
+                      <input type="text" name="fname" placeholder="First Name">
+                      <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+                    </div>
+                    <div class="details">
+                      <input type="email" name="email" id="signup-email" placeholder="Email Address" required>
+                      <input type="password" name="pass" id="signup-pass" placeholder="Enter a Password" required>
+                      <input type="password" name="confirm-pass" id="signup-conf-pass" placeholder="Re-Enter Password" required>
+                      <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                    </div>
+                    <input type="button" id="signup-btn" value="Create Account" onclick="userSignUp()">
+                  </form>
+                </div>
               </div>
-              <div class="details">
-                <input type="email" name="email" placeholder="Email Address">
-                <input type="password" name="pass" placeholder="Enter a Password">
-                <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                <input type="text" name="git-id" placeholder="Git ID(Optional)">
-              </div>
-              <input type="submit" id="signup-btn" value="Create Account">
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+          
+          <!-- / Join-Us PopUp -->
 
-    <!-- / Join-Us PopUp -->
   </div>
   <!-- <div style="margin-left: 460px;visibility: hidden;">
         <img src="assets/x-square.svg" style="position: absolute;
@@ -196,7 +206,7 @@
           </form>
       </div> -->
 
-  <img src="assets/eventDetailsBackground.svg" class="img-responsive" style="left: 0px;right: 0px;width: 100%;">
+  <img src="assets/eventDetailsBackground.svg" class="img-responsive" style="position: absolute;left: 0px;right: 0px;width: 100%;">
 
 
   <img
@@ -205,11 +215,11 @@
     style="position: absolute;left: 6%;right: 6%;top: 5.3%;height: 55%;width: 88.5%;border-radius: 5px 5px 0px 0px;">
 
   <div style="background-color: #FFFFFF;height: 160%;">
-  <table style="position: absolute;top: 61.91%;margin-left: 2%;margin-right: 1.5%;">
+  <table style="position: absolute;top: 61.91%;margin-left: 2%;margin-right: 5%;">
     <tr>
       <td>
         <p
-          style="bottom: 68.1%;left: 0%;right: 5%;font-family: GT Walsheim Pro;font-style: normal;font-size: 2.8vw;color: #000000;">
+          style="bottom: 68.1%;left: 0%;right: 5%;font-family: GT Walsheim Pro;font-style: normal;font-size: 2.7vw;color: #000000;">
           Kondoa Community Network School for Internet Governance</p>
       </td>
     </tr>
@@ -218,17 +228,7 @@
         <p
           style="left: 0%;bottom: 59.59%;font-family: GT Walsheim Pro;font-style: normal;font-weight: normal;font-size: 1.6vw;color: rgba(0, 0, 0, 0.54);">
 
-          Ultricies eget tellus ullamcorper quisque turpis. Ornare quisque viverra cursus quam tempus. Fusce semper
-          rhoncus sed eget nulla mi tincidunt mattis eget. Tortor a augue sit ut. Fermentum diam pellentesque donec
-          tellus non habitant. Massa quam tempor sit nisl.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <img src="assets/seeLess.svg"
-          style="position: absolute;left: 88.32%;right: 11%;top: 87.44%;bottom: 57.38%;height: 12%;"
-
-          class="img-responsive">
+          Ultricies eget tellus ullamcorper quisque turpis. Ornare quisque viverra cursus quam tempus. Fusce semper rhoncus sed eget nulla mi tincidunt mattis eget. Tortor a augue sit ut. Fermentum diam pellentesque donec tellus non habitant. Massa quam tempor sit nisl.</p>
       </td>
     </tr>
   </table>
@@ -306,13 +306,13 @@
 
   <p style="position: absolute;top: 165%;margin-left: 8.2%;font-family: GT Walsheim Pro;font-size: 18px;color: #000000;">Similar Events
   </p>
-  <div class="row" style="position: absolute;top: 171%; left: 8.2%;">
+  <div class="row" style="position: absolute;top: 171%; left: 8.2%;right: 1%;">
 
-    <div class="col-md-8">
+    <div class="col-md-12">
       <div class="row">
         <div class="col-md-6 mb-3">
           <div
-            style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 25%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
+            style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 30%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
             <img
               src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
               class="img-responsive" style="height: 260px;width: 100%;">
@@ -352,7 +352,7 @@
         </div>
         <div class="col-md-6 mb-3">
           <div
-            style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 25%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
+            style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 30%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
             <img
               src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
               class="img-responsive" style="height: 260px;width: 100%;">
@@ -391,7 +391,7 @@
         </div>
         <div class="col-md-6 mb-3">
           <div
-            style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 25%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
+            style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 30%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
             <img
               src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
               class="img-responsive" style="height: 260px;width: 100%;">
@@ -430,9 +430,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4">
-
     </div>
   </div>
 
