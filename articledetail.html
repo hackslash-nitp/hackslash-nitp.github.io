@@ -6,11 +6,24 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hackslash index</title>
  <link href="https://fonts.googleapis.com/css?family=Mada&display=swap" rel="stylesheet">
+
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>
@@ -23,17 +36,32 @@
   <link rel="stylesheet" href="./style.css">
 
 <script type="text/javascript">
-  
+  // var userId = firebase.auth().currentUser.uid;
   function fetch_article(){
-var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     alert(this.responseText);
-    }
-  };
-  xhttp.open("GET", "https://hackslash-17.firebaseio.com/articles/articleone", true);
-  xhttp.send();
-}
+    return firebase.database().ref('/articles/articleone').once('value').then(function(snapshot) {
+    var writername = snapshot.val().writername;
+    var writerpic = snapshot.val().writerpic;
+    var articledate = snapshot.val().date;
+    var content = snapshot.val().content;
+    var topic = snapshot.val().topic;
+    var articleimg = snapshot.val().image;
+    var tag = snapshot.val().tags.split("#");
+     
+    $(document).ready(function(){
+      $("#postingdate").text(articledate);
+      $("#articlecontent").text(content);
+      $("#writername").text(writername);
+      $("#articleheading").text(topic);
+      $("#writerimg").attr("src",writerpic);
+      $("#articleimg").attr("src",articleimg);
+
+      var i;
+      for (i = 1; i < tag.length; i++) {
+        $("#tagcontainer").append('<p class="hashvalue">#'+ tag[i] + '</p>');
+      }
+    });
+  });
+  }
 
 window.onload=fetch_article();
 
@@ -238,54 +266,43 @@ font-family: GT Walsheim Pro;
   <br>
   <div class="container block">
   <div class="row" >
-    <img src="https://i.pinimg.com/originals/f8/20/01/f82001c8ef0f754f9e0d6586acd227f8.jpg" class="profileimg">
-    <p class="profilename">Sudhanshu Singhaaaaaaaaaaaaaa</p>   
+    <img id="writerimg" src="" class="profileimg">
+    <p class="profilename" id="writername"></p>   
   </div>   
-   <p class="articledate">22/22/2222 -</p>
+   <p class="articledate" id="postingdate"></p>
 
       <!-- <p style="height: 14px;background-color: #60B6E9;margin-right: 8px;font-size: 13px;text-align: center;">
         #raj kothari
       </p> -->
-  <div class="articlehash">
-    <p class="hashvalue">
+  <div class="articlehash" id="tagcontainer">
+    <!-- <p class="hashvalue">
       #Web development
-    </p>
-    <p class="hashvalue">
-      #HTML
-    </p>
-    <p class="hashvalue">
-      #CSS
-    </p>
-    <p class="hashvalue">
-      #JAVAscript
-    </p>
-    <p class="hashvalue">
-      #Angular
-    </p>      
+    </p> -->
+        
   </div>
         <div class="row" style="margin-top: 10px;">
           <div class="col-xs-12 col-md-12 col-ls-12">
-            <img src="https://i.pinimg.com/originals/f8/20/01/f82001c8ef0f754f9e0d6586acd227f8.jpg" class="img-responsive">
+            <img id="articleimg" src="" class="img-responsive">
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-xs-3 col-md-3 col-ls-3"></div>
           <div  class="col-xs-6 col-md-6 col-ls-6" style="color: #000000;">
-            <h2 style="width: 100%;text-align: center;">Best Car In The World - The Black Dragon</h2>
+            <h2 style="width: 100%;text-align: center;" id="articleheading"></h2>
           </div>
           <div class="col-xs-3 col-md-3 col-ls-3"></div>
         </div>
         <br>
         <div class="row">
           <div  class="col-xs-11 col-md-11 col-ls-11" style="color: #3F3D56;padding-bottom: 80px;">
-            <p style="width: 100%;padding-right: 55px;">Best Car In The World The Black DragonBest Car In The World The Black DragonBest CThe World The Black Dragon</p>
+            <p style="width: 100%;padding-right: 55px;" id="articlecontent"></p>
           </div>
         </div>
   </div>
   <br>
   <center>
-    <div style="width: 100px;height: 40px;background-color: #60B6E9;border-radius: 5px;box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);margin-bottom: 50px;padding-top: 8px;">
+    <div style="width: 100px;height: 40px;background-color: #60B6E9;border-radius: 5px;box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);margin-bottom: 50px;padding-top: 8px;" id="backbutton">
       Go Back
     </div>
   </center>
