@@ -3,792 +3,267 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>hackslash index</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script></script>
     <script src="common_script.js"></script>
-
+    <script>
+        var request=new XMLHttpRequest;
+        var main=document.getElementById('cards');
+        request.open('GET','https://api.github.com/users/hackslash-nitp/repos',true);
+        request.onload=function(){
+            var data=JSON.parse(this.response);
+            
+           data.forEach(element => {
+            console.log(element.html_url);
+            var description;
+            if(element.description==null){
+                description='No description';
+            }else{
+                description=element.description;
+            }
+            var date=element.created_at;
+            var createdAt=date.split("T");
+            console.log(createdAt[0]);
+            var create=document.createElement('div');
+            create.className='card';
+            var cons="<div class="+"card"+" onclick='gotogit("+element.html_url+")'>";
+                cons+="<div class='card__image-container'>"+
+                    "<img src='"+element.owner.avatar_url+"'>"+
+                "</div>"+
+                "<div class='card_content' style='padding-right: 10px;'>"+
+                    "<img src='assets/Vector (2).svg' style='margin-top: 15px;margin-left: 60%; background-color: gainsboro;padding: 5px;'>"+
+                    "<p style='width: 15%;;margin-top: -30px;margin-left: 66%;color: black;background-color: gainsboro;padding: 4px;padding-left: -10px;'>Fork   "+element.forks_count+"</p>"+
+                    "<p style='width: 15%;;margin-top: -43px;margin-left: 85%;color: black;background-color: gainsboro;padding: 4px;padding-left: -10px;''>Star "+element.forks_count+"</p>"+    
+                "</div>"+
+                "<div style='height: 100%;'>"+
+                    "<h5 style='color: black;font-family: GT Walsheim Pro;font-style: normal;margin-left: 5%;margin-top: -10px;font-weight: normal;font-size: 32px;'>"+element.name+"</h5><p style='color: black;font-family: GT Walsheim Pro;font-style: normal;margin-top: -25px;margin-left: -2px;margin-left: 5%;font-weight: normal;font-size: 20px;'>"+description+"</p>"+
+                    "</div><div style='margin-top: 5%;'><img src='assets/Language.svg' style='margin-left: 5%;' ><p style='color: black;background-color: #3E97BF;font-family: Mada;font-style: normal;margin-top: -31.5px; margin-left: 15%;width: fit-content;font-weight: 500; border-radius: 4px; padding: 5px; font-size: 20px; color: #FFFFFF;'>"+"Created At - "+createdAt[0]+"</p>";
+                    $(".cards").append(cons);
+           });
+           
+            
+           
+        }
+        request.send();
+        
+    </script>
+    <script>
+        function gotogit(githublink){
+            window.open(githublink);
+        }
+    </script>
+    
 </head>
+<style>     
+        main{
+            display: grid;
+            grid-template-columns: 1fr repeat(12 ,minmax(auto,60px)),1fr;
+            grid-gap: 40px;
+            margin-top: 10px;
+            
+            padding: 30px 25px;
+        }
+        .cards{
+            grid-column: 2/span 12;
+            display: grid;
+            grid-template-columns: repeat(12 ,minmax(auto,60px));
+            grid-gap: 60px;
+        }
+        .card{
+            grid-column-end: span 4;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+             
+            transition:  all 0.3s ease 0s;
+        }
+        .card__image-container{
+            width: 100%;
+            padding-top: 56.25%;
+            overflow: hidden;
+            position: relative;
+        }
+        .card__image-container img{
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+        }
+        @media only screen and (max-width: 1000px){
+            .card{
+                grid-column-end: span 6;
+            }
+        }
+        @media only screen and (max-width: 700px){
+            .main{
+                grid-gap: 20px;
+            }
+            .card{
+                grid-column-end: span 12;
+            }
+        }
+        @media only screen and (max-width: 500px){
+            .main{
+                grid-template-columns: 10px repeat(6, 1fr) 10px;
+                grid-gap: 20px;
+            }
+            .cards{
+                grid-column: 2/ span 6;
+                grid-template-columns: repeat(6, 1fr);
+                grid-gap: 20px;
+            }
+            .card{
+                grid-column-end: span 12;
+            }
+        }
+</style>
+<body style="padding: 0px">
+    <nav class="normal_nav">
+        <ul class="menu">
+            <li class="logo"><a href="index.html" style="font-size: 50px; font-family: 'GT Walsheim Pro'; position: absolute; padding: 0px; left: 90px; top: 8px;">hackslash</a></li>
+            <li class="item"><a href="events.html">Events</a></li>
+            <li class="item"><a href="projects.html" id="nav_selected">Projects</a></li>
+            <li class="item"><a href="hall.html">Hall of Fame</a></li>
+            <li class="item"><a href="articles.html">Articles</a></li>
+            <li class="item"><a href="about.html">About Us</a></li>
+            <li class="item button"><a href="#login-box" class="login-window">Join Us</a></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
 
-<body>
-    <div id="container">
-        <div id="nav-box">
-          <nav>
-            <a href="index.html" id="nav_home">hackslash</a>
-            <ul>
-              <li><a href="#" id="nav_selected">Events</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Hall of Fame</a></li>
-              <li><a href="#">Articles</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#login-box" class="login-window">Join Us</a></li>
-            </ul>
-          </nav>
-        </div>
-        <!-- Join-Us PopUp -->
-        <div class="content">
-            <div id="login-box" class="login-popup">
-                <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
-                        alt="Close" /></a>
-                <div class="join-us-box">
-                    <div class="left-div">
-                        <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
-                        <p style="font-size: 14px;color: #FFFFFF;">
-                            Students' Developers Club<br>National Institute of Technology, Patna
-                        </p>
-                        <form action="#" style="margin-top: 40px;">
-                            <input type="email" name="email" placeholder="Email Address">
-                            <input type="password" name="pass" placeholder="Password">
-                            <input type="submit" id="signin-btn" value="Sign In">
-                        </form>
-                        <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
-                        <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
-                        <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
-                    </div>
-                    <div class="right-div">
-                        <p style="font-weight:bold;font-size:60px;">Create an account</p>
-                        <p style="font-size:30px;">Just a few basic details</p>
-                        <form action="#" style="margin-top: 40px;">
-                            <div class="name">
-                                <input type="text" name="fname" placeholder="First Name">
-                                <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
-                            </div>
-                            <div class="details">
-                                <input type="email" name="email" placeholder="Email Address">
-                                <input type="password" name="pass" placeholder="Enter a Password">
-                                <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                                <input type="text" name="git-id" placeholder="Git ID(Optional)">
-                            </div>
-                            <input type="submit" id="signup-btn" value="Create Account">
-                        </form>
-                    </div>
+    
+    <img src="assets/Asset.svg" id="box" style="width: 50%;">
+    
+    <!-- Join-Us PopUp -->
+    <div class="content">
+        <div id="login-box" class="login-popup">
+            <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
+                    alt="Close" /></a>
+            <div class="join-us-box">
+                <div class="left-div" style="width: 25%;height: 100%;">
+                    <p class="signin-heading" style="font-size: 48px;">hackslash</p>
+                    <p style="font-size: 14px">
+                        Students' Developers Club<br>National Institute of Technology, Patna
+                    </p>
+                    <form action="#" style="margin-top: 40px;">
+                        <input type="email" name="email" id="signin-email" placeholder="Email Address" required>
+                        <input type="password" name="pass" id="signin-pass" placeholder="Password" required>
+                        <input type="button" id="signin-btn" value="Sign In" onclick="userSignIn()">
+                    </form>
+                    <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
+                    <button class="signin-btns" onclick="signInWithGithub()"><i class="fab fa-github"></i> Sign in with
+                        GitHub</button>
+                    <button class="signin-btns" onclick="signInWithGoogle()"><i class="fab fa-google"></i> Sign in with
+                        Google</button>
+                </div>
+                <div class="right-div" style="width: 75%;height: 100%;">
+                    <p style="font-weight:bold;font-size:60px;">Create an account</p>
+                    <p style="font-size:30px;">Just a few basic details</p>
+                    <form action="#" style="margin-top: 40px;">
+                        <div class="name">
+                            <input type="text" name="fname" placeholder="First Name">
+                            <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+                        </div>
+                        <div class="details">
+                            <input type="email" name="email" id="signup-email" placeholder="Email Address" required>
+                            <input type="password" name="pass" id="signup-pass" placeholder="Enter a Password" required>
+                            <input type="password" name="confirm-pass" id="signup-conf-pass" placeholder="Re-Enter Password"
+                                required>
+                            <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                        </div>
+                        <input type="button" id="signup-btn" value="Create Account" onclick="userSignUp()">
+                    </form>
                 </div>
             </div>
         </div>
-        
-        <!-- / Join-Us PopUp -->
-      </div>
-        <img src="assets/Asset.svg" id="box">
-        <h2 style="position: absolute;
-        width: 680px;
+    </div>
+    
+    <!-- / Join-Us PopUp -->
+
+    <h2 style="position: relative;
+        width: 50%;
         z-index: -1;
-        height: 182px;
-        left: 889px;
-        top: 257px;
+        margin-left: 50%;
         font-family: GT Walsheim Pro;
         font-style: normal;
         font-weight: normal;
-        font-size: 72px;
-        line-height: 121.73%;
+        font-size: 4.5vw;
+        margin-top: 300px;
         color: #3A454B;
         ">
-            Lorem ipsum dolor sit amet
-        </h2>
-        <h4 style="position: absolute;
-        width: 680px;
+        Lorem ipsum dolor sit amet
+    </h2>
+    <h4 style="
         z-index: -1;
-        height: 85px;
-        left: 889px;
-        top: 464px;
-        
+        width: 50%;
+        margin-top: 80px;
+        margin-left: 50%;
         font-family: GT Walsheim Pro;
         font-style: normal;
         font-weight: normal;
-        font-size: 32px;
-        line-height: 42px;
-        
+        font-size: 2.5vw;
+         
         color: #3F82AA;">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenati
-        </h4>
-        <!--<img src="assets/Vector (3).svg">
-        <img src="assets/Vector (4).svg">
-        <img src="assets/Vector (5).svg">-->
-       <h6 style="position: absolute;
-       width: 257px;
-       z-index: -1;
-       height: 48px;
-       left: 90px;
-       top: 711px;
-       border-bottom-style: solid ;
-       border-bottom-width: 2px ;
-       border-bottom-color: black ;
-       font-family: GT Walsheim Pro;
-       font-style: normal;
-       font-weight: normal;
-       font-size: 36px;
-       line-height: 48px;
-       /* identical to box height */
-       
-       display: flex;
-       align-items: center;
-       color: #3E97BF;
-       ">Hackslash Picks</h6>
-       
-       <input type="text" style="position: absolute;
-       width: 570px;
-      border-bottom-color: black
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenati
+    </h4>
+   
+   <div style="display: inline;">
+    <img src="assets/Icon feather-search.svg" style="margin-left: 50%">
+    <input type="text" style="
+       width: 30%;
+      margin-top: -100px;
+       margin-left: 50%;
+      border-bottom-color: black;
       border-bottom-width: 1px;
        border-top: whitesmoke 1px ;
        border-right: whitesmoke 1px ;
        padding-left:50px;
        font-size:20px;
-       height: 45px;
        border-left: whitesmoke 1px ;
-       left: 889px;
-       margin-top: 65px;
-       top: 609px;
-       " placeholder="Search our projects">
-       <img src="assets/Icon feather-search.svg" style="position: absolute;
-       left: 47.08%;
-       right: 51.35%;
-       margin-top: 530px;
-       margin-left: 90px;
-       top: 19.97%;
-       bottom: 79.05%;">
-       <ul>
-           <li>
-                <ul style="list-style-type: none;z-index: -1;">
-                    <li style="
-                   border-radius: 5px;
-                    height: 644px;
-                    width: 510px;
-                    margin-top: 855px;
-                    margin-left: 2px;
-                   float: left;
-                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-                    ">
-                        <img src="assets/img.svg" style="position: absolute;
-                        width: 510px;
-                        height: 352px;
-                        left: 90px;
-                        top: 807px;
-                        margin-top: 65px;
-                        ">
-                       <img src="assets/Vector (2).svg" style="position: absolute;
-                       left: 19.95%;
-                       right: 79.22%;
-                       padding: 5px;
-                       top: 38.76%;
-                       margin-top: 941px;
-                       align-items: center;
-                       background-color: #d3d3d3;
-                       margin-left: 65px;
-                       bottom: 60.72%;
-                       ">
-                       <p style="position: absolute;
-                       width: 31px;
-                       height: 21px;
-                       background-color: #d3d3d3;
-                       left: 407px;
-                       top: 1182px;
-                       padding-top: 2px;
-                       padding-bottom: 2.5px;
-                       padding-left: 3px;
-                       padding-right: 3px;
-                       align-items: center;
-                       font-family: Mada;
-                       font-style: normal;
-                       font-weight: 500;
-                       font-size: 16px;
-                       line-height: 21px;
-                       display: flex;
-                       align-items: center;
-                       margin-top: 49px;
-                       margin-left: 23px;
-                       color: #000000;
-                       ">Fork</p>
-                       <p style="position: absolute;
-                       width: 19px;
-                       height: 23px;
-                       left: 452px;
-                       background-color: #d3d3d3;
-                       padding-top: 1px;
-                       padding-bottom: 2px;
-                       padding-left: 3px;
-                       padding-right: 4px;
-                       top: 1180px;
-                       margin-top: 51px;
-                       margin-left: 15px;
-                       font-family: Mada;
-                       font-style: normal;
-                       font-weight: 500;
-                       font-size: 18px;
-                       line-height: 23px;
-                       display: flex;
-                       align-items: center;
-                       color: #000000;">39</p>
-                       <img src="assets/star.svg" style="position: absolute;
-                       width: 24px;
-                       background-color: #d3d3d3;
-                       height: 24px;
-                       padding: 2px;
-                       left: 501px;
-                       margin-top: 50px;
-                       margin-left: 0px;
-                       top: 1180px;
-                       ">
-                       <p style="position: absolute;
-                       width: 28px;
-                       height: 21px;
-                       background-color: #d3d3d3;
-                       padding-top: 4px;
-                       padding-bottom: 3px;
-                       padding-left: 3px;
-                       padding-right: 3px;
-                       left: 530px;
-                       top: 1182px;
-                       font-family: Mada;
-                       font-style: normal;
-                       font-weight: 500;
-                       font-size: 16px;
-                       line-height: 21px;
-                       display: flex;
-                       margin-top: 48px;
-                       margin-left: -8px;
-                       align-items: center;
-                       color: #000000;
-                       ">Star</p>
-                       <p style="position: absolute;
-                      
-                       left: 572px;
-                       top: 1181px;
-                       font-family: Mada;
-                       background-color: #d3d3d3;
-                       padding-top: 3px;
-                       padding-bottom: 2.5px;
-                       padding-left: 3px;
-                       padding-right: 5px;
-                       font-style: normal;
-                       font-weight: 500;
-                       font-size: 18px;
-                       margin-top: 49px;
-                       margin-left: -20px;
-                       line-height: 23px;
-                       display: flex;
-                       align-items: center;
-                       color: #000000;">4</p>
-                        <h5 style="position: absolute;
-                        width: 456px;
-                        height: 83px;
-                        left: 132px;
-                        top: 1218px;
-                        font-family: GT Walsheim Pro;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 32px;
-                        line-height: 42px;
-                        color: #000000;">
-                            Eleifend quis auctor nulla elit molestie.
-                        </h5>
-                        <p style="position: absolute;
-                        width: 456px;
-                        height: 54px;
-                        left: 132px;
-                        top: 1310px;
-                        font-family: GT Walsheim Pro;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 20px;
-                        line-height: 26px;
-                        margin-top:60px;
-                        margin-left:-1px;
-                        color: rgba(0, 0, 0, 0.54);
-                        ">At aliquet mattis aliquam posuere. Congue ante ac ultrices nunc</p>
-                        <img src="assets/Language.svg" style="position: absolute;
-                        left: 6.88%;
-                        margin-top: 1102px;
-                        margin-left: -20px;
-                        right: 91.88%;
-                        top: 45.2%;
-                        bottom: 54.01%;">
-                        <h5 style="
-                        position: absolute;
-                        padding-right: 8px;
-                        padding-left: 5px;
-                        border-radius: 3px;
-                        top: 1384px;
-                        background-color: #3E97BF;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 20px;
-                        color: #FFFFFF;
-                        line-height: 26px;
-                        display: flex;
-                        align-items: center;
-                        margin-left: 48px;
-                        margin-top: 58px; 
-                        ">CSS</h5>
-                        <h5 style="
-                       
-                        position: absolute;
-                        padding-right: 8px;
-                        padding-left: 5px;
-                        border-radius: 3px;
-                        top: 1384px;
-                        background-color: #3E97BF;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 20px;
-                        color: #FFFFFF;
-                        line-height: 26px;
-                        display: flex;
-                        align-items: center;
-                        margin-left: 108px;
-                        margin-top: 58px; 
-                        ">React</h5>
-                        <h5 style="
-            
-                        position: absolute;
-                        padding-right: 8px;
-                        padding-left: 5px;
-                        border-radius: 3px;
-                        top: 1384px;
-                        background-color: #3E97BF;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 20px;
-                        color: #FFFFFF;
-                        line-height: 26px;
-                        display: flex;
-                        align-items: center;
-                        margin-left: 178px;
-                        margin-top: 58px; 
-                        ">Machine Learning</h5>
-                    </li>
-                    <li style="
-                   border-radius: 5px;
-                    height: 644px;
-                  
-                    width: 510px;
-                    margin-top: 855px;
-                    margin-left: 20px;
-                   float: left;
-                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-                    ">
-                        <img src="assets/img.svg" style="position: absolute;
-                        width: 510px;
-                        height: 352px;
-                        left: 90px;
-                        margin-left: 530px;
-                        top: 807px;
-                        margin-top: 65px;
-                        ">
-                       <img src="assets/Vector (2).svg" style="position: absolute;
-                       left: 19.95%;
-                       right: 79.22%;
-                       padding: 5px;
-                       top: 38.76%;
-                       margin-top: 941px;
-                       align-items: center;
-                       background-color: #d3d3d3;
-                       margin-left: 585px;
-                       bottom: 60.72%;
-                       ">
-                       <p style="position: absolute;
-                       width: 31px;
-                       height: 21px;
-                       background-color: #d3d3d3;
-                       left: 407px;
-                       top: 1182px;
-                       padding-top: 2px;
-                       padding-bottom: 2.5px;
-                       padding-left: 3px;
-                       padding-right: 3px;
-                       align-items: center;
-                       font-family: Mada;
-                       font-style: normal;
-                       font-weight: 500;
-                       font-size: 16px;
-                       line-height: 21px;
-                       display: flex;
-                       align-items: center;
-                       margin-top: 49px;
-                       margin-left: 543px;
-                       color: #000000;
-                       ">Fork</p>
-                       <p style="position: absolute;
-                       width: 19px;
-                       height: 23px;
-                       left: 452px;
-                       background-color: #d3d3d3;
-                       padding-top: 1px;
-                       padding-bottom: 2px;
-                       padding-left: 3px;
-                       padding-right: 4px;
-                       top: 1180px;
-                       margin-top: 51px;
-                       margin-left: 535px;
-                       font-family: Mada;
-                       font-style: normal;
-                       font-weight: 500;
-                       font-size: 18px;
-                       line-height: 23px;
-                       display: flex;
-                       align-items: center;
-                       color: #000000;">39</p>
-                       <img src="assets/star.svg" style="position: absolute;
-                       width: 24px;
-                       background-color: #d3d3d3;
-                       height: 24px;
-                       padding: 2px;
-                       left: 501px;
-                       margin-top: 50px;
-                       margin-left: 520px;
-                       top: 1180px;
-                       ">
-                       <p style="position: absolute;
-                       width: 28px;
-                       height: 21px;
-                       background-color: #d3d3d3;
-                       padding-top: 4px;
-                       padding-bottom: 3px;
-                       padding-left: 3px;
-                       padding-right: 3px;
-                       left: 530px;
-                       top: 1182px;
-                       font-family: Mada;
-                       font-style: normal;
-                       font-weight: 500;
-                       font-size: 16px;
-                       line-height: 21px;
-                       display: flex;
-                       margin-top: 48px;
-                       margin-left: 518px;
-                       align-items: center;
-                       color: #000000;
-                       ">Star</p>
-                       <p style="position: absolute;
-                      
-                       left: 572px;
-                       top: 1181px;
-                       font-family: Mada;
-                       background-color: #d3d3d3;
-                       padding-top: 3px;
-                       padding-bottom: 2.5px;
-                       padding-left: 3px;
-                       padding-right: 5px;
-                       font-style: normal;
-                       font-weight: 500;
-                       font-size: 18px;
-                       margin-top: 49px;
-                       margin-left: 510px;
-                       line-height: 23px;
-                       display: flex;
-                       align-items: center;
-                       color: #000000;">4</p>
-                        <h5 style="position: absolute;
-                        width: 456px;
-                        height: 83px;
-                        left: 132px;
-                        top: 1218px;
-                        font-family: GT Walsheim Pro;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 32px;
-                        line-height: 42px;
-                        margin-left: 530px;
-                        color: #000000;">
-                            Eleifend quis auctor nulla elit molestie.
-                        </h5>
-                        <p style="position: absolute;
-                        width: 456px;
-                        height: 54px;
-                        left: 132px;
-                        top: 1310px;
-                        font-family: GT Walsheim Pro;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 20px;
-                        line-height: 26px;
-                        margin-top:60px;
-                        margin-left:529px;
-                        color: rgba(0, 0, 0, 0.54);
-                        ">At aliquet mattis aliquam posuere. Congue ante ac ultrices nunc</p>
-                        <img src="assets/Language.svg" style="position: absolute;
-                        left: 6.88%;
-                        margin-top: 1102px;
-                        margin-left: 510px;
-                        right: 91.88%;
-                        top: 45.2%;
-                        bottom: 54.01%;">
-                        <h5 style="
-                        position: absolute;
-                        padding-right: 8px;
-                        padding-left: 5px;
-                        border-radius: 3px;
-                        top: 1384px;
-                        background-color: #3E97BF;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 20px;
-                        color: #FFFFFF;
-                        line-height: 26px;
-                        display: flex;
-                        align-items: center;
-                        margin-left: 48px;
-                        margin-top: 58px; 
-                        ">CSS</h5>
-                        <h5 style="
-                       
-                        position: absolute;
-                        padding-right: 8px;
-                        padding-left: 5px;
-                        border-radius: 3px;
-                        top: 1384px;
-                        background-color: #3E97BF;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 20px;
-                        color: #FFFFFF;
-                        line-height: 26px;
-                        display: flex;
-                        align-items: center;
-                        margin-left: 108px;
-                        margin-top: 58px; 
-                        ">React</h5>
-                        <h5 style="
-            
-                        position: absolute;
-                        padding-right: 8px;
-                        padding-left: 5px;
-                        border-radius: 3px;
-                        top: 1384px;
-                        background-color: #3E97BF;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 20px;
-                        color: #FFFFFF;
-                        line-height: 26px;
-                        display: flex;
-                        align-items: center;
-                        margin-left: 178px;
-                        margin-top: 58px; 
-                        ">Machine Learning</h5>
-                    </li>
-                    <li style="
-                    border-radius: 5px;
-                     height: 644px;
-                   
-                     width: 510px;
-                     margin-top: 855px;
-                     margin-left: 20px;
-                    float: left;
-                     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-                     ">
-                         <img src="assets/img.svg" style="position: absolute;
-                         width: 510px;
-                         height: 352px;
-                         left: 90px;
-                         margin-left: 1060px;
-                         top: 807px;
-                         margin-top: 65px;
-                        ">
-                        <img src="assets/Vector (2).svg" style="position: absolute;
-                        left: 19.95%;
-                        right: 79.22%;
-                        padding: 5px;
-                        top: 38.76%;
-                        margin-top: 941px;
-                        align-items: center;
-                        background-color: #d3d3d3;
-                        margin-left: 1125px;
-                        bottom: 60.72%;
-                        ">
-                        <p style="position: absolute;
-                        width: 31px;
-                        height: 21px;
-                        background-color: #d3d3d3;
-                        left: 407px;
-                        top: 1182px;
-                        padding-top: 2px;
-                        padding-bottom: 2.5px;
-                        padding-left: 3px;
-                        padding-right: 3px;
-                        align-items: center;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 16px;
-                        line-height: 21px;
-                        display: flex;
-                        align-items: center;
-                        margin-top: 49px;
-                        margin-left: 1083px;
-                        color: #000000;
-                        ">Fork</p>
-                        <p style="position: absolute;
-                        width: 19px;
-                        height: 23px;
-                        left: 452px;
-                        background-color: #d3d3d3;
-                        padding-top: 1px;
-                        padding-bottom: 2px;
-                        padding-left: 3px;
-                        padding-right: 4px;
-                        top: 1180px;
-                        margin-top: 51px;
-                        margin-left: 1075px;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 18px;
-                        line-height: 23px;
-                        display: flex;
-                        align-items: center;
-                        color: #000000;">39</p>
-                        <img src="assets/star.svg" style="position: absolute;
-                        width: 24px;
-                        background-color: #d3d3d3;
-                        height: 24px;
-                        padding: 2px;
-                        left: 501px;
-                        margin-top: 50px;
-                        margin-left: 1060px;
-                        top: 1180px;
-                        ">
-                        <p style="position: absolute;
-                        width: 28px;
-                        height: 21px;
-                        background-color: #d3d3d3;
-                        padding-top: 4px;
-                        padding-bottom: 3px;
-                        padding-left: 3px;
-                        padding-right: 3px;
-                        left: 530px;
-                        top: 1182px;
-                        font-family: Mada;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 16px;
-                        line-height: 21px;
-                        display: flex;
-                        margin-top: 48px;
-                        margin-left: 1058px;
-                        align-items: center;
-                        color: #000000;
-                        ">Star</p>
-                        <p style="position: absolute;
-                       
-                        left: 572px;
-                        top: 1181px;
-                        font-family: Mada;
-                        background-color: #d3d3d3;
-                        padding-top: 3px;
-                        padding-bottom: 2.5px;
-                        padding-left: 3px;
-                        padding-right: 5px;
-                        font-style: normal;
-                        font-weight: 500;
-                        font-size: 18px;
-                        margin-top: 49px;
-                        margin-left: 1050px;
-                        line-height: 23px;
-                        display: flex;
-                        align-items: center;
-                        color: #000000;">4</p>
-                         <h5 style="position: absolute;
-                         width: 456px;
-                         height: 83px;
-                         left: 132px;
-                         top: 1218px;
-                         font-family: GT Walsheim Pro;
-                         font-style: normal;
-                         font-weight: normal;
-                         font-size: 32px;
-                         line-height: 42px;
-                         margin-left: 1090px;
-                         color: #000000;">
-                             Eleifend quis auctor nulla elit molestie.
-                         </h5>
-                         <p style="position: absolute;
-                         width: 456px;
-                         height: 54px;
-                         left: 132px;
-                         top: 1310px;
-                         font-family: GT Walsheim Pro;
-                         font-style: normal;
-                         font-weight: normal;
-                         font-size: 20px;
-                         line-height: 26px;
-                         margin-top:60px;
-                         margin-left:1089px;
-                         color: rgba(0, 0, 0, 0.54);
-                         ">At aliquet mattis aliquam posuere. Congue ante ac ultrices nunc</p>
-                         <img src="assets/Language.svg" style="position: absolute;
-                         left: 6.88%;
-                         margin-top: 1102px;
-                         margin-left: 1040px;
-                         right: 91.88%;
-                         top: 45.2%;
-                         bottom: 54.01%;">
-                         <h5 style="
-                         position: absolute;
-                         padding-right: 8px;
-                         padding-left: 5px;
-                         border-radius: 3px;
-                         top: 1384px;
-                         background-color: #3E97BF;
-                         font-family: Mada;
-                         font-style: normal;
-                         font-weight: 500;
-                         font-size: 20px;
-                         color: #FFFFFF;
-                         line-height: 26px;
-                         display: flex;
-                         align-items: center;
-                         margin-left: 48px;
-                         margin-top: 58px; 
-                         ">CSS</h5>
-                         <h5 style="
-                        
-                         position: absolute;
-                         padding-right: 8px;
-                         padding-left: 5px;
-                         border-radius: 3px;
-                         top: 1384px;
-                         background-color: #3E97BF;
-                         font-family: Mada;
-                         font-style: normal;
-                         font-weight: 500;
-                         font-size: 20px;
-                         color: #FFFFFF;
-                         line-height: 26px;
-                         display: flex;
-                         align-items: center;
-                         margin-left: 108px;
-                         margin-top: 58px; 
-                         ">React</h5>
-                         <h5 style="
+ 
+       "placeholder="Search our projects">
+     
+    </div>
+    <h6 style="
+      
+    z-index: -1; 
+    width: 18%;
+    margin-top: 140px;
+   margin-left: 4%;
+   text-align: center;
+    border-bottom-style: solid ;
+    border-bottom-width: 2px ;
+    border-bottom-color: black ;
+    font-family: GT Walsheim Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vw;
+    align-items: center;
+    color: #3E97BF;
+    ">Hackslash Picks</h6>
+   
+    <main>
+        <section class="cards">
              
-                         position: absolute;
-                         padding-right: 8px;
-                         padding-left: 5px;
-                         border-radius: 3px;
-                         top: 1384px;
-                         background-color: #3E97BF;
-                         font-family: Mada;
-                         font-style: normal;
-                         font-weight: 500;
-                         font-size: 20px;
-                         color: #FFFFFF;
-                         line-height: 26px;
-                         display: flex;
-                         align-items: center;
-                         margin-left: 178px;
-                         margin-top: 58px; 
-                         ">Machine Learning</h5>
-                     </li>
-                </ul>
-           </li>
-       </ul>
-       <img src="assets/undraw_to_the_moon_v1mv 1.svg" style="float: right;margin-top: 30px;">
-</body>
+              
+        </section>
+    </main>
+    <img src="assets/undraw_to_the_moon_v1mv 1.svg" style="float: right;margin-top: 30px;">
+</body s>
 
 </html>
