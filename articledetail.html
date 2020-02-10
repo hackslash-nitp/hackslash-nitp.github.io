@@ -37,8 +37,15 @@
 
 <script type="text/javascript">
   // var userId = firebase.auth().currentUser.uid;
+  function getId(){
+    // var id = jQuery.url.param("id");
+    var id = 'articleone';
+    return id;
+  }
   function fetch_article(){
-    return firebase.database().ref('/articles/articleone').once('value').then(function(snapshot) {
+    
+    var id = getId();
+    return firebase.database().ref('/articles/' + id).once('value').then(function(snapshot) {
     var writername = snapshot.val().writername;
     var writerpic = snapshot.val().writerpic;
     var articledate = snapshot.val().date;
@@ -241,6 +248,7 @@ font-family: GT Walsheim Pro;
   margin-right: 10px;
   padding-right: 7px;
   padding-bottom: 3px;
+  font-family: Mada;
 }
 </style>
 
@@ -282,27 +290,29 @@ font-family: GT Walsheim Pro;
   </div>
         <div class="row" style="margin-top: 10px;">
           <div class="col-xs-12 col-md-12 col-ls-12">
+            <center>
             <img id="articleimg" src="" class="img-responsive">
+            </center>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-xs-3 col-md-3 col-ls-3"></div>
           <div  class="col-xs-6 col-md-6 col-ls-6" style="color: #000000;">
-            <h2 style="width: 100%;text-align: center;" id="articleheading"></h2>
+            <h2 style="width: 100%;text-align: center;font-family: GT Walsheim Pro;" id="articleheading"></h2>
           </div>
           <div class="col-xs-3 col-md-3 col-ls-3"></div>
         </div>
         <br>
         <div class="row">
           <div  class="col-xs-11 col-md-11 col-ls-11" style="color: #3F3D56;padding-bottom: 80px;">
-            <p style="width: 100%;padding-right: 55px;" id="articlecontent"></p>
+            <p style="width: 100%;padding-right: 55px;font-family: GT Walsheim Pro;" id="articlecontent"></p>
           </div>
         </div>
   </div>
   <br>
   <center>
-    <div style="width: 100px;height: 40px;background-color: #60B6E9;border-radius: 5px;box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);margin-bottom: 50px;padding-top: 8px;" id="backbutton">
+    <div style="width: 100px;height: 40px;background-color: #60B6E9;border-radius: 5px;box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);margin-bottom: 50px;padding-top: 8px;font-family: GT Walsheim Pro;" id="backbutton">
       Go Back
     </div>
   </center>
