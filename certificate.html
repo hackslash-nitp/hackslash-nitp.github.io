@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Mada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <meta charset="UTF-8">
+    <title>hackslash index</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    </script>
+    <script src="common_script.js"></script>
+    <style>
+        body {
+            background-color: #60b6e9;
+        }
+
+        .box {
+            position: absolute;
+            bottom: 40px;
+            left: 0px;
+            width: auto;
+        }
+
+        #item1 {
+            width: 100%;
+        }
+
+        header {
+            margin-left: 48px;
+        }
+
+        #description {
+            margin-top: 0px;
+            margin-left: 52px;
+        }
+
+        #heading {
+            width: 100%;
+            font-size: 5vw;
+            color: white;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 32px;
+            font-family: 'GT Walsheim Pro';
+        }
+
+        #ID {
+            width: 15%;
+            text-align: center;
+            float: center;
+        }
+
+        #submit {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="item1">
+            <header>hackslash</header>
+            <p id="description" style="font-size: 20px">
+                Student Developer Club<br>National Institute of Technology, Patna
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <p id="heading">Certificate Verification</p>
+        <div style="background-color: white;">
+            <div style="width: 100%; text-align: center;">
+                <input type="text" id="ID" placeholder="Certificate ID here">
+            </div>
+
+            <div style="width: 100%; text-align: center;">
+                <input type="button" id="submit" value="VERIFY">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
