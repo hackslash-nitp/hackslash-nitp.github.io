@@ -3,6 +3,7 @@
 
 <head>
     <link rel="shortcut icon" href="https://srv-file6.gofile.io/download/yGBSfY/hackslash.ico">
+    <link rel="icon" href="https://srv-file6.gofile.io/download/yGBSfY/hackslash.ico">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Mada&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,14 +17,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <meta charset="UTF-8">
-    <title>hackslash index</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>HackSlash Certification</title>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
@@ -33,13 +28,88 @@
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
     </script>
-    <script src="common_script.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyApPqV50wqW_pxUrqqHl4ZB-0O-a1BoTFY",
+            authDomain: "hackslash-17.firebaseapp.com",
+            databaseURL: "https://hackslash-17.firebaseio.com",
+            projectId: "hackslash-17",
+            storageBucket: "hackslash-17.appspot.com",
+            messagingSenderId: "981722954585",
+            appId: "1:981722954585:web:e2ed3d02d85a5445c86a48",
+            measurementId: "G-BF8Y47X72L"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var db = firebase.database();
+
+        document.onready = function () {
+            document.getElementById('ID').addEventListener("keyup", function (event) {
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+                    // Cancel the default action, if needed
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    document.getElementById("submit").click();
+                    document.getElementById('ID').blur();
+                }
+            });
+        }
+
+
+        function checkRecord() {
+            if (!document.getElementById('ID').value == '')
+                db.ref('certificates/' + document.getElementById('ID').value).once('value').then(function (snapshot) {
+                    if (snapshot.val() == null) {
+
+                        $('#details, #success_toast').hide();
+                        $('#failure_toast').css({
+                            display: "inline-block"
+                        });
+                        $('#failure_toast').animate({
+                            opacity: "1.0"
+                        }, 600);
+
+                        setTimeout(function () {
+                            $('#failure_toast').animate({
+                                opacity: "0.0"
+                            }, 600);
+                        }, 2000);
+
+                        setTimeout(function () {
+                            $('#failure_toast').hide();
+                        }, 2600);
+                    } else {
+                        document.getElementById('name_holder').innerHTML =
+                            "Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>" + snapshot.val().name +
+                            '</b>';
+                        document.getElementById('event_holder').innerHTML =
+                            'Event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>' + snapshot.val().event +
+                            '</b>';
+                        document.getElementById('college_holder').innerHTML =
+                            'College&nbsp;&nbsp;&nbsp;&nbsp;<b>' + snapshot.val().college + '</b>';
+                        document.getElementById('date_holder').innerHTML =
+                            'Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>' + snapshot.val().date +
+                            '</b>';
+
+                        $('#details, #success_toast').css({
+                            display: "block"
+                        });
+                        $('#details, #success_toast').animate({
+                            opacity: "1.0"
+                        }, 600);
+                    }
+                });
+
+        }
+    </script>
     <style>
         body {
             background-color: #60b6e9;
@@ -58,7 +128,7 @@
 
         header {
             margin-left: 48px;
-            font-size: 50px;
+            font-size: 56px;
         }
 
         #description {
@@ -86,6 +156,12 @@
             border: 0px;
             outline: none;
             color: #111;
+            border-bottom: 1.25px solid #60b7e985;
+        }
+
+        #ID:hover,
+        #ID:active,
+        #ID:focus {
             border-bottom: 1.25px solid #60b6e9;
         }
 
@@ -131,10 +207,10 @@
 
 <body>
     <div class="box">
-        <div id="item1">
+        <div id="item1" style="color: white; font-family: 'GT Walsheim Pro';">
             <header>hackslash</header>
-            <p id="description" style="font-size: 18px; line-height:20px;">
-                Student Developer Club<br>National Institute of Technology, Patna
+            <p id="description" style="font-size: 18px; line-height:24px;">
+                Student Developers' Club<br>National Institute of Technology, Patna
             </p>
         </div>
     </div>
@@ -143,8 +219,7 @@
 
     <div style="text-align: center; width: 100%;">
         <p id="heading">Certificate Verification</p>
-        <div
-            style="background-color: white; width:400px; height: auto;  display: inline-block; 
+        <div style="background-color: white; width:400px; height: auto;  display: inline-block; 
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
             border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.205);
             border: 1px solid rgb(255, 255, 255);">
@@ -153,15 +228,15 @@
             </div>
 
             <div style="width: 100%; text-align: center;">
-                <input type="button" id="submit" value="VERIFY">
+                <input type="button" onclick="checkRecord()" id="submit" value="VERIFY">
             </div>
 
 
             <p style="color: green; margin: 0px; text-align: center; display: none;" id="success_toast">This certificate
                 is valid</p>
-            <p style="color: red; margin: 0px; text-align: center; margin-bottom: 32px; display: none;"
+            <p style="color: red;margin: 0px; text-align: center; margin-bottom: 32px; display: none; opacity: 0.0;"
                 id="failure_toast">This certificate is invalid</p>
-            <div style="margin-bottom: 32px; margin-top: 16px;display: none;">
+            <div style="margin-bottom: 32px; margin-top: 16px;display: none;" id="details">
                 <p id="name_holder">Name: </p>
                 <p id="event_holder">Event: </p>
                 <p id="college_holder">College: </p>
