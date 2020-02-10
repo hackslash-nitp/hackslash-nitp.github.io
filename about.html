@@ -4,28 +4,28 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Mada&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <meta charset="UTF-8">
     <title>hackslash index</title>
     <link rel="stylesheet" href="./style.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 
@@ -36,9 +36,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    </script>
     <script src="common_script.js"></script>
     <script>
         var database = firebase.database();
@@ -49,43 +48,53 @@
         database.ref('/members').once('value').then(function (snapshot) {
             snapshot.val().forEach(function (element, index) {
                 console.log(element.name);
-                var card = "<div class='member_card" + (index % 5) + " card'>";
-                card += "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
-                    "<p class='member_name'>" + element.name + "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element.image + "' class='member_photo" + (index % 5) + "'>" +
-                    "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio + "</p><div class='links'>";
+                var card = "<div class='member_card" + ((index + 2) % 5) + " card'>";
+                card +=
+                    "<div style='width: 300px; height: 175px; position: absolute; z-index: 0; background-color: white; margin-left: -1px; margin-top: -1px;'>" +
+                    "<p class='member_name" + ((index + 2) % 5) + "'>" + element.name +
+                    "</p><p class='member_post'>" + element.role + "</p></div><img src='" + element
+                    .image + "' class='member_photo" + ((index + 2) % 5) + "'>" +
+                    "<p class='about_me_header'>About me</p><p class='about_me'>" + element.bio +
+                    "</p><div class='links'>";
 
                 if (element.medium !== undefined) {
-                    card += "<a href='" + element.medium + "'><img src='assets/about_us/card-link-medium.svg' class='link'></a>";
+                    card += "<a href='" + element.medium +
+                        "'><img src='assets/about_us/card-link-medium.svg' class='link'></a>";
                 }
 
                 if (element.github !== undefined) {
-                    card += "<a href='" + element.github + "'><img src='assets/about_us/card-link-github.svg' class='link'></a>";
+                    card += "<a href='" + element.github +
+                        "'><img src='assets/about_us/card-link-github.svg' class='link'></a>";
                 }
 
                 if (element.linkedin !== undefined) {
-                    card += "<a href='" + element.linkedin + "'><img src='assets/about_us/card-link-linkedin.svg' class='link'></a>";
+                    card += "<a href='" + element.linkedin +
+                        "'><img src='assets/about_us/card-link-linkedin.svg' class='link'></a>";
                 }
 
                 if (element.dev !== undefined) {
-                    card += "<a href='" + element.dev + "'><img src='assets/about_us/card-link-dev.svg' class='link'></a>";
+                    card += "<a href='" + element.dev +
+                        "'><img src='assets/about_us/card-link-dev.svg' class='link'></a>";
                 }
 
                 card += "</div></div>";
                 $("#members_list").append(card);
-                members_count++;
+                dev_count++;
             });
 
-            if (members_count !== 0)
+            if (dev_count !== 0)
 
-                $("#meet_the_team, #members_list").animate({
+                $("#meet_the_team, #members_list, #members_bg").animate({
                     opacity: 1.0,
                     transitionDuration: '0.4s'
                 });
 
-            if (members_count !== 0) {
-                console.log('here');
-                console.log(document.body.style.overflowY);
+            if (dev_count != 0) {
+
+                $("body").css("overflow-y", "scroll");
             }
+
+
         });
     </script>
 
@@ -218,13 +227,65 @@
             background-color: #8D8C97;
         }
 
-        .member_name {
+        .member_name0 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #F97892;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name1 {
             font-family: GT Walsheim Pro;
             font-style: normal;
             font-weight: normal;
             font-size: 28px;
             line-height: 30px;
             color: #0085CA;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name2 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #FCA557;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name3 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #F97892;
+            width: 100%;
+            margin-left: 0px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .member_name4 {
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 30px;
+            color: #8D8C97;
             width: 100%;
             margin-left: 0px;
             margin-top: 24px;
@@ -352,6 +413,38 @@
             text-align: center;
         }
 
+        .footer {
+            height: auto;
+            text-align: left;
+            position: absolute;
+            left: 0px;
+            margin-right: 0px;
+            width: 100%;
+            padding-top: -75px;
+            position: absolute;
+            margin-top: 425px;
+            z-index: 1;
+        }
+
+        .bottom_links {
+            height: auto;
+            text-align: left;
+            position: absolute;
+            left: 0px;
+            margin-right: 0px;
+            margin-left: 2%;
+            width: 50%;
+            bottom: 10%;
+        }
+
+        .bottom_link {
+            width: 5%;
+            margin-left: 2%;
+            margin-right: 2%;
+            display: inline-block;
+            height: 5%;
+        }
+
         .link {
             width: 36px;
             margin-left: 4px;
@@ -359,97 +452,215 @@
             display: inline-block;
             height: 36px;
         }
+
+        .contact_card_holder {
+            width: 100%;
+            height: 40%;
+            text-align: center;
+            position: absolute;
+            margin-top: 150px;
+            z-index: 100;
+        }
+
+        .contact_card {
+            width: 35%;
+            background-color: white;
+            height: auto;
+            display: inline-block;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+        }
+
+        .contact_form input,
+        .contact_form input::placeholder,
+        .contact_form input:focus {
+            width: 80%;
+            border: none;
+            border-bottom: 1px solid #F7F7F7;
+            font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-size: 1.1vw;
+            line-height: 1.5vw;
+            color: #60B6E9;
+            margin-top: 2%;
+            margin-bottom: 2%;
+        }
+
+        .contact_form {
+            text-align: right;
+            margin-right: 10%;
+            margin-left: -10%;
+        }
     </style>
 </head>
 
 <body style="padding: 0px">
-    <div id="container">
-        <div id="nav-box">
-            <nav>
-                <a href="index.html" id="nav_home">hackslash</a>
-                <ul>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="hall.html">Hall of Fame</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="#" id="nav_selected" style="color: white">About Us</a></li>
-                    <li><a href="#login-box" class="login-window">Join Us</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!-- Join-Us PopUp -->
-        <div class="content">
-            <div id="login-box" class="login-popup">
-                <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
-                        alt="Close" /></a>
-                <div class="join-us-box">
-                    <div class="left-div">
-                        <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
-                        <p style="font-size: 14px;color: #FFFFFF;">
-                            Students' Developers Club<br>National Institute of Technology, Patna
-                        </p>
-                        <form action="#" style="margin-top: 40px;">
-                            <input type="email" name="email" placeholder="Email Address">
-                            <input type="password" name="pass" placeholder="Password">
-                            <input type="submit" id="signin-btn" value="Sign In">
-                        </form>
-                        <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
-                        <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
-                        <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
-                    </div>
-                    <div class="right-div">
-                        <p style="font-weight:bold;font-size:60px;">Create an account</p>
-                        <p style="font-size:30px;">Just a few basic details</p>
-                        <form action="#" style="margin-top: 40px;">
-                            <div class="name">
-                                <input type="text" name="fname" placeholder="First Name">
-                                <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
-                            </div>
-                            <div class="details">
-                                <input type="email" name="email" placeholder="Email Address">
-                                <input type="password" name="pass" placeholder="Enter a Password">
-                                <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                                <input type="text" name="git-id" placeholder="Git ID(Optional)">
-                            </div>
-                            <input type="submit" id="signup-btn" value="Create Account">
-                        </form>
-                    </div>
+
+    <nav class="normal_nav">
+        <ul class="menu">
+            <li class="logo"><a href="index.html" style="font-size: 50px; font-family: 'GT Walsheim Pro'; position: absolute; padding: 0px; left: 90px; top: 8px;">hackslash</a></li>
+            <li class="item"><a href="events.html">Events</a></li>
+            <li class="item"><a href="projects.html">Projects</a></li>
+            <li class="item"><a href="hall.html">Hall of Fame</a></li>
+            <li class="item"><a href="articles.html">Articles</a></li>
+            <li class="item"><a href="about.html" id="nav_selected">About Us</a></li>
+            <li class="item button"><a href="#login-box" class="login-window">Join Us</a></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
+    <!-- Join-Us PopUp -->
+    <div class="content">
+        <div id="login-box" class="login-popup">
+            <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
+                    alt="Close" /></a>
+            <div class="join-us-box">
+                <div class="left-div" >
+                    <p class="signin-heading" style="font-size: 48px;">hackslash</p>
+                    <p style="font-size: 14px">
+                        Students' Developers Club<br>National Institute of Technology, Patna
+                    </p>
+                    <form action="#" style="margin-top: 40px;">
+                        <input type="email" name="email" id="signin-email" placeholder="Email Address" required>
+                        <input type="password" name="pass" id="signin-pass" placeholder="Password" required>
+                        <input type="button" id="signin-btn" value="Sign In" onclick="userSignIn()">
+                    </form>
+                    <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
+                    <button class="signin-btns" onclick="signInWithGithub()"><i class="fab fa-github"></i> Sign in with
+                        GitHub</button>
+                    <button class="signin-btns" onclick="signInWithGoogle()"><i class="fab fa-google"></i> Sign in with
+                        Google</button>
+                </div>
+                <div class="right-div" >
+                    <p style="font-weight:bold;font-size:60px;">Create an account</p>
+                    <p style="font-size:30px;">Just a few basic details</p>
+                    <form action="#" style="margin-top: 40px;">
+                        <div class="name">
+                            <input type="text" name="fname" placeholder="First Name">
+                            <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+                        </div>
+                        <div class="details">
+                            <input type="email" name="email" id="signup-email" placeholder="Email Address" required>
+                            <input type="password" name="pass" id="signup-pass" placeholder="Enter a Password" required>
+                            <input type="password" name="confirm-pass" id="signup-conf-pass" placeholder="Re-Enter Password"
+                                required>
+                            <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                        </div>
+                        <input type="button" id="signup-btn" value="Create Account" onclick="userSignUp()">
+                    </form>
                 </div>
             </div>
         </div>
-        
-        <!-- / Join-Us PopUp -->
     </div>
+    
+    <!-- / Join-Us PopUp -->
 
 
     <img src="assets/about_us/about-bg-1.svg" style="margin-right: -5px; width: 500px; margin-top: -20px; position: absolute; right: 0px;
             z-index: -1;">
     <p id="about_us_heading">About Us</p>
     <p id="about_us">
-        Hackslash is a student developers' community powered by Mozilla Campus Clubs Network that focuses
-        fundamentally on software development. Hackslash subsists on the belief that everyone can create & innovate. The
-        club aims at contriving better code by involving people from all walks of life. The ever-growing community of
-        young developers strives at upholding this maxim through the years to come.
+        HackSlash, currently under the Mozilla Campus Clubs Network, is an all student driven developers community
+        located in the National Institute of Technology Patna. The club strives to build and improve the open sourcing
+        environment and the coding culture of the whole city of Patna and eventually the whole state of Bihar. The will
+        power and determination of each Developers, Competitive Coders, Designers and Innovative thinkers is what
+        governs our great community.
     </p>
     <img src="assets/about_us/about-bg-2.svg"
-         style="margin-right: 90px;margin-top: 0px; height: 100%; width: 600px; position: absolute; z-index: -1;">
+        style="margin-right: 90px;margin-top: 0px; height: 100%; width: 600px; position: absolute; z-index: -1;">
     <p id="our_story_heading">Our Story</p>
     <p id="our_story">
-        Platea porttitor eu semper sagittis scelerisque duis at mi sed. Neque faucibus rhoncus, ac
-        curabitur ut tellus. Adipiscing nisi, quisque eget dolor augue. Ut sed eget consectetur fermentum velit
-        tincidunt auctor purus. Ornare sit elementum iaculis platea. At donec molestie condimentum nunc sed nulla.
-        Gravida lectus velit scelerisque fermentum. Lectus dignissim enim justo, neque viverra bibendum. Nulla est donec
-        egestas dictumst odio maecenas aliquam felis massa. Velit amet enim, facilisi id arcu sit. Mi et elementum enim
-        tempus aliquet egestas turpis orci. Urna nunc lorem tellus est viverra nunc ornare viverra. Vulputate hendrerit
-        ut sagittis non accumsan neque cras feugiat. Facilisis faucibus ullamcorper tortor lectus orci, aliquam faucibus
-        at.
+        Formed as a college’s development club in NIT Patna, it was established on 2018, with only 10 members. The main
+        reason of taking such a step, i.e. to form the HackSlash Club, was because of the lack of awareness and
+        opportunities for the students to achieve their maximum potential and also to bring their attention to the
+        current need in the field of development and open sourcing contribution. It started out as a weekly meet up in
+        the cafeteria to fully functioning weekend classes and afternoon informative sessions. Currently It is holding
+        over
+        15 core members and 112 interested members of all years and degree programs in the institute itself. We are
+        currently striving of increasing our reach to all other interested students in other technical institutes in
+        Patna.
     </p>
 
     <p id="meet_the_team">Meet the team</p>
     <div id="members_list" class="members"></div>
 
-    <img src="assets/about_us/about-bg-3.svg"
-         style="margin-right: 90px; margin-top: -650px; height: 100%; width: 100%; position: absolute; padding-right: 80%">
+    <img src="assets/about_us/about-bg-3.svg" id="members_bg"
+        style="margin-right: 90px; margin-top: -350px; height: 100%; width: 100%; position: absolute; padding-right: 80%; opacity: 0.0;">
+
+    <div class="contact_card_holder">
+        <p style="font-family: GT Walsheim Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 5vw;
+        line-height: 82px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+        color: #3E9AD1;">Contact Us</p>
+        <div class="contact_card">
+            <p style="font-family: GT Walsheim Pro;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.2vw;
+            line-height: 1.5vw;
+            text-align: left;
+            margin-top: 10%;
+            margin-left: 10%;
+            margin-right: 10%;
+            color: #9D9CB5;
+            ">Feel free to contact us. We will get back to you as soon as possible</p>
+            <form class="contact_form" action="">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email Address">
+                <input type="text" placeholder="Tell us about it?">
+                <br>
+                <input type="button" class="send" value="Send" style="
+                box-shadow: 0px 3px 8px #60B6E929;
+                background: #60B6E9;
+                font-family: GT Walsheim Pro;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 1.25vw;
+                width: 15%;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                text-align: center;
+                margin-bottom: 10%;
+                margin-top: 10px;
+                padding-left: 0px;
+                padding-right: 0px;
+                border-radius: 4px;
+                color: #FFFFFF;">
+            </form>
+
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <img src="assets/about_us/about-bg-4.svg"
+            style="left: 0px; margin-right: 0px; margin-left: 0px; width: 100%; height: auto; position: relative;z-index: -1;">
+        <div class="bottom_links">
+            <p
+                style="width: 100%; font-family: 'GT Walsheim Pro'; font-size: 2.5vw; text-align: left; margin-left: 2%;">
+                Follow us on</p>
+            <a href="https://github.com/hackslash-nitp"><img src="assets/about_us/card-link-github.svg"
+                    class="bottom_link"></a>
+            <a href="https://medium.com/hackslash-developers-club"><img src="assets/about_us/card-link-medium.svg"
+                    class="bottom_link"></a>
+            <a href="https://facebook.com/hackslash.nitp"><img src="assets/about_us/about-ic-facebook.svg"
+                    style="padding-left: 1%; padding-right: 1%;" class="bottom_link"></a>
+            <a href="https://instagram.com/hackslash.nitp"><img src="assets/about_us/about-ic-insta.svg"
+                    class="bottom_link"></a>
+            <a href="mailto:hackslashclub@nitp.ac.in"><img src="assets/about_us/about-ic-mail.svg"
+                    class="bottom_link"></a>
+            <a href="https://gitter.im/hslash"><img src="assets/about_us/about-ic-gitter.svg"
+                    style="padding-left: 0.7%; padding-right: 0.7%;" class="bottom_link"></a>
+
+            <a href="https://www.linkedin.com/in/hackslash-nit-patna-600210191/"><img
+                    src="assets/about_us/about-ic-linkedin.svg" class="bottom_link"></a>
+            <a href="https://twitter.com/hackslash_nitp"><img src="assets/about_us/about-ic-twitter.svg"
+                    class="bottom_link"></a>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -21,11 +21,8 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="common_script.js"></script>
     <script>
         var database = firebase.database();
@@ -511,64 +508,64 @@
     </style>
 </head>
 
+
 <body style="padding: 0px">
-    <div id="container">
-        <div id="nav-box">
-            <nav>
-                <a href="index.html" id="nav_home">hackslash</a>
-                <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#" id="nav_selected" style="color: white">Hall of Fame</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#login-box" class="login-window">Join Us</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!-- Join-Us PopUp -->
-        <div class="content">
-            <div id="login-box" class="login-popup">
-                <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
-                        alt="Close" /></a>
-                <div class="join-us-box">
-                    <div class="left-div">
-                        <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
-                        <p style="font-size: 14px;color: #FFFFFF;">
-                            Students' Developers Club<br>National Institute of Technology, Patna
-                        </p>
-                        <form action="#" style="margin-top: 40px;">
+    <nav class="normal_nav">
+        <ul class="menu">
+            <li class="logo"><a href="index.html" style="font-size: 50px; font-family: 'GT Walsheim Pro'; position: absolute; padding: 0px; left: 90px; top: 8px;">hackslash</a></li>
+            <li class="item"><a href="events.html">Events</a></li>
+            <li class="item"><a href="projects.html">Projects</a></li>
+            <li class="item"><a href="hall.html" id="nav_selected">Hall of Fame</a></li>
+            <li class="item"><a href="articles.html">Articles</a></li>
+            <li class="item"><a href="about.html">About Us</a></li>
+            <li class="item button"><a href="#login-box" class="login-window">Join Us</a></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- Join-Us PopUp -->
+    <div class="content">
+        <div id="login-box" class="login-popup">
+            <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
+                    alt="Close" /></a>
+            <div class="join-us-box">
+                <div class="left-div">
+                    <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
+                    <p style="font-size: 14px;color: #FFFFFF;">
+                        Students' Developers Club<br>National Institute of Technology, Patna
+                    </p>
+                    <form action="#" style="margin-top: 40px;">
+                        <input type="email" name="email" placeholder="Email Address">
+                        <input type="password" name="pass" placeholder="Password">
+                        <input type="submit" id="signin-btn" value="Sign In">
+                    </form>
+                    <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
+                    <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
+                    <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
+                </div>
+                <div class="right-div">
+                    <p style="font-weight:bold;font-size:60px;">Create an account</p>
+                    <p style="font-size:30px;">Just a few basic details</p>
+                    <form action="#" style="margin-top: 40px;">
+                        <div class="name">
+                            <input type="text" name="fname" placeholder="First Name">
+                            <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+                        </div>
+                        <div class="details">
                             <input type="email" name="email" placeholder="Email Address">
-                            <input type="password" name="pass" placeholder="Password">
-                            <input type="submit" id="signin-btn" value="Sign In">
-                        </form>
-                        <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
-                        <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
-                        <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
-                    </div>
-                    <div class="right-div">
-                        <p style="font-weight:bold;font-size:60px;">Create an account</p>
-                        <p style="font-size:30px;">Just a few basic details</p>
-                        <form action="#" style="margin-top: 40px;">
-                            <div class="name">
-                                <input type="text" name="fname" placeholder="First Name">
-                                <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
-                            </div>
-                            <div class="details">
-                                <input type="email" name="email" placeholder="Email Address">
-                                <input type="password" name="pass" placeholder="Enter a Password">
-                                <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                                <input type="text" name="git-id" placeholder="Git ID(Optional)">
-                            </div>
-                            <input type="submit" id="signup-btn" value="Create Account">
-                        </form>
-                    </div>
+                            <input type="password" name="pass" placeholder="Enter a Password">
+                            <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
+                            <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                        </div>
+                        <input type="submit" id="signup-btn" value="Create Account">
+                    </form>
                 </div>
             </div>
         </div>
-        
-        <!-- / Join-Us PopUp -->
     </div>
+</div>
+
+<!-- / Join-Us PopUp -->
 
     <img src="assets/hall/hall-bg-1.svg"
          style="width: 540px; height: 360px; position: absolute; top: 150px; left:40px; z-index: -1;">

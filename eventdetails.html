@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -14,80 +13,110 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
-    <link href="https://fonts.googleapis.com/css?family=Mada&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script src="common_script.js"></script>
-    <meta charset="UTF-8">
-    <title>hackslash index</title>
-    <link rel="stylesheet" href="./style.css">
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Mada&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="common_script.js"></script>
+  <meta charset="UTF-8">
+  <title>hackslash index</title>
+  <link rel="stylesheet" href="./style.css">
 
-    <style type="text/css">
-        html, body {
-    max-width: 100%;
-}
-    </style>
+  <style type="text/css">
+    html,
+    body {
+      max-width: 100%;
+      color: black;
+    }
+    .events_list {
+      position: absolute;
+      align-items: center;
+      width: auto;
+    }
+    .event {
+      width: 360px;
+      height: auto;
+      background-color: white;
+      overflow: hidden;
+      float: left;
+      margin-left: 4%;
+      margin-right: 3%;
+      margin-bottom: 4%;
+      padding-bottom: 20px;
+      box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
+    }
+  </style>
 
 </head>
 
-<body>
-    <div id="container">
-        <div id="nav-box">
-          <nav>
-            <a href="index.html" id="nav_home">hackslash</a>
-            <ul>
-              <li><a href="#" id="nav_selected">Events</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Hall of Fame</a></li>
-              <li><a href="#">Articles</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#login-box" class="login-window">Join Us</a></li>
-            </ul>
+<body style="overflow-x: hidden;">
+  <div id="container">
+    <div id="nav-box">
+      <nav>
+        <a href="index.html" id="nav_home">hackslash</a>
+        <ul>
+          <li><a href="#" id="nav_selected">Events</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Hall of Fame</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#login-box" class="login-window join-us-btn">Join Us</a></li>
+          </ul>
           </nav>
-        </div>
-        <!-- Join-Us PopUp -->
-        <div class="content">
-          <div id="login-box" class="login-popup">
-            <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window" alt="Close" /></a>
-            <div class="join-us-box">
-              <div class="left-div">
-                <p class="signin-heading" style="font-size: 48px;color: #FFFFFF;">hackslash</p>
-                <p style="font-size: 14px;color: #FFFFFF;">
-                  Students' Developers Club<br>National Institute of Technology, Patna
-                </p>
-                <form action="#" style="margin-top: 40px;">
-                  <input type="email" name="email" placeholder="Email Address">
-                  <input type="password" name="pass" placeholder="Password">
-                  <input type="submit" id="signin-btn" value="Sign In">
-                </form>
-                <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
-                <button class="signin-btns"><i class="fab fa-github"></i> Sign in with GitHub</button>
-                <button class="signin-btns"><i class="fab fa-google"></i> Sign in with Google</button>
-              </div>
-              <div class="right-div">
-                <p style="font-weight:bold;font-size:60px;">Create an account</p>
-                <p style="font-size:30px;">Just a few basic details</p>
-                <form action="#" style="margin-top: 40px;">
-                  <div class="name">
-                    <input type="text" name="fname" placeholder="First Name">
-                    <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
-                  </div>
-                  <div class="details">
-                    <input type="email" name="email" placeholder="Email Address">
-                    <input type="password" name="pass" placeholder="Enter a Password">
-                    <input type="password" name="confirm-pass" placeholder="Re-Enter Password">
-                    <input type="text" name="git-id" placeholder="Git ID(Optional)">
-                  </div>
-                  <input type="submit" id="signup-btn" value="Create Account">
-                </form>
+          </div>
+          <!-- Join-Us PopUp -->
+          <div class="content">
+            <div id="login-box" class="login-popup">
+              <a href="#" class="close-btn"><img src="assets/js-square.svg" class="btn_close" title="Close Window"
+                  alt="Close" /></a>
+              <div class="join-us-box">
+                <div class="left-div" >
+                  <p class="signin-heading" style="font-size: 48px;">hackslash</p>
+                  <p style="font-size: 14px">
+                    Students' Developers Club<br>National Institute of Technology, Patna
+                  </p>
+                  <form action="#" style="margin-top: 40px;">
+                    <input type="email" name="email" id="signin-email" placeholder="Email Address" required>
+                    <input type="password" name="pass" id="signin-pass" placeholder="Password" required>
+                    <input type="button" id="signin-btn" value="Sign In" onclick="userSignIn()">
+                  </form>
+                  <p style="text-align:center;margin:15px;font-size: 42px;">or</p>
+                  <button class="signin-btns" onclick="signInWithGithub()"><i class="fab fa-github"></i> Sign in with
+                    GitHub</button>
+                  <button class="signin-btns" onclick="signInWithGoogle()"><i class="fab fa-google"></i> Sign in with
+                    Google</button>
+                </div>
+                <div class="right-div" >
+                  <p style="font-weight:bold;font-size:60px;">Create an account</p>
+                  <p style="font-size:30px;">Just a few basic details</p>
+                  <form action="#" style="margin-top: 40px;">
+                    <div class="name">
+                      <input type="text" name="fname" placeholder="First Name">
+                      <input type="text" style="margin-left: 15px;" name="lname" placeholder="Last Name">
+                    </div>
+                    <div class="details">
+                      <input type="email" name="email" id="signup-email" placeholder="Email Address" required>
+                      <input type="password" name="pass" id="signup-pass" placeholder="Enter a Password" required>
+                      <input type="password" name="confirm-pass" id="signup-conf-pass" placeholder="Re-Enter Password" required>
+                      <input type="text" name="git-id" placeholder="Git ID(Optional)">
+                    </div>
+                    <input type="button" id="signup-btn" value="Create Account" onclick="userSignUp()">
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <!-- / Join-Us PopUp -->
-      </div>
-      <!-- <div style="margin-left: 460px;visibility: hidden;">
+          
+          <!-- / Join-Us PopUp -->
+
+  </div>
+  <!-- <div style="margin-left: 460px;visibility: hidden;">
         <img src="assets/x-square.svg" style="position: absolute;
         width: 80px;
         height: 80px;
@@ -95,8 +124,8 @@
         margin-top: -65px;
         left: 1246px;
         top: 140px;">
-          <form style="width: 608px;height: 562px;background-color: #60B6E9;">
-            <h4 style=" 
+    <form style="width: 608px;height: 562px;background-color: #60B6E9;">
+      <h4 style=" 
             left: 820px;
             top: 243px;
             font-family: GT Walsheim Pro;
@@ -113,7 +142,7 @@
             display: flex;
             align-items: center;
             color: #FFFFFF;">Book your slot</h4>
-            <input placeholder="Name" style="width: 490px;
+      <input placeholder="Name" style="width: 490px;
             height: 53px;
             padding-left: 30px;
             margin-left: 50px;
@@ -122,7 +151,7 @@
             font-size: 24px;
             background: #FFFFFF;
             border-radius: 5px;" type="text"><br>
-            <input placeholder="College" style="width: 490px;
+      <input placeholder="College" style="width: 490px;
             height: 53px;
             padding-left: 30px;
             margin-top: 20px;
@@ -132,7 +161,7 @@
             font-size: 24px;
             background: #FFFFFF;
             border-radius: 5px;" type="text"><br>
-            <input placeholder="Degree" style="width: 112px;
+      <input placeholder="Degree" style="width: 112px;
             height: 53px;
             padding-left: 30px;
             margin-left: 50px;
@@ -140,7 +169,7 @@
             font-size: 24px;
             background: #FFFFFF;
             border-radius: 5px;" type="text">
-            <input placeholder="Branch" style="width: 328px;
+      <input placeholder="Branch" style="width: 328px;
             height: 53px;
             padding-left: 30px;
             margin-left: 10px;
@@ -149,7 +178,7 @@
             font-size: 24px;
             background: #FFFFFF;
             border-radius: 5px;" type="text"><br>
-            <input placeholder="Roll no." style="width: 210px;
+      <input placeholder="Roll no." style="width: 210px;
             height: 53px;
             padding-left: 30px;
             margin-left: 50px;
@@ -167,7 +196,7 @@
             font-size: 24px;
             background: #FFFFFF;
             border-radius: 5px;" type="text"><br><br>
-            <label style="width: 93px;
+      <label style="width: 93px;
             height: 34px;
             left: 714px;
             top: 615px;
@@ -178,11 +207,11 @@
             font-size: 24px;
             margin-left: 50px;
             color: #FFFFFF;">Gender</label>
-            <select style="margin-top: 0x; padding: 5px;margin-left: 5px;border-radius: 5px;">
-                <option value="volvo">Male</option>
-                <option value="saab">Female</option>
-            </select><br><br><br>
-            <input type="submit" style="width: 165px;
+      <select style="margin-top: 0x; padding: 5px;margin-left: 5px;border-radius: 5px;">
+        <option value="volvo">Male</option>
+        <option value="saab">Female</option>
+      </select><br><br><br>
+      <input type="submit" style="width: 165px;
             height: 53px;
             left: 1039px;
             top: 660px;
@@ -193,172 +222,430 @@
             border-radius: 10px;">
           </form>
       </div> -->
-    <img src="assets/eventDetailsBackground.svg" class="img-responsive" style="left: 0px;right: 0px;width: 100%;">
 
-    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-responsive" style="position: absolute;left: 4.74%;right: 4.74%;top: 5.3%;height: 55%;width: 91%;border-radius: 5px 5px 0px 0px;">  
-
-
-    <table style="position: absolute;top: 61.91%;">
-        <tr>
-            <td>
-                <p style="min-width: 1000px;bottom: 68.1%;left: 0%;right: 5%;font-family: GT Walsheim Pro;font-style: normal;font-size: 35px;color: #000000;">Kondoa Community Network School for Internet Governance</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p style="min-width: 800px;left: 0%;bottom: 59.59%;font-family: GT Walsheim Pro;font-style: normal;font-weight: normal;font-size: 20px;color: rgba(0, 0, 0, 0.54);">Ultricies eget tellus ullamcorper quisque turpis. Ornare quisque viverra cursus quam tempus. Fusce semper rhoncus sed eget nulla mi tincidunt mattis eget. Tortor a augue sit ut. Fermentum diam pellentesque donec tellus non habitant. Massa quam tempor sit nisl.</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="assets/seeLess.svg" style="position: absolute;left: 88.32%;right: 11.2%;top: 84.24%;bottom: 57.38%;height: 15%;" class="img-responsive">
-            </td>
-        </tr>
-    </table>
+  <img src="assets/eventDetailsBackground.svg" class="img-responsive" style="position: absolute;left: 0px;right: 0px;width: 100%;">
 
 
-    <table style="position: absolute;top: 96.70%;left: 4.74%;">
-        <tr>
-            <td>
-                <img src="assets/calender.svg" class="img-responsive" style="margin-left: 1vw;height: 40%;bottom: 54.86%;">
-            </td>
-            <td>
-                <p style="bottom: 55.03%;font-family: 'Mada', sans-serif;font-style: normal;font-weight: 600;font-size: 20px;min-width: 100px;margin-left: 10px;margin-bottom: 5px;display: flex;align-items: center;">21-02-2020</p>     
-            </td>
-            <td> 
-                <img src="assets/calender.svg" class="img-responsive" style="margin-left: 4vw;height: 40%;bottom: 54.86%;">
-            </td>
-            <td>
-                <p style="bottom: 55.03%;font-family: 'Mada', sans-serif;font-style: normal;font-weight: 600;font-size: 20px;min-width: 100px;margin-left: 10px;margin-bottom: 5px;display: flex;align-items: center;">22-02-2020</p>     
-            </td>
-            <td>
-                <img src="assets/clock.svg" class="img-responsive" style="margin-left: 14vw;height: 40%;bottom: 54.86%;">
-            </td>
-            <td>
-                <p style="bottom: 55.03%;font-family: 'Mada', sans-serif;font-style: normal;font-weight: 600;font-size: 20px;min-width: 100px;margin-left: 10px;margin-bottom: 5px;display: flex;align-items: center;">10:00AM-1:00PM</p>    
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="assets/calender.svg" class="img-responsive" style="margin-left: 1vw;height: 40%;bottom: 54.86%;">
-            </td>
-            <td>
-                <p style="bottom: 55.03%;font-family: 'Mada', sans-serif;font-style: normal;font-weight: 600;font-size: 20px;min-width: 100px;margin-left: 10px;margin-bottom: 5px;display: flex;align-items: center;">23-02-2020</p>     
-            </td>
-        </tr>
-    </table>
+  <img
+    src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+    class="img-responsive"
+    style="position: absolute;left: 6%;right: 6%;top: 5.3%;height: 55%;width: 88.5%;border-radius: 5px 5px 0px 0px;">
+
+  <div style="background-color: #FFFFFF;height: 160%;">
+  <table style="position: absolute;top: 61.91%;margin-left: 2%;margin-right: 5%;">
+    <tr>
+      <td>
+        <p
+          style="bottom: 68.1%;left: 0%;right: 5%;font-family: GT Walsheim Pro;font-style: normal;font-size: 2.7vw;color: #000000;">
+          Kondoa Community Network School for Internet Governance</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p
+          style="left: 0%;bottom: 59.59%;font-family: GT Walsheim Pro;font-style: normal;font-weight: normal;font-size: 1.6vw;color: rgba(0, 0, 0, 0.54);">
+
+          Ultricies eget tellus ullamcorper quisque turpis. Ornare quisque viverra cursus quam tempus. Fusce semper rhoncus sed eget nulla mi tincidunt mattis eget. Tortor a augue sit ut. Fermentum diam pellentesque donec tellus non habitant. Massa quam tempor sit nisl.</p>
+      </td>
+    </tr>
+  </table>
+
+
+  <table style="position: absolute;top: 96.70%;left: 6%;">
+
+    <tr>
+      <td>
+        <img src="assets/calender.svg" class="img-responsive" style="margin-left: 1vw;height: 40%;bottom: 54.86%;">
+      </td>
+      <td>
+        <p
+          style="bottom: 55.03%;font-family: 'Mada', sans-serif;font-style: normal;font-weight: 600;font-size: 20px;min-width: 100px;margin-left: 10px;margin-bottom: 5px;display: flex;align-items: center;">
+          21-02-2020</p>
+      </td>
+      <td>
+        <img src="assets/calender.svg" class="img-responsive" style="margin-left: 4vw;height: 40%;bottom: 54.86%;">
+      </td>
+      <td>
+        <p
+          style="bottom: 55.03%;font-family: 'Mada', sans-serif;font-style: normal;font-weight: 600;font-size: 20px;min-width: 100px;margin-left: 10px;margin-bottom: 5px;display: flex;align-items: center;">
+          22-02-2020</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="assets/clock.svg" class="img-responsive" style="margin-left: 1vw;height: 40%;bottom: 54.86%;">
+
+      </td>
+      <td>
+        <p
+          style="bottom: 55.03%;font-family: 'Mada', sans-serif;font-style: normal;font-weight: 600;font-size: 20px;min-width: 100px;margin-left: 10px;margin-bottom: 5px;display: flex;align-items: center;">
+          10:00AM-1:00PM</p>
+
+      </td>
+    </tr>
+  </table>
 
 
 
-    <table style="position: absolute;left: 4.74%;top: 122.70%;">
-        <tr>
-            <td>
-                <img src="assets/location.svg" class="img-responsive" style="height: 30%;bottom: 54.86%;">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p style="font-family: GT Walsheim Pro;font-style: normal;font-weight: 600;font-size: 22px;margin-left: 3.5%;">South Hatiara,30c Bus Stop,Hatiyara, Kolkata, West Bengal 700157</p>    
-            </td>
-            <td>
-                <img src="https://images.unsplash.com/photo-1566935843973-aed0ddcb0ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1015&q=80" class="img-responsive" style="height: 13%;width: 30%;margin-left: 20.74%;">
-            </td>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <tr>
-            <td>
-                <img src="assets/register.svg" class="img-responsive" style="height: 35%;margin-left: 3.5%;">
-            </td>
-        </tr>
-    </table>
+  <table style="position: absolute;left: 7.1%;top: 122.70%;">
+
+    <tr>
+      <td>
+        <img src="assets/location.svg" class="img-responsive" style="height: 30%;bottom: 54.86%;">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p style="font-family: GT Walsheim Pro;font-style: normal;font-weight: 600;font-size: 22px;margin-left: 3.5%;">
+          South Hatiara,30c Bus Stop,Hatiyara, Kolkata, West Bengal 700157</p>
+      </td>
+      <td>
+        <img
+          src="https://images.unsplash.com/photo-1566935843973-aed0ddcb0ecc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1015&q=80"
+          class="img-responsive" style="height: 13%;width: 30%;margin-left: 20.74%;">
+      </td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+      <td>
+        <img src="assets/register.svg" class="img-responsive" style="height: 35%;margin-left: 3.5%;">
+      </td>
+    </tr>
+  </table>
+  </div>
 
 
-    <img src="assets/bottomPhoto.svg" class="img-responsive" style="position: absolute;width: 30%;height: 50%;right: 0%;top: 165%">
+
+  <img src="assets/bottomPhoto.svg" class="img-responsive"
+    style="position: absolute;width: 30%;height: 50%;right: 0%;top: 165%">
 
 
-    <p style="position: absolute;top: 165%;font-family: GT Walsheim Pro;font-size: 18px;color: #000000;">Similar Events</p>
-    <div class="row" style="position: absolute;top: 171%; left: 4.74%;">
-        <div class="col-md-8">
-            <div class="row">
-        <div class="col-md-6 mb-3">
-               <div style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 25%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-responsive" style="height: 260px;width: 100%;">
-                <p class="event_heading" style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the Heading of Test Similar Event</p>
-                <p class="event_heading" style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the Heading of Test Similar Event and also to test the position of event details for similar events.</p>
-                <table>
-                    <tr>
-                    <td>
-                        <img src="assets/calender.svg" class="img-responsive" style="height: 40%;margin-left:1vw;bottom: 54.86%;">
-                    </td>
-                    <td>
-                        <p style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 5px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">22-02-2020</p>   
-                        </td>
-                        <td> 
-                        <img src="assets/clock.svg" class="img-responsive" style="top: 90.40%;height: 40%;margin-left:2vw;bottom: 54.86%;">
-                    </td>
-                    <td>
-                        <p style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 5px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">10:00AM-1:00PM</p>    
-                    </td>
-                </tr>
-                </table>
-            </div>     
-        </div><div class="col-md-6 mb-3">
-               <div style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 25%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-responsive" style="height: 260px;width: 100%;">
-                <p class="event_heading" style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the Heading of Test Similar Event</p>
-                <p class="event_heading" style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the Heading of Test Similar Event and also to test the position of event details for similar events.</p>
-                <table>
-                    <tr>
-                    <td>
-                        <img src="assets/calender.svg" class="img-responsive" style="height: 40%;margin-left:1vw;bottom: 54.86%;">
-                    </td>
-                    <td>
-                        <p style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 5px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">22-02-2020</p>   
-                        </td>
-                        <td> 
-                        <img src="assets/clock.svg" class="img-responsive" style="top: 90.40%;height: 40%;margin-left:2vw;bottom: 54.86%;">
-                    </td>
-                    <td>
-                        <p style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 5px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">10:00AM-1:00PM</p>    
-                    </td>
-                </tr>
-                </table>
-            </div>     
-        </div><div class="col-md-6 mb-3">
-               <div style="background-color: #FFFFFF;box-shadow: 3px 3px 3px gray;width: 25%;min-width: 380px;border-radius: 5px 5px 5px 5px;">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-responsive" style="height: 260px;width: 100%;">
-                <p class="event_heading" style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the Heading of Test Similar Event</p>
-                <p class="event_heading" style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the Heading of Test Similar Event and also to test the position of event details for similar events.</p>
-                <table>
-                    <tr>
-                    <td>
-                        <img src="assets/calender.svg" class="img-responsive" style="height: 40%;margin-left:1vw;bottom: 54.86%;">
-                    </td>
-                    <td>
-                        <p style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 5px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">22-02-2020</p>   
-                        </td>
-                        <td> 
-                        <img src="assets/clock.svg" class="img-responsive" style="top: 90.40%;height: 40%;margin-left:2vw;bottom: 54.86%;">
-                    </td>
-                    <td>
-                        <p style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 5px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">10:00AM-1:00PM</p>    
-                    </td>
-                </tr>
-                </table>
-            </div>     
-        </div>
-    </div>
-        </div>
-        <div class="col-md-4">
-            
-        </div>
+  <p style="position: absolute;top: 165%;margin-left: 8.5%;font-family: GT Walsheim Pro;font-size: 18px;color: #000000;">Similar Events
+  </p>
+
+  <div style="position: absolute;top: 172%; left: 4.8%;">
+
+    <div class="event card bg-light mb-3">
+      <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              class="img-responsive" style="height: 260px;width: 100%;">
+            <p class="event_heading"
+              style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event</p>
+            <p class="event_heading"
+              style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event and also to test the position of event details for similar events.</p>
+            <table>
+              <tr>
+                <td>
+                  <img src="assets/calender.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:1vw;margin-bottom: 54.86%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    22-02-2020</p>
+                </td>
+                <td>
+                  <img src="assets/clock.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:2vw;margin-bottom: 36%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    10:00AM-1:00PM</p>
+                </td>
+              </tr>
+            </table>
     </div>
 
+    <div class="event card bg-light mb-3">
+      <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              class="img-responsive" style="height: 260px;width: 100%;">
+            <p class="event_heading"
+              style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event</p>
+            <p class="event_heading"
+              style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event and also to test the position of event details for similar events.</p>
+            <table>
+              <tr>
+                <td>
+                  <img src="assets/calender.svg" class="img-responsive"
 
-    
+                    style="height: 40%;margin-left:1vw;margin-bottom: 54.86%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
 
-    
-        
+                    22-02-2020</p>
+                </td>
+                <td>
+                  <img src="assets/clock.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:2vw;margin-bottom: 36%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    10:00AM-1:00PM</p>
+                </td>
+              </tr>
+            </table>
+
+    </div>
+
+
+    <div class="event card bg-light mb-3">
+      <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              class="img-responsive" style="height: 260px;width: 100%;">
+            <p class="event_heading"
+              style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event</p>
+            <p class="event_heading"
+              style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event and also to test the position of event details for similar events.</p>
+            <table>
+              <tr>
+                <td>
+                  <img src="assets/calender.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:1vw;margin-bottom: 54.86%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    22-02-2020</p>
+                </td>
+                <td>
+                  <img src="assets/clock.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:2vw;margin-bottom: 36%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    10:00AM-1:00PM</p>
+                </td>
+              </tr>
+            </table>
+
+    </div>
+
+
+    <div class="event card bg-light mb-3">
+      <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              class="img-responsive" style="height: 260px;width: 100%;">
+            <p class="event_heading"
+              style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event</p>
+            <p class="event_heading"
+              style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event and also to test the position of event details for similar events.</p>
+            <table>
+              <tr>
+                <td>
+                  <img src="assets/calender.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:1vw;margin-bottom: 54.86%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    22-02-2020</p>
+                </td>
+                <td>
+                  <img src="assets/clock.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:2vw;margin-bottom: 36%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    10:00AM-1:00PM</p>
+                </td>
+              </tr>
+            </table>
+
+    </div>
+
+    <div class="event card bg-light mb-3">
+      <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              class="img-responsive" style="height: 260px;width: 100%;">
+            <p class="event_heading"
+              style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event</p>
+            <p class="event_heading"
+              style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event and also to test the position of event details for similar events.</p>
+            <table>
+              <tr>
+                <td>
+                  <img src="assets/calender.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:1vw;margin-bottom: 54.86%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    22-02-2020</p>
+                </td>
+                <td>
+                  <img src="assets/clock.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:2vw;margin-bottom: 36%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    10:00AM-1:00PM</p>
+                </td>
+              </tr>
+            </table>
+    </div>
+
+    <div class="event card bg-light mb-3">
+      <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              class="img-responsive" style="height: 260px;width: 100%;">
+            <p class="event_heading"
+              style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event</p>
+            <p class="event_heading"
+              style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event and also to test the position of event details for similar events.</p>
+            <table>
+              <tr>
+                <td>
+                  <img src="assets/calender.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:1vw;margin-bottom: 54.86%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    22-02-2020</p>
+                </td>
+                <td>
+                  <img src="assets/clock.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:2vw;margin-bottom: 36%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    10:00AM-1:00PM</p>
+                </td>
+              </tr>
+            </table>
+
+    </div>
+
+
+    <div class="event card bg-light mb-3">
+      <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              class="img-responsive" style="height: 260px;width: 100%;">
+            <p class="event_heading"
+              style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event</p>
+            <p class="event_heading"
+              style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event and also to test the position of event details for similar events.</p>
+            <table>
+              <tr>
+                <td>
+                  <img src="assets/calender.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:1vw;margin-bottom: 54.86%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    22-02-2020</p>
+                </td>
+                <td>
+                  <img src="assets/clock.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:2vw;margin-bottom: 36%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    10:00AM-1:00PM</p>
+                </td>
+              </tr>
+            </table>
+
+    </div>
+
+
+    <div class="event card bg-light mb-3">
+      <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              class="img-responsive" style="height: 260px;width: 100%;">
+            <p class="event_heading"
+              style="font-size: 22px;margin-left: 5%;line-height: 145%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event</p>
+            <p class="event_heading"
+              style="font-size: 16px;margin-left: 5%;line-height: 140%;font-family: GT Walsheim Pro;">This is the
+              Heading of Test Similar Event and also to test the position of event details for similar events.</p>
+            <table>
+              <tr>
+                <td>
+                  <img src="assets/calender.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:1vw;margin-bottom: 54.86%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    22-02-2020</p>
+                </td>
+                <td>
+                  <img src="assets/clock.svg" class="img-responsive"
+
+                    style="height: 40%;margin-left:2vw;margin-bottom: 36%;">
+                </td>
+                <td>
+                  <p
+                    style="font-family: 'Mada', sans-serif;margin-left: 10px;margin-bottom: 28px;font-style: normal;font-weight: 600;font-size: 15px;display: flex;align-items: center;">
+
+                    10:00AM-1:00PM</p>
+                </td>
+              </tr>
+            </table>
+    </div>
+
+
+  </div>
+
+
+
+
+
 </body>
+
 </html>
