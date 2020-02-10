@@ -57,6 +57,7 @@
 
         header {
             margin-left: 48px;
+            font-size: 5vw;
         }
 
         #description {
@@ -76,13 +77,49 @@
         }
 
         #ID {
-            width: 15%;
+            width: 100%;
             text-align: center;
             float: center;
+            margin-top: 32px;
+            border: 0px;
+            outline: none;
+            color: #111;
+            border-bottom: 1.25px solid #60b6e9;
         }
 
         #submit {
-            margin-top: 8px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+            background: #60b6e9;
+            border: 0px;
+            color: white;
+            padding-top: 8px;
+            padding-bottom: 6px;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-radius: 4px;
+            outline: none;
+            transition-duration: 0.4s;
+            animation-direction: normal;
+        }
+
+        #submit:hover {
+            background: #91d2f8;
+            border: 0px;
+        }
+
+        #submit:active {
+            background: #ceeafa;
+            border: 0px;
+        }
+
+        #name_holder, #event_holder, #college_holder, #date_holder{
+            color: #111;
+            margin: 0px;
+            text-align: left;
+            margin-left: 20%;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -91,23 +128,37 @@
     <div class="box">
         <div id="item1">
             <header>hackslash</header>
-            <p id="description" style="font-size: 20px">
+            <p id="description" style="font-size: 2vw; line-height: 2.5vw;">
                 Student Developer Club<br>National Institute of Technology, Patna
             </p>
         </div>
     </div>
 
-    <div>
+    <img src="assets/coderdojo.png" style="position: absolute; right: 16px; bottom: 16px; width: 35%; z-index: -1;">
+
+    <div style="text-align: center; width: 100%;">
         <p id="heading">Certificate Verification</p>
-        <div style="background-color: white;">
-            <div style="width: 100%; text-align: center;">
+        <div
+            style="background-color: white; width:400px; height: auto;  display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <div style="width: 300px; text-align: center; display: inline-block;">
                 <input type="text" id="ID" placeholder="Certificate ID here">
             </div>
 
             <div style="width: 100%; text-align: center;">
                 <input type="button" id="submit" value="VERIFY">
             </div>
+
+
+            <p style="color: green; margin: 0px; text-align: center; display: none;" id="success_toast">This certificate is valid</p>
+            <p style="color: red; margin: 0px; text-align: center; margin-bottom: 32px; display: none;" id="failure_toast">This certificate is invalid</p>
+            <div style="margin-bottom: 32px; margin-top: 16px;display: none;">
+                <p id="name_holder">Name: </p>
+                <p id="event_holder">Event: </p>
+                <p id="college_holder">College: </p>
+                <p id="date_holder">Date: </p>
+            </div>
         </div>
+
     </div>
 </body>
 
