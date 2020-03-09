@@ -1,8 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { EventsComponent } from './events/events.component';
+import { IndexComponent } from './index/index.component';
+import { AboutComponent } from './about/about.component';
+import { HallComponent } from './hall/hall.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { EventdetailsComponent } from './eventdetails/eventdetails.component';
 
-
-const routes: Routes = [];
+export const routes: Routes = [{ path: '', component: IndexComponent },
+{ path: 'events', component: EventsComponent },
+{ path: 'projects', component: ProjectsComponent },
+{ path: 'about', component: AboutComponent },
+{ path: 'hall', component: HallComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

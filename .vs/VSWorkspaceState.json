@@ -4,12 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\about",
-    "\\src\\app\\events",
     "\\src\\app\\hall",
     "\\src\\app\\index",
+    "\\src\\app\\login",
     "\\src\\app\\navbar",
-    "\\src\\app\\projects"
+    "\\src\\app\\projects",
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\projects\\projects.component.html",
+  "SelectedNode": "\\src\\environments\\environment.prod.ts",
   "PreviewInSolutionExplorer": false
 }

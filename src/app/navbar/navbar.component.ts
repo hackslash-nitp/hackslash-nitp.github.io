@@ -1,8 +1,8 @@
-import { Component,OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-navbar',
@@ -11,8 +11,12 @@ import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 })
 export class NavbarComponent {
 
-  
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
-  constructor() {}
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
 }

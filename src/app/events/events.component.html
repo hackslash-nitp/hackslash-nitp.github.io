@@ -1,328 +1,291 @@
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Mada&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-</head>
-<body style="padding: 0px">
-  <app-navbar></app-navbar>
+<body><img src="assets/eventDetailsBackground.svg" class="img-fluid"
+     style="position: absolute;left: 0px;right: 0px;width: 100%;">
 
-  <div id="container">
-    <div id="nav-box">
-      <nav>
-        <a routerLink="../" id="nav_home">hackslash</a>
-        <ul>
-          <li><a routerLink="../events" id="nav_selected">Events</a></li>
-          <li><a routerLink="../projects">Projects</a></li>
-          <li><a routerLink="../hall">Hall of Fame</a></li>
-          <li><a href="#">Articles</a></li>
-          <li><a routerLink="about">About Us</a></li>
-          <li><a href="#">Join Us</a></li>
-        </ul>
-      </nav>
+<img src="assets/girlImage.svg" class="img-responsive" style="position: absolute;top: 25%;float: right;left: 50%;height: 50%;width: 50%;">
+<table style="position: absolute;margin-left: 5%;top: 25%;">
+  <tr>
+    <td>
+      <p style="font-size: 4vw;">
+        Ready to join the movement?
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p id="event_subheading" style="font-size: 2.2vw;z-index: +1;width: 70%;">
+        Check out what's happening in the campus
+      </p>
+    </td>
+  </tr>
+</table>
+
+<table style="position: absolute;margin-left: 10%;top: 75%;">
+  <tr>
+    <td>
+      <img src="assets/events/events-ic-search.svg" id="search_icon">
+    </td>
+    <td>
+      <form id="search_field">
+        <input type="email" class="form-control form-control-underlined" placeholder="Search events">
+      </form>
+    </td>
+  </tr>
+</table>
+
+<div class="selected_tab">Upcoming</div>
+<div class="unselected_tab">Past</div>
+<div class="line"></div>
+
+<div class="events_list">
+
+  <div class="card col-sm-6 col-lg-3 item">
+    <img class="card-img-top"
+         src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    <div class="location">
+      <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+           style="margin-right: 4px;margin-top: -2px;">
+      Location
+    </div>
+    <p class="event_heading">
+      Git & GitHub Workshop
+    </p>
+    <p class="event_subheading">
+      An introductory workshop to the most popular version control system
+    </p>
+    <div style="align-items: center; padding-left: 16px;">
+
+      <div class="event_date">
+        <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        21-02-2020
+      </div>
+
+      <div class="event_time">
+        <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        10:00 AM - 01:00 PM
+      </div>
     </div>
   </div>
 
-  <img src="assets/events/events-bg-1.svg" style="margin-left: 0px; left:0px;">
+  <div class="card col-sm-6 col-lg-3 item">
+    <img class="card-img-top"
+         src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    <div class="location">
+      <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+           style="margin-right: 4px;margin-top: -2px;">
+      Location
+    </div>
+    <p class="event_heading">
+      Git & GitHub Workshop
+    </p>
+    <p class="event_subheading">
+      An introductory workshop to the most popular version control system
+    </p>
+    <div style="align-items: center; padding-left: 16px;">
 
-  <img src="assets/events/events-bg-2.svg"
-       style="margin-right: 90px;margin-top: 136px; height: 100%; width: 40%; float: right;">
-
-  <p id="event_heading">
-    Ready to join the movement?
-  </p>
-
-  <p id="event_subheading">
-    Check out what's happening in the campus
-  </p>
-  <div id="search">
-    <img src="assets/events/events-ic-search.svg" id="search_icon">
-    <form id="search_field">
-      <input type="email" class="form-control form-control-underlined" placeholder="Search events">
-    </form>
-  </div>
-
-  <div class="event_tab">
-    <div class="selected_tab">Upcoming</div>
-    <div class="unselected_tab">Past</div>
-    <div class="line"></div>
-  </div>
-
-  <div class="events_list">
-
-    <div class="event card bg-light mb-3">
-      <img class="card-img-top"
-           src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-      <div class="location">
-        <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+      <div class="event_date">
+        <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
              style="margin-right: 4px;margin-top: -2px;">
-        Location
+        21-02-2020
       </div>
-      <p class="event_heading">
-        Git & GitHub Workshop
-      </p>
-      <p class="event_subheading">
-        An introductory workshop to the most popular version control system
-      </p>
-      <div style="align-items: center; padding-left: 16px;">
 
-        <div class="event_date">
-          <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          21-02-2020
-        </div>
-
-        <div class="event_time">
-          <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          10:00 AM - 01:00 PM
-        </div>
+      <div class="event_time">
+        <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        10:00 AM - 01:00 PM
       </div>
     </div>
 
-    <div class="event card bg-light mb-3" >
-      <img class="card-img-top"
-           src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-      <div class="location">
-        <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
-             style="margin-right: 4px;margin-top: -2px;">
-        Location
-      </div>
-      <p class="event_heading">
-        Git & GitHub Workshop
-      </p>
-      <p class="event_subheading">
-        An introductory workshop to the most popular version control system
-      </p>
-      <div style="align-items: center; padding-left: 16px;">
-
-        <div class="event_date">
-          <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          21-02-2020
-        </div>
-
-        <div class="event_time">
-          <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          10:00 AM - 01:00 PM
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="event card bg-light mb-3">
-      <img class="card-img-top"
-           src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-      <div class="location">
-        <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
-             style="margin-right: 4px;margin-top: -2px;">
-        Location
-      </div>
-      <p class="event_heading">
-        Git & GitHub Workshop
-      </p>
-      <p class="event_subheading">
-        An introductory workshop to the most popular version control system
-      </p>
-      <div style="align-items: center; padding-left: 16px;">
-
-        <div class="event_date">
-          <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          21-02-2020
-        </div>
-
-        <div class="event_time">
-          <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          10:00 AM - 01:00 PM
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="event card bg-light mb-3">
-      <img class="card-img-top"
-           src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-      <div class="location">
-        <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
-             style="margin-right: 4px;margin-top: -2px;">
-        Location
-      </div>
-      <p class="event_heading">
-        Git & GitHub Workshop
-      </p>
-      <p class="event_subheading">
-        An introductory workshop to the most popular version control system
-      </p>
-      <div style="align-items: center; padding-left: 16px;">
-
-        <div class="event_date">
-          <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          21-02-2020
-        </div>
-
-        <div class="event_time">
-          <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          10:00 AM - 01:00 PM
-        </div>
-      </div>
-
-    </div>
-
-    <div class="event card bg-light mb-3">
-      <img class="card-img-top"
-           src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-      <div class="location">
-        <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
-             style="margin-right: 4px;margin-top: -2px;">
-        Location
-      </div>
-      <p class="event_heading">
-        Git & GitHub Workshop
-      </p>
-      <p class="event_subheading">
-        An introductory workshop to the most popular version control system
-      </p>
-      <div style="align-items: center; padding-left: 16px;">
-
-        <div class="event_date">
-          <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          21-02-2020
-        </div>
-
-        <div class="event_time">
-          <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          10:00 AM - 01:00 PM
-        </div>
-      </div>
-    </div>
-
-    <div class="event card bg-light mb-3">
-      <img class="card-img-top"
-           src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-      <div class="location">
-        <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
-             style="margin-right: 4px;margin-top: -2px;">
-        Location
-      </div>
-      <p class="event_heading">
-        Git & GitHub Workshop
-      </p>
-      <p class="event_subheading">
-        An introductory workshop to the most popular version control system
-      </p>
-      <div style="align-items: center; padding-left: 16px;">
-
-        <div class="event_date">
-          <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          21-02-2020
-        </div>
-
-        <div class="event_time">
-          <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          10:00 AM - 01:00 PM
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="event card bg-light mb-3">
-      <img class="card-img-top"
-           src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-      <div class="location">
-        <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
-             style="margin-right: 4px;margin-top: -2px;">
-        Location
-      </div>
-      <p class="event_heading">
-        Git & GitHub Workshop
-      </p>
-      <p class="event_subheading">
-        An introductory workshop to the most popular version control system
-      </p>
-      <div style="align-items: center; padding-left: 16px;">
-
-        <div class="event_date">
-          <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          21-02-2020
-        </div>
-
-        <div class="event_time">
-          <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          10:00 AM - 01:00 PM
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="event card bg-light mb-3">
-      <img class="card-img-top"
-           src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-      <div class="location">
-        <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
-             style="margin-right: 4px;margin-top: -2px;">
-        Location
-      </div>
-      <p class="event_heading">
-        Git & GitHub Workshop
-      </p>
-      <p class="event_subheading">
-        An introductory workshop to the most popular version control system
-      </p>
-      <div style="align-items: center; padding-left: 16px;">
-
-        <div class="event_date">
-          <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          21-02-2020
-        </div>
-
-        <div class="event_time">
-          <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;">
-          10:00 AM - 01:00 PM
-        </div>
-      </div>
-    </div>
-
-    <nav aria-label="Page navigation example" class="pagination">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
   </div>
 
 
-  <img src="assets/events/events-bg-4.svg"
-       style="height: 50vw; width: 75%; margin-right: -350px; float: right; margin-top: -300px;">
-  <img src="assets/events/events-bg-3.svg"
-       style="margin-left: -450px;height: 50vw; width: 75%; margin-right: 0px; right: -100px; float: left;">
-  <img src="assets/events/events-bg-5.svg"
-       style="margin-bottom: 0px; bottom: 80px; height: 50vw; width: 75%; margin-right: 0px; right: -100px; float: right;">
+  <div class="card col-sm-6 col-lg-3 item">
+    <img class="card-img-top"
+         src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    <div class="location">
+      <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+           style="margin-right: 4px;margin-top: -2px;">
+      Location
+    </div>
+    <p class="event_heading">
+      Git & GitHub Workshop
+    </p>
+    <p class="event_subheading">
+      An introductory workshop to the most popular version control system
+    </p>
+    <div style="align-items: center; padding-left: 16px;">
+
+      <div class="event_date">
+        <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        21-02-2020
+      </div>
+
+      <div class="event_time">
+        <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        10:00 AM - 01:00 PM
+      </div>
+    </div>
+
+  </div>
 
 
-</body>
+  <div class="card col-sm-6 col-lg-3 item">
+    <img class="card-img-top"
+         src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    <div class="location">
+      <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+           style="margin-right: 4px;margin-top: -2px;">
+      Location
+    </div>
+    <p class="event_heading">
+      Git & GitHub Workshop
+    </p>
+    <p class="event_subheading">
+      An introductory workshop to the most popular version control system
+    </p>
+    <div style="align-items: center; padding-left: 16px;">
+
+      <div class="event_date">
+        <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        21-02-2020
+      </div>
+
+      <div class="event_time">
+        <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        10:00 AM - 01:00 PM
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card col-sm-6 col-lg-3 item">
+    <img class="card-img-top"
+         src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    <div class="location">
+      <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+           style="margin-right: 4px;margin-top: -2px;">
+      Location
+    </div>
+    <p class="event_heading">
+      Git & GitHub Workshop
+    </p>
+    <p class="event_subheading">
+      An introductory workshop to the most popular version control system
+    </p>
+    <div style="align-items: center; padding-left: 16px;">
+
+      <div class="event_date">
+        <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        21-02-2020
+      </div>
+
+      <div class="event_time">
+        <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        10:00 AM - 01:00 PM
+      </div>
+    </div>
+  </div>
+
+  <div class="card col-sm-6 col-lg-3 item">
+    <img class="card-img-top"
+         src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    <div class="location">
+      <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+           style="margin-right: 4px;margin-top: -2px;">
+      Location
+    </div>
+    <p class="event_heading">
+      Git & GitHub Workshop
+    </p>
+    <p class="event_subheading">
+      An introductory workshop to the most popular version control system
+    </p>
+    <div style="align-items: center; padding-left: 16px;">
+
+      <div class="event_date">
+        <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        21-02-2020
+      </div>
+
+      <div class="event_time">
+        <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        10:00 AM - 01:00 PM
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="card col-sm-6 col-lg-3 item">
+    <img class="card-img-top"
+         src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    <div class="location">
+      <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+           style="margin-right: 4px;margin-top: -2px;">
+      Location
+    </div>
+    <p class="event_heading">
+      Git & GitHub Workshop
+    </p>
+    <p class="event_subheading">
+      An introductory workshop to the most popular version control system
+    </p>
+    <div style="align-items: center; padding-left: 16px;">
+
+      <div class="event_date">
+        <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        21-02-2020
+      </div>
+
+      <div class="event_time">
+        <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        10:00 AM - 01:00 PM
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="card col-sm-6 col-lg-3 item">
+    <img class="card-img-top"
+         src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+    <div class="location">
+      <img src="assets/events/event-ic-location.svg" width="12px" height="12px"
+           style="margin-right: 4px;margin-top: -2px;">
+      Location
+    </div>
+    <p class="event_heading">
+      Git & GitHub Workshop
+    </p>
+    <p class="event_subheading">
+      An introductory workshop to the most popular version control system
+    </p>
+    <div style="align-items: center; padding-left: 16px;">
+
+      <div class="event_date">
+        <img src="assets/events/event-ic-date.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        21-02-2020
+      </div>
+
+      <div class="event_time">
+        <img src="assets/events/event-ic-time.svg" width="12px" height="12px"
+             style="margin-right: 4px;margin-top: -2px;">
+        10:00 AM - 01:00 PM
+      </div>
+    </div>
+  </div>
+
+</div>
+  </body>
