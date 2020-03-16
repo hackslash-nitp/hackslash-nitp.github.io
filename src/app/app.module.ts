@@ -15,37 +15,40 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventsComponent } from './events/events.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { IndexComponent } from './index/index.component';
 import { AboutComponent } from './about/about.component';
 import { HallComponent } from './hall/hall.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EventdetailsComponent } from './eventdetails/eventdetails.component';
+import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { routes } from './app-routing.module';
 
-const appRoutes: Routes = [
-  { path: '', component: IndexComponent },
-  { path: 'events', component: EventsComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'hall', component: HallComponent },
-]
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     EventsComponent,
-    NavbarComponent,
     IndexComponent,
     AboutComponent,
     HallComponent,
     ProjectsComponent,
-    EventdetailsComponent
+    EventdetailsComponent,
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.config),
     LayoutModule,
     NavbarModule,
+    BrowserAnimationsModule,
     MDBBootstrapModule,
     IconsModule,
     WavesModule,
@@ -55,7 +58,7 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(routes),
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
@@ -67,7 +70,7 @@ const appRoutes: Routes = [
     DropdownModule.forRoot(),
     NavbarModule,
     IconsModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
