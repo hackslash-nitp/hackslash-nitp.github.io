@@ -67,7 +67,19 @@
     </script>
     
 </head>
-<style>     
+<style>    
+.normal_nav{
+    width:1875px!important;
+    height:65px
+}
+.menu{
+    margin-top:0px;
+    height: 66px;
+    margin-bottom: 16px!important;
+}
+.item{
+                margin-top: 1px;
+            }
         main{
             display: grid;
             grid-template-columns: 1fr repeat(12 ,minmax(auto,60px)),1fr;
@@ -130,12 +142,13 @@
             .card{
                 grid-column-end: span 12;
             }
+
         }
 </style>
 <body style="padding: 0px">
     <nav class="normal_nav">
         <ul class="menu">
-            <li class="logo"><a href="index.html" style="font-size: 50px; font-family: 'GT Walsheim Pro'; position: absolute; padding: 0px; left: 90px; top: 8px;">hackslash</a></li>
+            <li class="logo"><a href="index.html" style="margin-top:4px;font-size: 50px; font-family: 'GT Walsheim Pro'; position: absolute; padding: 0px; left: 90px;height:75px; top: 8px;">hackslash</a></li>
             <li class="item"><a href="events.html">Events</a></li>
             <li class="item"><a href="projects.html" id="nav_selected">Projects</a></li>
             <li class="item"><a href="hall.html">Hall of Fame</a></li>
