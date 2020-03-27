@@ -27,6 +27,7 @@ import { routes } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ArticlesComponent } from './articles/articles.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ProjectsComponent,
     EventdetailsComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,

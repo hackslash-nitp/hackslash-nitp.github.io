@@ -24,3 +24,39 @@ a {
   color: white;
   
 }
+.mat-list-item {
+  border-radius: 15px;
+  margin: 2px 14px;
+  padding: 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  transition: 0.5s ease;
+  font-size: 1.2rem;
+}
+  .mat-list-item:hover{
+    background-color: white;
+    color: #60b6e9;
+    box-shadow: rgba(255, 255, 255, 0.6) 0px 2px 12px;
+    border-radius: 15px;
+  }
+
+.navitem {
+  border-radius: 15px;
+  margin: 2px 14px;
+  padding: 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  transition: 0.5s ease;
+}
+
+  .navitem:hover {
+    background-color: white;
+    color: #60b6e9;
+    box-shadow: rgba(255, 255, 255, 0.6) 0px 2px 12px;
+    border-radius: 15px;
+  }
+ .router-outlet{
+     background:white;
+ }

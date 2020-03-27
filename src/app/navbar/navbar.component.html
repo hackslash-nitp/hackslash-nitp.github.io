@@ -8,12 +8,13 @@
       <a mat-list-item routerLink="events">Events</a>
       <a mat-list-item routerLink="projects">Projects</a>
       <a mat-list-item routerLink="hall">Hall of Fame</a>
-      <a mat-list-item href="#">Articles</a>
+      <a mat-list-item routerLink="articles">Articles</a>
       <a mat-list-item routerLink="about">About Us</a>
-      <a mat-list-item href="#">Join Us</a>
+      <a mat-list-item routerLink="login">Join Us</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+
     <mat-toolbar>
       <button
         type="button"
@@ -23,15 +24,15 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">.</mat-icon>
       </button>
-      <span><a routerLink="" style="color:white;font-size:larger">hackslash</a></span>
+      <span><a routerLink="" style="color:white;font-size:1.5rem;" >hackslash</a></span>
       <span style="flex : 1 1 auto"></span>
       <div *ngIf="(isHandset$|async)==false">
-        <a routerLink="events">Events</a>
-        <a  routerLink="projects">Projects</a>
-        <a  routerLink="hall">Hall of Fame</a>
-        <a routerLink="article">Articles</a>
-        <a  routerLink="about">About Us</a>
-        <a routerLink="login">Join Us</a>
+        <a class="navitem" routerLink="events">Events</a>
+        <a class="navitem"  routerLink="projects">Projects</a>
+        <a class="navitem"  routerLink="hall">Hall of Fame</a>
+        <a class="navitem" routerLink="articles">Articles</a>
+        <a class="navitem"  routerLink="about">About Us</a>
+        <a class="navitem" routerLink="login">Join Us</a>
       </div>
     </mat-toolbar>
    <router-outlet></router-outlet>

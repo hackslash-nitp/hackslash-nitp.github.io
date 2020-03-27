@@ -1,163 +1,136 @@
-
-body {
-  overflow-x: hidden;
+.article-clean {
+  color: #56585b;
+  background-color: #fff;
+  font-family: Lora,serif;
+  font-size: 14px
 }
 
-.page_heading {
-  font-family: GT Walsheim Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 60px;
-  width: 40%;
-  margin-right: 16px;
-  margin-top: 223px;
-  margin-left: 40%;
-  line-height: 121.73%;
-  /* or 88px */
-  color: #3A454B;
+  .article-clean .intro {
+    font-size: 16px;
+    margin: 0 auto 30px
+  }
+
+    .article-clean .intro h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      padding-top: 20px;
+      line-height: 1.5;
+      color: inherit;
+      margin-top: 20px
+    }
+
+  .article-clean .text h2, .article-clean .text p {
+    line-height: 1.45;
+    margin-bottom: 20px
+  }
+
+  .article-clean .intro p {
+    color: #929292;
+    font-size: 12px
+  }
+
+    .article-clean .intro p .by {
+      font-style: italic
+    }
+
+    .article-clean .intro p .date {
+      text-transform: uppercase;
+      padding: 4px 0 4px 10px;
+      margin-left: 10px;
+      border-left: 1px solid #ddd
+    }
+
+    .article-clean .intro p a {
+      color: #333;
+      text-transform: uppercase;
+      padding-left: 3px
+    }
+
+  .article-clean .intro img {
+    margin-top: 20px
+  }
+
+  .article-clean .text h2 {
+    margin-top: 28px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333
+  }
+
+@media (min-width:768px) {
+  .article-clean .text p {
+    font-size: 16px
+  }
+
+  .article-clean .text h2 {
+    font-size: 20px
+  }
 }
 
-.page_subheading {
-  font-family: GT Walsheim Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 32px;
-  line-height: 42px;
-  width: 50%;
-  margin-left: 40%;
-  margin-right: 16px;
-  color: #3F82AA;
-}
-
-.line {
-  width: 90%;
-  height: 2px;
-  position: relative;
-  margin-top: 125px;
-  z-index: -1;
-  background-color: #A3A3A3;
-  display: inline-block;
-}
-
-#leads {
-  font-family: GT Walsheim Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 50px;
-  line-height: 66px;
-  z-index: 1;
-  background-color: white;
-  width: auto;
-  padding-left: 8px;
-  padding-right: 8px;
-  float: left;
-  margin-top: -40px;
-  margin-left: 100px;
-  color: #000000;
-}
-
-#members_list {
-  margin-top: 50px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 80px;
+.article-clean .text figure {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px
 }
 
-.member_card {
-  width: 300px;
-  height: 400px;
-  margin-top: 40px;
-  padding: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  display: inline-block;
-  box-shadow: 0px 0px 5px #CACACA;
-  background-color: #0085CA;
+  .article-clean .text figure img {
+    margin-bottom: 12px;
+    max-width: 100%
+  }
+
+float-left {
+  width: 50px
 }
 
-.member_name {
-  font-family: GT Walsheim Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 30px;
-  color: #0085CA;
-  width: 100%;
-  margin-left: 0px;
-  margin-top: 24px;
-  text-align: center;
+.float-left {
+  position: absolute
 }
 
-.member_post {
-  font-family: GT Walsheim Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 24px;
-  margin-top: -4px;
-  width: 100%;
-  margin-left: 0px;
-  text-align: center;
-  /* identical to box height */
-  color: #686868;
+@media (min-width:1000px) {
+  .float-left.visible.img-fluid {
+    width: 15%
+  }
 }
 
-.member_photo {
-  display: block;
-  border-radius: 200px;
-  box-sizing: border-box;
-  z-index: 5;
-  width: 120px;
-  height: 120px;
-  top: 100px;
-  left: 87px;
-  margin-left: 0px;
-  position: absolute;
-  border: 3px solid #0085CA;
+@media (min-width:1200px) {
+  h1 {
+    font-size: 4rem;
+    margin-left: 200px
+  }
+
+  h4 {
+    font-size: 2.5rem;
+    margin-left: 20px
+  }
 }
 
-
-.about_me_header {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 22px;
-  /* identical to box height */
-  color: #FFFFFF;
-  margin-top: 230px;
-  width: 100%;
-  margin-left: 0px;
-  text-align: center;
+.form-control-plaintext {
+  border-top: 2px;
+  border-color: #000;
+  max-width: 1000px
 }
 
-.about_me {
-  width: 100%;
-  text-align: center;
-  font-family: Ubuntu;
-  font-style: normal;
-  font-weight: 100;
-  font-size: 16px;
-  line-height: 18px;
-  width: 100%;
-  margin-left: 0px;
-  text-align: center;
-  padding-left: 25px;
-  padding-right: 25px;
-  color: #FFFFFF;
+hr {
+  border-top: 2px solid
 }
 
-.links {
-  height: auto;
-  margin-top: 8px;
-  text-align: center;
+@media (max-width:1200px) {
+  h1 {
+    margin-left: 6px;
+    margin-top: 40px
+  }
+
+  .float-left.visible.img-fluid {
+    opacity: 0
+  }
+
+  .row {
+    margin: 0
+  }
 }
 
-.link {
-  width: 36px;
-  margin-left: 4px;
-  margin-right: 4px;
-  display: inline-block;
-  height: 36px;
+@media (min-width:1200px) {
+  h3 {
+    margin-left: 200px
+  }
 }
