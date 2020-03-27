@@ -874,6 +874,9 @@ endobjxref0 1750000000000 65535 f
 0000143330 00000 n
 trailer<</Size 175/Root 172 0 R/Info 173 0 R/ID[<48318A4B2798DB417A8EE706030906F9><48318A4B2798DB417A8EE706030906F9>]>>startxref144290%%EOF
 
+angularfire2/database
+MIT
+
 bootstrap
 MIT
 The MIT License (MIT)
@@ -902,7 +905,7 @@ THE SOFTWARE.
 
 core-js
 MIT
-Copyright (c) 2014-2019 Denis Pushkarev
+Copyright (c) 2014-2020 Denis Pushkarev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

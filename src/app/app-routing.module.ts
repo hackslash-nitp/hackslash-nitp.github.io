@@ -8,7 +8,6 @@ import { HallComponent } from './hall/hall.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EventdetailsComponent } from './eventdetails/eventdetails.component';
 import { ArticlesComponent } from './articles/articles.component';
-import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [{ path: '', component: IndexComponent },
 { path: 'events', component: EventsComponent },
@@ -16,7 +15,6 @@ export const routes: Routes = [{ path: '', component: IndexComponent },
 { path: 'about', component: AboutComponent },
   { path: 'hall', component: HallComponent },
   { path: 'articles', component: ArticlesComponent },
-  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

@@ -20,7 +20,6 @@ import { AboutComponent } from './about/about.component';
 import { HallComponent } from './hall/hall.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EventdetailsComponent } from './eventdetails/eventdetails.component';
-import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { routes } from './app-routing.module';
 
@@ -29,6 +28,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ArticlesComponent } from './articles/articles.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+
+import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { AgmCoreModule } from '@agm/core';
+import { Observable } from 'rxjs';
 
 
 @NgModule({
@@ -40,7 +44,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HallComponent,
     ProjectsComponent,
     EventdetailsComponent,
-    LoginComponent,
     NavbarComponent,
     ArticlesComponent
   ],

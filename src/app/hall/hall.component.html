@@ -19,32 +19,72 @@
 <div>
   <div class="row" style="margin-top: 87px;">
     <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
-      <h4 class="m-auto" id="head" style="font-family: cursive;">Heading</h4>
+      <h4 class="m-auto" id="head" style="font-family: cursive;display:flex;justify-content:center;color:white">Leads</h4>
     </div>
     <div class="col-xl-10">
       <hr>
     </div>
   </div>
-  <div class="card-group">
-    <div class="card border rounded shadow" style="margin: 40px;">
-      <img class="card-img-top w-100 d-block">
+  <div class="row" style="justify-content:center;">
+    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;background-color:rgb(1,51,84);padding:30px" *ngFor="let item of leads | async">
+      <img class="card-img-top w-100 d-block" >
       <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
+        <h4 class="card-title justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
+
+        <p class="card-text" style="color:white">
+          {{item.bio}}
+        </p>
+        <div class="location" style="display:flex;justify-content:center">
+          <a href="{{item.linkedin}}">
+            <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a>
+          <a href="{{item.github}}">
+            <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a><a href="{{item.medium}}">
+            <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a>
+        </div>
+
       </div>
     </div>
-    <div class="card border rounded shadow" style="margin: 40px;">
-      <img class="card-img-top w-100 d-block">
-      <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
-      </div>
+  </div>
+</div>
+
+<div>
+  <div class="row" style="margin-top: 87px;">
+    <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
+      <h4 class="m-auto" id="head" style="font-family: cursive;display:flex;justify-content:center;color:white">Developers</h4>
     </div>
-    <div class="card border rounded shadow" style="margin: 40px;">
+    <div class="col-xl-10">
+      <hr>
+    </div>
+  </div>
+  <div class="row" style="justify-content:center;">
+    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;background-color:rgb(1,51,84);padding:40px" *ngFor="let item of devs | async">
       <img class="card-img-top w-100 d-block">
       <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
+        <h4 class="card-title justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
+
+        <p class="card-text" style="color:white">
+          {{item.bio}}
+        </p>
+        <div class="location" style="display:flex;justify-content:center">
+          <a href="{{item.linkedin}}">
+            <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a>
+          <a href="{{item.github}}">
+            <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a><a href="{{item.medium}}">
+            <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -52,32 +92,35 @@
 <div>
   <div class="row" style="margin-top: 87px;">
     <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
-      <h4 class="m-auto" style="font-family: cursive;">Heading</h4>
+      <h4 class="m-auto" id="head" style="font-family: cursive;display:flex;justify-content:center;color:white">Designers</h4>
     </div>
-    <div class="col">
+    <div class="col-xl-10">
       <hr>
     </div>
   </div>
-  <div class="card-group">
-    <div class="card border rounded shadow" style="margin: 40px;">
+  <div class="row" style="justify-content:center;">
+    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;background-color:rgb(1,51,84);padding:40px" *ngFor="let item of designers | async">
       <img class="card-img-top w-100 d-block">
       <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
-      </div>
-    </div>
-    <div class="card border rounded shadow" style="margin: 40px;">
-      <img class="card-img-top w-100 d-block">
-      <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
-      </div>
-    </div>
-    <div class="card border rounded shadow" style="margin: 40px;">
-      <img class="card-img-top w-100 d-block">
-      <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
+        <h4 class="card-title justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
+
+        <p class="card-text" style="color:white">
+          {{item.bio}}
+        </p>
+        <div class="location" style="display:flex;justify-content:center">
+          <a href="{{item.linkedin}}">
+            <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a>
+          <a href="{{item.github}}">
+            <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a><a href="{{item.medium}}">
+            <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
+                 style="margin-right: 4px;margin-top: -2px;">
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
