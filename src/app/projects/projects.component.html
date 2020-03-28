@@ -35,13 +35,10 @@
         <a href="{{item.html_url}}"><img class="img-fluid" src="{{item.owner.avatar_url}}" /></a>
         <h4 class="card-title d-flex justify-content-center" style="font-family: GT Walsheim Pro;">{{item.name}}</h4>
         <div class="location" style="display:flex;justify-content:end">
-          <a href="{{item.forks_url}}">
-            <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:10px;">
-<path d="M10 0L12.29 2.29L9.41 5.17L10.83 6.59L13.71 3.71L16 6V0H10ZM6 0H0V6L2.29 3.71L7 8.41V16H9V7.59L3.71 2.29L6 0Z" fill="black" style="background-color:grey;"/>
-</svg>
-          </a>
+
           <p class="d-flex justify-content-center" style="background-color:grey;font-family:sans-serif;color:white;margin:10px">Fork  {{item.forks_count}}</p>
-          <p class="d-flex justify-content-center" style="background-color:grey;font-family:sans-serif;color:white;margin:10px;">Star  {{item.stars_count}}</p>
+          <p class="d-flex justify-content-center" style="background-color:grey;font-family:sans-serif;color:white;margin:10px;">Star  {{item.stargazers_count}}</p>
+          <p class="d-flex justify-content-center" style="background-color:grey;font-family:sans-serif;color:white;margin:10px;">Watch  {{item.watchers_count}}</p>
         </div>
         <p class="card-text d-flex justify-content-center" id="desc" style="font-family: Mada;">
           {{item.description}}
@@ -58,8 +55,11 @@
             <path d="M10.3913 13H11.4348" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
           </svg>
 
-          <h6 class="d-flex justify-content-center" style="background-color: #3E97BF;font-family: Mada;">{{item.created_at}}</h6>
+          <h6 class="d-flex justify-content-center" style="background-color: #3E97BF;font-family: Mada;color:white;font-size:25px;">{{item.created_at}}</h6>
+
         </div>
+        <a href="{{item.clone_url}}"><p class="d-flex justify-content-center" style="background-color:grey;font-family:sans-serif;color:white;margin:10px;">Clone Repository</p></a>
+
 
       </div>
     </div>
