@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NavbarModule, WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -53,6 +53,7 @@ import { Observable } from 'rxjs';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.config),
     LayoutModule,
+    HttpClientModule,
     NavbarModule,
     BrowserAnimationsModule,
     MDBBootstrapModule,
@@ -79,7 +80,7 @@ import { Observable } from 'rxjs';
     RouterModule.forRoot(routes),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

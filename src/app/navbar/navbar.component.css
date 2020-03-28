@@ -57,6 +57,12 @@ a {
     box-shadow: rgba(255, 255, 255, 0.6) 0px 2px 12px;
     border-radius: 15px;
   }
+  .active {
+    background-color: white;
+    color: #60b6e9;
+    box-shadow: rgba(255, 255, 255, 0.6) 0px 2px 12px;
+    border-radius: 15px;
+  }
  .router-outlet{
-     background:white;
+     background-color:white;
  }

@@ -5,11 +5,11 @@
                >
     <mat-toolbar><a routerLink="">hackslash</a></mat-toolbar>
     <mat-nav-list >
-      <a mat-list-item routerLink="events">Events</a>
-      <a mat-list-item routerLink="projects">Projects</a>
-      <a mat-list-item routerLink="hall">Hall of Fame</a>
-      <a mat-list-item routerLink="articles">Articles</a>
-      <a mat-list-item routerLink="about">About Us</a>
+      <a mat-list-item routerLink="events" routerLinkActive="active">Events</a>
+      <a mat-list-item routerLink="projects" routerLinkActive="active">Projects</a>
+      <a mat-list-item routerLink="hall" routerLinkActive="active">Hall of Fame</a>
+      <a mat-list-item routerLink="articles" routerLinkActive="active">Articles</a>
+      <a mat-list-item routerLink="about" routerLinkActive="active">About Us</a>
       <a mat-list-item href="http://www.hackslash.club/slack/">Join Us</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -22,16 +22,16 @@
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">.</mat-icon>
+        <img class="img-fluid" src="assets/icons/icon-512x512.png" />
       </button>
       <span><a routerLink="" style="color:white;font-size:1.5rem;" >hackslash</a></span>
       <span style="flex : 1 1 auto"></span>
       <div *ngIf="(isHandset$|async)==false">
-        <a class="navitem" routerLink="events">Events</a>
-        <a class="navitem"  routerLink="projects">Projects</a>
-        <a class="navitem"  routerLink="hall">Hall of Fame</a>
-        <a class="navitem" routerLink="articles">Articles</a>
-        <a class="navitem"  routerLink="about">About Us</a>
+        <a class="navitem" routerLink="events" routerLinkActive="active">Events</a>
+        <a class="navitem"  routerLink="projects" routerLinkActive="active">Projects</a>
+        <a class="navitem"  routerLink="hall" routerLinkActive="active">Hall of Fame</a>
+        <a class="navitem" routerLink="articles" routerLinkActive="active">Articles</a>
+        <a class="navitem"  routerLink="about" routerLinkActive="active">About Us</a>
         <a class="navitem" href="http://www.hackslash.club/slack/">Join Us</a>
       </div>
     </mat-toolbar>

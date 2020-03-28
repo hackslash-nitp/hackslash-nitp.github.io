@@ -98,9 +98,15 @@ float-left {
     margin-left: 200px
   }
 
-  h4 {
+  #intro {
     font-size: 2.5rem;
     margin-left: 200px;
+  }
+  h4{
+      font-size:2rem;
+  }
+  #desc{
+font-size:1.2rem;
   }
 }
 
