@@ -9,6 +9,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbCarousel, NgbModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownModule } from 'angular-bootstrap-md';
+import { ActivatedRoute, RouterState } from '@angular/router';
+
+
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -33,6 +36,7 @@ import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AgmCoreModule } from '@agm/core';
 import { Observable } from 'rxjs';
+import { NavComponent } from './index/nav/nav.component';
 
 
 @NgModule({
@@ -45,7 +49,8 @@ import { Observable } from 'rxjs';
     ProjectsComponent,
     EventdetailsComponent,
     NavbarComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +84,10 @@ import { Observable } from 'rxjs';
     IconsModule,
     RouterModule.forRoot(routes),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    
   ],
+  
+
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })

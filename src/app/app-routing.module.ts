@@ -8,13 +8,15 @@ import { HallComponent } from './hall/hall.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EventdetailsComponent } from './eventdetails/eventdetails.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { NavComponent } from './index/nav/nav.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
-export const routes: Routes = [{ path: '', component: IndexComponent },
-{ path: 'events', component: EventsComponent },
-{ path: 'projects', component: ProjectsComponent },
-{ path: 'about', component: AboutComponent },
-  { path: 'hall', component: HallComponent },
-  { path: 'articles', component: ArticlesComponent },
+export const routes: Routes = [{ path: '', component: IndexComponent, pathMatch: 'full' },
+  { path: 'events', component: EventsComponent,  pathMatch: 'full' },
+  { path: 'projects', component: ProjectsComponent,  pathMatch: 'full' },
+  { path: 'about', component: AboutComponent, pathMatch: 'full' },
+  { path: 'hall', component: HallComponent, pathMatch: 'full' },
+  { path: 'articles', component: ArticlesComponent,  pathMatch:'full' },
 ];
 
 @NgModule({

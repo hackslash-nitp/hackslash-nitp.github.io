@@ -1,15 +1,15 @@
 .sidenav-container {
-  background-color: white;
+  background-color: #60b6e9;
   height: 100%;
 }
 
 .sidenav {
-  background-color: white;
+  background-color: #60b6e9;
   width: 200px;
 }
 
   .sidenav .mat-toolbar {
-    background-color: white;
+    background-color: #60b6e9;
   }
 
 .mat-toolbar.mat-primary {
@@ -20,23 +20,23 @@
 
 a {
   font: bolder;
-  background-color: white;
+  background-color: #60b6e9;
+  margin:0px 0px 0px 0px;
 }
 
 .mat-list-item {
-  margin: 2px 14px;
   padding: 8px;
   text-decoration: none;
   display: inline-block;
-  color: #60b6e9;
+  color: white;
   transition: 0.5s ease;
   font-size: 1.2rem;
 }
 
   .mat-list-item:hover {
-    background-color: #60b6e9;
-    color: white;
-    box-sizing: padding-box;
+    background-color: white;
+    color: #60b6e9;
+    box-sizing:padding-box;
   }
 
 .navitem {
@@ -44,18 +44,16 @@ a {
   padding: 8px;
   text-decoration: none;
   display: inline-block;
-  color: #60b6e9;
+  color: white;
   transition: 0.5s ease;
 }
 
   .navitem:hover {
-    background-color: #60b6e9;
-    color: white;
+    background-color: white;
+    color: #60b6e9;
     border-radius: 15px;
   }
 
 .active {
-  color: white;
-  background-color: #60b6e9;
-  border-radius:5px;
+  color: #60b6e9;
 }

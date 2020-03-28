@@ -95,12 +95,11 @@ float-left {
 @media (min-width:1200px) {
   h1 {
     font-size: 4rem;
-    margin-left: 200px
   }
 
   #intro {
     font-size: 2.5rem;
-    margin-left: 200px;
+    margin-left: 50px;
   }
   h4{
       font-size:2rem;
