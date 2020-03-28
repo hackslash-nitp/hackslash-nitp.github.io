@@ -24,6 +24,10 @@ export class HallComponent implements OnInit {
 
   ngOnInit() {
   }
+ getRandomColor() {
+    var color = Math.floor(0x1000000 * Math.random()).toString(7);
+    return '#' + ('000000' + color).slice(-6);
+  }
 
 }
 

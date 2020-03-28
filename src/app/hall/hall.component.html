@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="row" style="justify-content:center;">
-    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;background-color:rgb(1,51,84);padding:30px" *ngFor="let item of leads | async">
+    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;padding:30px" [ngStyle]="{'background-color': getRandomColor()}" *ngFor="let item of leads | async">
       <img class="card-img-top w-100 d-block" >
       <div class="card-body">
         <h4 class="card-title d-flex justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
@@ -72,7 +72,7 @@
     </div>
   </div>
   <div class="row" style="justify-content:center;">
-    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;background-color:rgb(1,51,84);padding:40px" *ngFor="let item of devs | async">
+    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;padding:40px" [ngStyle]="{'background-color': getRandomColor()}" *ngFor="let item of devs | async">
       <img class="card-img-top w-100 d-block">
       <div class="card-body">
         <h4 class="card-title d-flex justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
@@ -116,7 +116,7 @@
     </div>
   </div>
   <div class="row" style="justify-content:center;">
-    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;background-color:rgb(1,51,84);padding:40px" *ngFor="let item of designers | async">
+    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;padding:40px" [ngStyle]="{'background-color': getRandomColor()}" *ngFor="let item of designers | async">
       <img class="card-img-top w-100 d-block">
       <div class="card-body">
         <h4 class="card-title d-flex justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
