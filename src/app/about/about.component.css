@@ -125,8 +125,8 @@ hr {
 }
 
 @media (min-width:1200px) {
-  h3,h6 {
-    margin-left: 150px
+  h3 {
+    margin-left: 50px
   }
   h6{
       font-size:1.2rem;
@@ -147,5 +147,6 @@ hr {
 @media(min-width:1200px){
     #t{
         margin-top:200px;
+        margin-left:0px;
     }
 }

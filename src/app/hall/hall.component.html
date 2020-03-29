@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div style="background-color:white;">
   <div>
-    <div class="row">
+    <div class="row d-flex">
       <div class="col-md-6 col-lg-4 col-xl-4 offset-xl-1" style="margin: 26px;margin-left: 0px;"><img class="visible img-fluid" src="assets/img/hall/hall-bg-1.svg" style="margin: 0px;margin-top: 0px;"></div>
       <div class="col-md-6 col-xl-7 d-flex flex-column justify-content-center">
         <div class="row d-flex justify-content-center">
@@ -15,62 +15,81 @@
           </div>
         </div>
       </div>
-      <div class="col"><img src="assets/img/hall/hall-bg-2.svg" id="bg2" style="    position: absolute;
+      <div class="col">
+        <img src="assets/img/hall/hall-bg-2.svg" id="bg2" style="    position: absolute;
     max-width: 80%;
-"></div>
+">
+      </div>
     </div>
   </div>
   <div>
-    <div class="row" style="margin-top: 87px;">
+    <div class="row d-flex justify-content-center" style="margin-top: 87px;">
       <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
-        <h4 class="m-auto" id="head" style="font-family: GT Walsheim Pro;
-    display: flex;
-    justify-content: center;
-">Leads</h4>
+        <h4 class="m-auto" id="head" style="font-family: GT Walsheim Pro;display:flex;justify-content:center;">Leads</h4>
       </div>
       <div class="col-xl-10">
         <hr>
       </div>
     </div>
-    <div class="row" style="justify-content:center;">
-      <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;padding:30px" [ngStyle]="{'background-color': getRandomColor()}" *ngFor="let item of leads | async">
-        <img class="card-img-top w-100 d-block">
-        <div class="card-body">
-          <h4 class="card-title d-flex justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
+    <div class="row d-flex justify-content-center">
+      <div class=" col-sm-6 col-lg-3 item d-flex justify-content-center" style="margin-left:0px;margin-right:0px;margin-top:40px;" *ngFor="let item of leads | async">
+        <div class="border rounded shadow" style="height: 400px;
+    width: 280px;margin-left:0px;margin-right:0px;" [ngStyle]="{'background-color': getRandomColor()}">
+          <img class="card-img-top d-block" style="background-color:white;width:200px;">
+          <div class="card-body" style="margin-left:-30px;margin-right:-30px;margin-top:-20px;width:350px;">
+            <div style="background-color:white;position:absolute;width:300px;height:38%;">
+              <h3 class="card-title d-flex justify-content-center" [ngStyle]="{'color': getRandomColor()}" style="font-family: GT Walsheim Pro;margin-left:0px;">{{item.name}}</h3>
+            </div> <div class=" d-flex justify-content-center">
+              <img class="img-fluid d-flex justify-content-center" style="    display: block;
+    border-radius: 200px;
+    box-sizing: border-box;
+    z-index: 5;
+    margin-left: 10px;
+    border: 5px solid;
+    background-color: white;
+    width: 120px;
+    margin-top: 100px;
+  "
+                   src="{{item.image}}"
+                   [ngStyle]="{'border-color': getRandomColor()}" />
+            </div>
 
-          <p class="card-text d-flex justify-content-center" style="color:white">
-            {{item.bio}}
-          </p>
-          <div class="location" style="display:flex;justify-content:center">
-            <a href="{{item.linkedin}}" *ngIf="!(item.linkedin==undefined)">
-              <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
-              <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
-              <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
-              <img src="assets/img/about_us/card-link-dev.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
-              <img src="assets/img/about_us/card-link-dribble.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
+            <div style="    margin-top: 20px;
+">
+              <p class="card-text d-flex justify-content-center" style="color:white">
+                {{item.bio}}
+              </p>
+              <div class="location" style="display:flex;justify-content:center">
+                <a href="{{item.linkedin}}" *ngIf="!(item.linkedin===undefined)">
+                  <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
+                  <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
+                  <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
+                  <img src="assets/img/about_us/card-link-dev.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
+                  <img src="assets/img/about_us/card-link-dribble.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
-  </div>
 
+
+  </div>
   <div>
-    <div class="row" style="margin-top: 87px;">
+    <div class="row d-flex justify-content-center" style="margin-top: 87px;">
       <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
         <h4 class="m-auto" id="head" style="font-family: GT Walsheim Pro;display:flex;justify-content:center;">Developers</h4>
       </div>
@@ -78,43 +97,65 @@
         <hr>
       </div>
     </div>
-    <div class="row" style="justify-content:center;">
-      <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;padding:40px" [ngStyle]="{'background-color': getRandomColor()}" *ngFor="let item of devs | async">
-        <img class="card-img-top w-100 d-block">
-        <div class="card-body">
-          <h4 class="card-title d-flex justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
+    <div class="row d-flex justify-content-center">
+      <div class=" col-sm-6 col-lg-3 item d-flex justify-content-center" style="margin-left:0px;margin-right:0px;margin-top:40px;" *ngFor="let item of devs | async">
+        <div class="border rounded shadow" style="height: 400px;
+    width: 280px;margin-left:0px;margin-right:0px;" [ngStyle]="{'background-color': getRandomColor()}">
+          <img class="card-img-top d-block" style="background-color:white;width:200px;">
+          <div class="card-body" style="margin-left:-30px;margin-right:-30px;margin-top:-20px;width:350px;">
+            <div style="background-color:white;position:absolute;width:300px;height:38%;">
+              <h3 class="card-title d-flex justify-content-center" [ngStyle]="{'color': getRandomColor()}" style="font-family: GT Walsheim Pro;margin-left:0px;">{{item.name}}</h3>
+            </div> <div class=" d-flex justify-content-center">
+              <img class="img-fluid d-flex justify-content-center" style="    display: block;
+    border-radius: 200px;
+    box-sizing: border-box;
+    z-index: 5;
+    margin-left: 10px;
+    border: 5px solid;
+    background-color: white;
+    width: 120px;
+    margin-top: 100px;
+  "
+                   src="{{item.image}}"
+                   [ngStyle]="{'border-color': getRandomColor()}" />
+            </div>
 
-          <p class="card-text d-flex justify-content-center" style="color:white">
-            {{item.bio}}
-          </p>
-          <div class="location" style="display:flex;justify-content:center">
-            <a href="{{item.linkedin}}" *ngIf="!(item.linkedin===undefined)">
-              <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
-              <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
-              <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
-              <img src="assets/img/about_us/card-link-dev.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
-              <img src="assets/img/about_us/card-link-dribble.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
+            <div style="    margin-top: 20px;
+">
+              <p class="card-text d-flex justify-content-center" style="color:white">
+                {{item.bio}}
+              </p>
+              <div class="location" style="display:flex;justify-content:center">
+                <a href="{{item.linkedin}}" *ngIf="!(item.linkedin===undefined)">
+                  <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
+                  <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
+                  <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
+                  <img src="assets/img/about_us/card-link-dev.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
+                  <img src="assets/img/about_us/card-link-dribble.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
+
+
   </div>
   <div>
-    <div class="row" style="margin-top: 87px;">
+    <div class="row d-flex justify-content-center" style="margin-top: 87px;">
       <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
         <h4 class="m-auto" id="head" style="font-family: GT Walsheim Pro;display:flex;justify-content:center;">Designers</h4>
       </div>
@@ -122,39 +163,60 @@
         <hr>
       </div>
     </div>
-    <div class="row" style="justify-content:center;">
-      <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;padding:40px" [ngStyle]="{'background-color': getRandomColor()}" *ngFor="let item of designers | async">
-        <img class="card-img-top w-100 d-block">
-        <div class="card-body">
-          <h4 class="card-title d-flex justify-content-center" style="color:white">{{item.name}}</h4><img class="img-fluid" style="border-radius:50%" src="{{item.image}}" />
+    <div class="row d-flex justify-content-center">
+      <div class=" col-sm-6 col-lg-3 item d-flex justify-content-center" style="margin-left:0px;margin-right:0px;margin-top:40px;" *ngFor="let item of designers | async">
+        <div class="border rounded shadow" style="height: 400px;
+    width: 280px;margin-left:0px;margin-right:0px;" [ngStyle]="{'background-color': getRandomColor()}">
+          <img class="card-img-top d-block" style="background-color:white;width:200px;">
+          <div class="card-body" style="margin-left:-30px;margin-right:-30px;margin-top:-20px;width:350px;">
+            <div style="background-color:white;position:absolute;width:300px;height:38%;">
+              <h3 class="card-title d-flex justify-content-center" [ngStyle]="{'color': getRandomColor()}" style="font-family: GT Walsheim Pro;margin-left:0px;">{{item.name}}</h3>
+            </div> <div class=" d-flex justify-content-center">
+              <img class="img-fluid d-flex justify-content-center" style="    display: block;
+    border-radius: 200px;
+    box-sizing: border-box;
+    z-index: 5;
+    margin-left: 10px;
+    border: 5px solid;
+    background-color: white;
+    width: 120px;
+    margin-top: 100px;
+  "
+                   src="{{item.image}}"
+                   [ngStyle]="{'border-color': getRandomColor()}" />
+            </div>
 
-          <p class="card-text d-flex justify-content-center" style="color:white">
-            {{item.bio}}
-          </p>
-          <div class="location" style="display:flex;justify-content:center">
-            <a href="{{item.linkedin}}" *ngIf="!(item.linkedin==undefined)">
-              <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
-              <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
-              <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
-              <img src="assets/img/about_us/card-link-dev.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
-            <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
-              <img src="assets/img/about_us/card-link-dribble.svg" width="50px" height="50px"
-                   style="margin-right: 4px;margin-top: -2px;">
-            </a>
+            <div style="    margin-top: 20px;
+">
+              <p class="card-text d-flex justify-content-center" style="color:white">
+                {{item.bio}}
+              </p>
+              <div class="location" style="display:flex;justify-content:center">
+                <a href="{{item.linkedin}}" *ngIf="!(item.linkedin===undefined)">
+                  <img src="assets/img/about_us/card-link-linkedin.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
+                  <img src="assets/img/about_us/card-link-github.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
+                  <img src="assets/img/about_us/card-link-medium.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
+                  <img src="assets/img/about_us/card-link-dev.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+                <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
+                  <img src="assets/img/about_us/card-link-dribble.svg" width="50px" height="50px"
+                       style="margin-right: 4px;margin-top: -2px;">
+                </a>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
+
+
   </div>
-</div>

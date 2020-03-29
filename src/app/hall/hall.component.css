@@ -89,6 +89,7 @@ float-left {
 @media (min-width:1000px) {
   .float-left.visible.img-fluid {
     width: 15%
+  
   }
 }
 
@@ -100,6 +101,9 @@ float-left {
 
   h4 {
     font-size: 2.5rem;
+  }
+  h6 {
+    font-size: 1.2rem;
   }
 }
 
@@ -115,7 +119,6 @@ hr {
 
 @media (max-width:1200px) {
   h1 {
-    margin-left: 6px;
     margin-top: 40px
   }
 
@@ -123,9 +126,7 @@ hr {
     opacity: 0
   }
 
-  .row {
-    margin: 0
-  }
+ 
 }
 
 @media (min-width:1200px) {
