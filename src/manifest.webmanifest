@@ -1,8 +1,8 @@
 {
-  "name": "hslash",
-  "short_name": "hslash",
+  "name": "HackSlash",
+  "short_name": "HackSlash",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "background_color": "#013354",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",

@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'push' : 'side'"
                >
-    <mat-toolbar><a>hackslash</a></mat-toolbar>
+    <mat-toolbar><a routerLink="" style="font-size:1.5rem;">hackslash</a></mat-toolbar>
     <mat-nav-list >
       <a style=" font-family: GT Walsheim Pro;" mat-list-item routerLink="../events" routerLinkActive="active">Events</a>
       <a style=" font-family: GT Walsheim Pro;" mat-list-item routerLink="../projects" routerLinkActive="active">Projects</a>
@@ -23,7 +23,7 @@
               *ngIf="isHandset$ | async">
         <img class="img-fluid" style="max-width:70%;" src="assets/menu.svg" />
       </button>
-      <span><a routerLink="" style="font-size:1.5rem;" >hackslash</a></span>
+      <span><a routerLink="" style="font-size:1.5rem;">hackslash</a></span>
       <span style="flex : 1 1 auto"></span>
       <div *ngIf="(isHandset$|async)==false">
         <a style=" font-family: GT Walsheim Pro;" class="navitem" routerLink="../events" routerLinkActive="active">Events</a>
