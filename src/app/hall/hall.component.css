@@ -89,7 +89,6 @@ float-left {
 @media (min-width:1000px) {
   .float-left.visible.img-fluid {
     width: 15%
-  
   }
 }
 
@@ -98,12 +97,12 @@ float-left {
     font-size: 4rem;
     margin-left: 200px
   }
-
-  h4 {
-    font-size: 2.5rem;
+  #head{
+      font-size:3vw;
   }
-  h6 {
-    font-size: 1.2rem;
+  #in {
+    font-size: 2.5rem;
+    margin-left: 230px;
   }
 }
 
@@ -119,18 +118,28 @@ hr {
 
 @media (max-width:1200px) {
   h1 {
+    margin-left: 6px;
     margin-top: 40px
   }
 
-  .float-left.visible.img-fluid,#bg2 {
+  #bg2, #bg-4,#bg-7 {
     opacity: 0
   }
 
- 
+  .row {
+    margin: 0
+  }
 }
 
 @media (min-width:1200px) {
   h3 {
     margin-left: 200px
+  }
+  #dev {
+    margin-left: 30%;
+    font-size: 3vw;
+    background-color:white;
+    border-radius:5px;
+
   }
 }

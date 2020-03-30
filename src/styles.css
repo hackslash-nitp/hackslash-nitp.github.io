@@ -64,3 +64,5 @@ app-root>.load{
     transform: translateY(10px);
   }
 }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

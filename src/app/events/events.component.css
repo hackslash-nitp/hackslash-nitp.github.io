@@ -120,7 +120,7 @@ hr {
     margin-top: 40px
   }
 
-  .float-left.visible.img-fluid {
+  .float-left.visible.img-fluid,#bg-4 {
     opacity: 0
   }
 

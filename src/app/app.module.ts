@@ -34,7 +34,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { AgmCoreModule } from '@agm/core';
 import { Observable } from 'rxjs';
 import { NavComponent } from './index/nav/nav.component';
 

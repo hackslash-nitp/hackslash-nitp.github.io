@@ -1,5 +1,6 @@
-  <app-nav></app-nav>
-  <body id="bod" style="background-color:#60b6e9;">
+
+  <body style="background-color:#60b6e9">
+    <app-nav></app-nav>
     <section style="background-color:#60b6e9">
       <div class="row" style="margin-left:0px;margin-right:0px;color:white;">
         <div class="col-xl-6 d-flex flex-column  align-self-center justify-content-xl-start">

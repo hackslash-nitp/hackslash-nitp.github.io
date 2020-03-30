@@ -1,5 +1,5 @@
 
-@media (min-width:1200px) {
+@media (min-width:800px) {
   h1 {
     font-size: 7rem;
     margin-left: 100px
@@ -8,7 +8,35 @@
       margin-left:100px;
   }
   #p_world {
-    font-size: 6rem;
-    margin-left: 100px
+    font-size: 4rem;
+    margin-left: 100px;
+    margin-top:40px;
+  }
+ 
+}
+
+@media(max-width:800px){
+ 
+  #head{
+        font-size:4rem;
+  }
+  #head {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  #bod{
+      height:95vh;
+  }
+}
+@media(min-width:1200px){
+  
+  #head{
+      margin-top:100px;
+  }
+  #know_more{
+      margin-top:30px;
+  }
+  #bod{
+      height:93.3vh;
   }
 }

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/hslash",
+    "public": "dist/HackSlash",
     "ignore": [
       "firebase.json",
       "**/.*",
