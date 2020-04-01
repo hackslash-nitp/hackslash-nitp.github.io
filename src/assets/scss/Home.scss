@@ -4,41 +4,148 @@
     margin-right: 0px;
     color: $colorBackground;
     height: 100vh;
+    font-family: 'GT Walsheim Pro';
 }
 
-.home-head {}
+.home-contents{
+    z-index: 5;
+}
+
+#root{
+    background-color: $colorPrimary;
+}
+
+.home-head {
+    margin-left: 5vw;
+    font-weight: 400;
+    font-size: 100px;
+    display: inline-block;
+}
 
 .home-h3 {
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-left: 5vw;
+    margin-bottom: 5vh;
     font-weight: 400;
 }
 
 .home-h5 {
-    margin-bottom: 20px;
+    margin-left: 5vw;
+    font-size: 22px;
+    margin-bottom: vh;
     font-weight: 400
 }
 
 .home-p-world {
-    margin-top: 20px;
+    font-size: 70px;
+    margin-top: 10vh;
+    margin-left: 5vw;
+    z-index: 1;
     font-family: "Fake Serif";
 }
 
 .home-know-more {
-    color: $colorPrimary;
-    font-weight: bolder;
     text-decoration: none;
     display: inline-block;
-    background-color: white;
+    background-color: $colorBackground;
+    color: $colorPrimary;
     border-radius: 7px;
     margin-top: 15px;
-    padding: 2px 8px;
+    z-index: 2;
+    padding: 1vh;
+    font-weight: 100;
+    transition-duration: 0.4s;
+}
+
+.home-know-more:hover {
+    box-shadow: rgba(20, 54, 73, 0.247) 0px 2px 12px;
+    color: $colorPrimary;
+    text-decoration: none;
+
 }
 
 .home-col {
-    margin-right: 50px;
     background-color: $colorPrimary;
 }
 
 .home-img {
-    background-color: $colorPrimary;
+    position: absolute;
+    bottom: 5vh;
+    right: 0vw;
+    width: 100%;
+    z-index: 0;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .home-img {
+        position: absolute;
+        bottom: 5vh;
+        right: 0vw;
+        width: 75%;
+    }
+
+    .home-p-world {
+        font-size: 40px;
+        margin-top: 5vh;
+        margin-left: 5vw;
+        z-index: 1;
+        font-family: "Fake Serif";
+    }
+
+    .home-head {
+        margin-left: 5vw;
+        font-weight: 400;
+        font-size: 8vh;
+        display: inline-block;
+    }
+
+    .home-know-more {
+        text-decoration: none;
+        display: inline-block;
+        background-color: $colorBackground;
+        color: $colorPrimary;
+        border-radius: 7px;
+        margin-top: 10vh;
+        padding: 1vh;
+        width: 90%;
+        margin-left: 5%;
+        z-index: 1;
+        margin-right: 5%;
+        text-align: center;
+        font-weight: 100;
+        transition-duration: 0.4s;
+    }
+
+    .home-know-more:hover {
+        box-shadow: none;
+        color: $colorPrimary;
+        text-decoration: none;
+    }
+
+    .home-h3 {
+        font-size: 2.5vh;
+        margin-left: 5vw;
+        margin-bottom: 5vh;
+        font-weight: 400;
+    }
+    
+    .home-h5 {
+        margin-left: 5vw;
+        font-size: 2.6vh;
+        margin-bottom: vh;
+        font-weight: 400
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .home-img {
+        position: absolute;
+        bottom: 5vh;
+        right: 0vw;
+        width: 75%;
+    }
+
+
 }
