@@ -25,7 +25,8 @@ const Events = () => {
                             <img class="visible img-fluid events-img" src="assets/img/events/events-bg-2.svg"/>
                                 </div>
                         </div>
-                        <div class="row" style="margin-right: 0px;margin-left: 0px;"><div class="col">
+                        <div class="row events-div">
+                          <div class="col">
                             <div class="row">
                                 <div class="col-2 d-flex justify-content-end"><img class="img-fluid" src="assets/img/events/events-ic-search.svg"/>
                                     </div>
