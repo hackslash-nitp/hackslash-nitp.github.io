@@ -52,7 +52,7 @@ const Events = () => {
         <img class="card-img-top w-100 d-block"/>
         <div class="location events-location">
           <img src="assets/img/events/event-ic-location.svg" width="12px" height="12px"
-               style="margin-right: 4px;margin-top: -2px;z-index:5;"/>
+               class="events-img-fourth"/>
           item.location
         </div>
         <img class="img-fluid events-img-fluid" src="https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
