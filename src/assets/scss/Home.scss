@@ -1,8 +1,9 @@
 .home-body {
-    background-color: #60b6e9;
+    background-color: $colorPrimary;
     margin-left: 0px;
     margin-right: 0px;
-    color: white;
+    color: $colorBackground;
+    height: 100vh;
 }
 
 .home-head {}
@@ -19,18 +20,25 @@
 
 .home-p-world {
     margin-top: 20px;
+    font-family: "Fake Serif";
 }
 
 .home-know-more {
-    color: #60b6e9;
-    font-weight: bolder
+    color: $colorPrimary;
+    font-weight: bolder;
+    text-decoration: none;
+    display: inline-block;
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 15px;
+    padding: 2px 8px;
 }
 
 .home-col {
     margin-right: 50px;
-    background-color: #60b6e9
+    background-color: $colorPrimary;
 }
 
 .home-img {
-    background-color: #60b6e9
+    background-color: $colorPrimary;
 }

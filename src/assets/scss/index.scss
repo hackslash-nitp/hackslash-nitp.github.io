@@ -1,1 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+@import './colors.scss';
 @import './Home.scss';
+@import './fonts.scss';
+@import './About.scss';
+@import './Articles.scss';
+@import './Events.scss';
+@import './Hall.scss';
+@import './NavBar.scss';
+
+#root{
+    height: 100vh;
+}
+
+.App {
+    height: 100vh;
+}
