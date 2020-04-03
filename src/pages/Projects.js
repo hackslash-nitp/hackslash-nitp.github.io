@@ -1,80 +1,42 @@
 import React from 'react';
+import '../assets/scss/Projects.scss';
+import top from '../assets/images/ProjectTop.jpg';
+import search from '../assets/images/searchIcon.jpg';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const Projects = () => {
     return (
-<body style="background-color:white">
-<div>
-  <div class="row projects-main-div">
-    <div class="col-md-6 col-xl-7 d-flex flex-column justify-content-center align-items-center">
-      <div class="row d-flex align-items-start">
-        <div class="col-xl-12 offset-xl-1 d-flex">
-          <h1 class="d-flex projects-header-first">
-          Our Projects</h1>
+      <div>
+        <div class="projects-head-div">
+        <div class="projects-top-left-div">
+        <img class="projects-img-top" src={top}/>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h4 id="intro" class="projects-header-fourth">Welcome to our Projects</h4>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-xl-4 offset-xl-1"><img class="visible img-fluid projects-img" src="assets/img/Asset.svg"/></div>
-  </div>
-  <div class="row projects-main-div">
-    <div class="col">
-      <div class="row">
-        <div class="col-2 d-flex justify-content-end"><img class="img-fluid" src="assets/img/events/events-ic-search.svg"/></div>
-        <div class="col-xl-4 col-md-4 col-sm-5"><input class="form-control-plaintext projects-input" type="text" placeholder="Search"/></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="row projects-div-second"><hr/></div>
-  <div class="row projects-div-third">
-    <div class="card border rounded shadow col-sm-6 col-lg-3 item projects-div-fourth">
-      <div class="d-flex projects-div-fifth">
-        <a href="{{item.html_url}}">
-          <img class="img-fluid projects-a" src="{{item.owner.avatar_url}}" />
-        </a>
-      </div>
-      <div class="card-body">
-        <h4 class="card-title d-flex justify-content-center projects-header-first">item.name</h4>
-        <div class="location projects-location-div">
-
-          <p class="d-flex justify-content-center projects-p">Fork  item.forks_count</p>
-          <p class="d-flex justify-content-center projects-p-second">Star  item.stargazers_count</p>
-          <p class="d-flex justify-content-center projects-p-third">Watch  item.watchers_count</p>
-        </div>
-        <p class="card-text d-flex justify-content-center projects-p-fourth" id="desc">
-          item.description
-        </p>
-        <div class="location projects-div-sixth">
-          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24.4783 10.3913H22.0162C21.8244 9.72201 21.5584 9.07626 21.2231 8.46609L22.961 6.72817C23.0589 6.63033 23.1138 6.49765 23.1138 6.3593C23.1138 6.22096 23.0589 6.08828 22.961 5.99043L20.0096 3.03896C19.9117 2.94115 19.779 2.8862 19.6407 2.8862C19.5023 2.8862 19.3697 2.94115 19.2718 3.03896L17.5339 4.77687C16.9237 4.44166 16.278 4.17566 15.6087 3.98383V1.52174C15.6087 1.38337 15.5537 1.25066 15.4559 1.15281C15.358 1.05497 15.2253 1 15.087 1H10.913C10.7747 1 10.642 1.05497 10.5441 1.15281C10.4463 1.25066 10.3913 1.38337 10.3913 1.52174V3.98383C9.72204 4.17566 9.07629 4.44166 8.46609 4.77687L6.72817 3.03896C6.63033 2.94115 6.49765 2.8862 6.3593 2.8862C6.22096 2.8862 6.08828 2.94115 5.99043 3.03896L3.03896 5.99043C2.94115 6.08828 2.8862 6.22096 2.8862 6.3593C2.8862 6.49765 2.94115 6.63033 3.03896 6.72817L4.77687 8.46609C4.44159 9.07626 4.17559 9.72201 3.98383 10.3913H1.52174C1.38337 10.3913 1.25066 10.4463 1.15281 10.5441C1.05497 10.642 1 10.7747 1 10.913V15.087C1 15.2253 1.05497 15.358 1.15281 15.4559C1.25066 15.5537 1.38337 15.6087 1.52174 15.6087H3.98383C4.17566 16.278 4.44166 16.9237 4.77687 17.5339L3.03896 19.2718C2.94115 19.3697 2.8862 19.5023 2.8862 19.6407C2.8862 19.779 2.94115 19.9117 3.03896 20.0096L5.99043 22.961C6.08828 23.0589 6.22096 23.1138 6.3593 23.1138C6.49765 23.1138 6.63033 23.0589 6.72817 22.961L8.46609 21.2231C9.07629 21.5583 9.72204 21.8243 10.3913 22.0162V24.4783C10.3913 24.6166 10.4463 24.7493 10.5441 24.8472C10.642 24.945 10.7747 25 10.913 25H15.087C15.2253 25 15.358 24.945 15.4559 24.8472C15.5537 24.7493 15.6087 24.6166 15.6087 24.4783V22.0162C16.278 21.8243 16.9237 21.5583 17.5339 21.2231L19.2718 22.961C19.3697 23.0589 19.5023 23.1138 19.6407 23.1138C19.779 23.1138 19.9117 23.0589 20.0096 22.961L22.961 20.0096C23.0589 19.9117 23.1138 19.779 23.1138 19.6407C23.1138 19.5023 23.0589 19.3697 22.961 19.2718L21.2231 17.5339C21.5583 16.9237 21.8243 16.278 22.0162 15.6087H24.4783C24.6166 15.6087 24.7493 15.5537 24.8472 15.4559C24.945 15.358 25 15.2253 25 15.087V10.913C25 10.7747 24.945 10.642 24.8472 10.5441C24.7493 10.4463 24.6166 10.3913 24.4783 10.3913Z" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
-            <path d="M9.86958 8.30444H8.8261C8.54936 8.30444 8.28394 8.41438 8.08825 8.61007C7.89256 8.80576 7.78262 9.07117 7.78262 9.34792V12.4784H6.21741" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
-            <path d="M9.86955 18.2174H8.82607C8.54932 18.2174 8.28391 18.1074 8.08822 17.9117C7.89253 17.7161 7.78259 17.4506 7.78259 17.1739V14.0435" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
-            <path d="M16.1305 18.2174H17.174C17.4507 18.2174 17.7161 18.1074 17.9118 17.9117C18.1075 17.7161 18.2174 17.4506 18.2174 17.1739V14.0435H19.7827" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
-            <path d="M16.1305 8.30444H17.174C17.4507 8.30444 17.7161 8.41438 17.9118 8.61007C18.1075 8.80576 18.2174 9.07117 18.2174 9.34792V12.4784" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
-            <path d="M12.4782 13H13.5217" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
-            <path d="M14.5652 13H15.6087" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
-            <path d="M10.3913 13H11.4348" stroke="#0067A4" stroke-width="1.5" stroke-linejoin="round" />
-          </svg>
-
-          <div style="width:90%">
-            <h6 class="d-flex justify-content-center projects-header-sixth">Created at item.created_at.split("T"))[0]</h6>
+        <div class="projects-top-right-div">
+        <p class="projects-para-title">This is a test Project Title</p>
+        <p class="projects-para-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
+         purus sit amet luctus venenatis</p>
+        <div class="projects-search-div">
+          <div class="projects-search-left-div">
+          <img class="projects-search-img" src={search}/>
+          <hr/>
+          </div>
+          <div class="projects-search-right-div">
+          <input type="text" placeholder="Search Projects" class="projects-search-text"/>
+          <hr/>
           </div>
         </div>
-
-
+        </div>
+        </div>
+        <div class="projects-hackslash-div">
+          <p class="projects-hackslash-para">Hackslash Picks</p>
+          <hr class="projects-hackslash-underline"/>
+        </div>
+        <div class="row projects-list-div">
+          <div class="mb-3 projects-project-detail"></div>
+          <div class="mb-3 projects-project-detail"></div>
+          <div class="mb-3 projects-project-detail"></div>
+        </div>
       </div>
-    </div>
-
-  </div>
-  <div class="row d-flex justify-content-end"><img class="img-fluid d-flex projects-img-second" src="assets/undraw_to_the_moon_v1mv 1.svg" /></div>
-
-</div>
-</body>
 );
 };
 export default Projects;
