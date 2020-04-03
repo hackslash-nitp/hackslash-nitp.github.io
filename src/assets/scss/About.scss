@@ -1,6 +1,14 @@
+.about-body{
+    background-color: $colorBackground;
+    width:100%;
+}
+
+#root{
+    background-color: $colorBackground;
+}
+
 .about-main-div{
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-left: 2vw;
 }
 
 .about-div-sub{
@@ -12,8 +20,9 @@
 }
 
 .about-header-second{
-    color: rgb(6,18,30);
+    color: rgba(0,0,0,0.75);
     margin-bottom: 0px;
+    font-size:20px;
     font-family: GT Walsheim Pro;
 }
 
@@ -28,12 +37,11 @@
 }
 
 .about-div-third{
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 2vw;
 }
 
-.about-bottom-div{
-    margin-left:0px;
-    margin-right:0px;
+.about-bottom-divr{
+    margin-left:2vw;
+    margin-right:2vw;
     margin-top:40px;
 }

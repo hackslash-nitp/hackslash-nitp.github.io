@@ -4,7 +4,8 @@ import bg from '../assets/images/coderdojo.png';
 const Home = () => {
     return(
         <div className="row home-body" >
-            <div className="col-xl-6 d-flex flex-column  align-self-center justify-content-xl-start">
+            <div className="col-xl-6 d-flex flex-column  align-self-center 
+            justify-content-xl-start home-contents">
                 <h1 className="home-head">hackslash</h1>
                 <h3 className="home-h3">
                     Student Developer Club<br />National Institute of Technology, Patna
