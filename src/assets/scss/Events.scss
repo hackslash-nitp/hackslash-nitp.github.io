@@ -1,92 +1,288 @@
-.events-body{
-    background-color:white;
+.events-top-back-img{
+    position: absolute;
+    float: left;
+    margin-top: -5%;
+    height: 600px;
 }
 
-.events-div{
-    margin-right: 0px;
+.events-img-top{
+    height: 80%;
+    width: 80%;
+    float: left;
+    margin-left: 3%;
+    margin-top: 7%;
+}
+
+.events-head-div{
+    position: relative;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.events-para-title{
+    color: #3A454B;
+    font-size: 3.5vw;
+    font-family: GT Walsheim Pro;
+    margin-top: 10%;
+    margin-right: 35%;
+}
+
+.events-para-description{
+    color: #3F82AA;
+    font-family: GT Walsheim Pro;
+    font-size: 1.5vw;
+    margin-top: 0%;
+    margin-right: 35%;
+}
+
+.events-top-left-div{
+    width: 40%;
+    float: left;
+    margin-left: 20%;
+}
+
+.events-top-right-div{
+    width: 40%;
+    float: right;
+}
+
+.events-search-img{
+    height: 72%;
+    width: 72%;
+}
+
+.events-search-text{
+    color: #686868;
+    font-family: GT Walsheim Pro;
+    font-size: 1.2vw;
+    border: none;
+    width: 100%;
+    height: 30%;
     margin-left: 0px;
 }
 
-.events-header{
+.events-search-left-div{
+    width: 5%;
+    float: left;
+}
+
+.events-search-right-div{
+    width: 45%;
+    float: left;
+}
+
+.events-search-div{
+    margin-top: 5%;
+}
+
+.events-hackslash-para-upcoming{
+    color: #3E97BF;
     font-family: GT Walsheim Pro;
+    font-size: 1.6vw;
+    margin-left: 2%;
+
+}
+
+.events-hackslash-para-past{
+    color: #686868;
+    font-family: GT Walsheim Pro;
+    font-size: 1.6vw;
+    margin-left: 2%;
+}
+
+.events-hackslash-div{
+    position: relative;
+    width: 100%;
+    margin-top: 5%;
+    float: left;
+}
+
+.events-hackslash-text-section{
+    float: left;
+    width: 18%;
+    margin-left: 2%;
+}
+
+.events-hackslash-underline-section{
+    float: right;
+    width: 80%;
+}
+
+.events-hackslash-line{
+    width: 95%;
+    border:  1.2px solid rgba(0, 0, 0, 0.47);
+    margin-top: 1.5%;
+    margin-left: -5%;
+    float: left;
+}
+
+.events-upcoming-div{
+    float: left;
+    width: 50%;
+}
+
+.events-past-div{
+    float: right;
+    width: 50%;
+}
+
+.events-list-div{
+    position: relative;
+    width: 100%;
+    margin-left: 2%;
+}
+
+.events-event-detail{
+    height: 500px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 400px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
+}
+
+.events-image-div{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.events-image{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.events-text-section{
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+.events-heading-text-div{
+    margin-top: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.events-description-text-div{
+    position: relative;
+    width: 100%;
+}
+
+.events-heading-text{
+    font-family: GT Walsheim Pro;
+    color: #000000;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.events-description-text{
+    font-family: GT Walsheim Pro;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.events-left-side-vec{
+    position: absolute;
+    height: 180%;
+    width: 30%;
+    z-index: -1;
+    float: left;
+}
+
+.events-left-side-under-vec{
+    position: absolute;
+    z-index: -1;
+    float: left;
+    height: 100%;
+    width: 30%;
+    margin-left: 8%;
+    margin-top: 30%;
+}
+.events-right-side-vec{
+    position: absolute;
+    float: right;
+    margin-left: 55%;
+    margin-right: 10%;
+    margin-top: 15%;
+    height: 35%;
+    width: 40%;
+    z-index: -1;
+}
+
+.events-datetime-div{
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+    height: 40px;
+    background-color: white;
+}
+
+.events-time-div{
+    position: relative;
+    background-color: #f5f5f5;
+    height: 30px;
+    float: left;
+    margin-left: 15px;
+    width: 26%;
+    border-radius: 4px;
+}
+
+.events-time-image-div{
+    position: relative;
+    float: left;
+    width: 10%;
+}
+
+.events-time-text-div{
+    position: relative;
+    float: right;
+    width: 90%;
+}
+
+.events-time-text{
+    margin-left: 14px;
+    margin-top: 4px;
+    font-family: Mada;
+    font-size: 15px;
+
+}
+
+.events-date-div{
+    position: relative;
+    background-color: #f5f5f5;
+    height: 30px;
+    float: left;
     margin-top: 0px;
+     margin-left: 10px;
+    width: 38%;
+    border-radius: 4px;
 }
 
-.events-header-fourth{
-    color: rgb(9,117,225);
-    margin-bottom: 0px;
-    font-family: GT Walsheim Pro;
+.events-date-image-div{
+    position: relative;
+    float: left;
+    width: 10%;
 }
 
-.events-img{
-    margin-top: 0px;
+.events-date-text-div{
+    position: relative;
+    float: right;
+    width: 90%;
 }
 
-.events-input{
-    margin: 0px;
-    margin-left: 0px;
-    padding: 6px;
-    padding-left: 15px;
-    font-family: GT Walsheim Pro;
+.events-date-text{
+    margin-left: 7px;
+    margin-top: 3px;
+    font-family: Mada;
+    font-size: 15px;
 }
 
-.events-div-second{
-    margin-top: 87px;
-}
-
-.events-header-fifth{
-    font-family: GT Walsheim Pro;
-}
-
-.events-div-third{
-    justify-content:center;
-    margin-left:0px;
-    margin-right:0px;
-}
-
-.events-img-second{
-    position:absolute;
-    float:right;
-    right:0;
-    height:70%;
-}
-
-.events-img-third{
-    position:absolute;
-    float:left;
-    left:0;
-    height:70%;
-    margin-top:15%;
-}
-
-.events-div-card{
-    margin: 40px;
-    padding-left:0px;
-    padding-right:0px;
-}
-
-.events-location{
-    align-self:end;
-    position:absolute;
-    z-index:4;
-    margin-top:55%;
-    margin-right:10px;
-    padding:2px;
-    border-radius:2px;
-    background-color:white;
-}
-
-.events-img-fluid{
-    z-index:0;
-}
-
-.events-img-fourth{
-    margin-right: 4px;
-    margin-top: -2px;
-    z-index:5;
-}
-
-.events-img-location{
-    margin-right: 4px;
-    margin-top: -2px;
+.events-timedate-image{
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
 }
