@@ -92,7 +92,7 @@
 .projects-list-div{
     position: relative;
     width: 100%;
-    margin-left: 2%;
+    margin-left: 0;
 }
 
 .projects-project-detail{
@@ -103,6 +103,7 @@
     margin-left: 4%;
     margin-right: 3%;
     margin-top: 2%;
+    z-index: 1;
 }
 
 .projects-image-div{
@@ -239,13 +240,13 @@
     position: absolute;
     height: 180%;
     width: 30%;
-    z-index: -1;
+    z-index: 0;
     float: left;
 }
 
 .projects-left-side-under-vec{
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     float: left;
     height: 100%;
     width: 30%;
@@ -260,7 +261,7 @@
     margin-top: 15%;
     height: 35%;
     width: 40%;
-    z-index: -1;
+    z-index: 0;
 }
 
 .projects-bottom-left-img{
