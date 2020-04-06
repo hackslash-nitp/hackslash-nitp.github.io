@@ -7,6 +7,10 @@ import search from '../assets/images/searchIcon.jpg';
 import topRight from '../assets/images/events/topRight.svg';
 import date from '../assets/images/events/date.svg';
 import time from '../assets/images/events/time.svg';
+import bottomVec from '../assets/images/events/bottomVec.svg';
+import leftVec from '../assets/images/events/leftVec.svg';
+import rightVec from '../assets/images/events/rightVec.svg';
+import location from '../assets/images/events/location.svg';
 
 
 const Events = () => {
@@ -43,12 +47,18 @@ const Events = () => {
           </div>
           </div>
           <div class="row events-list-div">
-          {/* <img class="events-left-side-vec" src={sideVector}/> */}
-          {/* <img class="events-left-side-under-vec" src={sideUnderVec}/> */}
-          {/* <img class="events-right-side-vec" src={rightVector}/> */}
+          <img class="events-left-side-vec" src={leftVec}/>
+          <img class="events-right-side-vec" src={rightVec}/>
+          <img class="events-bottom-vec" src={bottomVec}/>
           <div class="mb-3 events-event-detail">
             <div class="events-image-div">
               <img class="events-image" src="https://in.bookmyshow.com/entertainment-news/wp-content/uploads/2018/01/Events-In-Chennai.jpg"/>
+              <div class="events-location-div">
+                <div class="events-location-image-div">
+                  <img class="events-timedate-image" src={location}/>
+                </div>
+                <div class="events-location-text-div"><p class="events-location-text">Location</p></div>
+              </div>
             </div>
             <div class="events-text-section">
               <div class="events-heading-text-div">
@@ -76,6 +86,12 @@ const Events = () => {
           <div class="mb-3 events-event-detail">
             <div class="events-image-div">
               <img class="events-image" src="https://in.bookmyshow.com/entertainment-news/wp-content/uploads/2018/01/Events-In-Chennai.jpg"/>
+              <div class="events-location-div">
+                <div class="events-location-image-div">
+                  <img class="events-timedate-image" src={location}/>
+                </div>
+                <div class="events-location-text-div"><p class="events-location-text">Location</p></div>
+              </div>
             </div>
             <div class="events-text-section">
               <div class="events-heading-text-div">
@@ -103,6 +119,12 @@ const Events = () => {
           <div class="mb-3 events-event-detail">
             <div class="events-image-div">
               <img class="events-image" src="https://in.bookmyshow.com/entertainment-news/wp-content/uploads/2018/01/Events-In-Chennai.jpg"/>
+              <div class="events-location-div">
+                <div class="events-location-image-div">
+                  <img class="events-timedate-image" src={location}/>
+                </div>
+                <div class="events-location-text-div"><p class="events-location-text">Location</p></div>
+              </div>
             </div>
             <div class="events-text-section">
               <div class="events-heading-text-div">
@@ -130,6 +152,12 @@ const Events = () => {
           <div class="mb-3 events-event-detail">
             <div class="events-image-div">
               <img class="events-image" src="https://in.bookmyshow.com/entertainment-news/wp-content/uploads/2018/01/Events-In-Chennai.jpg"/>
+              <div class="events-location-div">
+                <div class="events-location-image-div">
+                  <img class="events-timedate-image" src={location}/>
+                </div>
+                <div class="events-location-text-div"><p class="events-location-text">Location</p></div>
+              </div>
             </div>
             <div class="events-text-section">
               <div class="events-heading-text-div">
