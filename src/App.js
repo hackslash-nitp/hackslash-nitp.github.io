@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from "@reach/router";
 import Home from './pages/Home.js';
 import Events from './pages/Events.js';
-import Hall from './pages/Home.js';
+import Hall from './pages/Hall.js';
 import Articles from './pages/Home.js';
 import Projects from './pages/Projects.js';
 import NavBar from './components/Nav.js';
