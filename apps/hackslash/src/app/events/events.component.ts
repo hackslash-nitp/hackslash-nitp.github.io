@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'hackslash-events',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  events: Observable<any>;
+  constructor(db: AngularFireDatabase) {
+    this.events = db.list('events').valueChanges();
   }
 
+  ngOnInit(): void {}
 }

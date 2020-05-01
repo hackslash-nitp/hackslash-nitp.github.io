@@ -26,8 +26,8 @@
               "apps/hackslash/src/assets"
             ],
             "styles": [
-                 "node_modules/bootstrap/dist/css/bootstrap.css",
               "apps/hackslash/src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
            
             ],
             "scripts": []

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Component({
   selector: 'hackslash-about',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  getRandomColor() {
+    var color = Math.floor(0x1000000 * Math.random()).toString(7);
+    return '#' + ('000000' + color).slice(-6);
   }
-
+  team: Observable<any>;
+  constructor(db: AngularFireDatabase) {
+    this.team = db.list('members').valueChanges();
+  }
+  ngOnInit(): void {}
 }

@@ -10,31 +10,28 @@
   #p_world {
     font-size: 4rem;
     margin-left: 100px;
-    margin-top:40px;
+    margin-top:2vh;
   }
  
 }
-
+ #head {
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+  }
 @media(max-width:800px){
  
   #head{
         font-size:4rem;
   }
-  #head {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
+  
   #bod{
       height:95vh;
   }
 }
 @media(min-width:1200px){
-  
-  #head{
-      margin-top:100px;
-  }
+
   #know_more{
-      margin-top:30px;
+      margin-top:2vh;
   }
   #bod{
       height:93.3vh;

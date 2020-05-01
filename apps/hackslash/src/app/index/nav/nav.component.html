@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'push' : 'side'">
+    <mat-toolbar><a routerLink="" style="color:#60b6e9; font-family: GT Walsheim Pro;">
+        <h1>hackslash</h1>
+      </a></mat-toolbar>
+    <mat-nav-list>
+      <a style=" font-family: GT Walsheim Pro;" mat-list-item routerLink="events" routerLinkActive="active">Events</a>
+      <a style=" font-family: GT Walsheim Pro;" mat-list-item routerLink="projects"
+        routerLinkActive="active">Projects</a>
+      <a style=" font-family: GT Walsheim Pro;" mat-list-item routerLink="hall" routerLinkActive="active">Hall of
+        Fame</a>
+      <a style=" font-family: GT Walsheim Pro;" mat-list-item routerLink="articles"
+        routerLinkActive="active">Articles</a>
+      <a style=" font-family: GT Walsheim Pro;" mat-list-item routerLink="about" routerLinkActive="active">About Us</a>
+      <a style=" font-family: GT Walsheim Pro;" mat-list-item href="http://www.hackslash.club/slack/">Join Us</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar style="background-color: #60b6e9;">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <img class="img-fluid" style="max-width:70%;" src="assets/menu.svg" />
+      </button>
+      <span><a routerLink="" style="color:white;font-size:1.5rem;">hackslash</a></span>
+      <span style="flex : 1 1 auto"></span>
+      <div *ngIf="(isHandset$|async)==false">
+        <a style=" font-family: GT Walsheim Pro;" class="navitem" routerLink="events"
+          routerLinkActive="active">Events</a>
+        <a style=" font-family: GT Walsheim Pro;" class="navitem" routerLink="projects"
+          routerLinkActive="active">Projects</a>
+        <a style=" font-family: GT Walsheim Pro;" class="navitem" routerLink="hall" routerLinkActive="active">Hall of
+          Fame</a>
+        <a style=" font-family: GT Walsheim Pro;" class="navitem" routerLink="articles"
+          routerLinkActive="active">Articles</a>
+        <a style=" font-family: GT Walsheim Pro;" class="navitem" routerLink="about" routerLinkActive="active">About
+          Us</a>
+        <a style=" font-family: GT Walsheim Pro;" class="navitem" href="http://www.hackslash.club/slack/">Join Us</a>
+      </div>
+    </mat-toolbar>
+    <hackslash-index></hackslash-index>
+  </mat-sidenav-content>
+</mat-sidenav-container>

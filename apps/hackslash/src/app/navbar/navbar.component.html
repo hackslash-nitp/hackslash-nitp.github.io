@@ -18,7 +18,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
 
-    <mat-toolbar>
+    <mat-toolbar style="background-color: white;">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <img class="img-fluid" style="max-width:70%;" src="assets/menu.svg" />
@@ -39,7 +39,5 @@
         <a style=" font-family: GT Walsheim Pro;" class="navitem" href="http://www.hackslash.club/slack/">Join Us</a>
       </div>
     </mat-toolbar>
-
-    <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>

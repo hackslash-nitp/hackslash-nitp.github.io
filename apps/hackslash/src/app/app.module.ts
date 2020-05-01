@@ -25,6 +25,8 @@ import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {AngularFireModule} from '@angular/fire';
 import{AngularFireDatabaseModule}from '@angular/fire/database';
+import { NavComponent } from './index/nav/nav.component';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import{AngularFireDatabaseModule}from '@angular/fire/database';
     HallComponent,
     IndexComponent,
     ProjectsComponent,
-    NavbarComponent
+    NavbarComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,8 @@ import{AngularFireDatabaseModule}from '@angular/fire/database';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    AngularFireModule.initializeApp(environment.config),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

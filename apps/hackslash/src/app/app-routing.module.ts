@@ -8,9 +8,10 @@ import { HallComponent } from './hall/hall.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EventdetailsComponent } from './eventdetails/eventdetails.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { NavComponent } from './index/nav/nav.component';
 
 
-export const routes: Routes = [{ path: '', component: IndexComponent },
+export const routes: Routes = [{ path: '', component: NavComponent },
   { path: 'events', component: EventsComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'about', component: AboutComponent },
