@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "hackslash",
+      "public": "dist/apps/hackslash",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

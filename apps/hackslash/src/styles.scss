@@ -1,0 +1,100 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$hackslash-primary: mat-palette($mat-indigo);
+$hackslash-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$hackslash-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$hackslash-theme: mat-light-theme($hackslash-primary, $hackslash-accent, $hackslash-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($hackslash-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: url(assets/GTWalsheimProRegular.ttf);
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Black";
+  src: url(assets/brandon_grotesque.otf);
+}
+
+@font-face {
+  font-family: "Fake Serif";
+  src: url(assets/fake_serif.ttf);
+}
+
+#know_more {
+  text-decoration: none;
+  display: inline-block;
+  background-color: white;
+  color: #60b6e9;
+  border-radius: 7px;
+  margin-top: 15px;
+  padding: 2px 8px;
+  font-weight: 100;
+}
+
+#p_world {
+  font-family: "Fake Serif";
+}
+
+#nav_selected {
+  background-color: white;
+  color: #60b6e9;
+  border-radius: 15px;
+}
+
+
+
+/* You can add global styles to this file, and also import other style files */
+app-root>.load{
+  background-color: rgb(1,51,84);
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+
+.loading {
+  margin-top: 40vh;
+  height: 200px;
+  animation: load-animate 0.8s ease infinite;
+}
+
+@keyframes load-animate {
+  0% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

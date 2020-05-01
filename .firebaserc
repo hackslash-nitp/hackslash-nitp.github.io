@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hackslash-17": {
+      "hosting": {
+        "hackslash": [
+          "hackslash-17"
+        ]
+      }
+    }
+  }
+}
