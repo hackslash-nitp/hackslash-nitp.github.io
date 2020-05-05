@@ -17,7 +17,7 @@ const Certificates = (props) => {
 
     useEffect(() => {
         props.setPage('certificates');
-    }, [])
+    })
     const checkData = () => {
         firebase.database().ref('certificates/' + state.id).once('value').then(function (snapshot) {
             if (snapshot.val() == null) {

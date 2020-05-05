@@ -33,7 +33,7 @@ const Join = (props) => {
                     link: document.getElementById("join-link").value
                 }
 
-                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(data.email)
+                if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(data.email)
                     && data.email.length !== 0
                     && data.name.length !== 0
                     && data.link.length !== 0)

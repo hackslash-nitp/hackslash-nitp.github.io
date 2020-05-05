@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../assets/scss/Hall.scss';
 import topLeft from '../assets/images/hall/top-left.svg';
@@ -9,15 +9,12 @@ import leadsLine from '../assets/images/hall/leads-section.svg';
 import contribution from '../assets/images/hall/contribution.svg';
 import githubIcon from '../assets/images/hall/githubIcon.svg';
 import linkedinIcon from '../assets/images/hall/linkedinIcon.svg';
-import dribbleIcon from '../assets/images/hall/dribbleIcon.svg';
-import mediumIcon from '../assets/images/hall/mediumIcon.svg';
 import designersSection from '../assets/images/hall/designers-section.svg';
 import developersSection from '../assets/images/hall/developers-section.svg';
 import lowerLeft from '../assets/images/hall/lower-left.svg';
 import lowerRight from '../assets/images/hall/lower-right.svg';
 import bottomLeft from '../assets/images/hall/bottom-left.svg';
 import bottomRight from '../assets/images/hall/bottom-right.svg';
-import devIcon from '../assets/images/hall/devIcon.svg';
 
 const Hall = (props) => {
 
