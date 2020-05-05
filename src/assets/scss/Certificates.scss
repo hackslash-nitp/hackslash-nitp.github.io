@@ -1,0 +1,84 @@
+.certificates {
+  background-color: $colorPrimary;
+  height: 90vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.certi-bg-img{
+  position: absolute;
+  bottom: 0;
+  right: 5vw;
+  width: 90vw;
+  max-height: 90vh;
+}
+
+.certi-verify-card {
+  background-color: white;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.205);
+  border: 1px solid rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+
+  .certi-verify-id {
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+    border: 0;
+    outline: none;
+    color: #111;
+    border-bottom: 1.25px solid #60b7e985;
+  }
+
+  .certi-verify-button {
+    text-align: center;
+    border: none;
+    background-color: $colorPrimary;
+    text-decoration: none;
+    color: $colorBackground;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-top: 32px;
+
+    &:hover{
+      background-color: #73bff1;
+    }
+  }
+
+  .certi-success-toast {
+    color: green;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .certi-failure-toast {
+    color: red;
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .certi-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .certi-details-headers, .certi-details-data{
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+  }
+
+  .certi-details-data{
+    font-weight: 700;
+  }
+}

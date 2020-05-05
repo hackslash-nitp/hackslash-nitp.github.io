@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import bg1 from '../assets/images/about_us/about-bg-1.svg';
 import bg2 from '../assets/images/about_us/about-bg-2.svg';
 
 
-const About = () => {
+const About = (props) => {
+
+  useEffect(() => {
+    props.setPage('about');
+  });
     return (
       <div className="about-body">
         <div className="row d-flex about-main-div">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../assets/scss/Hall.scss';
 import topLeft from '../assets/images/hall/top-left.svg';
@@ -19,246 +19,146 @@ import bottomLeft from '../assets/images/hall/bottom-left.svg';
 import bottomRight from '../assets/images/hall/bottom-right.svg';
 import devIcon from '../assets/images/hall/devIcon.svg';
 
-const Hall = () => {
+const Hall = (props) => {
+
+    const state = {
+        leads: [
+            {
+                name: 'Tushar Anand',
+                role: 'President',
+                imageURL: 'https://avatars2.githubusercontent.com/u/34808961?s=400&u=5ec82d4c8670ebe14eae0038deeb7778347ce896&v=4',
+                description: 'A well establish security researcher, currently a data security intern at OYO, he played a crucial role in setting up the club.',
+                githubURL: 'https://github.com/anandtushar111',
+                linkedinURL: 'https://www.linkedin.com/in/anandtushar111/'
+            },
+            {
+                name: 'Saurabh Jha',
+                role: 'Vice-President',
+                imageURL: 'https://media-exp1.licdn.com/dms/image/C5103AQHP4D5-pFA3kQ/profile-displayphoto-shrink_200_200/0?e=1594252800&v=beta&t=rznoZ9GPSNzbl7Edm-F1DoDz3YMyfdlTfFUVlVB50WY',
+                description: 'An expert web developer, and an active competitive programmer, and a machine learning enthusiast',
+                githubURL: 'https://github.com/jhasaurabh312',
+                linkedinURL: 'https://www.linkedin.com/in/saurabh-kumar-jha-358293150/'
+            },
+            {
+                name: 'Insha Nadeem',
+                role: 'Treasurer',
+                imageURL: 'https://media-exp1.licdn.com/dms/image/C5603AQEStFGDnmQPFg/profile-displayphoto-shrink_200_200/0?e=1594252800&v=beta&t=RiP3vjshmG2D28rhlTrhSTT_FYGK_Ur6pAHXPCkuzjk',
+                description: 'An excellent orator and a wonderful mentor. She helped organize and host all of the club\'s meetups. ',
+                githubURL: '',
+                linkedinURL: 'https://www.linkedin.com/in/inshanadeem/'
+            }
+        ],
+        designers: [
+            {
+                name: 'Sudhanshu Singh',
+                role: 'Remote Designer',
+                imageURL: 'https://image.shutterstock.com/image-vector/avatar-vector-male-profile-gray-260nw-538707355.jpg',
+                description: 'A student designer based in Kolkata, he helped design the UI/UX for a few prominent projects in the club, including this website.',
+                githubURL:'',
+                linkedinURL: ''
+            },
+            {
+                name: 'Kumar Harsh',
+                role: 'Designer',
+                imageURL: 'https://avatars0.githubusercontent.com/u/46624829?s=460&u=387daf3f9715ebca5467a76694b28fa7e01a8b66&v=4',
+                githubURL:'https://github.com/krharsh17',
+                linkedinURL: 'https://linkedin.com/in/krharsh17'
+            }
+        ],
+        developers: []
+    };
+
+    useEffect(() => {
+        props.setPage('hall');
+    });
+
     return (
-        <div class="hall-body">
-          <div class="hall-upper-div">
-            <div class="hall-upper-left-div">
-              <img class="hall-top-left-image" src={topLeft}/>
+        <div className="hall-body">
+            <div className="hall-upper-div">
+                <div className="hall-upper-left-div">
+                    <img className="hall-top-left-image" src={topLeft} alt={''}/>
+                </div>
+                <div className="hall-upper-right-div">
+                    <div className="upper-heading-div">
+                        <p className="upper-heading-para">The Pioneers</p>
+                    </div>
+                    <div className="lower-description-div">
+                        <p className="lower-description-para">We believe that everyone deserves the credit for the good
+                            work that they do. A community is known by the way it values its people, so here are the top
+                            contributors of the club!
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="hall-upper-right-div">
-              <div class="upper-heading-div">
-                <p class="upper-heading-para">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="lower-description-div">
-                <p class="lower-description-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</p>
-              </div>
+            <img className="hall-top-right-image" src={topRight} alt={''}/>
+            <div className="hall-leads-line-div">
+                <img className="hall-leads-section-image" src={leadsLine} alt={''}/>
             </div>
-          </div>
-          <img class="hall-top-right-image" src={topRight}/>
-          <div class="hall-leads-line-div">
-            <img class="hall-leads-section-image" src={leadsLine}/>
-          </div>
-          <div class="row d-flex align-items-center hall-leads-section">
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
+            <div className={'leads-container'}>
+            {state.leads.map((member) => <MemberCard data={member}/>)}
             </div>
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
+            <img className="hall-middle-left-image" src={middleLeft} alt={''}/>
+            <img className="hall-middle-right-image" src={middleRight} alt={''}/>
+            <div className="hall-designers-line-div">
+                <img className="hall-designers-section-image" src={designersSection} alt={''}/>
             </div>
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
+            <div className={'designers-container'}>
+                {state.designers.map((member) => <MemberCard data={member}/>)}
             </div>
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
+            <img className="hall-lower-left-image" src={lowerLeft} alt={''}/>
+            <img className="hall-lower-right-image" src={lowerRight} alt={''}/>
+            <div className="hall-developers-line-div">
+                <img className="hall-developers-section-image" src={developersSection} alt={''}/>
             </div>
-          </div>
-          <img class="hall-middle-left-image" src={middleLeft}/>
-          <img class="hall-middle-right-image" src={middleRight}/>
-          <div class="hall-designers-line-div">
-            <img class="hall-designers-section-image" src={designersSection}/>
-          </div>
-          <div class="row d-flex align-items-center hall-leads-section">
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
+            <div className={'developers-container'}>
+                {state.developers.map((member) => <MemberCard data={member}/>)}
             </div>
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
-            </div>
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <img class="hall-lower-left-image" src={lowerLeft}/>
-          <img class="hall-lower-right-image" src={lowerRight}/>
-          <div class="hall-developers-line-div">
-            <img class="hall-developers-section-image" src={developersSection}/>
-          </div>
-          <div class="row d-flex align-items-center hall-leads-section">
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
-            </div>
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
-            </div>
-            <div class="mb-3 hall-leads-detail">
-              <div class="hall-leads-upper-div">
-                <div class="hall-lead-name"><p class="hall-lead-name-para">Parth Sharma</p></div>
-                <div class="hall-lead-skill"><p class="hall-lead-skill-para">Full-stack</p></div>
-                <div class="hall-lead-image-div"><img class="hall-lead-image" src="https://images.livemint.com/img/2019/08/22/600x338/AFP_1JJ5U1_1566464512957_1566464529484.jpg"/></div>
-              </div>
-              <div class="hall-leads-lower-div">
-                <div class="hall-contrib-div"><img class="hall-contrib-image" src={contribution}/></div>
-                <div class="hall-contrib-text-div">
-                  <div class="hall-enclosing-div"><p class="hall-contrib-text-para">Dignissim metus egestas tempus euismod turpis turpis turpis nisi eleifend eu suspendisse commodo nunc eget risus mauris amet</p></div>
-                </div>
-                <div class="row hall-media-icons-div">
-                  <div><img class="hall-media-image" src={githubIcon}/></div>
-                  <div><img class="hall-media-image" src={linkedinIcon}/></div>
-                  <div><img class="hall-media-image" src={dribbleIcon}/></div>
-                  <div><img class="hall-media-image" src={mediumIcon}/></div>
-                  <div><img class="hall-media-image" src={devIcon}/></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <img class="hall-bottom-left-image" src={bottomLeft}/>
-          <img class="hall-bottom-right-image" src={bottomRight}/>
+            <img className="hall-bottom-left-image" src={bottomLeft} alt={''}/>
+            <img className="hall-bottom-right-image" src={bottomRight} alt={''}/>
         </div>
-);
+    );
 };
+
+const MemberCard = (props) => {
+    return (
+        <div className="hall-leads-section">
+            <div className="mb-3 hall-leads-detail">
+                <div className="hall-leads-upper-div">
+                    <div className="hall-lead-name">
+                        <p className="hall-lead-name-para">{props.data.name}</p>
+                    </div>
+                    <div className="hall-lead-skill">
+                        <p className="hall-lead-skill-para">{props.data.role}</p>
+                    </div>
+
+                </div>
+                <div className="hall-lead-image-div">
+                    <img alt={''} className="hall-lead-image"
+                         src={props.data.imageURL}/>
+                </div>
+                <div className="hall-leads-lower-div">
+                    <div className="hall-contrib-div">
+                        <img alt={''} className="hall-contrib-image"
+                             src={contribution}/>
+                    </div>
+                    <div className="hall-contrib-text-div">
+                        <div className="hall-enclosing-div"><p
+                            className="hall-contrib-text-para">{props.data.description}</p>
+                        </div>
+                    </div>
+                    <div className="row hall-media-icons-div">
+                        <div><a href={props.data.githubURL}><img alt={''} className="hall-media-image"
+                                                                 src={githubIcon}/></a></div>
+                        <div><a href={props.data.linkedinURL}><img alt={''} className="hall-media-image"
+                                                                   src={linkedinIcon}/></a></div>
+                        {/*<div><img alt={''} className="hall-media-image" src={dribbleIcon}/></div>*/}
+                        {/*<div><a href={props.data.mediumURL}><img alt={''} className="hall-media-image" src={mediumIcon}/></div>*/}
+                        {/*<div><a href={props.data.devURL}><img alt={''} className="hall-media-image" src={devIcon}/></div>*/}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
 
 export default Hall;

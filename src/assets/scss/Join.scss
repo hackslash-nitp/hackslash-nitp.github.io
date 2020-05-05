@@ -1,0 +1,166 @@
+.wp-logo {
+  width: 160px;
+  display: block;
+  transition-duration: 0.4s;
+
+  &:hover {
+    width: 200px;
+  }
+}
+
+.wp-button {
+  border: none;
+  background-color: #212121;
+  color: $colorBackground;
+  padding: 12px 16px;
+  box-shadow: #424242;
+  border-radius: 4px;
+  font-family: "GT Walsheim Pro", sans-serif;
+  transition-duration: 0.4s;
+
+  &:hover{
+    background-color: #424242;
+  }
+}
+
+.slack-logo {
+  width: 120px;
+  display: block;
+  transition-duration: 0.4s;
+  margin-left: 20px;
+
+  &:hover {
+    width: 160px;
+  }
+}
+
+.wp-selected {
+  width: 200px;
+}
+
+.slack-selected {
+  width: 160px;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  color: $colorBackground;
+  align-items: center;
+  font-size: 24px;
+}
+
+.join {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 70px);
+  background-color: $colorPrimary;
+}
+
+.join-title {
+  font-size: 44px;
+  font-weight: bold;
+  margin-top: 0;
+  color: #ffffff;
+  font-family: "GT Walsheim Pro", sans-serif;
+}
+
+.join-input-field {
+  border: none;
+  width: 400px;
+  height: 40px;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #fff;
+  font-family: "GT Walsheim Pro", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  transition-duration: 0.4s;
+  color: #424242;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+
+.join-input-field::placeholder {
+  color: #424242;
+  font-weight: 400;
+}
+
+.join-send-button,
+.join-input-field:focus {
+  outline: none;
+}
+
+.join-send-button {
+  background: #212121;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  font-family: "GT Walsheim Pro", sans-serif;
+  border: none;
+  font-style: normal;
+  height: 50px;
+  width: 300px;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 24px;
+  color: #ffffff;
+  transition-duration: 0.4s;
+}
+
+.join-send-button:hover {
+  background: #424242;
+}
+
+@media only screen and (max-width: 500px) {
+  .join-App-logo {
+    height: 160px;
+    display: block;
+  }
+
+  .join-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0px;
+    color: #ffffff;
+    font-family: "GT Walsheim Pro", sans-serif;
+  }
+
+  .join-input-field {
+    border: none;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #f0f0f0;
+    font-family: "Muli", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    color: #424242;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+  }
+
+  .join-send-button {
+    background: #212121;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    font-family: "GT Walsheim Pro", sans-serif;
+    border: none;
+    font-style: normal;
+    height: 40px;
+    width: 240px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 24px;
+    color: #ffffff;
+    transition-duration: 0.4s;
+  }
+}

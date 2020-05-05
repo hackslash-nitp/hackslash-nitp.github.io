@@ -1,4 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
 @import './colors.scss';
 @import './Home.scss';
 @import './fonts.scss';
@@ -7,6 +6,8 @@
 @import './Events.scss';
 @import './Hall.scss';
 @import './NavBar.scss';
+@import './Join.scss';
+@import './Certificates.scss';
 
 body::-webkit-scrollbar {
   width: 5px;
@@ -27,6 +28,7 @@ body::-webkit-scrollbar-thumb {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+  background-color: $colorPrimary;
 }
 
 .App {
