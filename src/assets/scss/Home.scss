@@ -1,137 +1,121 @@
 .home-body {
-    background-color: $colorPrimary;
-    margin-left: 0;
-    margin-right: 0;
-    color: $colorBackground;
-    height: 90vh;
-    font-family: 'GT Walsheim Pro', sans-serif;
-    overflow: hidden;
-}
+  background-color: $colorPrimary;
+  color: $colorBackground;
+  height: 90vh;
+  font-family: 'GT Walsheim Pro', sans-serif;
 
-.home-head {
+  .home-main-row {
+    height: 100%;
+
+    .home-main-col {
+      align-self: center;
+      padding-left: 6rem;
+    }
+
+  }
+
+  .home-img {
+    width: 700px;
+    align-self: flex-end;
+  }
+
+  h3 {
+    font-size: 1.25rem;
     font-weight: 400;
-    font-size: 100px;
-    display: inline-block;
-}
+    margin-bottom: 4rem;
+  }
 
-.home-h3 {
-    font-size: 20px;
-    margin-bottom: 10vh;
+  h5 {
+    font-size: 1.7rem;
     font-weight: 400;
-}
+    white-space: pre;
+    margin-bottom: 2rem;
 
-.home-h5 {
-    font-size: 26px;
-    margin-bottom: 0vh;
-    font-weight: 400
-}
+  }
 
-.home-p-world {
-    position: absolute;
-    font-size: 64px;
-    bottom: 5vh;
-    left: 5vw;
+  p {
+    white-space: pre;
+    font-size: 4rem;
+    line-height: 4rem;
     z-index: 1;
+    margin-top: 8rem;
     font-family: "Fake Serif", sans-serif;
-}
+  }
 
-.home-know-more {
+  .home-know-more {
     text-decoration: none;
-    display: inline-block;
     background-color: $colorBackground;
     color: $colorPrimary;
-    border-radius: 7px;
-    margin-top: 24px;
-    z-index: 2;
-    font-size: 20px;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
     padding: 10px 24px;
-    font-weight: 100;
+    font-weight: 700;
     transition-duration: 0.4s;
+
+    &:hover {
+      box-shadow: rgba(20, 54, 73, 0.247) 0 2px 12px;
+      color: $colorPrimary;
+      text-decoration: none;
+    }
+
+  }
+
+  .home-head {
+    font-weight: 400;
+    font-size: 6.25rem;
+  }
 }
 
-.home-know-more:hover {
-    box-shadow: rgba(20, 54, 73, 0.247) 0 2px 12px;
-    color: $colorPrimary;
-    text-decoration: none;
-}
+@media only screen and (max-width: 800px) {
 
-.home-img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 700px;
-    z-index: 0;
-}
+  .home-body {
+    height: auto;
 
-.home-contents{
-    left: 5vw;
-    position: absolute;
-    top: 100px;
-    z-index: 5;
-}
+    .home-main-row {
+      height: 100%;
 
-@media only screen and (max-width: 700px) {
-
-    .home-body{
+      .home-main-col {
+        align-self: center;
+        padding: 1rem 1rem;
         text-align: center;
-        height: calc(100vh - 70px);
+
+
+        .home-know-more {
+          font-size: 4vw;
+          padding: 2vw 20vw;
+          margin-top: 4rem;
+        }
+      }
+
     }
 
     .home-img {
-        width: 75%;
+      width: 95vw;
+      align-self: flex-end;
     }
 
-    .home-contents{
-        left: 0;
-        top: 15%;
-        width: 100%;
+    h3 {
+      font-size: 4.8vw;
+      font-weight: 400;
+      margin-bottom: 4rem;
     }
 
-    .home-p-world {
-        font-size: 40px;
-        margin-top: 5vh;
-        z-index: 1;
-        font-family: "Fake Serif", sans-serif;
+    h5 {
+      font-size: 5.6vw;
+      font-weight: 400;
+      margin-bottom: 4rem;
+
+    }
+
+    p {
+      font-size: 12vw;
+      line-height: 10vw;
+      margin-top: 4rem;
     }
 
     .home-head {
-        font-weight: 400;
-        font-size: 70px;
-        display: inline-block;
+      font-weight: 400;
+      font-size: 16vw;
     }
-
-    .home-know-more {
-        text-decoration: none;
-        display: inline-block;
-        background-color: $colorBackground;
-        color: $colorPrimary;
-        border-radius: 7px;
-        margin-top: 10vh;
-        padding: 1vh;
-        width: 90%;
-        z-index: 1;
-        margin-left: 5%;
-        margin-right: 5%;
-        text-align: center;
-        font-weight: 100;
-        transition-duration: 0.4s;
-    }
-
-    .home-know-more:hover {
-        box-shadow: none;
-        color: $colorPrimary;
-        text-decoration: none;
-    }
-
-    .home-h3 {
-        font-size: 2.5vh;
-        margin-bottom: 5vh;
-        font-weight: 400;
-    }
-    
-    .home-h5 {
-        font-size: 2.6vh;
-        margin-bottom: 0;
-        font-weight: 400
-    }
+  }
 }
