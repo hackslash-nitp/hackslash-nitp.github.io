@@ -17,7 +17,7 @@ const Home = (props) => {
                         Student Developers' Club<br/>National Institute of Technology, Patna
                     </h3>
                     <h5 className="home-h5">
-                        Come, be a part of the community{'\n'}and help contrive better software!{'\n'}
+                        Come, be a part of our community{'\n'}and help contrive better software!{'\n'}
                     </h5>
                     <Link to="/about" className="home-know-more">Know more</Link>
                     <p className="home-p-world">
