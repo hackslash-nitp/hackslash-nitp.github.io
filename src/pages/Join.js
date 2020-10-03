@@ -44,7 +44,7 @@ const Join = (props) => {
                             // alert.error('Something went wrong, please try again!');
                         });
                 else {
-                    // alert.error('Please fill all fields correctly');
+                    // alert.error('Please fill out all the fields correctly');
                 }
             }}/>
         </form>
