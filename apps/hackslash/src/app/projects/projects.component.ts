@@ -8,7 +8,7 @@ import { map, startWith } from 'rxjs/operators';
 @Component({
   selector: 'hackslash-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
   Repo: Observable<any>;

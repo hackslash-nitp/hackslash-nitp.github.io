@@ -1,0 +1,188 @@
+.project-card {
+  width: 350px;
+  height: 450px;
+  max-height: 450px;
+  margin: 30px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  .image {
+    width: 350px;
+    height: 200px;
+    background-color: #013354;
+    display: flex;
+    justify-content: center;
+  }
+  .detail {
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      font-family: GT Walsheim Pro;
+    }
+    .rep-count {
+      display: flex;
+      justify-content: space-evenly;
+      p {
+        background-color: grey;
+        font-family: sans-serif;
+        color: white;
+        padding: 2px;
+      }
+    }
+    .desc {
+      padding: 5%;
+    }
+  }
+  .created {
+    background-color: #3e97bf;
+    font-family: Mada;
+    color: white;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    h6 {
+      font-size: 25px;
+    }
+  }
+}
+
+.article-clean {
+  color: #56585b;
+  background-color: #fff;
+  font-family: Lora, serif;
+  font-size: 14px;
+}
+
+.article-clean .intro {
+  font-size: 16px;
+  margin: 0 auto 30px;
+}
+
+.article-clean .intro h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  padding-top: 20px;
+  line-height: 1.5;
+  color: inherit;
+  margin-top: 20px;
+}
+
+.article-clean .text h2,
+.article-clean .text p {
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.article-clean .intro p {
+  color: #929292;
+  font-size: 12px;
+}
+
+.article-clean .intro p .by {
+  font-style: italic;
+}
+
+.article-clean .intro p .date {
+  text-transform: uppercase;
+  padding: 4px 0 4px 10px;
+  margin-left: 10px;
+  border-left: 1px solid #ddd;
+}
+
+.article-clean .intro p a {
+  color: #333;
+  text-transform: uppercase;
+  padding-left: 3px;
+}
+
+.article-clean .intro img {
+  margin-top: 20px;
+}
+
+.article-clean .text h2 {
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .article-clean .text p {
+    font-size: 16px;
+  }
+
+  .article-clean .text h2 {
+    font-size: 20px;
+  }
+}
+
+.article-clean .text figure {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.article-clean .text figure img {
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+
+float-left {
+  width: 50px;
+}
+
+.float-left {
+  position: absolute;
+}
+
+@media (min-width: 1000px) {
+  .float-left.visible.img-fluid {
+    width: 15%;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  #intro {
+    font-size: 2.5rem;
+    margin-left: 50px;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  #desc {
+    font-size: 1.2rem;
+  }
+}
+
+.form-control-plaintext {
+  border-top: 2px;
+  border-color: #000;
+  max-width: 1000px;
+}
+
+hr {
+  border-top: 2px solid;
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    margin-left: 6px;
+    margin-top: 40px;
+  }
+
+  .float-left.visible.img-fluid {
+    opacity: 0;
+  }
+
+  .row {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  h3 {
+    margin-left: 200px;
+  }
+}
