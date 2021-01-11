@@ -95,7 +95,7 @@ float-left {
 @media (min-width:1200px) {
   h1 {
     font-size: 4rem;
-    margin-left: 150px
+    margin-left: 40px;
   }
 }
 
@@ -130,6 +130,7 @@ hr {
   }
   h6{
       font-size:1.2rem;
+      margin-left:50px;
   }
 }
 

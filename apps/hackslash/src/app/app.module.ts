@@ -21,12 +21,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgForm, FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {AngularFireModule} from '@angular/fire';
 import{AngularFireDatabaseModule}from '@angular/fire/database';
 import { NavComponent } from './index/nav/nav.component';
 import { environment } from '../environments/environment';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,8 +50,11 @@ import { environment } from '../environments/environment';
     RouterModule.forRoot(routes),
     LayoutModule,
     MatToolbarModule,
+    Ng2SearchPipeModule,
     MatButtonModule,
     MatSidenavModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatListModule,
     AngularFireModule.initializeApp(environment.config),

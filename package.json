@@ -47,6 +47,7 @@
     "bootstrap": "^4.4.1",
     "core-js": "^2.5.4",
     "firebase": "^7.14.2",
+    "ng2-search-filter": "^0.5.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.4",
     "zone.js": "^0.10.2"

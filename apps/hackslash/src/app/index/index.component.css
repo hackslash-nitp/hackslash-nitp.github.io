@@ -2,15 +2,24 @@
 @media (min-width:800px) {
   h1 {
     font-size: 7rem;
-    margin-left: 100px
+    margin-left: 90px;
+    margin-top:5vh;
   }
-  h3,h5{
+  h3{
+    margin-left:100px;
+    margin-top:8vh;
+    font-size: 1.4rem;
+  }
+  h5{
       margin-left:100px;
+      font-size: 1.2rem;
+      line-height:1.4;
   }
   #p_world {
     font-size: 4rem;
     margin-left: 100px;
-    margin-top:2vh;
+    margin-top:10vh;
+    line-height: 1.2;
   }
  
 }
@@ -26,6 +35,11 @@
   
   #bod{
       height:95vh;
+  }
+  #p_world {
+    font-size: 1.4rem;
+    margin-top:2vh;
+    line-height: 1.2;
   }
 }
 @media(min-width:1200px){
