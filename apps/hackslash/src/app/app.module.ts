@@ -28,6 +28,7 @@ import{AngularFireDatabaseModule}from '@angular/fire/database';
 import { NavComponent } from './index/nav/nav.component';
 import { environment } from '../environments/environment';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatIconModule,
     MatListModule,
     AngularFireModule.initializeApp(environment.config),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

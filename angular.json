@@ -23,7 +23,8 @@
             "aot": true,
             "assets": [
               "apps/hackslash/src/favicon.ico",
-              "apps/hackslash/src/assets"
+              "apps/hackslash/src/assets",
+              "apps/hackslash/src/manifest.webmanifest"
             ],
             "styles": [
               "apps/hackslash/src/styles.scss",
@@ -59,7 +60,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/hackslash/ngsw-config.json"
             }
           }
         },

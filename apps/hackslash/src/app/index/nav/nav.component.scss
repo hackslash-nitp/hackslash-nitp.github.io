@@ -8,9 +8,9 @@
   width: 200px;
 }
 
-  .sidenav .mat-toolbar {
-    background-color: #60b6e9;
-  }
+.sidenav .mat-toolbar {
+  background-color: #60b6e9;
+}
 
 .mat-toolbar.mat-primary {
   position: sticky;
@@ -21,10 +21,12 @@
 a {
   font: bolder;
   background-color: #60b6e9;
-  margin:0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
 .mat-list-item {
+  margin: 2px 14px;
+
   padding: 8px;
   text-decoration: none;
   display: inline-block;
@@ -33,26 +35,26 @@ a {
   font-size: 1.2rem;
 }
 
-  .mat-list-item:hover {
-    background-color: white;
-    color: #60b6e9;
-    box-sizing:padding-box;
-  }
+.mat-list-item:hover {
+  background-color: white;
+  color: #60b6e9;
+  box-sizing: padding-box;
+}
 
 .navitem {
   margin: 2px 14px;
-  padding: 8px;
+  padding: 2px 6px;
   text-decoration: none;
   display: inline-block;
   color: white;
   transition: 0.5s ease;
 }
 
-  .navitem:hover {
-    background-color: white;
-    color: #60b6e9;
-    border-radius: 15px;
-  }
+.navitem:hover {
+  background-color: white;
+  color: #60b6e9;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.161);
+}
 
 .active {
   color: #60b6e9;
