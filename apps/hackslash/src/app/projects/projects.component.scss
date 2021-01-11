@@ -1,8 +1,7 @@
 .project-card {
   width: 350px;
-  height: 450px;
-  max-height: 450px;
   margin: 30px;
+  padding-bottom: 5px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   .image {
     width: 350px;
@@ -12,6 +11,7 @@
     justify-content: center;
   }
   .detail {
+    height:220px;
     h1 {
       font-size: 1.5rem;
       text-align: center;
@@ -35,11 +35,13 @@
     background-color: #3e97bf;
     font-family: Mada;
     color: white;
-    position: relative;
-    bottom: 0;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
     h6 {
       font-size: 25px;
+      line-height: 0;
     }
   }
 }
