@@ -26,7 +26,6 @@ a {
 
 .mat-list-item {
   margin: 2px 14px;
-
   padding: 8px;
   text-decoration: none;
   display: inline-block;
@@ -48,6 +47,7 @@ a {
   display: inline-block;
   color: white;
   transition: 0.5s ease;
+  border-radius: 5px;
 }
 
 .navitem:hover {

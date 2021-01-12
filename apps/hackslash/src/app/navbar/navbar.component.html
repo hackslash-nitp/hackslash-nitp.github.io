@@ -21,7 +21,7 @@
     <mat-toolbar style="background-color: white;">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <img class="img-fluid" style="max-width:70%;" src="assets/menu.svg" />
+        <img class="img-fluid" style="max-width:70%;" src="assets/toggle.svg" />
       </button>
       <span><a routerLink="" style="font-size:1.5rem;" >HackSlash</a></span>
       <span style="flex : 1 1 auto"></span>
@@ -39,5 +39,6 @@
         <a style=" font-family: GT Walsheim Pro;" class="navitem" href="http://www.hackslash.club/slack/">Join Us</a>
       </div>
     </mat-toolbar>
+    <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

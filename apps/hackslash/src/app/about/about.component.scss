@@ -5,6 +5,7 @@
   margin: 40px;
   width: 300px;
   height: 400px;
+  z-index: 1;
   max-width: 300px;
   max-height: 400px;
   background-color: #fff;
@@ -34,7 +35,7 @@
     border: 5px solid#5f7de7;
     align-items: center;
     justify-content: flex-start;
-    img{
+    img {
       min-width: 100%;
       width: 100%;
       height: auto;
@@ -49,7 +50,7 @@
     align-items: center;
     flex-direction: column;
     min-width: 300px;
-    .bio{
+    .bio {
       margin-top: 65px;
       text-align: center;
       width: 70%;

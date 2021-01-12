@@ -1,115 +1,125 @@
-<div style="width:99%">
-    <hackslash-navbar></hackslash-navbar>
+<hackslash-navbar>
+    <div style="width:99%">
 
-    <body>
-        <div>
-            <div class="row d-flex" style="margin-right: 0px;margin-left: 0px;">
-                <div class="col-md-6 col-xl-8 d-flex flex-column justify-content-center">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-12 offset-xl-1 d-flex" style="margin-left: 0px;">
-                            <h1 class="d-flex flex-grow-1 flex-shrink-1 align-items-center align-content-center align-self-center"
-                                style="font-family: GT Walsheim Pro;line-height: 1.6;
-">
-                                About Us
-                            </h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-11">
-                            <h6 class="d-inline-flex align-content-center align-self-center img-fluid" style="color: rgb(6,18,30);margin-bottom: 0px;font-family: GT Walsheim Pro;line-height: 1.4;">
-                                HackSlash, currently under the Mozilla Campus Clubs Network, is an all student driven
-                                developers community&nbsp;located in the National Institute of Technology Patna. The
-                                club strives to build and improve the open sourcing&nbsp;environment
-                                and the coding culture of the whole city of Patna and eventually the whole state of
-                                Bihar. The will&nbsp;power and determination of each Developers, Competitive Coders,
-                                Designers and Innovative thinkers is what&nbsp;governs
-                                our great community.<br>
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4 offset-xl-1" style="margin: 0px;margin-left: 0px;"><img
-                        class="visible img-fluid" src="assets/img/about_us/about-bg-1.svg"
-                        style="margin: 0px;margin-top: 0px;"></div>
-            </div>
-        </div>
-        <div>
-            <div class="row d-flex" id="story" style="margin-right: 0px; margin-left: 0px;">
-                <div class="col-md-4 col-lg-4 col-xl-4 offset-xl-1" style="margin: 0px;margin-left: 0px;"><img
-                        class="visible img-fluid" src="assets/img/about_us/about-bg-2.svg"
-                        style="margin: 0px;margin-top: 0px;"></div>
-                <div class="col-md-6 col-xl-8 d-flex flex-column justify-content-center">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-12 offset-xl-1 d-flex" style="margin-left: 0px;">
-                            <h1 class="d-flex flex-grow-1 flex-shrink-1 align-items-center align-content-center align-self-center"
-                                style="            font-family: GT Walsheim Pro;line-height: 1.6;
-">
-                                Our Story
-                            </h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-11">
-                            <h6 class="d-inline-flex align-content-center align-self-center img-fluid"
-                                style="color: rgb(6,18,30);margin-bottom: 0px;font-family: GT Walsheim Pro;line-height: 1.4;">
-                                Formed as a college’s development club in NIT Patna, it was established on 2018, with
-                                only 10 members. The main reason of taking such a step, i.e. to form the HackSlash Club,
-                                was because of the lack of awareness and opportunities
-                                for the students to achieve their maximum potential and also to bring their attention to
-                                the current need in the field of development and open sourcing contribution. It started
-                                out as a weekly meet up in&nbsp;the cafeteria
-                                to fully functioning weekend classes and afternoon informative sessions. Currently It is
-                                holding&nbsp;over<br>15 core members and 112 interested members of all years and degree
-                                programs in the institute itself. We are&nbsp;currently
-                                striving of increasing our reach to all other interested students in other technical
-                                institutes in&nbsp;Patna.<br>
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </body>
-    <div class="row d-flex justify-content-center align-content-center" id="team"
-        style="margin-left:0px;margin-right:0px;margin-top:40px;">
-        <div class="col d-flex justify-content-center align-content-center">
-            <h1 style="font-family: GT Walsheim Pro;" id="t">Our Team</h1>
-        </div>
-    </div>
-    <div>
-        <div class="row d-flex justify-content-around">
-            <div class="member-card" *ngFor="let item of team | async">
-                <p class="member-name">{{item.name}}</p>
-                <p class="member-role">{{item.role}}</p>
-                <div class="member-image">
-                    <img src={{item.image}} alt={{item.name}}/>
+        <body>
+            <div>
+                <div class="row d-flex" style="margin-right: 0px;margin-left: 0px;">
+                    <div class="col-md-6 col-xl-8 d-flex flex-column justify-content-center">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-xl-12 offset-xl-1 d-flex" style="margin-left: 0px;">
+                                <h1 class="d-flex flex-grow-1 flex-shrink-1 align-items-center align-content-center align-self-center"
+                                    style="font-family: GT Walsheim Pro;line-height: 1.6;
+">
+                                    About Us
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-11">
+                                <h6 class="d-inline-flex align-content-center align-self-center img-fluid"
+                                    style="color: rgb(6,18,30);margin-bottom: 0px;font-family: GT Walsheim Pro;line-height: 1.4;">
+                                    HackSlash, currently under the Mozilla Campus Clubs Network, is an all student
+                                    driven
+                                    developers community&nbsp;located in the National Institute of Technology Patna. The
+                                    club strives to build and improve the open sourcing&nbsp;environment
+                                    and the coding culture of the whole city of Patna and eventually the whole state of
+                                    Bihar. The will&nbsp;power and determination of each Developers, Competitive Coders,
+                                    Designers and Innovative thinkers is what&nbsp;governs
+                                    our great community.<br>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-4 offset-xl-1" style="margin: 0px;margin-left: 0px;"><img
+                            class="visible img-fluid" src="assets/img/about_us/about-bg-1.svg"
+                            style="margin: 0px;margin-top: 0px;"></div>
                 </div>
-                <div class="member-details">
-                    <p class="bio">
-                        {{item.bio}}
-                    </p>
-                    <div class="social">
-                        <a href="{{item.linkedin}}" *ngIf="!(item.linkedin===undefined)">
-                            <img src="assets/img/about_us/card-link-linkedin.svg" alt="linkedin">
-                        </a>
-                        <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
-                            <img src="assets/img/about_us/card-link-github.svg" alt="github">
-                        </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
-                            <img src="assets/img/about_us/card-link-medium.svg" alt="medium">
-                        </a>
-                        <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
-                            <img src="assets/img/about_us/card-link-dev.svg" alt="dev">
-                        </a>
-                        <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
-                            <img src="assets/img/about_us/card-link-dribble.svg" alt="dribble">
-                        </a>
+            </div>
+            <div>
+                <div class="row d-flex" id="story" style="margin-right: 0px; margin-left: 0px;">
+                    <div class="col-md-4 col-lg-4 col-xl-4 offset-xl-1" style="margin: 0px;margin-left: 0px;"><img
+                            class="visible img-fluid" src="assets/img/about_us/about-bg-2.svg"
+                            style="margin: 0px;margin-top: 0px;"></div>
+                    <div class="col-md-6 col-xl-8 d-flex flex-column justify-content-center">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-xl-12 offset-xl-1 d-flex" style="margin-left: 0px;">
+                                <h1 class="d-flex flex-grow-1 flex-shrink-1 align-items-center align-content-center align-self-center"
+                                    style="            font-family: GT Walsheim Pro;line-height: 1.6;
+">
+                                    Our Story
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-11">
+                                <h6 class="d-inline-flex align-content-center align-self-center img-fluid"
+                                    style="color: rgb(6,18,30);margin-bottom: 0px;font-family: GT Walsheim Pro;line-height: 1.4;">
+                                    Formed as a college’s development club in NIT Patna, it was established on 2018,
+                                    with
+                                    only 10 members. The main reason of taking such a step, i.e. to form the HackSlash
+                                    Club,
+                                    was because of the lack of awareness and opportunities
+                                    for the students to achieve their maximum potential and also to bring their
+                                    attention to
+                                    the current need in the field of development and open sourcing contribution. It
+                                    started
+                                    out as a weekly meet up in&nbsp;the cafeteria
+                                    to fully functioning weekend classes and afternoon informative sessions. Currently
+                                    It is
+                                    holding&nbsp;over<br>15 core members and 112 interested members of all years and
+                                    degree
+                                    programs in the institute itself. We are&nbsp;currently
+                                    striving of increasing our reach to all other interested students in other technical
+                                    institutes in&nbsp;Patna.<br>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </body>
+        <div class="row d-flex justify-content-center align-content-center" id="team"
+            style="margin-left:0px;margin-right:0px;margin-top:40px;">
+            <div class="col d-flex justify-content-center align-content-center">
+                <h1 style="font-family: GT Walsheim Pro;" id="t">Our Team</h1>
+            </div>
+        </div>
+        <div>
+            <div class="row d-flex justify-content-around">
+                <div class="member-card" *ngFor="let item of team | async">
+                    <p class="member-name">{{item.name}}</p>
+                    <p class="member-role">{{item.role}}</p>
+                    <div class="member-image">
+                        <img src={{item.image}} alt={{item.name}} />
+                    </div>
+                    <div class="member-details">
+                        <p class="bio">
+                            {{item.bio}}
+                        </p>
+                        <div class="social">
+                            <a href="{{item.linkedin}}" *ngIf="!(item.linkedin===undefined)">
+                                <img src="assets/img/about_us/card-link-linkedin.svg" alt="linkedin">
+                            </a>
+                            <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
+                                <img src="assets/img/about_us/card-link-github.svg" alt="github">
+                            </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
+                                <img src="assets/img/about_us/card-link-medium.svg" alt="medium">
+                            </a>
+                            <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
+                                <img src="assets/img/about_us/card-link-dev.svg" alt="dev">
+                            </a>
+                            <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
+                                <img src="assets/img/about_us/card-link-dribble.svg" alt="dribble">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row" style="margin-left:0px;margin-right:0px;width:99%">
+            <img style="width:100%;position:absolute;z-index:-1" src="assets/img/about_us/about-bg-4.svg" />
+        </div>
     </div>
-    <div class="row" style="margin-left:0px;margin-right:0px;width:99%">
-        <img style="width:100%;position:absolute;z-index:-1" src="assets/img/about_us/about-bg-4.svg" />
-    </div>
-</div>
+</hackslash-navbar>
