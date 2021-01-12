@@ -1,0 +1,216 @@
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  width: 300px;
+  height: 400px;
+  max-width: 300px;
+  max-height: 400px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  .member-name {
+    margin-top: 25px;
+    color: #4f6ac9;
+    font-size: 28px;
+    font-family: 'GT Walsheim Pro', sans-serif;
+    text-align: center;
+  }
+  .member-role {
+    margin-top: 7px;
+    color: #686868;
+    font-size: 16px;
+  }
+  .member-image {
+    width: 100px;
+    height: 100px;
+
+    margin-top: 5px;
+    margin-bottom: -50px;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    border: 5px solid#5f7de7;
+    align-items: center;
+    justify-content: flex-start;
+    img{
+      min-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .member-details {
+    background-color: #5f7de7;
+    height: 250px;
+    min-height: 250px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 300px;
+    .bio{
+      margin-top: 65px;
+      text-align: center;
+      width: 70%;
+      font-size: 15px;
+      color: #fff;
+      min-height: 105px;
+    }
+  }
+}
+
+.article-clean {
+  color: #56585b;
+  background-color: #fff;
+  font-family: Lora, serif;
+  font-size: 14px;
+}
+
+.article-clean .intro {
+  font-size: 16px;
+  margin: 0 auto 30px;
+}
+
+.article-clean .intro h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  padding-top: 20px;
+  line-height: 1.5;
+  color: inherit;
+  margin-top: 20px;
+}
+
+.article-clean .text h2,
+.article-clean .text p {
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.article-clean .intro p {
+  color: #929292;
+  font-size: 12px;
+}
+
+.article-clean .intro p .by {
+  font-style: italic;
+}
+
+.article-clean .intro p .date {
+  text-transform: uppercase;
+  padding: 4px 0 4px 10px;
+  margin-left: 10px;
+  border-left: 1px solid #ddd;
+}
+
+.article-clean .intro p a {
+  color: #333;
+  text-transform: uppercase;
+  padding-left: 3px;
+}
+
+.article-clean .intro img {
+  margin-top: 20px;
+}
+
+.article-clean .text h2 {
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .article-clean .text p {
+    font-size: 16px;
+  }
+
+  .article-clean .text h2 {
+    font-size: 20px;
+  }
+}
+
+.article-clean .text figure {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.article-clean .text figure img {
+  margin-bottom: 12px;
+  max-width: 100%;
+}
+
+float-left {
+  width: 50px;
+}
+
+.float-left {
+  position: absolute;
+}
+
+@media (min-width: 1000px) {
+  .float-left.visible.img-fluid {
+    width: 15%;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 4rem;
+    margin-left: 40px;
+  }
+}
+
+.form-control-plaintext {
+  border-top: 2px;
+  border-color: #000;
+  max-width: 1000px;
+}
+
+hr {
+  border-top: 2px solid;
+}
+
+@media (max-width: 1200px) {
+  h1 {
+    margin-left: 6px;
+    margin-top: 40px;
+  }
+
+  .float-left.visible.img-fluid {
+    opacity: 0;
+  }
+
+  .row {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  h3 {
+    margin-left: 50px;
+  }
+  h6 {
+    font-size: 1.2rem;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  #story {
+    flex-direction: column-reverse !important;
+    -ms-flex-direction: column-reverse !important;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+@media (min-width: 1200px) {
+  #t {
+    margin-top: 200px;
+    margin-left: 0px;
+  }
+}

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'hackslash-hall',
   templateUrl: './hall.component.html',
-  styleUrls: ['./hall.component.css']
+  styleUrls: ['./hall.component.scss']
 })
 export class HallComponent implements OnInit {
   designers: Observable<any>;
@@ -18,8 +18,4 @@ export class HallComponent implements OnInit {
     this.leads = db.list('hall/leads').valueChanges();
   }
   ngOnInit(): void {}
-  getRandomColor() {
-    var color = Math.floor(0x1000000 * Math.random()).toString(7);
-    return '#' + ('000000' + color).slice(-6);
-  }
 }

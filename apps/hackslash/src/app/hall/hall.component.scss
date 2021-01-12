@@ -1,3 +1,64 @@
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  width: 300px;
+  height: 400px;
+  max-width: 300px;
+  max-height: 400px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  .member-name {
+    margin-top: 25px;
+    color: #4f6ac9;
+    font-size: 28px;
+    font-family: 'GT Walsheim Pro', sans-serif;
+    text-align: center;
+  }
+  .member-role {
+    margin-top: 7px;
+    color: #686868;
+    font-size: 16px;
+  }
+  .member-image {
+    width: 100px;
+    height: 100px;
+
+    margin-top: 5px;
+    margin-bottom: -50px;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    border: 5px solid#5f7de7;
+    align-items: center;
+    justify-content: flex-start;
+    img{
+      min-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .member-details {
+    background-color: #5f7de7;
+    height: 250px;
+    min-height: 250px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 300px;
+    .bio{
+      margin-top: 65px;
+      text-align: center;
+      width: 70%;
+      font-size: 15px;
+      color: #fff;
+      min-height: 105px;
+    }
+  }
+}
 .article-clean {
   color: #56585b;
   background-color: #fff;
