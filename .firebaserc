@@ -1,14 +1,5 @@
 {
-  "targets": {
-    "hackslash-17": {
-      "hosting": {
-        "hackslash": [
-          "hackslash-17"
-        ]
-      }
-    }
-  },
   "projects": {
-    "default": "hackslash-17"
+    "default": "hack-slash"
   }
 }
