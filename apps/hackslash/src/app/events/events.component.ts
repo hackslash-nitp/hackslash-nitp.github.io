@@ -12,6 +12,7 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
+  ev:any;
   events: Observable<any>;
   events$: Observable<any>;
   filter: FormControl;
@@ -30,5 +31,10 @@ export class EventsComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   fetch('./assets/data/events/events.json').then(res => res.json())
+    .then(json => {
+      this.ev = json;
+    });
+  }
 }
