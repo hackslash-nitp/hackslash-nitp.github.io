@@ -32,7 +32,7 @@ export class EventsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   fetch('./assets/data/events/events.json').then(res => res.json())
+   fetch('./assets/data/events/event.json').then(res => res.json())
     .then(json => {
       this.ev = json;
     });
