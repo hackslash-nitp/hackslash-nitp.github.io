@@ -12,13 +12,22 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-  ev:any;
+   ev: Observable<any>;
+  ev$:Observable<any>;
   events: Observable<any>;
   events$: Observable<any>;
   filter: FormControl;
   filter$: Observable<string>;
-  constructor(db: AngularFireDatabase) {
-    this.events = db.list('events').valueChanges();
+
+  constructor(db: AngularFireDatabase, private http: HttpClient) {
+    
+    this.events=this.http.get<any>('./assets/data/events/events.json');
+    this.http.get<any>(
+      'https://www.eventbriteapi.com/v3/organizations/544604903183/events/?token=QCITQBPHYXMKFWP3FXXP'
+      ).subscribe(res=>{
+        this.ev=of(res.events);
+        this.ev.subscribe();
+         });;
     this.filter = new FormControl('');
     this.filter$ = this.filter.valueChanges.pipe(startWith(''));
     this.events$ = combineLatest(this.events, this.filter$).pipe(
@@ -29,12 +38,16 @@ export class EventsComponent implements OnInit {
         )
       )
     );
+    this.ev$ = combineLatest(this.ev, this.filter$).pipe(
+      map(([states, filterString]) =>
+        states.filter(
+          state =>
+            state.name.toLowerCase().indexOf(filterString.toLowerCase()) !== -1
+        )
+      )
+    );
+      
   }
-
-  ngOnInit(): void {
-   fetch('./assets/data/events/event.json').then(res => res.json())
-    .then(json => {
-      this.ev = json;
-    });
+   ngOnInit(): void {
   }
 }
