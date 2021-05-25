@@ -21,7 +21,7 @@ export class EventsComponent implements OnInit {
 
   constructor(db: AngularFireDatabase, private http: HttpClient) {
     
-    this.events=this.http.get<any>('./assets/data/events/events.json');
+    this.events=this.http.get<any>('./assets/data/events/event.json');
     this.http.get<any>(
       'https://www.eventbriteapi.com/v3/organizations/544604903183/events/?token=QCITQBPHYXMKFWP3FXXP'
       ).subscribe(res=>{
