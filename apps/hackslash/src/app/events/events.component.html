@@ -1,113 +1,209 @@
 <hackslash-navbar>
-    <div style="width: 99%;">
-
-        <body style="background-color:white">
-            <img class="float-left visible img-fluid" data-toggle="tooltip" data-bs-tooltip="" src="assets/img/events/events-bg-1.svg">
-            <div>
-                <div class="row" style="margin-right: 0px;margin-left: 0px;">
-                    <div class="col-md-6 col-xl-7 d-flex flex-column justify-content-center align-items-center">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-xl-12 offset-xl-1 d-flex">
-                                <h1 class="d-flex flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center align-self-center" style="font-family: GT Walsheim Pro;margin-top: 0px;line-height: 2;">Ready to Join the Movement?
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-11">
-                                <h4 id="in" class="d-inline-flex align-content-center align-self-center img-fluid" style="color: rgb(9,117,225);margin-bottom: 0px;font-family: GT Walsheim Pro;line-height: 1.5;">
-                                    Check out What's Happening in the Campus</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-4 offset-xl-1"><img class="visible img-fluid" src="assets/img/events/events-bg-2.svg" style="margin-top: 0px;"></div>
-                </div>
-                <div class="row" style="margin-right: 0px;margin-left: 0px;">
-                    <div class="col">
-                        <div class="row" style="margin-right: 0px;margin-left: 0px;">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col-2 d-flex justify-content-end"><img class="img-fluid" src="assets/img/events/events-ic-search.svg"></div>
-                                    <div class="col-xl-4 col-md-4 col-sm-5"><input class="form-control-plaintext" type="text" class="form-control" name="search" [formControl]="filter" autocomplete="off" placeholder="Search" style="margin: 0px;margin-left: 0px;padding: 6px;padding-left: 15px;font-family: cursive;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div style="width: 99%;">
+    <body style="background-color:white">
+      <img
+        class="float-left visible img-fluid"
+        data-toggle="tooltip"
+        data-bs-tooltip=""
+        src="assets/img/events/events-bg-1.svg"
+      />
+      <div>
+        <div class="row" style="margin-right: 0px;margin-left: 0px;">
+          <div
+            class="col-md-6 col-xl-7 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="row d-flex justify-content-center">
+              <div class="col-xl-12 offset-xl-1 d-flex">
+                <h1
+                  class="d-flex flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-center align-self-center"
+                  style="font-family: GT Walsheim Pro;margin-top: 0px;line-height: 2;"
+                >
+                  Ready to Join the Movement?
+                </h1>
+              </div>
             </div>
-            <div>
-                <div class="row" style="margin-top: 87px;">
-
-                    <!----upcoming event details and using api-->
-
-                    <!--------------------------------------------------------------->
-                </div>
-
-                <div class="row" style="justify-content:center;margin-left:0px;margin-right:0px;">
-                    <img id="bg-4" class="img-fluid" style="position:absolute;float:right;right:0;height:70%;" src="assets/img/events/events-bg-4.svg" />
-                    <img id="bg-3" class="img-fluid" style="position:absolute;float:left;left:0;height:70%;margin-top:15%" src="assets/img/events/events-bg-3.svg" />
-
-                    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;padding-left:0px;padding-right:0px;" *ngFor="let item of ev | async">
-                        <img class="card-img-top w-100 d-block">
-                        <a href={{item.url}}>
-                            <img class="img-fluid" style="z-index:0;" src={{item.logo.original.url}} />
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title" style="font-family: GT Walsheim Pro;">{{item.name.text}}</h4>
-                            <p class="card-text" style="font-family: GT Walsheim Pro;">
-                                {{item.description.text}}
-                            </p>
-                             <div *ngIf="item.status=='live'">
-                            <!-- Noscript content for added SEO -->
-                            <a href="https://ideathon2021.eventbrite.com" class="btn btn-success" rel="noopener noreferrer" target="_blank">
-                                <!-- You can customize this button any way you like -->
-                                <button id="eventbrite-widget-modal-trigger-157504505215" class="btn btn-success" type="button">Buy Tickets</button>
-                            </a>
-                            <div class="location">
-                                <img src="assets/img/events/event-ic-time.svg" width="12px" height="12px" style="margin-right: 4px;margin-top: -2px;"> {{item.start.local | date:'short':'IST'}} - {{item.end.local | date:'short':'IST'}}
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!------>
-                <div class="row" style="justify-content:center;margin-left:0px;margin-right:0px;">
-                    <img id="bg-4" class="img-fluid" style="position:absolute;float:right;right:0;height:70%;" src="assets/img/events/events-bg-4.svg" />
-                    <img id="bg-3" class="img-fluid" style="position:absolute;float:left;left:0;height:70%;margin-top:15%" src="assets/img/events/events-bg-3.svg" />
-
-                    <div class="card border rounded shadow col-sm-6 col-lg-3 item" style="margin: 40px;padding-left:0px;padding-right:0px;" *ngFor="let item of events$ | async">
-                        <img class="card-img-top w-100 d-block">
-                        <div class="location" style="align-self:end;position:absolute;z-index:4;margin-top:55%;margin-right:10px;padding:2px;border-radius:2px;background-color:white;">
-                            <img src="assets/img/events/event-ic-location.svg" width="12px" height="12px" style="margin-right: 4px;margin-top: -2px;z-index:2;"> {{item.type}} {{item.venue}}
-
-                        </div>
-                        <a href={{item.link}}>
-                            <img class="img-fluid" style="z-index:0; float: left;
-                             width:  500px;
-                             height: 300px;
-                             object-fit: cover;" src={{item.photo}} />
-                        </a>
-
-                        <div class="card-body">
-                            <h4 class="card-title" style="font-family: GT Walsheim Pro;">{{item.name}}</h4>
-
-                            <p class="card-text" style="font-family: GT Walsheim Pro;">
-                                {{item.department}}
-                            </p>
-
-                            <div class="location">
-                                <img src="assets/img/events/event-ic-time.svg" width="12px" height="12px" style="margin-right: 4px;margin-top: -2px;"> {{item.Date}}
-
-                                <br>
-
-                            </div>
-
-                        </div>
-                    </div>
+            <div class="row">
+              <div class="col-xl-11">
+                <h4
+                  id="in"
+                  class="d-inline-flex align-content-center align-self-center img-fluid"
+                  style="color: rgb(9,117,225);margin-bottom: 0px;font-family: GT Walsheim Pro;line-height: 1.5;"
+                >
+                  Check out What's Happening in the Campus
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4 offset-xl-1">
+            <img
+              class="visible img-fluid"
+              src="assets/img/events/events-bg-2.svg"
+              style="margin-top: 0px;"
+            />
+          </div>
+        </div>
+        <div class="row" style="margin-right: 0px;margin-left: 0px;">
+          <div class="col">
+            <div class="row" style="margin-right: 0px;margin-left: 0px;">
+              <div class="col">
+                <div class="row">
+                  <div class="col-2 d-flex justify-content-end">
+                    <img
+                      class="img-fluid"
+                      src="assets/img/events/events-ic-search.svg"
+                    />
+                  </div>
+                  <div class="col-xl-4 col-md-4 col-sm-5">
+                    <input
+                      class="form-control-plaintext"
+                      type="text"
+                      class="form-control"
+                      name="search"
+                      [formControl]="filter"
+                      autocomplete="off"
+                      placeholder="Search"
+                      style="margin: 0px;margin-left: 0px;padding: 6px;padding-left: 15px;font-family: cursive;"
+                    />
+                  </div>
                 </div>
               </div>
-                <!---->
             </div>
-        </body>
-    </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row" style="margin-top: 87px;">
+          <!----upcoming event details and using api-->
+        </div>
+
+        <div
+          class="row"
+          style="justify-content:center;margin-left:0px;margin-right:0px;"
+        >
+          <img
+            id="bg-4"
+            class="img-fluid"
+            style="position:absolute;float:right;right:0;height:70%;"
+            src="assets/img/events/events-bg-4.svg"
+          />
+          <img
+            id="bg-3"
+            class="img-fluid"
+            style="position:absolute;float:left;left:0;height:70%;margin-top:15%"
+            src="assets/img/events/events-bg-3.svg"
+          />
+
+          <div
+            class="card border rounded shadow col-sm-6 col-lg-3 item"
+            style="margin: 40px;padding-left:0px;padding-right:0px;"
+            *ngFor="let item of ev | async"
+          >
+            <img class="card-img-top w-100 d-block" />
+            <a
+              href="{{ item.url }}"
+              id="eventbrite-widget-modal-trigger-{{ item.id }}"
+              type="button"
+              target="_blank"
+            >
+              <img
+                class="img-fluid"
+                style="z-index:0;"
+                src="{{ item.logo.original.url }}"
+              />
+            </a>
+            <div class="card-body">
+              <h4 class="card-title" style="font-family: GT Walsheim Pro;">
+                {{ item.name.text }}
+              </h4>
+              <p class="card-text" style="font-family: GT Walsheim Pro;">
+                {{ item.description.text }}
+              </p>
+
+              <div class="location">
+                <img
+                  src="assets/img/events/event-ic-time.svg"
+                  width="12px"
+                  height="12px"
+                  style="margin-right: 4px;margin-top: -2px;"
+                />
+                {{ item.start.local | date: 'short':'IST' }} -
+                {{ item.end.local | date: 'short':'IST' }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!------>
+        <div
+          class="row"
+          style="justify-content:center;margin-left:0px;margin-right:0px;"
+        >
+          <img
+            id="bg-4"
+            class="img-fluid"
+            style="position:absolute;float:right;right:0;height:70%;"
+            src="assets/img/events/events-bg-4.svg"
+          />
+          <img
+            id="bg-3"
+            class="img-fluid"
+            style="position:absolute;float:left;left:0;height:70%;margin-top:15%"
+            src="assets/img/events/events-bg-3.svg"
+          />
+
+          <div
+            class="card border rounded shadow col-sm-6 col-lg-3 item"
+            style="margin: 40px;padding-left:0px;padding-right:0px;"
+            *ngFor="let item of events$ | async"
+          >
+            <img class="card-img-top w-100 d-block" />
+            <div
+              class="location"
+              style="align-self:end;position:absolute;z-index:4;margin-top:55%;margin-right:10px;padding:2px;border-radius:2px;background-color:white;"
+            >
+              <img
+                src="assets/img/events/event-ic-location.svg"
+                width="12px"
+                height="12px"
+                style="margin-right: 4px;margin-top: -2px;z-index:2;"
+              />
+              {{ item.type }} {{ item.venue }}
+            </div>
+            <a href="{{ item.link }}">
+              <img
+                class="img-fluid"
+                style="z-index:0; float: left;
+                             width:  500px;
+                             height: 300px;
+                             object-fit: cover;"
+                src="{{ item.photo }}"
+              />
+            </a>
+
+            <div class="card-body">
+              <h4 class="card-title" style="font-family: GT Walsheim Pro;">
+                {{ item.name }}
+              </h4>
+
+              <p class="card-text" style="font-family: GT Walsheim Pro;">
+                {{ item.department }}
+              </p>
+
+              <div class="location">
+                <img
+                  src="assets/img/events/event-ic-time.svg"
+                  width="12px"
+                  height="12px"
+                  style="margin-right: 4px;margin-top: -2px;"
+                />
+                {{ item.Date }}
+
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+    </body>
+  </div>
 </hackslash-navbar>
