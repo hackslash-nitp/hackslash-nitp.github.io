@@ -57,7 +57,12 @@
                             <p class="card-text" style="font-family: GT Walsheim Pro;">
                                 {{item.description.text}}
                             </p>
-
+                             <div *ngIf="item.status=='live'">
+                            <!-- Noscript content for added SEO -->
+                            <a href="https://ideathon2021.eventbrite.com" class="btn btn-success" rel="noopener noreferrer" target="_blank">
+                                <!-- You can customize this button any way you like -->
+                                <button id="eventbrite-widget-modal-trigger-157504505215" class="btn btn-success" type="button">Buy Tickets</button>
+                            </a>
                             <div class="location">
                                 <img src="assets/img/events/event-ic-time.svg" width="12px" height="12px" style="margin-right: 4px;margin-top: -2px;"> {{item.start.local | date:'short':'IST'}} - {{item.end.local | date:'short':'IST'}}
                             </div>
