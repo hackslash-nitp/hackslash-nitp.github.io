@@ -37,14 +37,28 @@
                         src="assets/img/hall/hall-bg-4.svg" />
                     <img id="bg-3" class="img-fluid" style="position:absolute;float:left;left:0%;height:200%"
                         src="assets/img/hall/hall-bg-3.svg" />
+                        <img id="bg-3" class="img-fluid"
+                        style="position:absolute;float:right;right:0;height:100%;margin-top:40%"
+                        src="assets/img/hall/hall-bg-5.svg" />
+                        <img id="bg-7" class="img-fluid"
+                        style="position:absolute;float:right;right:0;bottom:0;height:70%;margin-top:80%"
+                        src="assets/img/hall/hall-bg-7.svg" />
+                    <!-- 
+                    <img id="bg-6" class="img-fluid"
+                        style="position:absolute;float:left;left:0;width:40%;margin-top:60%"
+                        src="assets/img/hall/hall-bg-6.svg" />
+                    
+                    <img id="bg-8" class="img-fluid"
+                        style="position:absolute;float:left;left:0;height:50%;margin-top:30%"
+                        src="assets/img/hall/hall-bg-8.svg" /> -->
 
-                    <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
+                    <!-- <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
                         <h4 class="m-auto" id="head"
                             style="font-family: GT Walsheim Pro;display:flex;justify-content:center;">Leads</h4>
                     </div>
                     <div class="col-xl-10" style="padding-top:1%">
                         <hr>
-                    </div>
+                    </div> -->
                 </div>
                 <div>
                     <div class="row d-flex justify-content-around">
@@ -80,109 +94,7 @@
                 </div>
 
             </div>
-            <div>
-                <div class="row d-flex justify-content-center"
-                    style="margin-top: 87px;margin-left:0px;margin-right:0px;">
-                    <img id="bg-3" class="img-fluid"
-                        style="position:absolute;float:right;right:0;height:100%;margin-top:10%"
-                        src="assets/img/hall/hall-bg-5.svg" />
-                    <img id="bg-6" class="img-fluid"
-                        style="position:absolute;float:left;left:0;width:40%;margin-top:20%"
-                        src="assets/img/hall/hall-bg-6.svg" />
 
-                    <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
-                        <h4 class="m-auto" id="dev"
-                            style="font-family: GT Walsheim Pro;display:flex;justify-content:center;">Designers</h4>
-                    </div>
-                    <div class="col-xl-10" style="padding-top:1%">
-                        <hr>
-                    </div>
-                </div>
-                <div>
-                    <div class="row d-flex justify-content-around">
-                        <div class="member-card" *ngFor="let item of designers | async">
-                            <p class="member-name">{{item.name}}</p>
-                            <p class="member-role">{{item.role}}</p>
-                            <div class="member-image">
-                                <img src={{item.image}} alt={{item.name}} />
-                            </div>
-                            <div class="member-details">
-                                <p class="bio">
-                                    {{item.bio}}
-                                </p>
-                                <div class="social">
-                                    <a href="{{item.linkedin}}" *ngIf="!(item.linkedin===undefined)">
-                                        <img src="assets/img/about_us/card-link-linkedin.svg" alt="linkedin">
-                                    </a>
-                                    <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
-                                        <img src="assets/img/about_us/card-link-github.svg" alt="github">
-                                    </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
-                                        <img src="assets/img/about_us/card-link-medium.svg" alt="medium">
-                                    </a>
-                                    <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
-                                        <img src="assets/img/about_us/card-link-dev.svg" alt="dev">
-                                    </a>
-                                    <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
-                                        <img src="assets/img/about_us/card-link-dribble.svg" alt="dribble">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="row d-flex justify-content-center"
-                    style="margin-top: 87px;margin-left:0px;margin-right:0px;">
-                    <img id="bg-7" class="img-fluid"
-                        style="position:absolute;float:right;right:0;height:70%;margin-top:10%"
-                        src="assets/img/hall/hall-bg-7.svg" />
-                    <img id="bg-8" class="img-fluid"
-                        style="position:absolute;float:left;left:0;height:50%;margin-top:30%"
-                        src="assets/img/hall/hall-bg-8.svg" />
-
-                    <div class="col-12 col-md-4 col-xl-2 d-flex" id="upcom">
-                        <h4 class="m-auto" id="dev"
-                            style="font-family: GT Walsheim Pro;display:flex;justify-content:center;">Developers</h4>
-                    </div>
-                    <div class="col-xl-10" style="padding-top:1%">
-                        <hr>
-                    </div>
-                </div>
-                <div>
-                    <div class="row d-flex justify-content-around">
-                        <div class="member-card" *ngFor="let item of devs | async">
-                            <p class="member-name">{{item.name}}</p>
-                            <p class="member-role">{{item.role}}</p>
-                            <div class="member-image">
-                                <img src={{item.image}} alt={{item.name}} />
-                            </div>
-                            <div class="member-details">
-                                <p class="bio">
-                                    {{item.bio}}
-                                </p>
-                                <div class="social">
-                                    <a href="{{item.linkedin}}" *ngIf="!(item.linkedin===undefined)">
-                                        <img src="assets/img/about_us/card-link-linkedin.svg" alt="linkedin">
-                                    </a>
-                                    <a href="{{item.github}}" *ngIf="!(item.github==undefined)">
-                                        <img src="assets/img/about_us/card-link-github.svg" alt="github">
-                                    </a><a href="{{item.medium}}" *ngIf="!(item.medium==undefined)">
-                                        <img src="assets/img/about_us/card-link-medium.svg" alt="medium">
-                                    </a>
-                                    <a href="{{item.dev}}" *ngIf="!(item.dev==undefined)">
-                                        <img src="assets/img/about_us/card-link-dev.svg" alt="dev">
-                                    </a>
-                                    <a href="{{item.dribble}}" *ngIf="!(item.dribble==undefined)">
-                                        <img src="assets/img/about_us/card-link-dribble.svg" alt="dribble">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
 
