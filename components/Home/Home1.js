@@ -1,6 +1,6 @@
 import styles from '@/styles/home.module.css'
 import Image from 'next/image'
-import homeLogo from '@/assets/home/homeLogo.png'
+import homeLogo from '@/assets/home/girlImage.svg'
 import style from 'styled-components'
 
 export default function Homepage() {

@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
 .mainDiv{
   display: grid;
+  max-width: 100vw;
   height: 100vh;
   grid-template-columns: repeat(2, 1fr);
-  background: url('../assets/home/Homepage_1_background.png') center center/cover;
+  background: url('../assets/home/Homepage_1_background.svg') center center/cover;
 }
 .infoDiv{
   display: flex;
@@ -18,6 +19,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  color: white;
 }
 .infoDiv_right h1{
   margin: 0px;
