@@ -21,9 +21,9 @@ export default function Navbar() {
                 <Link href="/about">About Us</Link>
                 <Link href="/contact">Contact Us</Link>
                 <div>
-                    <Link href="facebook_link"><FaFacebook/></Link>
-                    <Link href="insta_link"><FaInstagram/></Link>
-                    <Link href="facebook_link"><FaTwitter/></Link>
+                    <Link href="https://www.facebook.com/hackSlash.nitp/"><a><FaFacebook/></a></Link>
+                    <Link href="https://www.instagram.com/hackslash.nitp/"><a><FaInstagram/></a></Link>
+                    <Link href="https://twitter.com/hackslash_nitp/"><a><FaTwitter/></a></Link>
                 </div>
             </NavRight>
         </Nav>
@@ -40,6 +40,7 @@ var Nav = styled.div`
     display: flex;
     position: fixed;
     align-items: center;
+    z-index: 10;
     padding-left: 10%;
     padding-right: 10%;
     justify-content: space-between;

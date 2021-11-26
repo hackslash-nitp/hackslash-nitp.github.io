@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 import Card from './Card'
 
 export default function About2() {

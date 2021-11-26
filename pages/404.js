@@ -1,11 +1,12 @@
-import errorPage from '@/assets/errorPage/errorpagefile.svg'
+import ErrorPageImg from '@/assets/errorPage/errorpagefile.svg'
 import Image from 'next/image'
 import styled from 'styled-components'
+
 export default function ErrorPage() {
     return (
         <Container>
             <center>
-            <Image src={errorPage} alt="Oops! something went wrong" width={400} height={400}/>
+            <Image src={ErrorPageImg} alt="Oops! something went wrong" width={400} height={400}/>
             <p>Oops! Something went wrong!</p>
             </center>
         </Container>

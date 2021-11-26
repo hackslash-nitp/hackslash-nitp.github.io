@@ -1,6 +1,5 @@
 import Layout from "@/components/Layout"
 //use "@/components/Layout" instead of "../components/Layout" everywhere
-import styles from "@/styles/home.module.css"
 import Homepage1 from "@/components/Home/Home1"
 import Homepage2 from "@/components/Home/Home2"
 import Homepage3 from "@/components/Home/Home3"
