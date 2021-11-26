@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/Image'
+import marketing from "@/assets/home/home2logo.svg"
 export default function Home2() {
   return (
       <div>
@@ -9,7 +10,7 @@ export default function Home2() {
                     <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
                     <button>Learn More</button>
                 </div>               
-              {/* <Image src={''} alt="girl-with-laptop" width={800} height={600} /> */}
+              <Image src={marketing} alt="marketing-boy-logo" width={400} height={400} />
             </div>
 
             <div>
