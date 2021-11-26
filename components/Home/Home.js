@@ -1,6 +1,8 @@
 import styles from '@/styles/home.module.css'
 import Image from 'next/image'
 import homeLogo from '@/assets/home/homeLogo.png'
+import style from 'styled-components'
+
 export default function Homepage() {
     return (
         <div className={styles.mainDiv}>
