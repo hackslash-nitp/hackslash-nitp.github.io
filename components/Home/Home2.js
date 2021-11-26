@@ -7,9 +7,9 @@ export default function Home2() {
       <MainDiv>
             <ImageAndBody>
                 <ParagraphDiv>
-                    <Heading>We are making ideas better for everyone</Heading>
-                    <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
-                    <button>Learn More</button>
+                    <Heading>We are making <Em>ideas</Em> better for everyone</Heading>
+                    <Para>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </Para>
+                    <Button>Learn More</Button>
                 </ParagraphDiv>               
               <Image src={marketing} alt="marketing-boy-logo" width={400} height={400} />
             </ImageAndBody>
@@ -38,7 +38,23 @@ const ImageAndBody = styled.div`
 const ParagraphDiv = styled.div`
   width: 50%;
 `
-const Heading = styled.h3`
+const Heading = styled.h2`
   width: 400px;
   color: white;
+`
+const Em = styled.em`
+font-family: Poppins;
+color:#00F0FF;
+`
+const Para = styled.p`
+font-size:20px;
+color: #FFFFFF
+`
+const Button= styled.button`
+border-radius:20px;
+color:#FFFBFB;
+font-size:30px;
+padding: 7px;
+background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
+
 `
