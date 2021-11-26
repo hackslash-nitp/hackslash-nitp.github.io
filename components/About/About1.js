@@ -45,4 +45,5 @@ const Heading = styled.span`
   background-clip: initial;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 400;
 `

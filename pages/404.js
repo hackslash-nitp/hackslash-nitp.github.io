@@ -6,7 +6,7 @@ export default function ErrorPage() {
         <Container>
             <center>
             <Image src={errorPage} alt="Oops! something went wrong" width={400} height={400}/>
-            <p>Oops! something went wrong</p>
+            <p>Oops! Something went wrong!</p>
             </center>
         </Container>
     )
@@ -20,4 +20,8 @@ var Container = styled.div`
     justify-content: center;
     background: url('/errorPage/ErrorPage.svg') center center/cover;
     color: white;
+
+    & > center > p {
+        font-size: 25px;
+    }
 `

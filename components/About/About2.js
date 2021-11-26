@@ -20,7 +20,9 @@ export default function About2() {
 }
 
 const Container = styled.div`
-  
+  width: 100%;
+  min-height: 100vh;
+  background: url("/about/About_2_background.svg") center center/cover;
 `
 const Heading = styled.span`
 
