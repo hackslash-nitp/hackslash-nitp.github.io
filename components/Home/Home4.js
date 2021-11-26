@@ -1,18 +1,18 @@
 import styled from "styled-components"
-
+import Image from 'next/image'
+import mail from '@/assets/home/envelope-2997179-2516217.svg'
 export default function Home4() {
   return (
     <MainDiv>
-      <div>
-       <label htmlFor="usermail"> REGISTER FOR OUR NEWSLETTER NOW </label>
-      </div>
-
-      <div>
-        <form>
-          <input type="text" name="usermail" />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
+      <Div1>
+   <Head1>REGISTER FOR OUR NEWSLETTER NOW
+</Head1>
+      </Div1>
+      <Div2>
+          <Input/> <br/>
+          {/* <Image src={mail} width={81} height={81}/> */}
+          <Button>Subscribe</Button>
+      </Div2>
     </MainDiv>
   )
 }
@@ -20,4 +20,44 @@ export default function Home4() {
 const MainDiv = styled.div`
   background: url('/home/Homepage_3_background.svg') center center/cover;
   height: 50vh;
+  display: flex;
+`
+var Div1 = styled.div`
+margin-top:100px;
+width:60%;
+`
+var Head1 = styled.p`
+font-size:40px;
+color:#FFFFFF;
+`
+var Input = styled.input`
+width:65%;
+height:30px;
+border:none;
+margin-top:20px;
+margin-right:200px;
+margin-left:70px;
+text-align:center;
+margin
+background-color: #FFFFFF;
+`
+var Div3 = styled.div`
+   border-radius:10px;
+   background-color: #FFFFFF;
+   height:40px;
+`
+var Div2 = styled.div`
+margin-top:100px;
+width:40%;
+`
+var Button = styled.button`
+background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
+color:#FFFFFF;
+font-size:30px;
+padding:10px;
+margin-top:10px;
+margin-left:70px;
+padding-left:20px;
+padding-right:20px;
+border-radius:20px;
 `
