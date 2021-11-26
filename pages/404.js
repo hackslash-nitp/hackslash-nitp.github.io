@@ -1,9 +1,10 @@
+import errorPage from '@/assets/errorPage/errorpagefile.svg'
+import Image from 'next/image'
 export default function ErrorPage() {
     return (
         <div>
-            Oops! Nothing found here<br />
-            Please design error page inside pages/404.js
-
+           <Image src={errorPage} alt="Oops! something went wrong" width={400} height={400}/>
+           <p>Oops! something went wrong</p>
         </div>
     )
 }
