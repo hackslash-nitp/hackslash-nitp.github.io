@@ -1,9 +1,11 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import Image from 'next/Image'
-import marketing from "@/assets/home/home2logo.svg"
+import marketing from '@/assets/home/home2logo.svg'
+import styled from 'styled-components'
+
 export default function Home2() {
   return (
-      <div>
+      <MainDiv>
             <div>
                 <div>
                     <h1>We are making ideas better for everyone</h1>
@@ -20,7 +22,11 @@ export default function Home2() {
               <div><Image /></div> */}
             </div>
 
-        </div>
+        </MainDiv>
   )
 }
 
+const MainDiv = styled.div`
+  background: url('/home/Homepage_2_background.svg') center center/cover;
+  height: 100vh;
+`

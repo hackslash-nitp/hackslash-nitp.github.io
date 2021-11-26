@@ -1,6 +1,8 @@
+import styled from "styled-components";
+
 export default function Home4() {
   return (
-    <div>
+    <MainDiv>
       <div>Contact Us</div>
 
       <div>
@@ -74,6 +76,11 @@ export default function Home4() {
 
             <p style={{textAlign: "center"}}> Copyright © 2021, HackSlash.org . Privacy | Terms of service</p>
       </div>
-    </div>
+    </MainDiv>
   );
 }
+
+const MainDiv = styled.div`
+  background: url('/home/Homepage_5_background.svg') center center/cover;
+  height: 90vh;
+`

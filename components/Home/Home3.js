@@ -1,6 +1,8 @@
+import styled from "styled-components"
+
 export default function Home3() {
   return (
-        <div >
+        <MainDiv>
             {/* <Image src={homeLogo} alt="girl-with-laptop" width={800} height={600}></Image> */}
             <div>
                 <div>
@@ -30,6 +32,11 @@ export default function Home3() {
                 </div>
                          
             </div>
-        </div>
+        </MainDiv>
   )
 }
+
+const MainDiv = styled.div`
+  background: url('/home/Homepage_2_background.svg') center center/cover;
+  height: 100vh;
+`

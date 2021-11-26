@@ -1,6 +1,8 @@
+import styled from "styled-components"
+
 export default function Home4() {
   return (
-    <div>
+    <MainDiv>
       <div>
        <label htmlFor="usermail"> REGISTER FOR OUR NEWSLETTER NOW </label>
       </div>
@@ -11,6 +13,11 @@ export default function Home4() {
           <button type="submit">Subscribe</button>
         </form>
       </div>
-    </div>
+    </MainDiv>
   )
 }
+
+const MainDiv = styled.div`
+  background: url('/home/Homepage_3_background.svg') center center/cover;
+  height: 50vh;
+`
