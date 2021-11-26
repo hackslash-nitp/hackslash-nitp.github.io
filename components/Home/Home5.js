@@ -82,5 +82,5 @@ export default function Home4() {
 
 const MainDiv = styled.div`
   background: url('/home/Homepage_5_background.svg') center center/cover;
-  height: 90vh;
+  height: 100vh;
 `
