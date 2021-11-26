@@ -7,6 +7,7 @@ export default function About1() {
     <Container>
         <Text>
           <Heading>On a Mission</Heading>
+          <br />
           <span>To Take The Hassle out of Home.</span>
           <p>HackSlash, currently under the Mozilla Campus Clubs Network, is an all student driven developers community located in the National Institute of Technology Patna. The club strives to build and improve the open sourcing environment and the coding culture of the whole city of Patna and eventually the whole state of Bihar. The will power and determination of each Developers, Competitive Coders, Designers and Innovative thinkers is what governs our great community.</p>
         </Text>
@@ -27,6 +28,8 @@ const Container = styled.div`
 
 const Text = styled.div`
   width: 50%;
+  text-align: justify;
+  font-weight: 350;
 
   & > p :first {
     font-size: 18px;
@@ -38,4 +41,8 @@ const Text = styled.div`
 `
 const Heading = styled.span`
   width: 50%;
+  background: -webkit-linear-gradient(right, #00FF9D, #00E7FF);
+  background-clip: initial;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `

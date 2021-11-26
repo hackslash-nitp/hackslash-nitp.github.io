@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import Image from 'next/Image'
+// import styled from 'styled-components'
+// import Image from 'next/Image'
 export default function Home2() {
   return (
       <div>
