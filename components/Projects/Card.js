@@ -1,14 +1,19 @@
 import styled from 'styled-components'
+var CardData = [{
+  CardTitle: 'Project-1',
+  CardDate: '26 November 2021',
+  CardAuthor: 'Web Team',
+  CardDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl tristique eu risus, convallis. In aliquet malesuada pulvinar malesuada. Tortor nibh rutrum est nisi varius in enim quam magna. Et, sit cursus nunc tortor diam leo cursus. Arcu orci, in bibendum egestas donec. Eu, nibh laoreet auctor tellus rutrum lacinia morbi. Volutpat ut volutpat enim aliquet duis cras tellus donec. Sed amet, cursus gravida sem integer vitae nisl libero. Eleifend ipsum rhoncus augue dui id integer quis platea dictum."
+}]
 export default function Card(){
   return (
     <CardBody>
       <CardTitle>
-        <CardTText>Project-1</CardTText>
-        <CardDate>26 November 2021</CardDate></CardTitle>
-      <CardAuthor>Web Team</CardAuthor>
+        <CardTText>{CardData[0].CardTitle}</CardTText>
+        <CardDate>{CardData[0].CardDate}</CardDate></CardTitle>
+      <CardAuthor>{CardData[0].CardAuthor}</CardAuthor>
       <CardDescription>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl tristique eu risus, convallis. In aliquet malesuada pulvinar malesuada. Tortor nibh rutrum est nisi varius in enim quam magna. Et, sit cursus nunc tortor diam leo cursus. Arcu orci, in bibendum
-        egestas donec. Eu, nibh laoreet auctor tellus rutrum lacinia morbi. Volutpat ut volutpat enim aliquet duis cras tellus donec. Sed amet, cursus gravida sem integer vitae nisl libero. Eleifend ipsum rhoncus augue dui id integer quis platea dictum.
+       {CardData[0].CardDescription}
       </CardDescription>
       <CardButton>Read More</CardButton>
     </CardBody>
