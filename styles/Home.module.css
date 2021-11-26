@@ -3,7 +3,7 @@
   display: grid;
   height: 100vh;
   grid-template-columns: repeat(2, 1fr);
-  border: 2px solid salmon;
+  background: url('../assets/home/Homepage_1_background.png') center center/cover;
 }
 .infoDiv{
   display: flex;
