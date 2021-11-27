@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import hackslashLogo from "@/assets/hackslash_logo.svg"
+import Image from 'next/image'
 
-export default function Home4() {
+export default function Home5() {
   return (
     <MainDiv>
-      <div>Contact Us</div>
+      <ContactUs><ContactusSpan>Contact Us</ContactusSpan></ContactUs>
 
       <div>
         <form>
@@ -21,7 +23,7 @@ export default function Home4() {
 
       <div>
           <div>
-            {/* <ImageHackslashLogo /> */}
+            <Image src={hackslashLogo} height={40} width={40} />
             <span>HackSlash</span>
           </div>
 
@@ -80,6 +82,15 @@ export default function Home4() {
   );
 }
 
+const ContactUs = styled.div`
+  /* background: linear-gradient(94.77deg, #00FF9D 3.5%, #00E7FF 86.04%); */
+`
+const ContactusSpan = styled.span`
+  background: linear-gradient(94.77deg, #00FF9D 3.5%, #00E7FF 86.04%);
+  background-clip: initial;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
 const MainDiv = styled.div`
   background: url('/home/Homepage_5_background.png') center center/cover;
   height: 100vh;
