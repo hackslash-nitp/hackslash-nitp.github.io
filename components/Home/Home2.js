@@ -1,9 +1,12 @@
 import Image from 'next/image'
 import marketing from '@/assets/home/home2logo.svg'
 import styled from 'styled-components'
+import {FaCode} from 'react-icons/fa'
+import {BiNotepad} from 'react-icons/bi'
 
 export default function Home2() {
   return (
+    <MainDiv>
     <Container>
         <Text>
           <Heading>We are making <Em>ideas</Em> better for everyone</Heading>
@@ -13,13 +16,34 @@ export default function Home2() {
         </Text>
         <Image src={marketing} width={800} height={600}/>
     </Container>
+
+      <IconsMainDiv>
+          <IconsDivContainer>
+            <IconDiv>
+              <Notepad />
+            </IconDiv>
+            <IconDiv>
+              <CodePen />
+            </IconDiv>
+            <IconDiv>
+              <CodePen />
+            </IconDiv>
+            <IconDiv>
+              <Notepad />
+            </IconDiv>
+          </IconsDivContainer>
+      </IconsMainDiv>
+    </MainDiv>
     )
   }
 
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
+  const MainDiv = styled.div`
+  /* height: 100vh; */
   background: url("/about/About_1_background.svg") center center/cover;
+  display: flex;
+  flex-direction: column;
+  `
+const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 5%;
@@ -40,13 +64,46 @@ const Heading = styled.span`
 `
 const Em = styled.b`
  font-family: Poppins;
- color:#00F0FF;
+ color: rgba(105, 248, 162, 1);
  `
 const Button= styled.button`
 margin-top: 20px;
 border-radius:25px;
 color:#FFFBFB;
-font-size:25px;
-padding: 10px;
+font-size:1.5rem;
+letter-spacing: 1px;
+padding: 10px 15px;
+border: none;
+outline: none;
 background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
 ` 
+
+const IconsMainDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+`
+const IconsDivContainer = styled.div`
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+const IconDiv = styled.div`
+  background: rgba(105, 248, 162, 1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+`
+const Notepad = styled(BiNotepad)`
+  transform: scale(2.2);
+  color: white;
+`
+const CodePen = styled(FaCode)`
+  transform: scale(2.2);
+  color: #18a0fb;
+`
