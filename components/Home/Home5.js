@@ -38,40 +38,37 @@ export default function Home5() {
                             Blogs
                         </LinkedListItem>
                         <LinkedListItem>
-                            Blogs
+                          Sponsor us
                         </LinkedListItem>
                         <LinkedListItem>
-                            Blogs
-                        </LinkedListItem>
-                    </LinksList>
-                </div>
-
-                <div>
-                    <LinksListHeading>USEFUL LINKS</LinksListHeading>
-                    <LinksList>
-                        <LinkedListItem>
-                            Blogs
-                        </LinkedListItem>
-                        <LinkedListItem>
-                            Blogs
-                        </LinkedListItem>
-                        <LinkedListItem>
-                            Blogs
+                          Contact Us
                         </LinkedListItem>
                     </LinksList>
                 </div>
 
                 <div>
-                    <LinksListHeading>USEFUL LINKS</LinksListHeading>
+                    <LinksListHeading>PRODUCT</LinksListHeading>
                     <LinksList>
                         <LinkedListItem>
                             Blogs
                         </LinkedListItem>
                         <LinkedListItem>
-                            Blogs
+                          Sponsor us
                         </LinkedListItem>
                         <LinkedListItem>
-                            Blogs
+                          Contact Us
+                        </LinkedListItem>
+                    </LinksList>
+                </div>
+
+                <div>
+                    <LinksListHeading>CONTACT</LinksListHeading>
+                    <LinksList>
+                        <LinkedListItem>
+                          hackslash@nitp.ac.in
+                        </LinkedListItem>
+                        <LinkedListItem>
+                          Patna University Campus, Patna, Bihar 800005
                         </LinkedListItem>
                     </LinksList>
                 </div>
@@ -83,37 +80,41 @@ export default function Home5() {
   );
 }
 
-const ContactUs = styled.div`
-  height: 10%;
-  color: white;
-`
-const ContactusSpan = styled.span`
-  background: linear-gradient(94.77deg, #00FF9D 3.5%, #00E7FF 86.04%);
-  background-clip: initial;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 2rem;
-`
 const MainDiv = styled.div`
   background: url('/home/Homepage_5_background.png') center center/cover;
   height: 100vh;
-  padding: 5%;
+  padding: 10%;
   padding-bottom: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `
+const ContactUs = styled.div`
+  height: 10%;
+  /* padding-top: 5vh; */
+  color: white;
+` 
+const ContactusSpan = styled.span`
+  background: linear-gradient(94.77deg, #00FF9D 3.5%, #00E7FF 86.04%);
+  background-clip: initial;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-weight: 400;
+`
 const Input = styled.input`
   width: 400px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-right: 20px;
   color: white;
   font-size: 1.2rem;
   padding: 10px 15px;
   margin:10px 0px;
-  border: none;
-  outline: rgba(171, 239, 254, 1);
+
+  font-weight: 300;
+  font-family: 'Poppins','sans-serif';
+  border: #69F8A2 solid 1.5px;
   background-color: rgba(256, 256, 256, 0.3);
   &:hover {
     outline: 2px solid green;
@@ -125,15 +126,16 @@ const Input = styled.input`
 const TextArea = styled.textarea`
   height: 50%;
   width: 400px;
-  border-radius: 5px;
   color: white;
+  border-radius: 10px;
   font-size: 1.2rem;
   padding: 10px 15px;
   margin: 10px 0px;
   margin-left: 30px;
-
-  border: none;
-  outline: rgba(171, 239, 254, 1);
+  
+  font-weight: 300;
+  font-family: 'Poppins','sans-serif';
+  border: #69F8A2 solid 1.5px;
   background-color: rgba(256, 256, 256, 0.3);
   resize: none;
   &:hover {
@@ -197,9 +199,14 @@ const FooterLinksDiv = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px;
+  
+  & > div{
+    max-width: 25%;
+    line-height: 2rem;
+  }
 `
-const AboutHackslashP = styled.div`
-  width: 300px;
+const AboutHackslashP = styled.p`
+  width: 450px;
   color: white;
   text-align: justify;
 `
