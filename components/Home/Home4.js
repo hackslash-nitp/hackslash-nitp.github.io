@@ -1,87 +1,78 @@
-import styled from "styled-components"
-import Image from 'next/image'
-import mail from '@/assets/home/envelope-2997179-2516217.svg'
-import { BiMailSend } from "react-icons/bi"
+import styled from "styled-components";
+
 export default function Home4() {
   return (
     <MainDiv>
       <LetterDiv>
-          <LetterHeading>REGISTER FOR OUR NEWSLETTER NOW </LetterHeading>
+        <p>REGISTER FOR OUR NEWSLETTER NOW </p>
       </LetterDiv>
 
-      <ButtonDiv>
+      <div>
         <form>
           <InputMailSend>
-            <Input placeholder="Enter Your Email" type="text"></Input>
-            <MailSend />
-
+            <input placeholder="Enter Your Email" type="text"></input>
+            {/* <MailSend><Image src={mail}/></MailSend> */}
           </InputMailSend>
           <SubscribeBtn>Subscribe</SubscribeBtn>
         </form>
-      </ButtonDiv>
+      </div>
     </MainDiv>
-  )
+  );
 }
 
 const MainDiv = styled.div`
-  background: url('/home/Homepage_3_background.svg') center center/cover;
+  background: url("/home/Homepage_4.svg") center center/cover;
   height: 50vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
+  padding: 10%;
+`;
 const LetterDiv = styled.div`
   width: 60%;
-  padding: 10px 20px;
-`
-const LetterHeading = styled.div`
-  font-size:40px;
-  color:#FFFFFF;
-`
-const ButtonDiv = styled.div`
+  font-size: 30px;
+  font-weight: 400;
+  color: #ffffff;
+`;
 
-`
 const InputMailSend = styled.div`
-position: relative;
-`
+  position: relative;
+
+  & > input {
+    width: 400px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    background-color: white;
+    padding: 12px;
+    border: none;
+
+    background-image: url("/home/home3-envelope.svg");
+    background-position: right 10px top;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:hover {
+      outline: 2px solid green;
+    }
+  }
+`;
+
 const SubscribeBtn = styled.div`
-  background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
-  color:#FFFFFF;
-  font-size:20px;
-  border-radius:10px;
+  color: #ffffff;
   width: 150px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 7px 20px;
   transition: 1s;
-  &:hover{
-    background: linear-gradient(90deg, #5DB5DC 5.88%, #49DDAC 89.82%);
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 7px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #49ddac 5.88%, #5db5dc 89.82%);
+
+  &:hover {
+    background: linear-gradient(90deg, #5db5dc 5.88%, #49ddac 89.82%);
   }
   cursor: pointer;
-`
-const Input = styled.input`
-  width: 400px;
-  height: 40px;
-  border-radius: 5px;
-  margin-right: 20px;
-  color: black;
-  font-size: 1.2rem;
-  background-color: white;
-  padding: 10px;
-  border: none;
-  outline: rgba(171, 239, 254, 1);
-  &:hover {
-    outline: 2px solid green;
-  }
-`
-const MailSend = styled(BiMailSend)`
-    color: burlywood;
-    position: absolute;
-    right: 38px;
-    top: 12px;
-    -webkit-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
-`
+`;
