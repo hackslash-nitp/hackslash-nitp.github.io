@@ -28,7 +28,6 @@ color: white;
 const Text = styled.div`
 width: 50%;
 text-align: justify;
-font-weight: 350;
 padding-right: 15%;
 
 & > p :first {

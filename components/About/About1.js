@@ -29,7 +29,6 @@ const Container = styled.div`
 const Text = styled.div`
   width: 50%;
   text-align: justify;
-  font-weight: 350;
 
   & > p :first {
     font-size: 18px;

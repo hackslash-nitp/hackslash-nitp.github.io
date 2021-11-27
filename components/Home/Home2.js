@@ -85,7 +85,6 @@ const Container = styled.div`
 
 const Text = styled.div`
   width: 50%;
-  font-weight: 350;
 
   & > p :first {
     font-size: 18px;
@@ -104,7 +103,7 @@ const Button= styled.button`
 margin-top: 20px;
 border-radius:25px;
 color:#FFFBFB;
-font-size:30px;
-padding: 7px;
+font-size:25px;
+padding: 10px;
 background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
 ` 
