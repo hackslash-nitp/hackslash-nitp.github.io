@@ -100,7 +100,7 @@ const Em = styled.b`
  font-family: Poppins;
  color:#00F0FF;
  `
-const Button= styled.div`
+const Button= styled.button`
 margin-top: 20px;
 border-radius:25px;
 color:#FFFBFB;
