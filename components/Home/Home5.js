@@ -14,71 +14,71 @@ export default function Home5() {
               <Input type="text" name="email" placeholder="Email"/>
               <Input type="text" name="name" placeholder="Name"/>
             </TwoInputBox>
-            <divTextArea>
+            <DivTextArea>
               <TextArea id="w3review" name="w3review" rows="4" cols="50" placeholder="Enter your message" />
-            </divTextArea>
+            </DivTextArea>
           </InputAndTextareaBox>
           <SendMessageBtn type="submit">Send Message</SendMessageBtn>
         </Form>
       </div>
 
-      <div>
+      <FooterMainDiv>
           <Logo>
             <Image src={hackslashLogo} height={40} width={40} />
             <HackslashSpan>HackSlash</HackslashSpan>
           </Logo>
 
-            <div>
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi. Lorem ipsum dolor sit amet.</div>
+            <FooterLinksDiv>
+                <AboutHackslashP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi. Lorem ipsum dolor sit amet.</AboutHackslashP>
 
                 <div>
-                    <h3>USEFUL LINKS</h3>
-                    <ul>
-                        <li>
+                    <LinksListHeading>USEFUL LINKS</LinksListHeading>
+                    <LinksList>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                        <li>
+                        </LinkedListItem>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                        <li>
+                        </LinkedListItem>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                    </ul>
+                        </LinkedListItem>
+                    </LinksList>
                 </div>
 
                 <div>
-                    <h3>PRODUCT</h3>
-                    <ul>
-                        <li>
+                    <LinksListHeading>USEFUL LINKS</LinksListHeading>
+                    <LinksList>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                        <li>
+                        </LinkedListItem>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                        <li>
+                        </LinkedListItem>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                    </ul>
+                        </LinkedListItem>
+                    </LinksList>
                 </div>
 
                 <div>
-                    <h3>CONTACT</h3>
-                    <ul>
-                        <li>
+                    <LinksListHeading>USEFUL LINKS</LinksListHeading>
+                    <LinksList>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                        <li>
+                        </LinkedListItem>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                        <li>
+                        </LinkedListItem>
+                        <LinkedListItem>
                             Blogs
-                        </li>
-                    </ul>
+                        </LinkedListItem>
+                    </LinksList>
                 </div>
-            </div>
+            </FooterLinksDiv>
 
-            <p style={{textAlign: "center"}}> Copyright © 2021, HackSlash.org . Privacy | Terms of service</p>
-      </div>
+      </FooterMainDiv>
+          <Copyright> Copyright © 2021, HackSlash.org . Privacy | Terms of service</Copyright>
     </MainDiv>
   );
 }
@@ -98,6 +98,10 @@ const MainDiv = styled.div`
   background: url('/home/Homepage_5_background.png') center center/cover;
   height: 100vh;
   padding: 5%;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 const Input = styled.input`
   width: 400px;
@@ -140,7 +144,7 @@ const TextArea = styled.textarea`
   }
 `
 
-const divTextArea = styled.div`
+const DivTextArea = styled.div`
   padding: 0;
 `
 const Form = styled.form`
@@ -150,6 +154,7 @@ const Form = styled.form`
 const TwoInputBox = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `
 const InputAndTextareaBox = styled.div`
   display: flex;
@@ -182,4 +187,37 @@ font-weight: 600;
 `
 const HackslashSpan = styled.span`
   margin-left: 10px;
+`
+const FooterMainDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const FooterLinksDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+`
+const AboutHackslashP = styled.div`
+  width: 300px;
+  color: white;
+  text-align: justify;
+`
+const LinksList = styled.ul`
+  list-style: none;
+  color: white;
+`
+const LinkedListItem = styled.li`
+  color: white;
+  margin-left: 5px;
+`
+const LinksListHeading = styled.h3`
+  color: white;
+  font-weight: 600;
+`
+const Copyright = styled.p`
+/* style={{textAlign: "center", color : "white"}} */
+text-align: center;
+color: white;
+letter-spacing: 1.2px;
 `
