@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function Home4() {
+export default function Home4(props) {
   return (
-    <MainDiv>
+    <MainDiv id={props.id}>
       <LetterDiv>
         <p>REGISTER FOR OUR NEWSLETTER NOW </p>
       </LetterDiv>

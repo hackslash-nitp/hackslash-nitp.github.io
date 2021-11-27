@@ -8,11 +8,11 @@ import Homepage5 from "@/components/Home/Home5"
 export default function Home() {
   return (
     <Layout keywords="hackslash, nit, patna">
-      <Homepage1 />
-      <Homepage2 />
-      <Homepage3 />
-      <Homepage4 />
-      <Homepage5 />
+      <Homepage1 id="Home1" />
+      <Homepage2 id="Home2" />
+      <Homepage3 id="Home3" />
+      <Homepage4 id="Home4" />
+      <Homepage5 id="Home5" />
     </Layout>
   )
 }
