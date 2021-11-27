@@ -1,17 +1,16 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import backgroundImg from '@/assets/about/boy_on_plane.svg'
+import ShoppingLove from '@/assets/contact/shopping-love.svg'
 
 export default function Contact1() {
   return (
     <Container>
         <Text>
-          <Heading>On a Mission</Heading>
+          <Heading>Our Alumini</Heading>
           <br />
-          <span>To Take The Hassle out of Home.</span>
-          <p>HackSlash, currently under the Mozilla Campus Clubs Network, is an all student driven developers community located in the National Institute of Technology Patna. The club strives to build and improve the open sourcing environment and the coding culture of the whole city of Patna and eventually the whole state of Bihar. The will power and determination of each Developers, Competitive Coders, Designers and Innovative thinkers is what governs our great community.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum, aliquam quis nisi, id. Non lacus sed nulla ac sit posuere dui. Tristique tristique fames nec ultricies sapien nisl feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum, aliquam quis nisi, id. Non lacus sed nulla ac sit posuere dui. Tristique tristique fames nec ultricies sapien nisl feugiat.</p>
         </Text>
-        <Image src={backgroundImg} width={800} height={600}/>
+        <Image src={ShoppingLove} width={800} height={600}/>
     </Container>
     )
   }
@@ -19,7 +18,7 @@ export default function Contact1() {
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: url("/about/About_1_background.svg") center center/cover;
+  background: url("/contact/contact_background.svg") center center/cover;
   display: flex;
   align-items: center;
   padding: 5%;

@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import Card from './card'
 
-export default function About2() {
+export default function Contact2() {
   return (
     <Container>
         <Text>
-          <Heading>Our Team</Heading>
+          <Heading>Our Alumini</Heading>
           <br />
           <span>Conquering The World Of Tech</span>
         </Text>
@@ -23,7 +23,7 @@ const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   padding: 10%;
-  background: url("/about/About_2_background.svg") center center/cover;
+  background: url("/contact/contact_background.svg") center center/cover;
   display: flex;
   justify-content: center;
   flex-direction: column;
