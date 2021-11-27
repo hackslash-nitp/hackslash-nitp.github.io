@@ -53,8 +53,9 @@ const Container = styled.div`
 const Text = styled.div`
   width: 50%;
 
-  & > p :first {
+  & > p  {
     font-size: 18px;
+    text-align: justify;
   }
   `
 const Heading = styled.span`
