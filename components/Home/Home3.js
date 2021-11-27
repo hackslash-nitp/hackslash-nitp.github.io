@@ -57,7 +57,7 @@ var Ul= styled.ul`
 
 var Li = styled.li`
   margin-left:40px;
-  maegin-right:40px;
+  margin-right: 40px;
 `
 var Number = styled.p`
 font-size:30px;

@@ -35,16 +35,11 @@ width:65%;
 height:30px;
 border:none;
 margin-top:20px;
-margin-right:200px;
 margin-left:70px;
 text-align:center;
 background-color: #FFFFFF;
 `
-var Div3 = styled.div`
-   border-radius:10px;
-   background-color: #FFFFFF;
-   height:40px;
-`
+
 var Div2 = styled.div`
 margin-top:100px;
 width:40vw;

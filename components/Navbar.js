@@ -44,7 +44,7 @@ var Nav = styled.div`
     padding-left: 10%;
     padding-right: 10%;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
 `
 
 var NavLeft = styled.div`
