@@ -8,24 +8,25 @@ export default function Home5() {
       <ContactUs><ContactusSpan>Contact Us</ContactusSpan></ContactUs>
 
       <div>
-        <form>
-          <div>
-            <input type="text" name="email" placeholder="Email"/>
-            <input type="text" name="name" placeholder="name"/>
-          </div>
-          <div>
-            <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="Enter your message" />
-          </div>
-
-          <button type="submit">Send Message</button>
-        </form>
+        <Form>
+          <InputAndTextareaBox>
+            <TwoInputBox>
+              <Input type="text" name="email" placeholder="Email"/>
+              <Input type="text" name="name" placeholder="Name"/>
+            </TwoInputBox>
+            <divTextArea>
+              <TextArea id="w3review" name="w3review" rows="4" cols="50" placeholder="Enter your message" />
+            </divTextArea>
+          </InputAndTextareaBox>
+          <SendMessageBtn type="submit">Send Message</SendMessageBtn>
+        </Form>
       </div>
 
       <div>
-          <div>
+          <Logo>
             <Image src={hackslashLogo} height={40} width={40} />
-            <span>HackSlash</span>
-          </div>
+            <HackslashSpan>HackSlash</HackslashSpan>
+          </Logo>
 
             <div>
                 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi. Lorem ipsum dolor sit amet.</div>
@@ -83,15 +84,102 @@ export default function Home5() {
 }
 
 const ContactUs = styled.div`
-  /* background: linear-gradient(94.77deg, #00FF9D 3.5%, #00E7FF 86.04%); */
+  height: 10%;
+  color: white;
 `
 const ContactusSpan = styled.span`
   background: linear-gradient(94.77deg, #00FF9D 3.5%, #00E7FF 86.04%);
   background-clip: initial;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 2rem;
 `
 const MainDiv = styled.div`
   background: url('/home/Homepage_5_background.png') center center/cover;
   height: 100vh;
+  padding: 5%;
+`
+const Input = styled.input`
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 20px;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  margin:10px 0px;
+  border: none;
+  outline: rgba(171, 239, 254, 1);
+  background-color: rgba(256, 256, 256, 0.3);
+  &:hover {
+    outline: 2px solid green;
+  }
+  &::placeholder{
+    color: whitesmoke;
+  }
+`
+const TextArea = styled.textarea`
+  height: 50%;
+  width: 400px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  margin: 10px 0px;
+  margin-left: 30px;
+
+  border: none;
+  outline: rgba(171, 239, 254, 1);
+  background-color: rgba(256, 256, 256, 0.3);
+  resize: none;
+  &:hover {
+    outline: 2px solid green;
+  }
+  &::placeholder{
+    color: whitesmoke;
+  }
+`
+
+const divTextArea = styled.div`
+  padding: 0;
+`
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`
+const TwoInputBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const InputAndTextareaBox = styled.div`
+  display: flex;
+  align-items: center;
+`
+const SendMessageBtn = styled.div`
+  background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
+  color:#FFFFFF;
+  font-size:20px;
+  border-radius:10px;
+  width: 400px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 20px;
+  transition: 1s;
+  &:hover{
+    background: linear-gradient(90deg, #5DB5DC 5.88%, #49DDAC 89.82%);
+  }
+  cursor: pointer;
+`
+const Logo = styled.div`
+display: flex;
+align-items: center;
+margin-top: 40px;
+font-size: 30px;
+color: white;
+font-weight: 600;
+`
+const HackslashSpan = styled.span`
+  margin-left: 10px;
 `

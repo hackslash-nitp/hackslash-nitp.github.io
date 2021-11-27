@@ -49,6 +49,7 @@ var BText= styled.p`
   font-size:24px;
   color: #FFFFFF;
   font-size: 20px;
+  text-align: justify;
   `
 
 var Ul= styled.ul`
