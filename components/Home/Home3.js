@@ -25,8 +25,8 @@ export default function Home3() {
 }
 
 const MainDiv = styled.div`
-  background: url('/home/Homepage_2_background.svg') center center/cover;
-  height: 150vh;
+  background: url('/home/Homepage_3.svg') center center/cover;
+  height: 100vh;
   display: flex;
   align-items: center;
 `
