@@ -18,17 +18,17 @@ export default function Home3() {
         </p>
         <Ul>
           <Li>
-            <Image src={member} width={60} height={60} />
+            <div width={60} height={60}><Image src={member} width={60} height={60} /></div>
             <span>80+</span>
             <p>Memebers</p>
           </Li>
           <Li>
-            <Image src={code} width={60} height={60} />
+            <div width={60} height={60}><Image src={code} width={60} height={60} /></div>
             <span>50000+</span>
             <p>Lines of Code</p>
           </Li>
           <Li>
-            <Image src={proj} width={60} height={60} />
+            <div width={60} height={60}><Image src={proj} width={60} height={60} /></div>
             <span>500+</span>
             <p>Projects</p>
           </Li>
@@ -45,7 +45,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   color: white;
-`;
+`
 
 const Text = styled.div`
   width: 50%;
@@ -55,7 +55,7 @@ const Text = styled.div`
     text-align: justify;
     font-size: 15px;
   }
-`;
+`
 const Heading = styled.span`
   width: 100%;
   display: flex;
@@ -70,13 +70,13 @@ const Heading = styled.span`
     font-size: 34px;
     font-weight: 400;
   }
-`;
+`
 
 var Ul = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
-`;
+`
 
 var Li = styled.div`
   display: flex;
@@ -87,4 +87,4 @@ var Li = styled.div`
   & > span{
     color: #49DDAC;
   }
-`;
+`
