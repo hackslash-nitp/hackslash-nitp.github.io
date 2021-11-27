@@ -10,7 +10,7 @@ export default function Home4() {
       </Div1>
       <Div2>
           <Input/> <br/>
-          {/* <Image src={mail} width={81} height={81}/> */}
+          <Image src={mail} width={81} height={81}/>
           <Button>Subscribe</Button>
       </Div2>
     </MainDiv>
@@ -24,7 +24,7 @@ const MainDiv = styled.div`
 `
 var Div1 = styled.div`
 margin-top:100px;
-width:60%;
+width:60vw;
 `
 var Head1 = styled.p`
 font-size:40px;
@@ -38,7 +38,6 @@ margin-top:20px;
 margin-right:200px;
 margin-left:70px;
 text-align:center;
-margin
 background-color: #FFFFFF;
 `
 var Div3 = styled.div`
@@ -48,7 +47,7 @@ var Div3 = styled.div`
 `
 var Div2 = styled.div`
 margin-top:100px;
-width:40%;
+width:40vw;
 `
 var Button = styled.button`
 background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);

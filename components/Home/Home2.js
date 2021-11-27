@@ -2,59 +2,109 @@ import Image from 'next/image'
 import marketing from '@/assets/home/home2logo.svg'
 import styled from 'styled-components'
 
+// export default function Home2() {
+//   return (
+//       <MainDiv>
+//             <ImageAndBody>
+//                 <ParagraphDiv>
+//                     <Heading>We are making <Em>ideas</Em> better for everyone</Heading>
+//                     <Para>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </Para>
+//                     <Button>Learn More</Button>
+//                 </ParagraphDiv>               
+//               <Image src={marketing} alt="marketing-boy-logo" width={400} height={400} />
+//             </ImageAndBody>
+
+//             <div>
+//               {/* <div><Image /></div>
+//               <div><Image /></div>
+//               <div><Image /></div>
+//               <div><Image /></div> */}
+//             </div>
+
+//         </MainDiv>
+//   )
+// }
+
+// const MainDiv = styled.div`
+//   background: url('/home/Homepage_2_background.svg') center center/cover;
+//   height: 100vh;
+// `
+// const ImageAndBody = styled.div`
+//   height: 80%;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+// `
+// const ParagraphDiv = styled.div`
+//   width: 50%;
+// `
+// const Heading = styled.h2`
+//   width: 400px;
+//   color: white;
+// `
+// const Em = styled.em`
+// font-family: Poppins;
+// color:#00F0FF;
+// `
+// const Para = styled.p`
+// font-size:20px;
+// color: #FFFFFF
+// `
+// const Button= styled.button`
+// border-radius:20px;
+// color:#FFFBFB;
+// font-size:30px;
+// padding: 7px;
+// background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
+
+// `
+
 export default function Home2() {
   return (
-      <MainDiv>
-            <ImageAndBody>
-                <ParagraphDiv>
-                    <Heading>We are making <Em>ideas</Em> better for everyone</Heading>
-                    <Para>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </Para>
-                    <Button>Learn More</Button>
-                </ParagraphDiv>               
-              <Image src={marketing} alt="marketing-boy-logo" width={400} height={400} />
-            </ImageAndBody>
+    <Container>
+        <Text>
+          <Heading>We are making <Em>ideas</Em> better for everyone</Heading>
+          <br />
+          <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
+          <Button>Learn More</Button>
+        </Text>
+        <Image src={marketing} width={800} height={600}/>
+    </Container>
+    )
+  }
 
-            <div>
-              {/* <div><Image /></div>
-              <div><Image /></div>
-              <div><Image /></div>
-              <div><Image /></div> */}
-            </div>
-
-        </MainDiv>
-  )
-}
-
-const MainDiv = styled.div`
-  background: url('/home/Homepage_2_background.svg') center center/cover;
+const Container = styled.div`
+  width: 100%;
   height: 100vh;
-`
-const ImageAndBody = styled.div`
-  height: 80%;
+  background: url("/about/About_1_background.svg") center center/cover;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-`
-const ParagraphDiv = styled.div`
-  width: 50%;
-`
-const Heading = styled.h2`
-  width: 400px;
+  padding: 5%;
   color: white;
 `
-const Em = styled.em`
-font-family: Poppins;
-color:#00F0FF;
+
+const Text = styled.div`
+  width: 50%;
+  font-weight: 350;
+
+  & > p :first {
+    font-size: 18px;
+  }
+  `
+const Heading = styled.span`
+  width: 50%;
+  font-size: 45px;
+  font-weight: 400;
 `
-const Para = styled.p`
-font-size:20px;
-color: #FFFFFF
-`
-const Button= styled.button`
-border-radius:20px;
+const Em = styled.b`
+ font-family: Poppins;
+ color:#00F0FF;
+ `
+const Button= styled.div`
+margin-top: 20px;
+border-radius:25px;
 color:#FFFBFB;
 font-size:30px;
 padding: 7px;
 background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
-
-`
+` 

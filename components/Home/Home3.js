@@ -30,11 +30,11 @@ const MainDiv = styled.div`
   display: flex;
 `
 var Div = styled.div`
-  width: 50%;
+  width: 50vw;
 `
 var Div1 = styled.div`
   margin-top:120px;
-  width: 50%;
+  width: 50vw;
 `
 var Head1= styled.p`
 font-size: 27px;
