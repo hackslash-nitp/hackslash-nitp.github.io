@@ -8,7 +8,7 @@ import proj from "@/assets/home/Guarantee.svg";
 export default function Home3() {
   return (
     <Container>
-      <Image src={cupImg} width={800} height={600} />
+      <Image src={cupImg} alt="Cup Img" width={800} height={600} />
       <Text>
         <Heading>
           <p>At HackSlash</p> <span>We Have Done Some Great Stuffs.</span>
@@ -18,17 +18,17 @@ export default function Home3() {
         </p>
         <Ul>
           <Li>
-            <div width={60} height={60}><Image src={member} width={60} height={60} /></div>
+            <div width={60} height={60}><Image src={member} alt="Icon" width={60} height={60} /></div>
             <span>80+</span>
             <p>Memebers</p>
           </Li>
           <Li>
-            <div width={60} height={60}><Image src={code} width={60} height={60} /></div>
+            <div width={60} height={60}><Image src={code} alt="Icon" width={60} height={60} /></div>
             <span>50000+</span>
             <p>Lines of Code</p>
           </Li>
           <Li>
-            <div width={60} height={60}><Image src={proj} width={60} height={60} /></div>
+            <div width={60} height={60}><Image src={proj} alt="Icon" width={60} height={60} /></div>
             <span>500+</span>
             <p>Projects</p>
           </Li>

@@ -24,7 +24,7 @@ export default function Home5() {
 
       <FooterMainDiv>
           <Logo>
-            <Image src={hackslashLogo} height={40} width={40} />
+            <Image src={hackslashLogo} alt="Hackslash Logo" height={40} width={40} />
             <HackslashSpan>HackSlash</HackslashSpan>
           </Logo>
 

@@ -11,7 +11,7 @@ export default function Home2() {
         <Text>
           <Heading>We are making <Em>ideas</Em> better for everyone</Heading>
           <br />
-          <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
+          <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when </p>
           <Button>Learn More</Button>
         </Text>
         <Image src={marketing} width={800} height={600}/>

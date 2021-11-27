@@ -10,7 +10,7 @@ export default function Navbar() {
             <NavLeft> 
                 <Link href="/">
                     <a>
-                        <Image src={Logo} height="20%"/> 
+                        <Image src={Logo} alt="Hackslash Logo" height="20%"/> 
                         <span>Hackslash</span>
                     </a>
                 </Link>

@@ -10,7 +10,7 @@ export default function Contact1() {
           <br />
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum, aliquam quis nisi, id. Non lacus sed nulla ac sit posuere dui. Tristique tristique fames nec ultricies sapien nisl feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum, aliquam quis nisi, id. Non lacus sed nulla ac sit posuere dui. Tristique tristique fames nec ultricies sapien nisl feugiat.</p>
         </Text>
-        <Image src={ShoppingLove} width={800} height={600}/>
+        <Image src={ShoppingLove} alt="Shopping Love" width={800} height={600}/>
     </Container>
     )
   }
