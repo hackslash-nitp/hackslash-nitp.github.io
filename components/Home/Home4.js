@@ -8,7 +8,7 @@ export default function Home4() {
       <LetterDiv>
           <LetterHeading>REGISTER FOR OUR NEWSLETTER NOW </LetterHeading>
       </LetterDiv>
-      
+
       <ButtonDiv>
         <form>
           <InputMailSend>
@@ -55,6 +55,11 @@ const SubscribeBtn = styled.div`
   justify-content: center;
   align-items: center;
   padding: 7px 20px;
+  transition: 1s;
+  &:hover{
+    background: linear-gradient(90deg, #5DB5DC 5.88%, #49DDAC 89.82%);
+  }
+  cursor: pointer;
 `
 const Input = styled.input`
   width: 400px;
@@ -62,10 +67,14 @@ const Input = styled.input`
   border-radius: 5px;
   margin-right: 20px;
   color: black;
+  font-size: 1.2rem;
   background-color: white;
   padding: 10px;
   border: none;
-  outline: none;
+  outline: rgba(171, 239, 254, 1);
+  &:hover {
+    outline: 2px solid green;
+  }
 `
 const MailSend = styled(BiMailSend)`
     color: burlywood;
