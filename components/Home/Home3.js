@@ -5,9 +5,9 @@ import member from "@/assets/home/members.svg";
 import code from "@/assets/home/List.svg";
 import proj from "@/assets/home/Guarantee.svg";
 
-export default function Home3() {
+export default function Home3(props) {
   return (
-    <Container>
+    <Container id={props.id}>
       <Image src={cupImg} alt="Cup Img" width={800} height={600} />
       <Text>
         <Heading>

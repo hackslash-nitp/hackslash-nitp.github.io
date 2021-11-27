@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import {FaCode} from 'react-icons/fa'
 import {BiNotepad} from 'react-icons/bi'
 
-export default function Home2() {
+export default function Home2(props) {
   return (
-    <MainDiv>
+    <MainDiv  id={props.id}>
     <Container>
         <Text>
           <Heading>We are making <Em>ideas</Em> better for everyone</Heading>

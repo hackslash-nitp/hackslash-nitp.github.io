@@ -2,9 +2,9 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import HomeLogo from '@/assets/home/girlImage.svg'
 
-export default function Homepage() {
+export default function Homepage(props) {
     return (
-      <Container>
+      <Container id={props.id}>
           <Image src={HomeLogo} alt="Girl Image" width={800} height={600}/>
           <Text>
             <Heading><h3>We Are</h3> <h1>HackSlash</h1></Heading>

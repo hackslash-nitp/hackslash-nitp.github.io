@@ -2,9 +2,9 @@ import styled from "styled-components";
 import hackslashLogo from "@/assets/hackslash_logo.svg"
 import Image from 'next/image'
 
-export default function Home5() {
+export default function Home5(props) {
   return (
-    <MainDiv>
+    <MainDiv id={props.id}>
       <ContactUs><ContactusSpan>Contact Us</ContactusSpan></ContactUs>
 
       <div>
@@ -82,7 +82,7 @@ export default function Home5() {
 
 const MainDiv = styled.div`
   background: url('/home/Homepage_5_background.png') center center/cover;
-  height: 100vh;
+  min-height: 100vh;
   padding: 10%;
   padding-bottom: 5px;
   display: flex;

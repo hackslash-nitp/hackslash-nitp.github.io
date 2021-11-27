@@ -7,16 +7,17 @@ var CardData = [{
 }]
 export default function Card(){
   return (
-    <CardBody>
-      <CardTitle>
-        <CardTText>{CardData[0].CardTitle}</CardTText>
-        <CardDate>{CardData[0].CardDate}</CardDate></CardTitle>
-      <CardAuthor>{CardData[0].CardAuthor}</CardAuthor>
-      <CardDescription>
-       {CardData[0].CardDescription}
-      </CardDescription>
-      <CardButton>Read More</CardButton>
-    </CardBody>
+    <><div>abcd</div></>
+    // <CardBody>
+    //   <CardTitle>
+    //     <CardTText>{CardData[0].CardTitle}</CardTText>
+    //     <CardDate>{CardData[0].CardDate}</CardDate></CardTitle>
+    //   <CardAuthor>{CardData[0].CardAuthor}</CardAuthor>
+    //   <CardDescription>
+    //    {CardData[0].CardDescription}
+    //   </CardDescription>
+    //   <CardButton>Read More</CardButton>
+    // </CardBody>
   )
 }
 
@@ -34,7 +35,7 @@ text-align:center;
 display: flex;
 `
 var CardTText = styled.p`
-margin-right:70px;
+/* margin-right:70px; */
 font-size:30px;
 color:#FFFFFF;
 `
