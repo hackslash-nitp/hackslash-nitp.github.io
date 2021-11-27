@@ -1,18 +1,24 @@
 import styled from "styled-components"
 import Image from 'next/image'
 import mail from '@/assets/home/envelope-2997179-2516217.svg'
+import { BiMailSend } from "react-icons/bi"
 export default function Home4() {
   return (
     <MainDiv>
-      <Div1>
-   <Head1>REGISTER FOR OUR NEWSLETTER NOW
-</Head1>
-      </Div1>
-      <Div2>
-          <Input/> <br/>
-          <Image src={mail} width={81} height={81}/>
-          <Button>Subscribe</Button>
-      </Div2>
+      <LetterDiv>
+          <LetterHeading>REGISTER FOR OUR NEWSLETTER NOW </LetterHeading>
+      </LetterDiv>
+      
+      <ButtonDiv>
+        <form>
+          <InputMailSend>
+            <Input placeholder="Enter Your Email" type="text"></Input>
+            <MailSend />
+
+          </InputMailSend>
+          <SubscribeBtn>Subscribe</SubscribeBtn>
+        </form>
+      </ButtonDiv>
     </MainDiv>
   )
 }
@@ -21,37 +27,52 @@ const MainDiv = styled.div`
   background: url('/home/Homepage_3_background.svg') center center/cover;
   height: 50vh;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
-var Div1 = styled.div`
-margin-top:100px;
-width:60vw;
+const LetterDiv = styled.div`
+  width: 60%;
+  padding: 10px 20px;
 `
-var Head1 = styled.p`
-font-size:40px;
-color:#FFFFFF;
+const LetterHeading = styled.div`
+  font-size:40px;
+  color:#FFFFFF;
 `
-var Input = styled.input`
-width:65%;
-height:30px;
-border:none;
-margin-top:20px;
-margin-left:70px;
-text-align:center;
-background-color: #FFFFFF;
-`
+const ButtonDiv = styled.div`
 
-var Div2 = styled.div`
-margin-top:100px;
-width:40vw;
 `
-var Button = styled.button`
-background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
-color:#FFFFFF;
-font-size:30px;
-padding:10px;
-margin-top:10px;
-margin-left:70px;
-padding-left:20px;
-padding-right:20px;
-border-radius:20px;
+const InputMailSend = styled.div`
+position: relative;
+`
+const SubscribeBtn = styled.div`
+  background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
+  color:#FFFFFF;
+  font-size:20px;
+  border-radius:10px;
+  width: 150px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 20px;
+`
+const Input = styled.input`
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 20px;
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border: none;
+  outline: none;
+`
+const MailSend = styled(BiMailSend)`
+    color: burlywood;
+    position: absolute;
+    right: 38px;
+    top: 12px;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
 `
