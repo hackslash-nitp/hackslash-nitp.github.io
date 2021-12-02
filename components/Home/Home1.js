@@ -23,6 +23,18 @@ display: flex;
 align-items: center;
 /* padding: 5%; */
 color: white;
+
+@media (max-width: 768px) {
+  height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 50px;
+
+  &>div{
+    width: 80%;
+    text-align: left;
+  }
+}
 `
 
 const Text = styled.div`
@@ -44,6 +56,10 @@ flex-direction: column;
 
 & > h2{
     margin: 0;
+}
+
+@media (max-width: 768px) {
+  text-align: left;
 }
 `
 

@@ -122,7 +122,10 @@ const Input = styled.input`
   &::placeholder{
     color: whitesmoke;
   }
-`
+  @media (max-width: 768px) {
+      width: 90%;
+    }
+    `
 const TextArea = styled.textarea`
   height: 50%;
   width: 400px;
@@ -144,6 +147,11 @@ const TextArea = styled.textarea`
   &::placeholder{
     color: whitesmoke;
   }
+  
+  @media (max-width: 768px) {
+    margin-left: 0;
+    width: 90%;
+  }
 `
 
 const DivTextArea = styled.div`
@@ -161,6 +169,11 @@ const TwoInputBox = styled.div`
 const InputAndTextareaBox = styled.div`
   display: flex;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: initial;
+  }
 `
 const SendMessageBtn = styled.div`
   background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
@@ -178,6 +191,10 @@ const SendMessageBtn = styled.div`
     background: linear-gradient(90deg, #5DB5DC 5.88%, #49DDAC 89.82%);
   }
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `
 const Logo = styled.div`
 display: flex;
@@ -204,11 +221,23 @@ const FooterLinksDiv = styled.div`
     max-width: 25%;
     line-height: 2rem;
   }
-`
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    & > div{
+    max-width: 90%;
+  }
+  }
+  `
 const AboutHackslashP = styled.p`
   width: 450px;
   color: white;
   text-align: justify;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 const LinksList = styled.ul`
   list-style: none;

@@ -45,6 +45,18 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   color: white;
+
+  @media (max-width: 768px) {
+  height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 50px;
+
+  &>div{
+    width: 80%;
+    padding: 0;
+  }
+}
 `
 
 const Text = styled.div`

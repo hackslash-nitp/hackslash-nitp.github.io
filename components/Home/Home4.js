@@ -23,11 +23,22 @@ export default function Home4(props) {
 const MainDiv = styled.div`
   background: url("/home/Homepage_4.svg") center center/cover;
   height: 50vh;
+  min-height: fit-content;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 10%;
+
+  @media (max-width: 768px) {
+  justify-content: center;
+  flex-direction: column;
+
+  &>div{
+    width: 80%;
+    padding: 0;
+  }
+}
 `;
+ 
 const LetterDiv = styled.div`
   width: 60%;
   font-size: 30px;
@@ -54,6 +65,10 @@ const InputMailSend = styled.div`
 
     &:hover {
       outline: 2px solid green;
+    }
+
+    @media (max-width: 768px) {
+      width: 90%;
     }
   }
 `;

@@ -48,6 +48,13 @@ const Container = styled.div`
   align-items: center;
   padding: 5%;
   color: white;
+
+  @media (max-width: 768px) {
+  height: 100vh;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  padding-bottom: 50px;
+}
 `
 
 const Text = styled.div`
@@ -57,6 +64,10 @@ const Text = styled.div`
     font-size: 18px;
     text-align: justify;
   }
+
+  @media (max-width: 768px) {
+ width: 90%;
+}
   `
 const Heading = styled.span`
   width: 50%;

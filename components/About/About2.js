@@ -10,10 +10,10 @@ export default function About2() {
           <span>Conquering The World Of Tech</span>
         </Text>
         <CardContainer>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
         </CardContainer>
     </Container>
   )
@@ -49,4 +49,12 @@ const CardContainer = styled.div`
   display: flex;
   margin-top: 5vh;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+}
+`
+const CardItem = styled(Card)`
+  max-width: 20%;
 `
