@@ -20,7 +20,7 @@ export default function Home4(props) {
   );
 }
 
-const MainDiv = styled.div`
+const MainDiv = styled.section`
   background: url("/home/Homepage_4.svg") center center/cover;
   height: 50vh;
   min-height: fit-content;

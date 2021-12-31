@@ -16,7 +16,7 @@ export default function About1() {
     )
   }
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: 100vh;
   background: url("/about/About_1_background.svg") center center/cover;

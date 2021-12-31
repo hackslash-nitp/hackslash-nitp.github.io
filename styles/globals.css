@@ -6,6 +6,8 @@ body {
   margin: 0;
   font-family: 'Poppins','sans-serif';
   font-weight: 300;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 a {
@@ -17,4 +19,12 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+section{
+  scroll-snap-align: start;
 }

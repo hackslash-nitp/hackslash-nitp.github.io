@@ -38,7 +38,7 @@ export default function Home3(props) {
   );
 }
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: 100vh;
   background: url("/home/Homepage_3.svg") center center/cover;

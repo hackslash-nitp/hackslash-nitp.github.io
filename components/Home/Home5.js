@@ -80,7 +80,7 @@ export default function Home5(props) {
   );
 }
 
-const MainDiv = styled.div`
+const MainDiv = styled.section`
   background: url('/home/Homepage_5_background.png') center center/cover;
   min-height: 100vh;
   padding: 10%;

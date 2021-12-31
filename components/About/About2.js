@@ -19,7 +19,7 @@ export default function About2() {
   )
 }
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   min-height: 100vh;
   padding: 10%;

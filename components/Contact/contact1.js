@@ -15,7 +15,7 @@ export default function Contact1() {
     )
   }
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: 100vh;
   background: url("/contact/contact_background.svg") center center/cover;

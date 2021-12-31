@@ -37,7 +37,7 @@ export default function Home2(props) {
     )
   }
 
-  const MainDiv = styled.div`
+  const MainDiv = styled.section`
   /* height: 100vh; */
   background: url("/about/About_1_background.svg") center center/cover;
   display: flex;
