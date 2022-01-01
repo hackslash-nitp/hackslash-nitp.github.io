@@ -9,6 +9,16 @@ export default function About2() {
           <br />
           <span>Conquering The World Of Tech</span>
         </Text>
+
+        <Heading>2020</Heading>
+        <CardContainer>
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
+        </CardContainer>
+
+        <Heading>2019</Heading>
         <CardContainer>
           <CardItem />
           <CardItem />
@@ -49,12 +59,13 @@ const CardContainer = styled.div`
   display: flex;
   margin-top: 5vh;
   justify-content: space-between;
+  flex-wrap : wrap;
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-}
+} */
 `
 const CardItem = styled(Card)`
-  max-width: 20%;
+  /* max-width: 20%; */
 `

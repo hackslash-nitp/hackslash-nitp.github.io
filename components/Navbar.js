@@ -106,7 +106,6 @@ var NavRight = styled.div`
     justify-content: space-evenly;
 
     & > div {
-        width: 15%;
         font-size: 20px;
         display: flex;
         align-items: center;
