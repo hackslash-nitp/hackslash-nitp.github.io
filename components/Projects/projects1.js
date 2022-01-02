@@ -36,6 +36,10 @@ var FlexDiv = styled.div`
   width: 60%;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px){
+    width: 100%;
+    flex-direction: column;
+  }
 `
 
 const Text = styled.span`
@@ -43,13 +47,14 @@ const Text = styled.span`
   background-clip: initial;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
 `
 
 const Input = styled.input`
-  width: 350px;
-  height: 60px;
+  width: 50%;
+  max-width: 100%;
+  height: 30%;
   border-radius: 35px;
   color: white;
   font-size: 1.2rem;
