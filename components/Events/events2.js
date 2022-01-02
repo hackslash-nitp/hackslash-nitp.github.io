@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Card from './card'
+import Card from '../about_and_event_card'
 
 export default function Contact2() {
   return (
