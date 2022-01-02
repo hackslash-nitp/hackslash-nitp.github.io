@@ -24,7 +24,8 @@ export default function projects1() {
         
         <CardContainer>
           {projects.map((project) => {
-              return <Card 
+            // need to paas a key value to remove unique key error in the array/list 
+              return <Card key={project['name']}
                           name={project['name'].charAt(0).toUpperCase() + project['name'].slice(1).replace('-', ' ').replace('_', ' ').replace('-', ' ')} 
                           url={project['html_url']} 
                           description={project['description']}
