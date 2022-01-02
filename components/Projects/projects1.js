@@ -74,4 +74,9 @@ var CardContainer = styled.div`
   display: grid;
   justify-content: space-between;
   grid-template-columns: 50% 50%;
+
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: column;
+  }
 `
