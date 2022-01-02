@@ -7,59 +7,58 @@ var CardData = [{
 }]
 export default function Card(){
   return (
-    <><div>abcd</div></>
-    // <CardBody>
-    //   <CardTitle>
-    //     <CardTText>{CardData[0].CardTitle}</CardTText>
-    //     <CardDate>{CardData[0].CardDate}</CardDate></CardTitle>
-    //   <CardAuthor>{CardData[0].CardAuthor}</CardAuthor>
-    //   <CardDescription>
-    //    {CardData[0].CardDescription}
-    //   </CardDescription>
-    //   <CardButton>Read More</CardButton>
-    // </CardBody>
+    // <><div>abcd</div></>
+    <CardBody>
+      <CardTitle>
+        <CardTText>{CardData[0].CardTitle}</CardTText>
+        <CardDate>{CardData[0].CardDate}</CardDate></CardTitle>
+      <CardAuthor>{CardData[0].CardAuthor}</CardAuthor>
+      <CardDescription>
+       {CardData[0].CardDescription}
+      </CardDescription>
+      <CardButton>Read More</CardButton>
+    </CardBody>
   )
 }
 
 //For Card
-
 var CardBody = styled.div`
 width:90%;
-padding:10px;
-margin:auto;
+padding: 30px 10px;
+padding-left: 10%;
+margin: 30px auto;
 background-color: #2D2828;
+font-size: 1.4rem;
 `
+
 var CardTitle = styled.div`
 margin:auto;
 text-align:center;
 display: flex;
+justify-content: space-around;
 `
 var CardTText = styled.p`
-/* margin-right:70px; */
-font-size:30px;
 color:#FFFFFF;
 `
 var CardDate = styled.p`
-font-size:24px;
 color: #C2D4F8;
 `
+
 var CardAuthor = styled.p`
-font-size:26px;
-margin-right:490px;
-color: linear-gradient(270deg, #48DDAB 48.58%, #54ADE6 98.99%);
+background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 ;
 `
 var CardDescription = styled.p`
-  font-size:16px;
+  font-size: 0.8rem;
   color: #FFFFFF;
   padding-right:35%;
-
 `
 var CardButton = styled.button`
-   font-size:28px;
+   font-size:1.2rem;
    padding:6px;
-   font-weight:bold;
-   background: linear-gradient(270deg, #48DDAB 48.58%, #54ADE6 98.99%);
+   color: white;
+   background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
    border-radius:25px;
-   margin-left:-0px;
 `
