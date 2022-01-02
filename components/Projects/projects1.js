@@ -24,12 +24,26 @@ export default function Projects1() {
         
         <CardContainer>
           {projects.map((project) => {
+            var project_topics = project['topics']
+            if(project_topics.includes("web")){
+              var team = "Web";
+            }else if(project_topics.includes("android")){
+              var team = "Android";
+            }else if(project_topics.includes("ml")){
+              var team = "ML";
+            }else if(project_topics.includes("game")){
+              var team = "Game";
+            }
+            else{
+              return false
+            }
             // need to paas a key value to remove unique key error in the array/list 
-              return <Card key={project['name']}
-                          name={project['name'].charAt(0).toUpperCase() + project['name'].slice(1).replace('-', ' ').replace('_', ' ').replace('-', ' ')} 
-                          url={project['html_url']} 
-                          description={project['description']}
-                          date={String(new Date(project['created_at'])).split(' ').slice(1, 4)}/>
+            return <Card key = {project['name']}
+                        name = {project['name'].charAt(0).toUpperCase() + project['name'].slice(1).replace('-', ' ').replace('_', ' ').replace('-', ' ')} 
+                        url = {project['html_url']} 
+                        description = {project['description']}
+                        date = {String(new Date(project['created_at'])).split(' ').slice(1, 4)}
+                        team = {team}/>
             })}
         </CardContainer>
         
