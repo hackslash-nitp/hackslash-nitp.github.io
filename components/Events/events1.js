@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Image from 'next/image'
-import ShoppingLove from '@/assets/contact/shopping-love.svg'
+import ShoppingLove from '@/assets/events/shopping-love.svg'
 
 export default function Contact1() {
   return (

@@ -42,7 +42,8 @@ export default class Navbar extends Component {
                         <Link href="/">Home</Link>
                         <Link href="/projects">Our Projects</Link>
                         <Link href="/about">About Us</Link>
-                        <Link href="/contact">Contact Us</Link>
+                        <Link href="/events">Events</Link>
+                        <Link href="/#contact">Contact Us</Link>
                         <div>
                             <Link href="https://www.facebook.com/hackSlash.nitp/"><a><FaFacebook/></a></Link>
                             <Link href="https://www.instagram.com/hackslash.nitp/"><a><FaInstagram/></a></Link>

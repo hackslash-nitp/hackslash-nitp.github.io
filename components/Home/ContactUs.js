@@ -2,7 +2,7 @@ import styled from "styled-components";
 import hackslashLogo from "@/assets/hackslash_logo.svg"
 import Image from 'next/image'
 
-export default function Home5(props) {
+export default function ContactUsFunc(props) {
   return (
     <MainDiv id={props.id}>
       <ContactUs><ContactusSpan>Contact Us</ContactusSpan></ContactUs>
