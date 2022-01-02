@@ -19,6 +19,7 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  user-select: none;
 }
 
 body::-webkit-scrollbar{
