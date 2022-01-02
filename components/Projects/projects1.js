@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Card from './Card'
 
 
-export default function projects1() {
+export default function Projects1() {
   const [projects, setProjects] = useState([]);
   const url = 'https://api.github.com/users/hackslash-nitp/repos'
   
