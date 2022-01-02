@@ -3,32 +3,71 @@ import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Card from './Card'
 
+const sortByDate = (a, b)=>{
+  return (new Date(b.created_at) - new Date(a.created_at))
+}
 
 export default function projects1() {
   const [projects, setProjects] = useState([]);
+  const [searchItem, setsearchItem]= useState('');
+
   const url = 'https://api.github.com/users/hackslash-nitp/repos'
   
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
-      .then(data => setProjects(data));
-  }, [url])
+      .then(data => {
+        const sortedData = data.sort(sortByDate)
+        setProjects(sortedData)
+      });
+  }, [])
 
+  useEffect(()=>{
+    const getResults = async ()=>{
+      if(searchItem===''){
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          setProjects(data.sort(sortByDate))
+        });
+      } else {
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const results = data.filter((project) => project.name.toLowerCase().indexOf(searchItem.toLowerCase()) != -1 )
+          console.log("searching...",results)
+          setProjects(results.sort(sortByDate))
+        });
+        
+      }
+  }
+
+  getResults()
+
+  }, [searchItem])
   return (
     <>
       <Container>
         <FlexDiv>
           <Text>Our Project</Text>
-          <Input type="text" name="name" placeholder="" />
+          <Input 
+            type='search' 
+            name='search'
+            value = {searchItem}
+            placeholder="Search Projects..." 
+            onChange = {(e)=> setsearchItem(e.target.value)}
+          />
         </FlexDiv>
         
         <CardContainer>
-          {projects.map((project) => {
+          {projects.map((project, index) => {
               return <Card 
                           name={project['name'].charAt(0).toUpperCase() + project['name'].slice(1).replace('-', ' ').replace('_', ' ').replace('-', ' ')} 
                           url={project['html_url']} 
                           description={project['description']}
-                          date={String(new Date(project['created_at'])).split(' ').slice(1, 4)}/>
+                          date={String(new Date(project['created_at'])).split(' ').slice(1, 4)}
+                          key= {index}/>
+                          
             })}
         </CardContainer>
         
