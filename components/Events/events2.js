@@ -1,7 +1,19 @@
+import { useState, useEffect } from 'react'
+
 import styled from 'styled-components'
 import Card from '../about_and_event_card'
 
-export default function Contact2() {
+export default function AllEvents() {
+  const [all_events, setEvents] = useState([]);
+  const url = 'https://www.eventbriteapi.com/v3/organizations/544604903183/events/?token=QCITQBPHYXMKFWP3FXXP'
+
+  useEffect(() => {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => setEvents(data['events']))
+  }, [])
+
+
   return (
     <Container>
         <Text>
@@ -10,10 +22,14 @@ export default function Contact2() {
           <span>Conquering The World Of Tech</span>
         </Text>
         <CardContainer>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {all_events.map((event) => {
+            return <Card name={event['name']['html']}
+                          description={event['description']['html']}
+                          url={event['url']}
+                          image={event['logo']['url']}
+                          start={String(new Date(event['start']['local']))}
+                          end={String(new Date(event['end']['local']))} />
+          })}
         </CardContainer>
     </Container>
   )
@@ -49,4 +65,5 @@ const CardContainer = styled.div`
   display: flex;
   margin-top: 5vh;
   justify-content: space-between;
+  flex-wrap: wrap;
 `
