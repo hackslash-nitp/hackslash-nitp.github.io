@@ -1,6 +1,19 @@
+import { useState, useEffect } from 'react'
+
 import styled from 'styled-components'
 import Card from './Card'
+
+
 export default function projects1() {
+  const [projects, setProjects] = useState([]);
+  const url = 'https://api.github.com/users/hackslash-nitp/repos'
+  
+  useEffect(() => {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => setProjects(data));
+  }, [url])
+
   return (
     <>
       <Container>
@@ -10,12 +23,13 @@ export default function projects1() {
         </FlexDiv>
         
         <CardContainer>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          {projects.map((project) => {
+              return <Card 
+                          name={project['name'].charAt(0).toUpperCase() + project['name'].slice(1).replace('-', ' ').replace('_', ' ').replace('-', ' ')} 
+                          url={project['html_url']} 
+                          description={project['description']}
+                          date={String(new Date(project['created_at'])).split(' ').slice(1, 4)}/>
+            })}
         </CardContainer>
         
       </Container>
