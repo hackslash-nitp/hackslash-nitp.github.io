@@ -9,6 +9,7 @@ const sortByDate = (a, b)=>{
 
 export default function Projects1() {
   const [projects, setProjects] = useState([]);
+  const [all_projects, setAllProjects] = useState([]);
   const [searchItem, setsearchItem]= useState('');
 
   const url = 'https://api.github.com/users/hackslash-nitp/repos'
@@ -18,33 +19,21 @@ export default function Projects1() {
       .then(response => response.json())
       .then(data => {
         const sortedData = data.sort(sortByDate)
+        setAllProjects(sortedData)
         setProjects(sortedData)
       });
-  }, [])
+  }, [url])
 
   useEffect(()=>{
-    const getResults = async ()=>{
-      if(searchItem===''){
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          setProjects(data.sort(sortByDate))
-        });
-      } else {
-        fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          const results = data.filter((project) => project.name.toLowerCase().indexOf(searchItem.toLowerCase()) != -1 )
-          console.log("searching...",results)
-          setProjects(results.sort(sortByDate))
-        });
-        
-      }
-  }
-
-  getResults()
-
+    if(searchItem===''){
+      setProjects(all_projects)
+    } else {
+        const results = all_projects.filter((project) => project.name.toLowerCase().indexOf(searchItem.toLowerCase()) != -1 )
+        console.log("searching...",results)
+        setProjects(results.sort(sortByDate))        
+    }
   }, [searchItem])
+
   return (
     <>
       <Container>
