@@ -1,7 +1,55 @@
+import { useState, useEffect } from 'react'
+
 import styled from 'styled-components'
 import Card from '../about_and_event_card'
 
+/* members = [
+   {member}, 
+   {member}, 
+   {member}, 
+   {member}
+ ] */
+
+/* new_members_after_filter = {
+    2021: [{member}, {member}],
+    2020: [{member}, {member}]
+    2022: [{member}, {member}]
+  } */
+
+/* new_members_after_sort = [
+    {2020: [{member}, {member}]},
+    {2021: [{member}, {member}]},
+    {2022: [{member}, {member}]},
+  ] */
+
+const filterMembersByYear = (members) => {
+  var new_members = {};
+  members.forEach(member => {
+    if (member['year'] === undefined){ member['year'] = 2019; }
+    if(new_members[member['year']] === undefined){new_members[member['year']] = []}
+    new_members[member['year']].push(member)
+  });
+  return new_members;
+}
+
+const sortByYear = (members) => {
+  var new_members = Object.keys(members).sort().map((year) => {
+    return {[year]: members[year]}
+  })
+  return new_members
+}
+
 export default function About2() {
+  const [all_members, setMembers] = useState([]);
+  const url = "/api/members";
+
+  useEffect(()=>{
+    console.log(url);
+    fetch(url)
+    .then(response => response.json())
+    .then(data => setMembers(  sortByYear(filterMembersByYear(data))  ))
+  }, [])
+  
   return (
     <Container>
         <Text>
@@ -10,21 +58,21 @@ export default function About2() {
           <span>Conquering The World Of Tech</span>
         </Text>
 
-        <Heading>2020</Heading>
-        <CardContainer>
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
-        </CardContainer>
-
-        <Heading>2019</Heading>
-        <CardContainer>
-          <CardItem />
-          <CardItem />
-          <CardItem />
-          <CardItem />
-        </CardContainer>
+        {all_members.map((members_by_year) => {
+          var year = Object.keys(members_by_year)[0];
+          return <><Heading>{year}</Heading>
+                    <CardContainer>
+                    {members_by_year[year].map((member) => {
+                      return <CardItem name={member['name']} 
+                                        image={member['image']}
+                                        bio={member['bio']}
+                                        role={member['role']}
+                                        linkedin={member['linkedin']}
+                                        github={member['github']}/>
+                    })}
+                  </CardContainer>
+          </>
+        })}
     </Container>
   )
 }
@@ -69,3 +117,6 @@ const CardContainer = styled.div`
 const CardItem = styled(Card)`
   /* max-width: 20%; */
 `
+
+
+

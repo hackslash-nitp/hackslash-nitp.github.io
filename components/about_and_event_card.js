@@ -5,11 +5,10 @@ import {IconContext} from "react-icons"
  
 import topLeft from '@/assets/profileCard/left-small.png'
 import topRight from '@/assets/profileCard/right-big.png'
-import profilePic from '@/assets/profileCard/profile-pic.png'
 import bottomLeft from '@/assets/profileCard/left-big.png'
 import bottomRight from '@/assets/profileCard/right-small.png'
 
-export default function card() {
+export default function card(props) {
   return (
     <div className={style.parentCard}>
       <div className={style.mainCardBox}>
@@ -19,10 +18,10 @@ export default function card() {
         </div>
 
         <div className={style.aboutContent}>
-          <Image src={profilePic} className={style.profileImage} alt="profile picture" />
-          <h1>Name</h1>
-          <h3>Designation</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur </p>
+          <Image src={props.image} className={style.profileImage} alt="profile picture" width="100%" height="100%" />
+          <h1>{props.name}</h1>
+          <h3>{props.role}</h3>
+          <p>{props.bio} </p>
           <div className={style.icons}>
               <FaLinkedinIn className={style.linkIcons}/>
               <FaTwitter className={style.linkIcons}/>

@@ -79,3 +79,6 @@
  .parentCard:hover .bottomRightImage {
     transform: translate(0.4rem, 0.4rem);
  }
+ .profileImage{
+     border-radius: 50%;
+ }
