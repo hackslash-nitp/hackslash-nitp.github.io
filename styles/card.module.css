@@ -79,6 +79,16 @@
  .parentCard:hover .bottomRightImage {
     transform: translate(0.4rem, 0.4rem);
  }
- .profileImage{
+ .profileImageDiv{
      border-radius: 50%;
+     border: 7px solid green;
+     width: 100px;
+     height: 100px;
+     overflow: hidden;
+ }
+ 
+ .profileImage{
+    min-width: 100%;
+    width: 100%;
+    height: auto;
  }

@@ -9,6 +9,7 @@ import bottomLeft from '@/assets/profileCard/left-big.png'
 import bottomRight from '@/assets/profileCard/right-small.png'
 
 export default function card(props) {
+  if(props.image === undefined) return <></>
   return (
     <div className={style.parentCard}>
       <div className={style.mainCardBox}>
@@ -18,7 +19,9 @@ export default function card(props) {
         </div>
 
         <div className={style.aboutContent}>
-          <Image src={props.image} className={style.profileImage} alt="profile picture" width="100%" height="100%" />
+          <div className={style.profileImageDiv}>
+            <Image src={props.image} className={style.profileImage} alt="profile picture" width="100" height="100" objectFit='contain' />
+          </div>
           <h1>{props.name}</h1>
           <h3>{props.role}</h3>
           <p>{props.bio} </p>
