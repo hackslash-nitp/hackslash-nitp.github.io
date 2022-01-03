@@ -23,7 +23,8 @@ export default function AllEvents() {
         </Text>
         <CardContainer>
           {all_events.map((event) => {
-            return <Card name={event['name']['html']}
+            return <Card key={event['name']['html']}
+                          name={event['name']['html']}
                           description={event['description']['html']}
                           url={event['url']}
                           image={event['logo']['url']}
