@@ -63,7 +63,8 @@ export default function About2() {
           return <><Heading>{year}</Heading>
                     <CardContainer>
                     {members_by_year[year].map((member) => {
-                      return <CardItem name={member['name']} 
+                      return <CardItem key={member['name']}
+                                        name={member['name']} 
                                         image={member['image']}
                                         bio={member['bio']}
                                         role={member['role']}
