@@ -43,6 +43,9 @@ background-color: #2D2828;
 font-size: 1.4rem;
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
 transition: 0.3s;
+@media (max-width: 768px){
+  font-size: 1rem;
+  }
 `
 
 var CardTitle = styled.div`
@@ -50,6 +53,7 @@ margin:auto;
 text-align:center;
 display: flex;
 justify-content: space-around;
+overflow-wrap: break-word;
 `
 var CardTText = styled.p`
 color:#FFFFFF;
@@ -58,6 +62,9 @@ max-width: 50%;
 var CardDate = styled.p`
 color: #C2D4F8;
 max-width: 50%;
+@media (max-width: 768px){
+  font-size: 0.8rem;
+  }
 `
 
 var CardAuthor = styled.p`
