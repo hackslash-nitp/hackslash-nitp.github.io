@@ -17,9 +17,9 @@ export default function AllEvents() {
   return (
     <Container>
         <Text>
-          <Heading>Our Alumini</Heading>
+          {/* <Heading>Our Alumini</Heading>
           <br />
-          <span>Conquering The World Of Tech</span>
+          <span>Conquering The World Of Tech</span> */}
         </Text>
         <CardContainer>
           {all_events.map((event) => {

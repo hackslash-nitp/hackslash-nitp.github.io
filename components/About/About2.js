@@ -110,10 +110,10 @@ const CardContainer = styled.div`
   justify-content: space-between;
   flex-wrap : wrap;
 
-  /* @media (max-width: 768px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-} */
+}
 `
 const CardItem = styled(Card)`
   /* max-width: 20%; */

@@ -6,7 +6,7 @@ export default function Contact1() {
   return (
     <Container>
         <Text>
-          <Heading>Our Alumini</Heading>
+          <Heading>Our Events</Heading>
           <br />
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum, aliquam quis nisi, id. Non lacus sed nulla ac sit posuere dui. Tristique tristique fames nec ultricies sapien nisl feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum, aliquam quis nisi, id. Non lacus sed nulla ac sit posuere dui. Tristique tristique fames nec ultricies sapien nisl feugiat.</p>
         </Text>

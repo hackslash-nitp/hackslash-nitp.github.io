@@ -34,14 +34,17 @@
 }
 .aboutContent h1{
     color: white;
+    text-align: center;
 }
 .aboutContent h3{
     color: rgb(12, 161, 69);
+    text-align: center;
 }
 .aboutContent p{
     width: 250px;
     text-align: center;
     color: white;
+    min-height: 63px;
 }
 .icons{
     margin: 20px 0px;
