@@ -1,4 +1,5 @@
-import {FaLinkedinIn, FaTwitter, FaGithub} from 'react-icons/fa'
+import Link from 'next/link'
+import {FaLinkedinIn, FaMedium, FaGithub, FaTwitter} from 'react-icons/fa'
 import styled from 'styled-components'
 
 export default function card(props) {
@@ -13,15 +14,33 @@ export default function card(props) {
 
         <AboutContent>
           <ProfileImageDiv>
-            <ProfileImage src={props.image} alt="profile picture" width="100" height="100" objectFit='contain' />
+            <ProfileImage src={props.image} alt="loading" width="100" height="100" objectFit='contain' />
           </ProfileImageDiv>
           <h1>{props.name}</h1>
           <h3>{props.role}</h3>
           <p>{props.bio} </p>
           <Icons>
-              <LinkedIn />
-              <Twitter />
-              <Github />
+            { props.github &&
+              <Link href={props.github}>
+                <Github />
+              </Link>
+            }
+            { props.linkedin &&
+              <Link href={props.linkedin}>
+                <LinkedIn />
+              </Link>
+            }
+            { props.medium &&
+              <Link href={props.medium}>
+                <Medium />
+              </Link>
+            }
+            { props.twitter &&
+              <Link href={props.twitter}>
+                <Twitter />
+              </Link>
+            }
+            
           </Icons>
         </AboutContent>
 
@@ -96,11 +115,12 @@ const AboutContent = styled.div`
 
     & > h1{
       color: white;
-      justify-content: center;
+      text-align: center;
     }
 
     & > h3{
       color: rgb(12, 161, 69);
+      text-align: center;
     }
 
     & > p{
@@ -131,13 +151,19 @@ const LinkedIn = styled(FaLinkedinIn)`
     color: white;
     cursor: pointer;
 `
-const Twitter = styled(FaTwitter)`
+const Medium = styled(FaMedium)`
   transform: scale(2);
     margin: 0 15px;
     color: white;
     cursor: pointer;
 `
 const Github = styled(FaGithub)`
+  transform: scale(2);
+    margin: 0 15px;
+    color: white;
+    cursor: pointer;
+`
+const Twitter = styled(FaTwitter)`
   transform: scale(2);
     margin: 0 15px;
     color: white;

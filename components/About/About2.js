@@ -65,11 +65,15 @@ export default function About2() {
                     {members_by_year[year].map((member) => {
                       return <CardItem key={member['name']}
                                         name={member['name']} 
-                                        image={member['image']}
+                                        image={member['image'] || '/hackslashLogo.jpg'}
                                         bio={member['bio']}
                                         role={member['role']}
                                         linkedin={member['linkedin']}
-                                        github={member['github']}/>
+                                        github={member['github']}
+                                        medium = {member['medium']}
+                                        twitter = {member['twitter']}
+                                        />
+                                        
                     })}
                   </CardContainer>
           </>
