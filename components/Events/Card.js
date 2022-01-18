@@ -12,18 +12,15 @@ export default function Card(props){
     <CardBody>
       <CardTitle>
         <CardTText>{props.name}</CardTText>
-        {
-          props.start && <CardDate>{props.start[2] + " " + props.start[1] + " " + props.start[3]} - {props.end[2] + " " + props.end[1] + " " + props.end[3]}</CardDate>
-        }
-        {
-          props.date && <CardDate>{props.date}</CardDate>
-        }
       </CardTitle>
       <CardAuthor>{"By HackSlash"}</CardAuthor>
       <CardDescription>
        {props.description || `An awesome project created by ${props.team} team under Hackslash`}
       </CardDescription>
       <CardButton><Link href={props.url}>Read More</Link></CardButton>
+      
+      {props.start && <CardDate>{props.start[2] + " " + props.start[1] + " " + props.start[3]} - {props.end[2] + " " + props.end[1] + " " + props.end[3]}</CardDate>}
+      {props.date && <CardDate>{props.date}</CardDate>}
 
       {/*  */}
       <CardTopLeft> <Image src={top_left_image}/> </CardTopLeft>
@@ -62,11 +59,10 @@ overflow-wrap: break-word;
 `
 var CardTText = styled.p`
 color:#FFFFFF;
-max-width: 50%;
 `
+
 var CardDate = styled.p`
 color: #C2D4F8;
-max-width: 50%;
 @media (max-width: 768px){
   font-size: 0.8rem;
   }
