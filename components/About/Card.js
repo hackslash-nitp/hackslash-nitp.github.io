@@ -21,22 +21,22 @@ export default function card(props) {
           <p>{props.bio} </p>
           <Icons>
             { props.github &&
-              <Link href={props.github}>
+              <Link href={props.github} passHref>
                 <Github />
               </Link>
             }
             { props.linkedin &&
-              <Link href={props.linkedin}>
+              <Link href={props.linkedin} passHref>
                 <LinkedIn />
               </Link>
             }
             { props.medium &&
-              <Link href={props.medium}>
+              <Link href={props.medium} passHref>
                 <Medium />
               </Link>
             }
             { props.twitter &&
-              <Link href={props.twitter}>
+              <Link href={props.twitter} passHref>
                 <Twitter />
               </Link>
             }

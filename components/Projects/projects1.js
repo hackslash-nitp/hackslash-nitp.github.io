@@ -31,7 +31,7 @@ export default function Projects1() {
         const results = all_projects.filter((project) => project.name.toLowerCase().indexOf(searchItem.toLowerCase()) != -1 )
         setProjects(results.sort(sortByDate))        
     }
-  }, [searchItem])
+  }, [searchItem, all_projects])
 
   return (
     <>

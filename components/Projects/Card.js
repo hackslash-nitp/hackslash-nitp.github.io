@@ -21,10 +21,10 @@ export default function Card(props){
       <CardButton><Link href={props.url}>Read More</Link></CardButton>
 
       {/*  */}
-      <CardTopLeft> <Image src={top_left_image}/> </CardTopLeft>
-      <CardBottomLeft> <Image src={bottm_left_image}/> </CardBottomLeft>
+      <CardTopLeft> <Image src={top_left_image} alt="Top left Image"/> </CardTopLeft>
+      <CardBottomLeft> <Image src={bottm_left_image} alt="Bottom Left Image"/> </CardBottomLeft>
       
-      <CardRight> <Image src={right_hackslash_image}/> </CardRight>
+      <CardRight> <Image src={right_hackslash_image} alt="Right Image"/> </CardRight>
     </CardBody>
 
     </>
@@ -69,7 +69,7 @@ max-width: 50%;
 
 var CardAuthor = styled.p`
 background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
-background-clip: text;
+-webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 `
 var CardDescription = styled.p`
