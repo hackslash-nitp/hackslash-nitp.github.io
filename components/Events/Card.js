@@ -25,7 +25,7 @@ export default function Card(props){
       <CardTopLeft> <Image src={top_left_image}/> </CardTopLeft>
       <CardBottomLeft> <Image src={bottm_left_image}/> </CardBottomLeft>
       
-      <CardRight>  <EventImage src={props.image} /> </CardRight>
+      <CardRight> <ImageDiv> <EventImage src={props.image} /> </ImageDiv> </CardRight>
     </CardBody>
 
     </>
@@ -106,6 +106,12 @@ var CardRight = styled.div`
   right: -10%;
   top: 50%; 
   transform: translateY(-50%);
+`
+
+
+var ImageDiv = styled.div`
+  max-height: 120px !important;
+  overflow: hidden;
 `
 
 var EventImage = styled.img`
