@@ -16,7 +16,7 @@ export default function Card(props){
         <CardDate>{props.date[1] + " " + props.date[0] + " " + props.date[2]}</CardDate></CardTitle>
       <CardAuthor>{"By " + props.team + " Team"}</CardAuthor>
       <CardDescription>
-       {props.description}
+       {props.description || `An awesome project created by ${props.team} team under Hackslash`}
       </CardDescription>
       <CardButton><Link href={props.url}>Read More</Link></CardButton>
 
