@@ -11,7 +11,7 @@ export default function Home3(props) {
       <Image src={cupImg} alt="Cup Img" width={800} height={600} />
       <Text>
         <Heading>
-          <p>At HackSlash</p> <span>We Have Done Some Great Stuffs.</span>
+          <p>At HackSlash</p> <h1>We Have Done Some Great Stuffs.</h1>
         </Heading>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi.

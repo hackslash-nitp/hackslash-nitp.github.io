@@ -4,7 +4,7 @@ export default function Home4(props) {
   return (
     <MainDiv id={props.id}>
       <LetterDiv>
-        <p>REGISTER FOR OUR NEWSLETTER NOW </p>
+        <h2>REGISTER FOR OUR NEWSLETTER NOW </h2>
       </LetterDiv>
 
       <div>
@@ -41,7 +41,7 @@ const MainDiv = styled.section`
  
 const LetterDiv = styled.div`
   width: 60%;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 400;
   color: #ffffff;
 `;

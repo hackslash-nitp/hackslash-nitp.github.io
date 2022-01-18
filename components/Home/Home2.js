@@ -9,7 +9,7 @@ export default function Home2(props) {
     <MainDiv  id={props.id}>
     <Container>
         <Text>
-          <Heading>We are making <Em>ideas</Em> better for everyone</Heading>
+          <Heading><h1>We are making <Em>ideas</Em> better for everyone</h1></Heading>
           <br />
           <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when </p>
           <Button>Learn More</Button>
@@ -71,7 +71,7 @@ const Text = styled.div`
   `
 const Heading = styled.span`
   width: 50%;
-  font-size: 45px;
+  font-size: 20px;
   font-weight: 400;
 `
 const Em = styled.b`

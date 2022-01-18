@@ -250,6 +250,7 @@ const LinkedListItem = styled.li`
 const LinksListHeading = styled.h3`
   color: white;
   font-weight: 600;
+  padding-top: 30px;
 `
 const Copyright = styled.p`
 /* style={{textAlign: "center", color : "white"}} */
