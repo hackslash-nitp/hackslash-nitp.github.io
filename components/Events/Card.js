@@ -60,9 +60,9 @@ var CardTText = styled.p`
 color:#FFFFFF;
 margin-top: 50px;
 font-size: 1.8rem;
-max-width: 70%;
+/* max-width: 70%; */
 line-height: 35px;
-min-height: 100px;
+min-height: 90px;
 @media (max-width: 768px){
   font-size: 1.4rem;
   }
