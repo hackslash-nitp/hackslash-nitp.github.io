@@ -13,13 +13,16 @@ export default function Card(props){
         <CardTText>{props.name}</CardTText>
 
       <CardAuthor>{"By HackSlash"}</CardAuthor>
+      {props.start && <CardDate>{props.start[2] + " " + props.start[1] + " " + props.start[3]} - {props.end[2] + " " + props.end[1] + " " + props.end[3]}</CardDate>}
+      {props.date && <CardDate>{props.date}</CardDate>}
       <CardDescription>
        {props.description || `An awesome project created by ${props.team} team under Hackslash`}
       </CardDescription>
+
+      <ButtonDiv>
       <CardButton><Link href={props.url}>Read More</Link></CardButton>
+      </ButtonDiv>
       
-      {props.start && <CardDate>{props.start[2] + " " + props.start[1] + " " + props.start[3]} - {props.end[2] + " " + props.end[1] + " " + props.end[3]}</CardDate>}
-      {props.date && <CardDate>{props.date}</CardDate>}
 
       {/*  */}
       <CardTopLeft> <Image src={top_left_image}/> </CardTopLeft>
@@ -48,11 +51,17 @@ transition: 0.3s;
   font-size: 1rem;
   }
 `
-
+const ButtonDiv = styled.div`
+width: 100%;
+display: flex;
+justify-content: flex-end;
+`
 var CardTText = styled.p`
 color:#FFFFFF;
 margin-top: 50px;
 font-size: 2rem;
+max-width: 70%;
+line-height: 35px;
 `
 
 var CardDate = styled.p`
