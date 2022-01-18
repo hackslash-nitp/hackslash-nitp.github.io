@@ -64,7 +64,7 @@ export default function Projects1() {
             }
             // need to paas a key value to remove unique key error in the array/list 
             return <Card key = {project['name']}
-                        name = {project['name'].charAt(0).toUpperCase() + project['name'].slice(1).replace('-', ' ').replace('_', ' ').replace('-', ' ')} 
+                        name = {project['name'].charAt(0).toUpperCase() + project['name'].slice(1).replaceAll('-', ' ').replaceAll('_', ' ')} 
                         url = {project['html_url']} 
                         description = {project['description']}
                         date = {String(new Date(project['created_at'])).split(' ').slice(1, 4)}
