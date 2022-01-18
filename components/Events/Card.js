@@ -59,9 +59,12 @@ justify-content: flex-end;
 var CardTText = styled.p`
 color:#FFFFFF;
 margin-top: 50px;
-font-size: 2rem;
+font-size: 1.8rem;
 max-width: 70%;
 line-height: 35px;
+@media (max-width: 768px){
+  font-size: 1.4rem;
+  }
 `
 
 var CardDate = styled.p`
