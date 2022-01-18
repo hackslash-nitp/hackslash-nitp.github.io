@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 import styled from 'styled-components'
 import Card from '../about_and_event_card'
+import eventsJson from './event.json';
 
 export default function AllEvents() {
   const [all_events, setEvents] = useState([]);
@@ -12,7 +13,6 @@ export default function AllEvents() {
       .then(response => response.json())
       .then(data => setEvents(data['events']))
   }, [])
-
 
   return (
     <Container>
@@ -31,6 +31,18 @@ export default function AllEvents() {
                           start={String(new Date(event['start']['local']))}
                           end={String(new Date(event['end']['local']))} />
           })}
+
+          {
+            eventsJson.map(event =>{
+              <Card key = {event.name} 
+                    name = {event.name}
+                    url = {event.link}
+                    image = {event.photo}
+                    date = {event.Date}
+                    description = {event.department}
+              />
+            })
+          }
         </CardContainer>
     </Container>
   )
