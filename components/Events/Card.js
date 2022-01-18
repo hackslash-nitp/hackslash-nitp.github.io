@@ -10,9 +10,8 @@ export default function Card(props){
   return (
     <>
     <CardBody>
-      <CardTitle>
         <CardTText>{props.name}</CardTText>
-      </CardTitle>
+
       <CardAuthor>{"By HackSlash"}</CardAuthor>
       <CardDescription>
        {props.description || `An awesome project created by ${props.team} team under Hackslash`}
@@ -38,7 +37,7 @@ var CardBody = styled.div`
 position: relative;
 width:85%;
 min-height: 50vh;
-padding: 50px 10px;
+padding: 22px 10px;
 padding-left: 10%;
 margin: 30px auto;
 background-color: #2D2828;
@@ -50,15 +49,10 @@ transition: 0.3s;
   }
 `
 
-var CardTitle = styled.div`
-margin:auto;
-text-align:center;
-display: flex;
-justify-content: space-around;
-overflow-wrap: break-word;
-`
 var CardTText = styled.p`
 color:#FFFFFF;
+margin-top: 50px;
+font-size: 2rem;
 `
 
 var CardDate = styled.p`
@@ -77,13 +71,16 @@ var CardDescription = styled.p`
   font-size: 0.8rem;
   color: #FFFFFF;
   padding-right:35%;
+  margin-top: 10px;
 `
 var CardButton = styled.button`
    font-size:1.2rem;
    padding:8px;
-   margin-top: 3rem;
+   margin-top: 30px;
    margin-left: 2.5rem;
    color: white;
+   border: none;
+   outline: none;
    background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
    border-radius:25px;
 `
