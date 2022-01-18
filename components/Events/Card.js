@@ -62,6 +62,7 @@ margin-top: 50px;
 font-size: 1.8rem;
 max-width: 70%;
 line-height: 35px;
+min-height: 100px;
 @media (max-width: 768px){
   font-size: 1.4rem;
   }
@@ -69,6 +70,7 @@ line-height: 35px;
 
 var CardDate = styled.p`
 color: #C2D4F8;
+font-size: 0.8rem;
 @media (max-width: 768px){
   font-size: 0.8rem;
   }
@@ -84,6 +86,9 @@ var CardDescription = styled.p`
   color: #FFFFFF;
   padding-right:35%;
   margin-top: 10px;
+  min-height: 60px;
+  align-items: center;
+  display: flex;
 `
 var CardButton = styled.button`
    font-size:1.2rem;

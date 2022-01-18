@@ -36,7 +36,7 @@ export default function AllEvents() {
                     url = {event.link}
                     image = {event.photo}
                     date = {event.Date}
-                    description = {event.department}
+                    description = {`${event.name} was successfully hosted by ${event.department} department with huge number of participants`}
               />
             })}
         </CardContainer>
