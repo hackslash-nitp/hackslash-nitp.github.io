@@ -69,7 +69,7 @@ max-width: 50%;
 
 var CardAuthor = styled.p`
 background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
--webkit-background-clip: text;
+background-clip: text;
 -webkit-text-fill-color: transparent;
 `
 var CardDescription = styled.p`
