@@ -7,7 +7,13 @@ body {
   font-family: 'Poppins','sans-serif';
   font-weight: 300;
   scroll-behavior: smooth;
-  /* scroll-snap-type: y mandatory; */
+}
+
+@media (min-width: 768px) {
+  html,
+  body{
+    scroll-snap-type: y mandatory;
+  }
 }
 
 a {
