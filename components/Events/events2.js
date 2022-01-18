@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import styled from 'styled-components'
-import Card from '../about_and_event_card'
+import Card from '../About/Card'
 
 export default function AllEvents() {
   const [all_events, setEvents] = useState([]);
