@@ -11,7 +11,7 @@ export default function Home() {
       <Homepage1 id="Home1" />
       <Homepage2 id="Home2" />
       <Homepage3 id="Home3" />
-      <Homepage4 id="Home4" />
+      {/* <Homepage4 id="Home4" /> */}
       <ContactUs id="contact" />
     </Layout>
   )
