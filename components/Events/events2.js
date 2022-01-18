@@ -16,9 +16,6 @@ export default function AllEvents() {
   return (
     <Container>
         <Text>
-          {/* <Heading>Our Alumini</Heading>
-          <br />
-          <span>Conquering The World Of Tech</span> */}
         </Text>
         <CardContainer>
           {all_events.map((event) => {
@@ -32,8 +29,7 @@ export default function AllEvents() {
                           end={String(new Date(event['end']['local'])).split(' ')} />
           })}
 
-          {
-            eventsJson.map(event =>{
+          {eventsJson.map(event =>{
               return <Card key = {event.name} 
                     name = {event.name}
                     url = {event.link}
@@ -41,8 +37,7 @@ export default function AllEvents() {
                     date = {event.Date}
                     description = {event.department}
               />
-            })
-          }
+            })}
         </CardContainer>
     </Container>
   )
