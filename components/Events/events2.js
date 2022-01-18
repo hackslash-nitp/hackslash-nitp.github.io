@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import styled from 'styled-components'
-import Card from '../About/Card'
+import Card from './Card'
 
 export default function AllEvents() {
   const [all_events, setEvents] = useState([]);
@@ -23,13 +23,14 @@ export default function AllEvents() {
         </Text>
         <CardContainer>
           {all_events.map((event) => {
-            return <Card key={event['name']['html']}
-                          name={event['name']['html']}
-                          description={event['description']['html']}
+            console.log(String(new Date(event['start']['local'])).split(' '));
+            return <Card key={event['name']['text']}
+                          name={event['name']['text']}
+                          description={event['description']['text']}
                           url={event['url']}
                           image={event['logo']['url']}
-                          start={String(new Date(event['start']['local']))}
-                          end={String(new Date(event['end']['local']))} />
+                          start={String(new Date(event['start']['local'])).split(' ')}
+                          end={String(new Date(event['end']['local'])).split(' ')} />
           })}
         </CardContainer>
     </Container>
@@ -62,9 +63,16 @@ const Text = styled.div`
   }
 `
 
-const CardContainer = styled.div`
-  display: flex;
-  margin-top: 5vh;
+
+// Card Container 
+
+var CardContainer = styled.div`
+  display: grid;
   justify-content: space-between;
-  flex-wrap: wrap;
+  grid-template-columns: 50% 50%;
+
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: column;
+  }
 `
