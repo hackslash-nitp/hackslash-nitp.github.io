@@ -19,13 +19,13 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* user-select: none; */
+  user-select: none;
 }
 
-/* body::-webkit-scrollbar{
+body::-webkit-scrollbar{
   display: none;
 }
 
 section{
   scroll-snap-align: start;
-} */
+}

@@ -144,6 +144,7 @@ const ProfileImage = styled.img`
 `
 const Icons = styled.div`
   margin: 20px 0px;
+  z-index: 10;
 `
 const LinkedIn = styled(FaLinkedinIn)`
   transform: scale(2);
