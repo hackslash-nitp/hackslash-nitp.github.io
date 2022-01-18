@@ -12,7 +12,12 @@ export default function Card(props){
     <CardBody>
       <CardTitle>
         <CardTText>{props.name}</CardTText>
-        <CardDate>{props.start[2] + " " + props.start[1] + " " + props.start[3]} - {props.end[2] + " " + props.end[1] + " " + props.end[3]}</CardDate>
+        {
+          props.start && <CardDate>{props.start[2] + " " + props.start[1] + " " + props.start[3]} - {props.end[2] + " " + props.end[1] + " " + props.end[3]}</CardDate>
+        }
+        {
+          props.date && <CardDate>{props.date}</CardDate>
+        }
       </CardTitle>
       <CardAuthor>{"By HackSlash"}</CardAuthor>
       <CardDescription>
@@ -24,7 +29,7 @@ export default function Card(props){
       <CardTopLeft> <Image src={top_left_image}/> </CardTopLeft>
       <CardBottomLeft> <Image src={bottm_left_image}/> </CardBottomLeft>
       
-      <CardRight> <Image src={props.image} width={100} height={100}/> </CardRight>
+      <CardRight>  <Image src={props.image} width={100} height={100}/> </CardRight>
     </CardBody>
 
     </>

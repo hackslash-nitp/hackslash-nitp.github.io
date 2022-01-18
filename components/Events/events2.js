@@ -34,7 +34,7 @@ export default function AllEvents() {
 
           {
             eventsJson.map(event =>{
-              <Card key = {event.name} 
+              return <Card key = {event.name} 
                     name = {event.name}
                     url = {event.link}
                     image = {event.photo}
