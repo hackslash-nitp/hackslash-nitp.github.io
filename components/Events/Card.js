@@ -29,7 +29,7 @@ export default function Card(props){
       <CardTopLeft> <Image src={top_left_image}/> </CardTopLeft>
       <CardBottomLeft> <Image src={bottm_left_image}/> </CardBottomLeft>
       
-      <CardRight>  <Image src={props.image} width={100} height={100}/> </CardRight>
+      <CardRight>  <EventImage src={props.image} /> </CardRight>
     </CardBody>
 
     </>
@@ -115,4 +115,11 @@ var CardRight = styled.div`
   right: -10%;
   top: 50%; 
   transform: translateY(-50%);
+`
+
+var EventImage = styled.img`
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
 `
