@@ -17,7 +17,7 @@ export default function Home2(props) {
         <Image src={marketing} width={800} height={600} alt=""/>
     </Container>
 
-      <IconsMainDiv>
+      {/* <IconsMainDiv>
           <IconsDivContainer>
             <IconDiv>
               <Notepad />
@@ -32,13 +32,13 @@ export default function Home2(props) {
               <Notepad />
             </IconDiv>
           </IconsDivContainer>
-      </IconsMainDiv>
+      </IconsMainDiv> */}
     </MainDiv>
     )
   }
 
   const MainDiv = styled.section`
-  /* height: 100vh; */
+  height: 100vh;
   background: url("/about/About_1_background.svg") center center/cover;
   display: flex;
   flex-direction: column;
@@ -48,9 +48,9 @@ const Container = styled.div`
   align-items: center;
   padding: 5%;
   color: white;
+  height: 100vh;
 
   @media (max-width: 768px) {
-  height: 100vh;
   justify-content: space-between;
   flex-direction: column-reverse;
   padding-bottom: 50px;
