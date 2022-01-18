@@ -21,7 +21,7 @@ export default function Card(props){
       </CardTitle>
       <CardAuthor>{"By HackSlash"}</CardAuthor>
       <CardDescription>
-       {props.description || `An awesome project created by ${props.team} team under Hackslash`}
+       {props.description || `An awesome event hosted by Hackslash`}
       </CardDescription>
       <CardButton><Link href={props.url}>Read More</Link></CardButton>
 
@@ -90,6 +90,8 @@ var CardButton = styled.button`
    color: white;
    background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
    border-radius:25px;
+   border: none;
+   outline: none;
 `
 
 var CardTopLeft = styled.div`

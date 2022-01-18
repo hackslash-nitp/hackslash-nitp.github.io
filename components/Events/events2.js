@@ -23,6 +23,7 @@ export default function AllEvents() {
         <CardContainer>
           {all_events.map((event) => {
             console.log(String(new Date(event['start']['local'])).split(' '));
+            console.log(event)
             return <Card key={event['name']['text']}
                           name={event['name']['text']}
                           description={event['description']['text']}
