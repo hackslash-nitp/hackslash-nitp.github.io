@@ -9,7 +9,7 @@ export default function Homepage(props) {
           <Text>
             <Heading><h3>We Are</h3> <h1>HackSlash</h1></Heading>
             <br />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla purus porttitor sed. Neque ornare tempor, egestas vel, sed commodo cursus euismod egestas. At vulputate turpis et ultricies.</p>
+            <p>A Community that aims to provide a forum to nurture coding and development skills, and help each other grow because we believe that working together has immense power.</p>
           </Text>
       </Container>
       )

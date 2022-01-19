@@ -9,7 +9,7 @@ export default function About1() {
           <Heading>On a Mission</Heading>
           <br />
           <span>To Take The Hassle out of Home.</span>
-          <p>HackSlash, currently under the Mozilla Campus Clubs Network, is an all student driven developers community located in the National Institute of Technology Patna. The club strives to build and improve the open sourcing environment and the coding culture of the whole city of Patna and eventually the whole state of Bihar. The will power and determination of each Developers, Competitive Coders, Designers and Innovative thinkers is what governs our great community.</p>
+          <p>HackSlash Developer Club is a community of NIT Patna that was created with the sole purpose of bringing people with similar interests in technology together where they can begin and master their coding and development skills. The club strives to build and improve the open-sourcing environment and the coding culture. It provides a platform where you get to work on collaborative projects and help each other grow as a team. The willpower and determination of each Developer, Competitive Coders, Designers, and Innovative thinker is what governs our community. It is an initiative taken that will go a long way in maintaining the coding culture of NIT Patna in the years to come.</p>
         </Text>
         <Image src={backgroundImg} alt="Boy on Plane" width={800} height={600}/>
     </Container>

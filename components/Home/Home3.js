@@ -14,7 +14,7 @@ export default function Home3(props) {
           <p>At HackSlash</p> <h1>We Have Done Some Great Stuffs.</h1>
         </Heading>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi.
+        Since its inception, HackSlash is growing every year. We have created projects for various social causes. In our quest to enhance the coding culture in our campus, we have managed to organize Hackathons which saw students from different colleges of India. We have also conducted workshops, and sessions that covered domains like open source contribution, graphic designing, coding, and development.
         </p>
         <Ul>
           <Li>

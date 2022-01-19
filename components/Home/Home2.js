@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import marketing from '@/assets/home/home2logo.svg'
 import styled from 'styled-components'
 import {FaCode} from 'react-icons/fa'
@@ -11,8 +12,8 @@ export default function Home2(props) {
         <Text>
           <Heading><h1>We are making <Em>ideas</Em> better for everyone</h1></Heading>
           <br />
-          <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when </p>
-          <Button>Learn More</Button>
+          <p>Ideas without actions are useless and we try to foster them by giving our members a platform through which they can put those ideas in motion.</p>
+          <Button><Link href="/projects">Learn More</Link></Button>
         </Text>
         <Image src={marketing} width={800} height={600} alt=""/>
     </Container>
@@ -60,7 +61,7 @@ const Container = styled.div`
 const Text = styled.div`
   width: 50%;
 
-  & > p  {
+  & > p :first  {
     font-size: 18px;
     text-align: justify;
   }
@@ -82,7 +83,7 @@ const Button= styled.button`
 margin-top: 20px;
 border-radius:25px;
 color:#FFFBFB;
-font-size:1.5rem;
+font-size:1.2rem;
 letter-spacing: 1px;
 padding: 10px 15px;
 border: none;

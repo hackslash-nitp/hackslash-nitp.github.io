@@ -8,7 +8,7 @@ export default function Contact1() {
         <Text>
           <Heading>Our Events</Heading>
           <br />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum, aliquam quis nisi, id. Non lacus sed nulla ac sit posuere dui. Tristique tristique fames nec ultricies sapien nisl feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum, aliquam quis nisi, id. Non lacus sed nulla ac sit posuere dui. Tristique tristique fames nec ultricies sapien nisl feugiat.</p>
+          <p>HackSlash aims at one’s development in a peer-to-peer learning environment, with people having like interests. This is not possible without strong community bonding and informative tech sessions or events. HackSlash never fails to organize an event at a regular interval of time. The events range from technical sessions to hackathons, from workshops to community meetups, and many more!</p>
         </Text>
         <Image src={ShoppingLove} alt="Shopping Love" width={800} height={600}/>
     </Container>

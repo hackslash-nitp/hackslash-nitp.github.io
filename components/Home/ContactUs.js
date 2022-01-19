@@ -29,7 +29,7 @@ export default function ContactUsFunc(props) {
           </Logo>
 
             <FooterLinksDiv>
-                <AboutHackslashP>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget egestas enim lorem diam nibh leo, morbi. Lorem ipsum dolor sit amet.</AboutHackslashP>
+                <AboutHackslashP>HackSlash Developer Club is a community of NIT Patna that strives to build and improve the open sourcing environment and the coding culture where we work on collaborative projects and help each other grow as a team.</AboutHackslashP>
 
                 <div>
                     <LinksListHeading>USEFUL LINKS</LinksListHeading>
