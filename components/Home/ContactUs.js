@@ -1,24 +1,61 @@
 import styled from "styled-components";
+import { useState } from "react";
+
 import hackslashLogo from "@/assets/hackslash_logo.svg"
 import Image from 'next/image'
 
 export default function ContactUsFunc(props) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitBtnText, setSubmitBtnText] = useState("Send Message");
+  const [btnDisabled, setBtnDisabled] = useState(false);
+
+  var submitForm = (e) => {
+    e.preventDefault();
+    if(name=="" || email=="" || message==""){
+      alert("All fields are required");
+      return;
+    }
+    setName("");
+    setEmail("");
+    setMessage("");
+    setSubmitBtnText(<Loader />);
+    setBtnDisabled(true);
+
+    // send message
+    fetch('/api/contact', {
+      method: "POST",
+      body: JSON.stringify({name, email, message})
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.message === 'success')
+        alert("Thank you for writing to us. We got your request and within 2 business days, we will get in touch.")
+      else
+        alert("Something went wrong while submitting your request")
+      
+        setSubmitBtnText("Send Message")
+        setBtnDisabled(false);
+    })
+  }
+
   return (
     <MainDiv id={props.id}>
       <ContactUs><ContactusSpan>Contact Us</ContactusSpan></ContactUs>
 
       <div>
-        <Form>
+        <Form onSubmit={submitForm}>
           <InputAndTextareaBox>
             <TwoInputBox>
-              <Input type="text" name="email" placeholder="Email"/>
-              <Input type="text" name="name" placeholder="Name"/>
+              <Input type="email" onChange={(e)=>{setEmail(e.target.value)}} placeholder="Email" value={email}/>
+              <Input type="text" onChange={(e)=>{setName(e.target.value)}} placeholder="Name" value={name}/>
             </TwoInputBox>
             <DivTextArea>
-              <TextArea id="w3review" name="w3review" rows="4" cols="50" placeholder="Enter your message" />
+              <TextArea id="message" onChange={(e)=>{setMessage(e.target.value)}}  rows="4" cols="50" placeholder="Enter your message" value={message} />
             </DivTextArea>
           </InputAndTextareaBox>
-          <SendMessageBtn type="submit">Send Message</SendMessageBtn>
+          <SendMessageBtn type="submit" disabled={btnDisabled}>{submitBtnText}</SendMessageBtn>
         </Form>
       </div>
 
@@ -175,12 +212,13 @@ const InputAndTextareaBox = styled.div`
     align-items: initial;
   }
 `
-const SendMessageBtn = styled.div`
+const SendMessageBtn = styled.button`
   background: linear-gradient(90deg, #49DDAC 5.88%, #5DB5DC 89.82%);
   color:#FFFFFF;
   font-size:20px;
   border-radius:10px;
   width: 400px;
+  height: 60px;
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -257,4 +295,26 @@ const Copyright = styled.p`
 text-align: center;
 color: white;
 letter-spacing: 1.2px;
+`
+
+const Loader = styled.div`
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+
+  border-top: 6px solid #00FF9D;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 `
