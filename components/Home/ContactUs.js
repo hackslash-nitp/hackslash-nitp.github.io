@@ -112,7 +112,7 @@ export default function ContactUsFunc(props) {
             </FooterLinksDiv>
 
       </FooterMainDiv>
-          <Copyright> Copyright © 2021, HackSlash.org . Privacy | Terms of service</Copyright>
+          <Copyright> Copyright © 2022, HackSlash.co.in . Privacy | Terms of service</Copyright>
     </MainDiv>
   );
 }
