@@ -79,7 +79,6 @@ export default function Projects1() {
 
 var Container = styled.div`
     background: url('/errorPage/ErrorPage.svg');
-    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -93,6 +92,7 @@ var FlexDiv = styled.div`
   @media (max-width: 768px){
     width: 100%;
     flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -107,6 +107,7 @@ const Text = styled.span`
 
 const Input = styled.input`
   width: 50%;
+  min-width: 250px;
   max-width: 100%;
   height: 30%;
   border-radius: 35px;

@@ -9,12 +9,12 @@ body {
   scroll-behavior: smooth;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   html,
   body{
     scroll-snap-type: y mandatory;
   }
-}
+} */
 
 a {
   color: inherit;
@@ -32,6 +32,6 @@ body::-webkit-scrollbar{
   display: none;
 }
 
-section{
+/* section{
   scroll-snap-align: start;
-}
+} */

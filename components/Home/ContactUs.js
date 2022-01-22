@@ -13,17 +13,10 @@ export default function ContactUsFunc(props) {
 
   var submitForm = (e) => {
     e.preventDefault();
-    if(name=="" || email=="" || message==""){
-      alert("All fields are required");
-      return;
-    }
-    setName("");
-    setEmail("");
-    setMessage("");
+
     setSubmitBtnText(<Loader />);
     setBtnDisabled(true);
 
-    // send message
     fetch('/api/contact', {
       method: "POST",
       body: JSON.stringify({name, email, message})
@@ -35,8 +28,11 @@ export default function ContactUsFunc(props) {
       else
         alert("Something went wrong while submitting your request")
       
-        setSubmitBtnText("Send Message")
-        setBtnDisabled(false);
+      setName("");
+      setEmail("");
+      setMessage("");
+      setSubmitBtnText("Send Message")
+      setBtnDisabled(false);
     })
   }
 
@@ -48,11 +44,27 @@ export default function ContactUsFunc(props) {
         <Form onSubmit={submitForm}>
           <InputAndTextareaBox>
             <TwoInputBox>
-              <Input type="email" onChange={(e)=>{setEmail(e.target.value)}} placeholder="Email" value={email}/>
-              <Input type="text" onChange={(e)=>{setName(e.target.value)}} placeholder="Name" value={name}/>
+              <Input 
+                type="email" 
+                required
+                onChange={(e)=>{setEmail(e.target.value)}} placeholder="Email" value={email}
+              />
+              <Input 
+                type="text" 
+                required
+                onChange={(e)=>{setName(e.target.value)}} placeholder="Name" value={name}
+              />
             </TwoInputBox>
             <DivTextArea>
-              <TextArea id="message" onChange={(e)=>{setMessage(e.target.value)}}  rows="4" cols="50" placeholder="Enter your message" value={message} />
+              <TextArea 
+                id="message" 
+                required
+                onChange={(e)=>{setMessage(e.target.value)}}  
+                rows="4" 
+                cols="50" 
+                placeholder="Enter your message" 
+                value={message} 
+              />
             </DivTextArea>
           </InputAndTextareaBox>
           <SendMessageBtn type="submit" disabled={btnDisabled}>{submitBtnText}</SendMessageBtn>
@@ -225,6 +237,7 @@ const SendMessageBtn = styled.button`
   align-items: center;
   padding: 7px 20px;
   transition: 1s;
+  border: none;
   &:hover{
     background: linear-gradient(90deg, #5DB5DC 5.88%, #49DDAC 89.82%);
   }
